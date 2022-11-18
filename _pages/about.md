@@ -5,7 +5,7 @@ title: "About"
 
 # EOC.online
 
-[img align="right" src="./../assets/images/eoconline_logo500.png]
+![right-aligned-image](./../assets/images/eoconline_logo500.png){: .align-right}
 
 > Helping you help others!
 
@@ -64,23 +64,7 @@ Address, Google PlusCodes, and perhaps What3Words. See
 
 ### OpenFemaNgClient™
 
-111
-
-<img align="right" src="./../assets/images/openFemaNgClient_logo.png>
-
-222
-
-[img align="right" src="./../assets/images/openFemaNgClient_logo.ico]
-
-333
-
 ![right-aligned-image](./../assets/images/openFemaNgClient_logo.png){: .align-right}
-
-<!-- picture>
- <source media="(prefers-color-scheme: dark)" srcset="YOUR-DARKMODE-IMAGE">
- <source media="(prefers-color-scheme: light)" srcset="YOUR-LIGHTMODE-IMAGE">
- <img alt="YOUR-ALT-TEXT" src="YOUR-DEFAULT-IMAGE">
-</picture -->
 
 > A TypeScript & Angular Client for the openFEMA datasets/APIs
 
