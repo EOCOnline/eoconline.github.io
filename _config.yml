@@ -13,12 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
+title: EOC.online
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this line in
-  _config.yml. It will appear in your document head meta (for Google search results) and
-  in your feed.xml site description.
+  EOC.online provides open-source tools for Emergency Operations Centers, wildland
+  firefighters, & local CERT/VOAD/Citizen Corps groups.
 twitter_username: username
 github_username: username
 minimal_mistakes_skin: default
@@ -32,7 +31,7 @@ remote_theme: mmistakes/minimal-mistakes
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/Los_Angeles # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
@@ -59,34 +58,39 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name: "First Lastname"
-  avatar: "/assets/images/bio-photo.jpg"
-  bio: "My awesome biography constrained to a sentence or two goes here."
+  name: "EOC.online"
+  avatar: "/assets/images/eoconline_logo500.png"
+  bio:
+    "EOC.online provides open-source tooling for Emergency Operation Centers and disaster
+    proparedness groups."
   links:
-    - label: "Website"
+    - label: "EOC.online"
       icon: "fas fa-fw fa-link"
       url: "https://EOC.online"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://eoconline.github.io/"
+    - label: "GitHub Repositories"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/eoconline/"
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+    - label: "EOC.online"
+      icon: "fas fa-fw fa-link"
+      url: "https://EOC.online"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://eoconline.github.io/"
+    - label: "GitHub Repositories"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/eoconline/"
+    - label: "RangerTrak"
+      icon: "fas fa-fw fa-link"
+      url: "https://RangerTrak.org"
+    - label: "OpenFemaNgClient"
+      icon: "fas fa-fw fa-link"
+      url: "https://eocsw.org/"
 
 defaults:
   # _posts
