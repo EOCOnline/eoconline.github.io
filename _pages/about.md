@@ -62,7 +62,17 @@ Address, Google PlusCodes, and perhaps What3Words. See
 
 ### OpenFemaNgClient™
 
-[img align="right" src="./../assets/images/openFemaNgClient_logo.png]
+111
+
+<img align="right" src="./../assets/images/openFemaNgClient_logo.png>
+
+222
+
+[img align="right" src="./../assets/images/openFemaNgClient_logo.ico]
+
+333
+
+![right-aligned-image](./../assets/images/openFemaNgClient_logo.png){: .align-right}
 
 <!-- picture>
  <source media="(prefers-color-scheme: dark)" srcset="YOUR-DARKMODE-IMAGE">
