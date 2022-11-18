@@ -5,6 +5,8 @@ title: "About"
 
 # EOC.online
 
+[img align="right" src="./../assets/images/eoconline_logo500.png]
+
 > Helping you help others!
 
 ## About
@@ -98,6 +100,9 @@ with encouragement it could be fortified into an enterprise ready tool.
 > Testing & Tracing Toolkit (RT3).
 
 #### RT3 - Rural Testing & Tracing Toolkit
+
+![right-aligned-image](./../assets/images/Rural-COVID-Testing-Webpage.178x300.png){:
+.align-right}
 
 One of these is the COVID Rural Testing & Tracing Toolkit (RT3), that provides rural
 communities a proven toolkit for conducting their own COVID testing for local residents
