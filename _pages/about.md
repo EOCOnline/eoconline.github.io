@@ -58,9 +58,17 @@ centrally tracked.
 Verbally transmitting & transcribing latitude & longitude coordinates can be very error
 prone and slow. Instead RangerTrak also permits other ways to report locations: by Street
 Address, Google PlusCodes, and perhaps What3Words. See
-https://en.wikipedia.org/wiki/Open_Location_Code#Other_geocode_systems for a list.
+<https://en.wikipedia.org/wiki/Open_Location_Code#Other_geocode_systems> for a list.
 
 ### OpenFemaNgClient™
+
+[img align="right" src="./../assets/images/openFemaNgClient_logo.png]
+
+<!-- picture>
+ <source media="(prefers-color-scheme: dark)" srcset="YOUR-DARKMODE-IMAGE">
+ <source media="(prefers-color-scheme: light)" srcset="YOUR-LIGHTMODE-IMAGE">
+ <img alt="YOUR-ALT-TEXT" src="YOUR-DEFAULT-IMAGE">
+</picture -->
 
 > A TypeScript & Angular Client for the openFEMA datasets/APIs
 
@@ -70,7 +78,7 @@ browser-only client application to provide an example for accessing one (current
 title=" https://www.fema.gov/about/reports-and-data/openfema">OpenFEMA datasets</a>.
 
 A working version/demo is (planned for now) at:
-<a href="https://eocsw.org" target="_blank" title="http://eocsw.org">http://eocsw.org</a>.
+<a href="https://eocsw.org" target="_blank" title="<http://eocsw.org>">http://eocsw.org</a>.
 (No $ to make it a https (secure) site for now.) Initially this is a proof of concept,
 with encouragement it could be fortified into an enterprise ready tool.
 
