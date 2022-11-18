@@ -8,7 +8,7 @@ button above for the quickest method of getting started with the
 Contains basic configuration to get you a site with:
 
 - Sample posts. WRONG SITE!
-- Sample top navigation.
+- Sample top navigation.Another newer edit...
 - Sample author sidebar with social links.
 - Sample footer links.
 - Paginated home page.
