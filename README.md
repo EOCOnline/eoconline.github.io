@@ -7,7 +7,7 @@ button above for the quickest method of getting started with the
 
 Contains basic configuration to get you a site with:
 
-- Sample posts. WRONG SITE!
+- Sample posts. connecting to proper respository???
 - Sample top navigation.Another newer edit...
 - Sample author sidebar with social links.
 - Sample footer links.
