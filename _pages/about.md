@@ -5,20 +5,23 @@ title: "About"
 
 # EOC.online
 
-> Helping you help others
+> Helping you help others!
 
 ## About
 
-EOC.Online's goal is to make it easy for you to install and use a standards based website
-for your emergency operations center. Whether yours is small or large, private or public,
-we offer a flexible, extensible, secure set of options customized for your Emergency
-Operations Center's needs. Our software is based on free, open source, robust code that
-runs on a laptop, a server farm, or in the cloud. Transform your EOC operations from
-chaotic to focused!
+> Transform your EOC operations from chaotic to focused!
+
+EOC.Online's primary goal has been to make it easy for you to install and use a standards
+based website for your emergency operations center. Whether yours is small or large,
+private or public, we offer a flexible, extensible, secure set of options customized for
+your Emergency Operations Center's needs. Our software is based on free, open source,
+robust code that runs on a laptop, a server farm, or in the cloud.
+
+We've also focused on other tools and projects recently:
 
 ## Projects
 
-EOC.online currently is working on 3 efforts - with others now archived.
+EOC.online currently is working on a few efforts - with others now archived.
 
 ### Open Source, Standards Based Web Sites for Emergency Operations Centers
 
@@ -60,3 +63,38 @@ https://en.wikipedia.org/wiki/Open_Location_Code#Other_geocode_systems for a lis
 ### OpenFemaNgClient™
 
 > A TypeScript & Angular Client for the openFEMA datasets/APIs
+
+openFemaNgClient is an Angular (aka Ng) & Typescript (thus ubiqitious JavaScript)
+browser-only client application to provide an example for accessing one (currently) of the
+<a href="https://www.fema.gov/about/reports-and-data/openfema" target="blank"
+title=" https://www.fema.gov/about/reports-and-data/openfema">OpenFEMA datasets</a>.
+
+A working version/demo is (planned for now) at:
+<a href="https://eocsw.org" target="_blank" title="http://eocsw.org">http://eocsw.org</a>.
+(No $ to make it a https (secure) site for now.) Initially this is a proof of concept,
+with encouragement it could be fortified into an enterprise ready tool.
+
+### COVID-Testing Web Page
+
+> A free, readily modifed and deployable standards based web page for the COVID Rural
+> Testing & Tracing Toolkit (RT3).
+
+#### RT3 - Rural Testing & Tracing Toolkit
+
+One of these is the COVID Rural Testing & Tracing Toolkit (RT3), that provides rural
+communities a proven toolkit for conducting their own COVID testing for local residents
+outside a formal hospital setting.
+
+Vashon's MRC is making freely available their pioneering simple, no frills COVID-19
+testing set-up that follows CDC guidence and can still be run by volunteers with proper
+training.
+
+We are making this available to other communities around the world as a model. Learn more
+at www.VashonBePrepared.org/Testing
+
+Within this larger context above, this particular GitHub repository, at
+www.github.com/EOCOnline/Covid-Testing, provides a standards based, easily replicated web
+page that can be integrated into your existing website, and easily branded to assure your
+visitors.
+
+Read more at: <https://github.com/EOCOnline/COVID-Testing>

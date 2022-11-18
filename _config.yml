@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   EOC.online provides open-source tools for Emergency Operations Centers, wildland
   firefighters, & local CERT/VOAD/Citizen Corps groups.
 twitter_username: username
-github_username: username
+github_username: eoconline
 minimal_mistakes_skin: default
 search: true
 
