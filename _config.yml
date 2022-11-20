@@ -68,7 +68,7 @@ author:
       icon: "fas fa-fw fa-link"
       url: "https://EOC.online"
     - label: "Our Jekyll Pages"
-      icon: "fab fa-fw fa-jekyll"
+      icon: "fab fa-fw fa-github"
       url: "https://eoconline.github.io/"
     - label: "Our GitHub Repositories"
       icon: "fab fa-fw fa-github"
@@ -83,10 +83,10 @@ author:
 footer:
   links:
     - label: "EOC.online"
-      icon: "fas fa-fw fa-link"
+      icon: "fa-solid fa-wand-magic-sparkles"
       url: "https://EOC.online"
     - label: "GitHub Jekyll Pages"
-      icon: "fab fa-fw fa-jekyll"
+      icon: "fab fa-fw fa-github"
       url: "https://eoconline.github.io/"
     - label: "GitHub Repositories"
       icon: "fab fa-fw fa-github"
