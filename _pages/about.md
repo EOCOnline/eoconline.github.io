@@ -5,8 +5,8 @@ title: "About"
 
 # EOC.online
 
-![right-aligned-image](./../assets/images/eoconline_logo500.png width="100" height="100"
-){: .align-right}
+![right-aligned-image](./../assets/images/eoconline_logo500.png| width=100){:
+.align-right}
 
 > "Helping you help others!"
 
