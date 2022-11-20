@@ -61,8 +61,8 @@ author:
   name: "EOC.online"
   avatar: "/assets/images/eoconline_logo500.png"
   bio:
-    "EOC.online provides open-source tooling for Emergency Operation Centers and disaster
-    proparedness groups."
+    "EOC.online provides open-source tooling for Emergency Operation Centerse and disaster
+    preparedness groups."
   links:
     - label: "EOC.online"
       icon: "fas fa-fw fa-link"
@@ -73,6 +73,12 @@ author:
     - label: "Our GitHub Repositories"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/eoconline/"
+    - label: "RangerTrak"
+      icon: "fas fa-fw fa-link"
+      url: "https://RangerTrak.org"
+    - label: "OpenFemaNgClient"
+      icon: "fas fa-fw fa-link"
+      url: "https://eocsw.org/"
 
 footer:
   links:
