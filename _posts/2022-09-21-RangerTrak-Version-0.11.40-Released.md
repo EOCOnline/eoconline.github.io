@@ -1,6 +1,6 @@
 ---
 title: "RangerTrak v 0.11.40 Release Notes"
-date: 2022-91-21T00:00:00-00:00
+date: 2022-91-21T01:00:00-01:00
 categories:
   - blog
 tags:
