@@ -14,6 +14,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: EOC.online
+#subtitle: "Version xx"
+#url: "https://EOC.online" # url where this is being hosted...not project home url!
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   EOC.online provides open-source tools for Emergency Operations Centers, wildland
@@ -22,6 +24,7 @@ twitter_username: username
 github_username: eoconline
 minimal_mistakes_skin: default
 search: true
+logo: "/assets/images/eoconline_logo256.png"
 
 # Build settings
 markdown: kramdown
@@ -101,7 +104,7 @@ footer:
 defaults:
   # _posts
   - scope:
-      path: ""
+      path: "_posts"
       type: posts
     values:
       layout: single
