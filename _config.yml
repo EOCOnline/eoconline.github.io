@@ -68,7 +68,7 @@ author:
     preparedness groups."
   links:
     - label: "EOC.online"
-      icon: "fas fa-fw fa-link"
+      icon: "fas fa-fw fa-wand-magic-sparkles"
       url: "https://EOC.online"
     - label: "Our Jekyll Pages"
       icon: "fab fa-fw fa-github"
@@ -86,7 +86,7 @@ author:
 footer:
   links:
     - label: "EOC.online"
-      icon: "fab fa-wand-magic-sparkles"
+      icon: "fa-light fa-wand-magic-sparkles"
       url: "https://EOC.online"
     - label: "GitHub Jekyll Pages"
       icon: "fab fa-fw fa-github"
