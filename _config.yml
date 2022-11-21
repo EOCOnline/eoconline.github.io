@@ -86,7 +86,7 @@ author:
 footer:
   links:
     - label: "EOC.online"
-      icon: "fab fa-fw fa-github" #fa-wand-magic-sparkles"
+      icon: "fab fa-wand-magic-sparkles"
       url: "https://EOC.online"
     - label: "GitHub Jekyll Pages"
       icon: "fab fa-fw fa-github"
