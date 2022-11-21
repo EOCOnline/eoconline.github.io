@@ -3,7 +3,9 @@ permalink: /about/
 title: "About"
 ---
 
-![right-aligned-image](./../assets/images/eoconline_logo256.png){: .align-right}
+![right-aligned-image](./../assets/images/eoconline_logo256.png)
+
+: .align-right
 
 > "Helping you help others!"
 
