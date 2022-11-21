@@ -62,7 +62,8 @@ Address, Google PlusCodes, and perhaps What3Words. See
 
 ### OpenFemaNgClient™
 
-![right-aligned-image](./../assets/images/openFemaNgClient_logo.png){: .align-right}
+![right-aligned-image](./../assets/images/openFemaNgClient_logo.png | width:256){:
+.align-right}
 
 > A TypeScript & Angular Client for the openFEMA datasets/APIs
 
