@@ -2,7 +2,7 @@
 
 "Helping you help others"
 
-## To view:
+## To View
 
 https://eoconline.github.io
 
