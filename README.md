@@ -4,7 +4,7 @@
 
 ## To view:
 
-[https://eoconline.github.io]
+https://eoconline.github.io
 
 ## About
 
