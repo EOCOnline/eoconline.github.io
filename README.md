@@ -2,6 +2,10 @@
 
 "Helping you help others"
 
+## To view:
+
+[https://eoconline.github.io]
+
 ## About
 
 EOC.Online's goal is to make it easy for you to install and use a standards based website
