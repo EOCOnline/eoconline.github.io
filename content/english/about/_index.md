@@ -1,9 +1,9 @@
 ---
-title: "Hey, I am John Doe!"
+title: "eoc.online"
 meta_title: "About"
-description: "this is meta description"
-image: "/images/avatar.png"
+description: "eoc.online™ provides free tools for Emergency Operations Centers (EOCs) and local ACS/ARES/CERT/MRC/Neighborhood/Citizen Corps groups. For more information check out https://eoc.online."
+image: "/images/logos/5-25-2024 at 11.50.07 AM.png"
 draft: false
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis illum nesciunt commodi vel nisi ut alias excepturi ipsum, totam, labore tempora, odit ex iste tempore sed. Fugit voluptatibus perspiciatis assumenda nulla ad nihil, omnis vel, doloremque sit quam autem optio maiores, illum eius facilis et quo consectetur provident dolor similique! Enim voluptatem dicta expedita veritatis repellat dolorum impedit, provident quasi at.
+eoc.online™ provides free tools for Emergency Operations Centers (EOCs) and local ACS/ARES/CERT/MRC/Neighborhood/Citizen Corps groups. For more information check out https://eoc.online.
