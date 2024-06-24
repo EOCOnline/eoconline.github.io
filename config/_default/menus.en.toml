@@ -6,6 +6,7 @@ name = "Home"
 pageRef = "/"
 weight = 1
 
+
 [[main]]
 name = "About"
 pageRef = "/about"
@@ -13,7 +14,7 @@ weight = 2
 
 [[main]]
 parent = "About"
-name = "About"
+name = "About Us"
 pageRef = "/about"
 
 [[main]]
@@ -21,8 +22,9 @@ parent = "About"
 name = "Contact"
 pageRef = "/contact"
 
+
 [[main]]
-weight = 4
+weight = 3
 name = "Insights"
 
 [[main]]
@@ -40,6 +42,29 @@ pageRef = "/authors"
 parent = "Insights"
 name = "Categories"
 pageRef = "/categories"
+
+
+
+[[main]]
+weight = 4
+name = "Resources"
+
+[[main]]
+parent = "Resources"
+name = "Resources2"
+pageRef = "/resources"
+
+
+[[main]]
+parent = "Resources"
+name = "Topics"
+pageRef = "/topics"
+
+[[main]]
+parent = "Resources"
+name = "Categories2"
+pageRef = "/categories2"
+
 
 [[main]]
 name = "Elements"

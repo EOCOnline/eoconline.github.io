@@ -29,10 +29,10 @@ features = [
 ]
 
 [author]
-name = "Zeon Studio"
-homepage = "https://zeon.studio"
+name = "Vashon Software"
+homepage = "https://VashonSoftware.com"
 
 [original]
-author = "Zeon Studio"
-homepage = "https://zeon.studio"
+author = "Vashon Software"
+homepage = "https://VashonSoftware.com"
 repo = "https://github.com/eoconline/themeplate"
