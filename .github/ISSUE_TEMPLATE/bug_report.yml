@@ -6,7 +6,7 @@ body:
     id: hugo-version
     attributes:
       label: What is your Hugo Extended Version
-      description: Check the [README](https://github.com/zeon-studio/hugoplate?tab=readme-ov-file#user-content-️-prerequisites) for the required version. Use "hugo version" in your terminal to see your Hugo version.
+      description: Check the [README](https://github.com/eoconline/hugoplate?tab=readme-ov-file#user-content-️-prerequisites) for the required version. Use "hugo version" in your terminal to see your Hugo version.
     validations:
       required: true
 
@@ -14,7 +14,7 @@ body:
     id: go-version
     attributes:
       label: What is your Go Version
-      description: Check the [README](https://github.com/zeon-studio/hugoplate?tab=readme-ov-file#user-content-️-prerequisites) for the required version. Use "go version" in your terminal to see your Go version.
+      description: Check the [README](https://github.com/eoconline/hugoplate?tab=readme-ov-file#user-content-️-prerequisites) for the required version. Use "go version" in your terminal to see your Go version.
     validations:
       required: true
 
@@ -22,7 +22,7 @@ body:
     id: node-version
     attributes:
       label: What is your Node.js Version
-      description: Check the [README](https://github.com/zeon-studio/hugoplate?tab=readme-ov-file#user-content-️-prerequisites) for the required version. Use "node -v" in your terminal to see your Node.js version.
+      description: Check the [README](https://github.com/eoconline/hugoplate?tab=readme-ov-file#user-content-️-prerequisites) for the required version. Use "node -v" in your terminal to see your Node.js version.
     validations:
       required: true
 

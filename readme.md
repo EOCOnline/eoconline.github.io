@@ -13,16 +13,16 @@
     <img src="https://img.shields.io/static/v1?label=min-HUGO-version&message=0.126.0&color=f00&logo=hugo" />
   </a>
 
-  <a href="https://github.com/zeon-studio/hugoplate/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/zeon-studio/hugoplate" alt="license">
+  <a href="https://github.com/eoconline/hugoplate/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/eoconline/hugoplate" alt="license">
   </a>
 
-  <a href="https://github.com/zeon-studio/hugoplate">
-    <img src="https://img.shields.io/github/languages/code-size/zeon-studio/hugoplate" alt="code size">
+  <a href="https://github.com/eoconline/hugoplate">
+    <img src="https://img.shields.io/github/languages/code-size/eoconline/hugoplate" alt="code size">
   </a>
 
-  <a href="https://github.com/zeon-studio/hugoplate/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/zeon-studio/hugoplate" alt="contributors">
+  <a href="https://github.com/eoconline/hugoplate/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/eoconline/hugoplate" alt="contributors">
   </a>
 </p>
 
@@ -83,7 +83,7 @@ We have included almost everything you need to start your Hugo project. Let's se
 
 ## 🚀 Getting Started
 
-First you need to [clone](https://github.com/zeon-studio/hugoplate) or [download](https://github.com/zeon-studio/hugoplate/archive/refs/heads/main.zip) the template repository, and then let's get started with the following process:
+First you need to [clone](https://github.com/eoconline/hugoplate) or [download](https://github.com/eoconline/hugoplate/archive/refs/heads/main.zip) the template repository, and then let's get started with the following process:
 
 ### ⚙️ Prerequisites
 
@@ -119,7 +119,7 @@ npm run dev
 
 ### 🎬 Still Confused? Watch a Quick Video
 
-https://github.com/zeon-studio/hugoplate/assets/58769763/c260c0ae-91be-42ce-b8db-aa7f11f777bd
+https://github.com/eoconline/hugoplate/assets/58769763/c260c0ae-91be-42ce-b8db-aa7f11f777bd
 
 ---
 
@@ -211,14 +211,14 @@ And if you want to Host some other hosting platforms. then you can build your pr
 
 ### 🐞 Reporting Issues
 
-We use GitHub Issues as the official bug tracker for this Template. Please Search [existing issues](https://github.com/zeon-studio/hugoplate/issues). It’s possible someone has already reported the same problem.
-If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com/zeon-studio/hugoplate/issues).
+We use GitHub Issues as the official bug tracker for this Template. Please Search [existing issues](https://github.com/eoconline/hugoplate/issues). It’s possible someone has already reported the same problem.
+If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com/eoconline/hugoplate/issues).
 
 ### 📝 License
 
 Copyright (c) 2023 - Present, Designed & Developed by [Zeon Studio](https://zeon.studio/)
 
-**Code License:** Released under the [MIT](https://github.com/zeon-studio/hugoplate/blob/main/LICENSE) license.
+**Code License:** Released under the [MIT](https://github.com/eoconline/hugoplate/blob/main/LICENSE) license.
 
 **Image license:** The images are only for demonstration purposes. They have their license, we don't have permission to share those images.
 
@@ -228,9 +228,9 @@ Copyright (c) 2023 - Present, Designed & Developed by [Zeon Studio](https://zeon
 
 List of some projects people are building with **Hugoplate**!
 
-| [![Open Neuromorphic](https://tinyurl.com/hp7avtje)](https://open-neuromorphic.org/) | [![AI Models](https://tinyurl.com/mu4p7dhb)](https://aimodels.org/) | [![Hugobricks](https://tinyurl.com/4x3uwhm9)](https://www.hugobricks.preview.usecue.com/) | [![ONO LLC](https://tinyurl.com/2fbjzwzn)](https://ono.day/)
-|:---:|:---:|:---:|:---:|
-| **Open Neuromorphic** | **AI Models** | **Hugobricks** | **ONO LLC** |
+| [![Open Neuromorphic](https://tinyurl.com/hp7avtje)](https://open-neuromorphic.org/) | [![AI Models](https://tinyurl.com/mu4p7dhb)](https://aimodels.org/) | [![Hugobricks](https://tinyurl.com/4x3uwhm9)](https://www.hugobricks.preview.usecue.com/) | [![ONO LLC](https://tinyurl.com/2fbjzwzn)](https://ono.day/) |
+| :----------------------------------------------------------------------------------: | :-----------------------------------------------------------------: | :---------------------------------------------------------------------------------------: | :----------------------------------------------------------: |
+|                                **Open Neuromorphic**                                 |                            **AI Models**                            |                                      **Hugobricks**                                       |                         **ONO LLC**                          |
 
 ---
 

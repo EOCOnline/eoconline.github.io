@@ -6,7 +6,7 @@ description: "Experience the future of web development with hugoplate and Hugo. 
 button:
   enable: true
   label: "Get Started Now"
-  link: "https://github.com/zeon-studio/hugoplate"
+  link: "https://github.com/eoconline/hugoplate"
 
 # don't create a separate page
 _build:
