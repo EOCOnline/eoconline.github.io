@@ -2,18 +2,18 @@
 # Banner
 banner:
   title: "The Ultimate Starter Template You Need To Start Your Hugo Project"
-  content: "hugoplate is a free starter template built with Hugo and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
+  content: "eoc.online is a free starter template built with Hugo and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
   image: "/images/banner.png"
   button:
     enable: true
     label: "Get Started For Free"
-    link: "https://github.com/zeon-studio/hugoplate"
+    link: "https://github.com/zeon-studio/eoc.online"
 
 # Features
 features:
-  - title: "What's Included in hugoplate"
+  - title: "What's Included in eoc.online"
     image: "/images/service-1.png"
-    content: "hugoplate is a comprehensive starter template that includes everything you need to get started with your Hugo project. What's Included in hugoplate"
+    content: "eoc.online is a comprehensive starter template that includes everything you need to get started with your Hugo project. What's Included in eoc.online"
     bulletpoints:
       - "10+ Pre-build pages"
       - "95+ Google Pagespeed Score"
@@ -36,7 +36,7 @@ features:
     button:
       enable: true
       label: "Get Started Now"
-      link: "https://github.com/zeon-studio/hugoplate"
+      link: "https://github.com/zeon-studio/eoc.online"
 
   - title: "The Top Reasons to Choose Hugo for Your Hugo Project"
     image: "/images/service-3.png"
