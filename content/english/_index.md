@@ -2,7 +2,7 @@
 # Banner
 banner:
   title: "The Ultimate Starter Template You Need To Start Your Hugo Project"
-  content: "Hugoplate is a free starter template built with Hugo and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
+  content: "hugoplate is a free starter template built with Hugo and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
   image: "/images/banner.png"
   button:
     enable: true
@@ -11,9 +11,9 @@ banner:
 
 # Features
 features:
-  - title: "What's Included in Hugoplate"
+  - title: "What's Included in hugoplate"
     image: "/images/service-1.png"
-    content: "Hugoplate is a comprehensive starter template that includes everything you need to get started with your Hugo project. What's Included in Hugoplate"
+    content: "hugoplate is a comprehensive starter template that includes everything you need to get started with your Hugo project. What's Included in hugoplate"
     bulletpoints:
       - "10+ Pre-build pages"
       - "95+ Google Pagespeed Score"
