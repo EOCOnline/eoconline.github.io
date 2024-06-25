@@ -1,26 +1,49 @@
 ---
 # Banner
 banner:
-  title: "The Ultimate Starter Template You Need To Start Your Hugo Project"
-  content: "hugoplate is a free starter template built with Hugo and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
+  title: "Open Source Tools & Resources for your Emergency Operation Center"
+  content: "eoc.online provides free, extendable software built with the latest technology, providing time-saving and support to modern rural and international EOCs."
   image: "/images/banner.png"
-  button:
-    enable: true
-    label: "Get Started For Free"
-    link: "https://github.com/eoconline/hugoplate"
+  # button:
+  #   enable: true
+  #   label: "Learn More"
+  #   link: "https://github.com/eoconline/hugoplate"
 
 # Features
 features:
-  - title: "What's Included in hugoplate"
+  - title: "We Provide Insights"
     image: "/images/service-1.png"
-    content: "hugoplate is a comprehensive starter template that includes everything you need to get started with your Hugo project. What's Included in hugoplate"
+    content: "We've been involved in rural EOCs for decades, but need your input and suggestions to grow in areas that will help you. Our insights change frequently and are a reaction to current events."
     bulletpoints:
-      - "10+ Pre-build pages"
-      - "95+ Google Pagespeed Score"
-      - "Build with Hugo and TailwindCSS for easy and customizable styling"
-      - "Fully responsive on all devices"
-      - "SEO-optimized for better search engine rankings"
-      - "**Open-source and free** for personal and commercial use"
+      - In the last decade, FEMA has grown from ICS & Initial Response oriented to offering explicit EOC (& even IMT) related coursework
+      - Reviews of various EOC software
+      - Various natinoal and International standards apply to EOC focused software. What does that mean for your EOC?
+    button:
+      enable: true
+      label: "See our latest Insights"
+      link: "/Insights"
+
+  - title: "We Provide Resources"
+    image: "/images/service-1.png"
+    content: "Documents, Curated links, and software tools that your EOC can repurpose and integrate to stay current."
+    bulletpoints:
+      - There is a LOT of software that is useful for EOC's and Operations - check out our expanding listing!
+      - Various national and International standards apply to EOC focused software. What does that mean for your EOC?
+      - Standards help guide software for EOC's - but which apply and how do they shape our actions?
+    button:
+      enable: true
+      label: "See our current Resources"
+      link: "/resources"
+
+  - title: "We Are a Community"
+    image: "/images/service-1.png"
+    content: "We've been involved in rural EOCs for decades, but need your input and suggestions to grow in areas that will help you. Our insights change frequently and are a reaction to current events."
+    bulletpoints:
+      - In the last decade, FEMA has grown from ICS & Initial Response oriented to offering full EOC related coursework and IMS
+      - Reviews of various EOC software"
+      - Various natinoal and International standards apply to EOC focused software. What does that mean for your EOC?
+      - e
+      - "**Open-source and free**"
     button:
       enable: false
       label: "Get Started Now"
