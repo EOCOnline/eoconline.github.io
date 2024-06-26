@@ -1,9 +1,9 @@
 ---
-title: "Elements"
+title: "Markdown Guide & Cheat SHeet"
 # meta title
 meta_title: ""
 # meta description
-description: "This is meta description"
+description: "A handy guide to Markdown formatting syntax"
 # save as draft
 draft: false
 ---

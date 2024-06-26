@@ -2,7 +2,8 @@
 # Banner
 banner:
   title: "Open Source Tools & Resources for your Emergency Operation Center"
-  content: "eoc.online provides free, extendable software built with the latest technology, providing time-saving and support to modern rural and international EOCs."
+  content: "**eoc.online** provides insights & open-source software to support rural & international EOCs -- <br>
+  helping you support others."
   image: "/images/banner.png"
   # button:
   #   enable: true
@@ -13,36 +14,38 @@ banner:
 features:
   - title: "EOC Specific Insights"
     image: "/images/service-1.png"
-    content: "We focus on *underserved* Emergency Operation Centers: rural and international without few dedicated staff -- or ongoing training."
+    content: "We focus on Emergency Operation Centers: rural & international with few dedicated staff"
     bulletpoints:
-      - In the last decade, FEMA has grown from ICS & Initial Response oriented to offering explicit EOC (& even IMT) related coursework
-      - Reviews of various EOC software
-      - Various national and International standards apply to EOC focused software. What does that mean for your EOC?
+      - Learn about FEMA's recent innovations in supporting EOC (& IMTs) over the past decade
+      - What do we think of software used by EOCs? CHeck out our take on them.
+      - 
     button:
       enable: true
-      label: "See our latest Insights"
+      label: "Review our latest Insights"
       link: "/Insights"
 
   - title: "Software Tools & Resources"
-    image: "/images/service-1.png"
-    content: "Documents, Curated links, and software tools that your EOC can repurpose and integrate to stay current."
+    image: "/images/service-2.png"
+    content: "Documents, software & tools your EOC can repurpose and integrate to stay current & save time."
     bulletpoints:
-      - There is a LOT of software that is useful for EOC's and Operations - check out our expanding listing!
-      - Various national and International standards apply to EOC focused software. What does that mean for your EOC?
-      - Standards help guide software for EOC's - but which apply and how do they shape our actions?
+      - RangerTrak™ -- Track & map search & rescue members reporting via radio, without reliable cell or internet access
+      - OpenFemaNgClient™ -- A TypeScript & Angular Client for the openFEMA datasets/APIs
+      - EOC Skillset Cross-Walk -- A handy spreadsheet to organize which skills apply to your various EOC positions
+      - See what software is used by EOCs -- check out our ever expanding listing!
+      - What national and International standards apply to EOC software -- and does that impact your EOC?
     button:
       enable: true
       label: "See our current Resources"
       link: "/resources"
 
   - title: "We Are a Community"
-    image: "/images/service-1.png"
+    image: "/images/service-3.png"
     content: "We've been involved in rural EOCs for decades, but need your input and suggestions to grow in areas that will help you. Our insights change frequently and are a reaction to current events."
     bulletpoints:
       - We currently welcome discussions & inquiries using Discord
-      - In the future, we look towards new models for EOC to EOC collaboratino and discussion
+      - In the future, we look towards new models for EOC to EOC collaboration and discussion!
     button:
-      enable: false
-      label: "Get Started Now"
-      link: "#"
+      enable: true
+      label: "Join our nascent Discord community"
+      link: "https://discord.com/invite/6dbuFqPs"
 ---
