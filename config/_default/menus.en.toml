@@ -28,15 +28,16 @@ weight = 3
 name = "Insights"
 
 [[main]]
+weight = 1
 parent = "Insights"
-name = "Blog"
-pageRef = "/blog"
+name = "Insightz"
+pageRef = "/insights"
 
 
 [[main]]
 parent = "Insights"
-name = "Authors"
-pageRef = "/authors"
+name = "Author"
+pageRef = "/author"
 
 [[main]]
 parent = "Insights"

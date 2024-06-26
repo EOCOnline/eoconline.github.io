@@ -49,7 +49,7 @@ We have included almost everything you need to start your Hugo project. Let's se
 - 🏠 Homepage
 - 👤 About
 - 📞 Contact
-- 👥 Authors
+- 👥 Author
 - 👤 Author Single
 - 📝 Blog
 - 📝 Blog Single
