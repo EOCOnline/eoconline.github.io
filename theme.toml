@@ -1,8 +1,8 @@
-name = "hugoplate"
+name = "eoc.online™"
 license = "MIT"
 licenselink = "https://github.com/eoconline/hugoplate/blob/main/LICENSE"
-description = "hugoplate is a free starter template built with Hugo, and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
-homepage = "https://github.com/eoconline/hugoplate"
+description = "eoc.online™ provides free tools for Emergency Operations Centers (EOCs) and local ACS/ARES/CERT/MRC/Neighborhood/Citizen Corps groups. For more information check out https://eoc.online."
+homepage = "https://github.com/eoconline"
 demosite = "https://zeon.studio/preview?project=hugoplate"
 min_version = "0.124.1"
 
