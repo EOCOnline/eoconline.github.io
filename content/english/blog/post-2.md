@@ -1,23 +1,28 @@
 ---
-title: "How to build an Application with modern Technology"
+title: "Why we choose Hugo to build our website"
 meta_title: ""
-description: "this is meta description"
-date: 2022-04-04T05:00:00Z
-image: "/images/image-placeholder.png"
-categories: ["Technology", "Data"]
-author: "Sam Wilson"
-tags: ["technology", "tailwind"]
+description: "Why we chose Hugo for our website"
+date: 2024-06-24T05:00:00Z
+image: "/images/hugo-logo-wide.svg"
+categories: ["Technology", "Websites"]
+author: "John Cornelison"
+tags: ["technology", "Hugo"]
 draft: false
 ---
 
-Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+## Advantages of Hugo for building websites
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+Hugo is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:
 
-## Creative Design
+- _Zero JS_, by default: No JavaScript runtime overhead to slow you down.
+- Customizable: Tailwind, MDX, and 100+ other integrations to choose from.
+- UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more.
 
-Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+## Top Reasons to Choose Hugo for Your Project
 
-> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+> With Hugo, you can build modern and content-focused websites without sacrificing performance or ease of use.
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+- Instantly load static sites for better user experience and SEO.
+- Intuitive syntax and support for popular frameworks make learning and using Hugo a breeze.
+- Use any front-end library or framework, or build custom components, for any project size.
+- Built on cutting-edge technology to keep your projects up-to-date with the latest web standards.

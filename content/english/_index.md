@@ -7,23 +7,23 @@ banner:
   # button:
   #   enable: true
   #   label: "Learn More"
-  #   link: "https://github.com/eoconline/hugoplate"
+  #   link: "https://github.com/eoconline/"
 
 # Features
 features:
-  - title: "We Provide Insights"
+  - title: "EOC Specific Insights"
     image: "/images/service-1.png"
-    content: "We've been involved in rural EOCs for decades, but need your input and suggestions to grow in areas that will help you. Our insights change frequently and are a reaction to current events."
+    content: "We focus on *underserved* Emergency Operation Centers: rural and international without few dedicated staff -- or ongoing training."
     bulletpoints:
       - In the last decade, FEMA has grown from ICS & Initial Response oriented to offering explicit EOC (& even IMT) related coursework
       - Reviews of various EOC software
-      - Various natinoal and International standards apply to EOC focused software. What does that mean for your EOC?
+      - Various national and International standards apply to EOC focused software. What does that mean for your EOC?
     button:
       enable: true
       label: "See our latest Insights"
       link: "/Insights"
 
-  - title: "We Provide Resources"
+  - title: "Software Tools & Resources"
     image: "/images/service-1.png"
     content: "Documents, Curated links, and software tools that your EOC can repurpose and integrate to stay current."
     bulletpoints:
@@ -39,38 +39,10 @@ features:
     image: "/images/service-1.png"
     content: "We've been involved in rural EOCs for decades, but need your input and suggestions to grow in areas that will help you. Our insights change frequently and are a reaction to current events."
     bulletpoints:
-      - In the last decade, FEMA has grown from ICS & Initial Response oriented to offering full EOC related coursework and IMS
-      - Reviews of various EOC software"
-      - Various natinoal and International standards apply to EOC focused software. What does that mean for your EOC?
-      - e
-      - "**Open-source and free**"
+      - We currently welcome discussions & inquiries using Discord
+      - In the future, we look towards new models for EOC to EOC collaboratino and discussion
     button:
       enable: false
       label: "Get Started Now"
       link: "#"
-
-  - title: "Discover the Key Features Of Hugo"
-    image: "/images/service-2.png"
-    content: "Hugo is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
-    bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
-    button:
-      enable: true
-      label: "Get Started Now"
-      link: "https://github.com/eoconline/hugoplate"
-
-  - title: "The Top Reasons to Choose Hugo for Your Hugo Project"
-    image: "/images/service-3.png"
-    content: "With Hugo, you can build modern and content-focused websites without sacrificing performance or ease of use."
-    bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Hugo a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
-    button:
-      enable: false
-      label: ""
-      link: ""
 ---
