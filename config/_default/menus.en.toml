@@ -60,16 +60,18 @@ name = "Resources"
 [[main]]
 weight = 1
 parent = "Resources"
-name = "Resourcess"
-pageRef = "/resources"
+name = "toolss"
+pageRef = "/tools"
 
 
 [[main]]
+weight = 2
 parent = "Resources"
 name = "Topics"
 pageRef = "/topics"
 
 [[main]]
+weight = 3
 parent = "Resources"
 name = "Keywords"
 pageRef = "/keywords"
@@ -94,7 +96,7 @@ weight = 2
 
 [[footer]]
 name = "Resources"
-pageRef = "/resources"
+pageRef = "/tools"
 weight = 3
 
 [[footer]]

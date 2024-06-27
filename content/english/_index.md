@@ -36,7 +36,7 @@ features:
     button:
       enable: true
       label: "See our current Resources"
-      link: "/resources"
+      link: "/tools"
 
   - title: "We Are a Community"
     image: "/images/service-3.png"
