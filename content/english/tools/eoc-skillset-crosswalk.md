@@ -3,6 +3,8 @@ title: "EOC Skillset Crosswalk"
 meta_title: "EOC Skillset Crosswalk"
 description: "EOC Skillset Crosswalk"
 date: 2024-06-04T05:00:00Z
+created: 2022-04-04T05:00:00Z
+reviewed: 2024-06-27T05:00:00Z
 image: "/images/eoc.online.SkillsCrosswalk.png"
 topics: ["Credentialling", "NIMS"]
 author: "John Cornelison"

@@ -4,8 +4,11 @@ title: "Markdown Guide & Cheat Sheet"
 meta_title: ""
 # meta description
 description: "A handy guide to Markdown formatting syntax"
-categories: ["Guides"]
-tags: ["Markdown"]
+date: 2024-06-27T05:00:00Z
+created: 2022-04-04T05:00:00Z
+reviewed: 2024-06-27T05:00:00Z
+topics: ["Guides"]
+keywords: ["Markdown"]
 # save as draft
 draft: false
 ---
