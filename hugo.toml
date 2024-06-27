@@ -171,3 +171,9 @@ lazy = true
 [[params.plugins.js]]
 link = "plugins/youtube-lite.js"
 lazy = true
+
+[taxonomies]
+  category = 'categories' # heirarchical general topics for Insights
+  tag = 'tags' # specific keywords for Insights
+  topics = 'topics' # analgous to categories - for resources
+  keywords = 'keywords' # analgous to tags - for resources
