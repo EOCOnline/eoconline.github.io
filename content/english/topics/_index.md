@@ -1,3 +1,3 @@
 ---
-title: "Author"
+title: "Topics (was Author)"
 ---

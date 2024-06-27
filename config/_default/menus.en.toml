@@ -24,11 +24,7 @@ name = "Contact"
 pageRef = "/contact"
 weight = 2
 
-[[main]]
-parent = "About"
-name = "Markdown Guide"
-pageRef = "/elements"
-weight = 3
+
 
 [[main]]
 weight = 3
@@ -58,8 +54,9 @@ weight = 4
 name = "Resources"
 
 [[main]]
+weight = 1
 parent = "Resources"
-name = "Resources2"
+name = "Resourcess"
 pageRef = "/resources"
 
 
@@ -70,8 +67,8 @@ pageRef = "/topics"
 
 [[main]]
 parent = "Resources"
-name = "Categories2"
-pageRef = "/categories2"
+name = "Keywords"
+pageRef = "/keywords"
 
 
 #[[main]]
@@ -87,11 +84,16 @@ pageRef = "/about"
 weight = 1
 
 [[footer]]
-name = "Elements"
-pageRef = "/elements"
+name = "Insights"
+pageRef = "/insights"
 weight = 2
+
+[[footer]]
+name = "Resources"
+pageRef = "/resources"
+weight = 3
 
 [[footer]]
 name = "Privacy Policy"
 pageRef = "/privacy-policy"
-weight = 3
+weight = 4
