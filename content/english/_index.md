@@ -22,7 +22,7 @@ features:
     button:
       enable: true
       label: "Review our latest Insights"
-      link: "/Insights"
+      link: "/insights"
 
   - title: "Software Tools & Resources"
     image: "/images/service-2.png"
