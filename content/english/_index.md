@@ -18,7 +18,7 @@ features:
     bulletpoints:
       - Learn about FEMA's recent innovations in supporting EOC (& IMTs) over the past decade
       - What do we think of software used by EOCs? CHeck out our take on them.
-      - 
+      - Other topical issues 
     button:
       enable: true
       label: "Review our latest Insights"
@@ -26,7 +26,7 @@ features:
 
   - title: "Software Tools & Resources"
     image: "/images/service-2.png"
-    content: "Documents, software & tools your EOC can repurpose and integrate to stay current & save time."
+    content: "References, software & tools your EOC can repurpose and integrate to stay current & save time."
     bulletpoints:
       - RangerTrak™ -- Track & map search & rescue members reporting via radio, without reliable cell or internet access
       - OpenFemaNgClient™ -- A TypeScript & Angular Client for the openFEMA datasets/APIs

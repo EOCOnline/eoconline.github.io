@@ -2,6 +2,7 @@
 title: "Content Ideas for an EOC website"
 meta_title: "Content Ideas for an EOC website"
 description: "Content Ideas for an EOC website"
+type: resource
 date: 2022-04-04T05:00:00Z
 created: 2022-04-04T05:00:00Z
 reviewed: 2024-06-27T05:00:00Z
@@ -29,7 +30,7 @@ draft: false
   - Hazards
   - How to Prepare
 
-### Intenral Pages
+### Internal (Private) Pages
 
 - Sign-in (who has access, to all or part of the site?)
 - Current Incidents

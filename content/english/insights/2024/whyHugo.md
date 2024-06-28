@@ -1,5 +1,5 @@
 ---
-title: "Why we choose Hugo to build our website"
+title: "Why our website is built with Hugo"
 meta_title: ""
 description: "Why we chose Hugo for our website"
 date: 2024-06-24T05:00:00Z
@@ -10,7 +10,7 @@ tags: ["technology", "Hugo"]
 draft: false
 ---
 
-![Hugo Logo](./hugo-logo-wide.svg)
+![Hugo Logo](hugo-logo-wide.svg)
 
 ## Advantages of Hugo for building websites
 

@@ -1,7 +1,8 @@
 ---
 title: "RangerTrak™"
 meta_title: "Track & map search & rescue members reporting via radio, without reliable cell or internet access "
-description: "RangerTrak allows you to track & map search & rescue members reporting via radio, without reliable cell or internet access "
+description: "RangerTrak allows you to track & map search & rescue members reporting via radio, without reliable cell or internet access"
+type: resource
 date: 2022-04-04T05:00:00Z
 created: 2022-04-04T05:00:00Z
 reviewed: 2024-06-27T05:00:00Z
