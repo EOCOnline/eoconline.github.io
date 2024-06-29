@@ -41,8 +41,8 @@ pageRef = "/insights"
 
 [[main]]
 parent = "Insights"
-name = "Author"
-pageRef = "/author"
+name = "Authors"
+pageRef = "/authors"
 
 [[main]]
 parent = "Insights"
