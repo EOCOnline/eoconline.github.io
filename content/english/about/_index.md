@@ -15,7 +15,8 @@ EOC.Online's goal is to make it easy for you to install and use a standards base
 ## Projects
 
 EOC.online currently is working on 3 efforts - with others now archived.
-Open Source, Standards Based Web Sites for Emergency Operations Centers
+
+## Open Source, Standards Based Web Sites for Emergency Operations Centers
 
 We started working on open source, free websites to serve as a template for your community's Emergency Operations Center's use. The goal is to provide sophisticated tools that simplify your staff and volunteers effort during disasters. Easy navigation and workflows mirror ICS & NIMS guidance for typical EOCs. Each community is encouraged to customize their own website to match local risks, special populations, and other circumstances.
 
