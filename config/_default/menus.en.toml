@@ -63,7 +63,7 @@ pageRef = "/resources"
 [[main]]
 weight = 1
 parent = "Resources"
-identifier = "toolz"
+identifier = "resourcez"
 name = "Resources"
 pageRef = "/resources"
 

@@ -2,11 +2,13 @@
 title: "FEMAs moves to support EOCs and IMTs"
 meta_title: "FEMAs moves to support EOCs and IMTs"
 description: "FEMAs moves to support EOCs and IMTs"
-date: 2022-04-04T05:00:00Z
+date: 2023-04-04T05:00:00Z
 image: "/images/image-placeholder.png"
-categories: ["Architecture", "OpenFema", "Data", "NIMS"]
 author: "John Cornelison"
-tags: ["silicon", "technology"]
+categories: ["FEMA", "OpenFema", "ICS vs EOC", "IMS", "NIMS"]
+tags: ["technology", "EOC", "IMT"]
+Topics: []
+Keywords: []
 draft: false
 ---
 

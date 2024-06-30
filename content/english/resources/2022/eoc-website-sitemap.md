@@ -7,9 +7,12 @@ date: 2022-04-04T05:00:00Z
 created: 2022-04-04T05:00:00Z
 reviewed: 2024-06-27T05:00:00Z
 image: "/images/image-placeholder.png"
-topics: ["Architecture", "Websites"]
 author: "John Cornelison"
-keywords: ["silicon", "technology"]
+topics: ["Architecture", "Websites", "I'm a topic"]
+keywords: ["silicon", "technology", "I'm a keyword"]
+categories: ["I'm a category"]
+tags: ["I'm a tag"]
+
 draft: false
 ---
 
