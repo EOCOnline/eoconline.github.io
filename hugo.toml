@@ -1,3 +1,5 @@
+resourceDir = "/resourceCache/"
+
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
 baseURL = "http://localhost:1313/"
@@ -82,6 +84,7 @@ resampleFilter = "Lanczos"
 
 ############################ Caches ##############################
 [caches]
+
 [caches.images]
 dir = ":resourceDir/_gen"
 maxAge = "720h"
@@ -175,5 +178,5 @@ lazy = true
 [taxonomies]
   category = 'categories' # heirarchical general topics for Insights
   tag = 'tags' # specific keywords for Insights
-  topic = 'topics' # analgous to categories - for tools
-  keyword = 'keywords' # analgous to tags - for tools
+  topic = 'topics' # analgous to categories - for resources
+  keyword = 'keywords' # analgous to tags - for resources

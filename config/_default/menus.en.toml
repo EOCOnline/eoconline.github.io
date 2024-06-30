@@ -58,14 +58,14 @@ pageRef = "/tags"
 [[main]]
 weight = 4
 name = "Resources"
-pageRef = "/tools"
+pageRef = "/resources"
 
 [[main]]
 weight = 1
 parent = "Resources"
 identifier = "toolz"
 name = "Resources"
-pageRef = "/tools"
+pageRef = "/resources"
 
 
 [[main]]
@@ -100,7 +100,7 @@ weight = 2
 
 [[footer]]
 name = "Resources"
-pageRef = "/tools"
+pageRef = "/resources"
 weight = 3
 
 [[footer]]

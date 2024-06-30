@@ -9,7 +9,7 @@ node_modules
 builds
 package-lock.json
 public
-resources
+resourceCache
 .hugo_build.lock
 jsconfig.json
 hugo_stats.json
