@@ -4,7 +4,7 @@ banner:
   title: "Open Source Tools & Resources for your Emergency Operation Center"
   content: "**eoc.online** provides insights & open-source software to support rural & international EOCs -- <br>
   helping you support others."
-  image: "/images/banner.png"
+  image: "/images/20220205_112750.1200x512.png"
   # button:
   #   enable: true
   #   label: "Learn More"
@@ -13,11 +13,11 @@ banner:
 # Features
 features:
   - title: "EOC Specific Insights"
-    image: "/images/service-1.png"
+    image: "/images/GoogleMaps.512x403.png"
     content: "We focus on Emergency Operation Centers: rural & international with few dedicated staff"
     bulletpoints:
       - Learn about FEMA's recent innovations in supporting EOC (& IMTs) over the past decade
-      - What do we think of software used by EOCs? CHeck out our take on them.
+      - What do we think of software used by EOCs? Check out our take on them.
       - Other topical issues 
     button:
       enable: true
@@ -25,7 +25,7 @@ features:
       link: "/insights"
 
   - title: "Software Tools & Resources"
-    image: "/images/service-2.png"
+    image: "/images/CardView.lg.512x456.png"
     content: "References, software & tools your EOC can repurpose and integrate to stay current & save time."
     bulletpoints:
       - RangerTrak™ -- Track & map search & rescue members reporting via radio, without reliable cell or internet access
@@ -39,7 +39,7 @@ features:
       link: "/resources"
 
   - title: "We Are a Community"
-    image: "/images/service-3.png"
+    image: "/images/eoc.online.SkillsCrosswalk.512x455.png"
     content: "We've been involved in rural EOCs for decades, but need your input and suggestions to grow in areas that will help you. Our insights change frequently and are a reaction to current events."
     bulletpoints:
       - We currently welcome discussions & inquiries using Discord

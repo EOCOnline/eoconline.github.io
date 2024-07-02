@@ -55,7 +55,7 @@ show_categories = true
 # announcement
 # announcement module: https://github.com/gethugothemes/hugo-modules/tree/master/components/announcement
 [announcement]
-enable = true
+enable = false
 expire_days = 7
 content = "You must replace the **baseURL** in **hugo.toml** file when deploying, you can manage this announcement from the **params.toml** file."
 
@@ -98,8 +98,8 @@ sidebar = ["categories", "tags"]
 [google_map]
 enable = false
 map_api_key = "AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"
-map_latitude = "51.5223477"
-map_longitude = "-0.1622023"
+map_latitude = "47.4474"
+map_longitude = "-122.4604"
 map_marker = "images/marker.png"
 
 
