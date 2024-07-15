@@ -1,0 +1,28 @@
+<!-- from https://web.archive.org/web/20191212011308/https://gohugohq.com/partials/autolinking-shortcode-for-articles/
+  Shortcode that finds keywords or phrases and link them with found phrases in other markdown files
+
+In a markdown file add:   removed offending 2{ followed by <
+---
+seo = ["all about examples", "examples list"]  /# these phrases will be automatically linked with this articles link
+---
+ seo-autolink p>}}This is an Article about examples. Lorem ipsum dolor. /seo-autolink >}}
+
+Then in another md file:
+---
+seo = ["Lorem ipsum dolor"]
+---
+  seo-autolink blockquote>}}This is another article, you can find all about examples including a large examples list in the prior article. /seo-autolink >}}
+-->
+
+
+{{ printf "<%s>" (.Get 0) | safeHTML }}
+  {{ $.Scratch.Set "content" .Inner }}
+  {{ range where $.Site.Pages.ByPublishDate.Reverse ".Params.seo" "ne" nil }}
+  {{ $tmpPage := . }}
+  {{ range .Params.seo }}
+  {{ $.Scratch.Set "content" (($.Scratch.Get "content") | replaceRE . (printf "<a href=\"%s\" title=\"%s\">%s</a>"
+  $tmpPage.RelPermalink $tmpPage.Title . ) ) }}
+  {{ end }}
+  {{ end }}
+  {{ $.Scratch.Get "content" | safeHTML }}
+  {{ printf "</%s>" (.Get 0) | safeHTML }}

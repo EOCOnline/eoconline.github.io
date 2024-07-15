@@ -1,0 +1,143 @@
+$gutter-default : 20px;
+$color-accent   : #ff6600;
+$color-white    : #ffffff;
+
+.calendar-year {
+  display       : flex;
+  flex-direction: row;
+  flex-wrap     : wrap;
+
+  list-style-type: none;
+  padding        : 0px;
+  margin         : 0px;
+  text-align     : center;
+
+  header {
+    width: 100%;
+  }
+
+}
+
+.calendar-month {
+  display       : flex;
+  flex-grow     : 1;
+  flex-direction: row;
+  flex-wrap     : wrap;
+  align-content : flex-start;
+
+  list-style-type: none;
+  padding        : 0px;
+  text-align     : center;
+
+  width : calc(100% / 4);
+  margin: $gutter-default;
+
+  header {
+    width: 100%;
+  }
+
+}
+
+.calendar-weekdays {
+  display        : flex;
+  flex-grow      : 1;
+  flex-direction : row;
+  flex-wrap      : wrap;
+  list-style-type: none;
+  padding        : 0px;
+  margin         : 0px;
+  text-align     : center;
+
+  width: 100%;
+
+  li {
+    width         : calc(100% / 7);
+    font-weight   : 500;
+    text-transform: uppercase;
+    line-height   : $gutter-default * 2;
+    font-size     : $gutter-default / 2;
+    opacity       : 0.6;
+
+    &.calendar-weekday-sat,
+    &.calendar-weekday-sun {
+      opacity: 1;
+    }
+
+  }
+
+}
+
+.calendar-days {
+  display        : flex;
+  flex-grow      : 1;
+  flex-direction : row;
+  flex-wrap      : wrap;
+  list-style-type: none;
+  padding        : 0px;
+  margin         : 0px;
+  text-align     : center;
+
+  li {
+    width: calc(100% / 7);
+  }
+
+}
+
+.calendar-day {
+  line-height: $gutter-default * 1.5;
+  font-size  : $gutter-default / 1.8;
+  text-align : center;
+
+  &.calendar-day-future {
+    opacity: 0.4;
+  }
+
+  &.calendar-day-has-articles {
+    &::before {
+      content         : '';
+      width           : $gutter-default * 1.1;
+      height          : $gutter-default * 1.1;
+      position        : absolute;
+      top             : 50%;
+      left            : 50%;
+      background-color: $color-accent;
+      transform       : translate(-50%, -50%);
+      z-index         : -1;
+      border-radius   : 50%;
+    }
+
+    color   : $color-white;
+    position: relative;
+
+    a {
+      color: $color-white;
+
+      em {
+        display: none;
+      }
+
+    }
+
+  }
+
+  &.calendar-day-is-today {
+    &::before {
+      content      : '';
+      width        : $gutter-default * 1;
+      height       : $gutter-default * 1;
+      position     : absolute;
+      top          : 50%;
+      left         : 50%;
+      border       : 2px solid $color-accent;
+      transform    : translate(-50%, -50%);
+      z-index      : -1;
+      border-radius: 50%;
+    }
+
+    position   : relative;
+    font-weight: 800;
+    color      : $color-accent;
+
+  }
+
+}
