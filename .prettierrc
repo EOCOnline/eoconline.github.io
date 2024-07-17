@@ -13,5 +13,6 @@
         "bracketSameLine": true
       }
     }
-  ]
+  ],
+  "printWidth": 1000
 }

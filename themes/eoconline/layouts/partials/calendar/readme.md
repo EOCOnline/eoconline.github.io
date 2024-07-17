@@ -46,7 +46,7 @@ In order to make working links to the archive we need to create taxonomies that 
 archive = "archive"
 ```
 
-Then create a layout file called archive.html in /layouts/taxonomy/. To start with the following content:
+Then create a layout file called archive.html in /layouts/taxonomy/, with the following content:
 
 **archive.html**
 
