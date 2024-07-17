@@ -6,7 +6,9 @@
 {{ $to := .to }}
 {{ $toMonth := .toMonth }}
 
-{{ $isLeapYear := (modBool $year 4) }}
+<!--  $isLeapYear := (modBool $year 4) -->
+{{ $isLeapYear := false }}
+
 
 <div class="calendar-year">
   <header>

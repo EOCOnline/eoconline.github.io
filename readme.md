@@ -228,12 +228,14 @@ Copyright (c) 2023 - Present, Designed & Developed by [Zeon Studio](https://zeon
 
 List of some projects people are building with **eoconline**!
 
-| [![Open Neuromorphic](https://tinyurl.com/hp7avtje)](https://open-neuromorphic.org/) | [![AI Models](https://tinyurl.com/mu4p7dhb)](https://aimodels.org/) | [![Hugobricks](https://tinyurl.com/4x3uwhm9)](https://www.hugobricks.preview.usecue.com/) | [![ONO LLC](https://tinyurl.com/2fbjzwzn)](https://ono.day/) |
-| :----------------------------------------------------------------------------------: | :-----------------------------------------------------------------: | :---------------------------------------------------------------------------------------: | :----------------------------------------------------------: |
-|                                **Open Neuromorphic**                                 |                            **AI Models**                            |                                      **Hugobricks**                                       |                         **ONO LLC**                          |
-
 ---
 
 ## 💻 Need Customization?
 
 If you need a custom theme, theme customization, or complete website development services from scratch you can [Hire Us](https://zeon.studio/estimate-project).
+
+## ToDo
+
+- downlevelDiv.innerHTML =
+- 2011-6-6_entry138\\index.html": "C:\Users\John\AppData\Local\Temp\hugo-transform-error569656508:1233:217": unexpected EOF in expression on line 1233 and column 217
+- 2012\\2012-3-26_entry245\\index.html": "C:\Users\John\AppData\Local\Temp\hugo-transform-error2119166930:1235:229": unexpected EOF in expression on line 1235 and column 229

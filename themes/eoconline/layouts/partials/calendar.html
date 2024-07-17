@@ -1,3 +1,4 @@
+<p>calender running!</p>
 {{ $context := .context }}
 {{ $from := int .from }}
 {{ $fromMonth := int .fromMonth }}
@@ -5,11 +6,16 @@
 {{ $toMonth := int .toMonth }}
 {{ $pages := .pages }}
 
+Calendar to call year with From: {{ $from }}-{{ $fromMonth }} To:
+{{ $to }}-{{ $toMonth }}
+
 {{ $context.Scratch.Set "currentYear" $from }}
 {{ $context.Scratch.Add "consideredYears" (slice $from) }}
 
+
 {{ range ($pages.GroupByPublishDate "2006") }}
-{{ $context.Scratch.SetInMap "ArticlesPerYear" .Key (len .Pages) }}
+{{ $context.Scratch.SetInMap "ArticlesPerYear" .Key (20) }}
+<!-- $context.Scratch.SetInMap "ArticlesPerYear" .Key (len .Pages) -->
 {{ end }}
 
 {{ range ($pages.GroupByPublishDate "2006-01") }}
@@ -20,18 +26,30 @@
 {{ $context.Scratch.SetInMap "ArticlesPerDay" .Key (len .Pages) }}
 {{ end }}
 
+
 {{ range $i, $sequence := (seq ((sub $to $from))) }}
 {{ $currentYear := $context.Scratch.Get "currentYear" }}
 {{ $nextYear := (add $from $sequence) }}
 
+
 {{ if le $nextYear $to }}
+
+<br />Adding consideredYears: slice {{$nextYear}}
+
 {{ $context.Scratch.Add "consideredYears" (slice $nextYear) }}
 {{ $context.Scratch.Set "currentYear" $nextYear }}
 {{ end }}
 
+
 {{ end }}
 
+
 {{ range ($context.Scratch.Get "consideredYears") }}
+Calendar calling year with From: {{ $from }}-{{ $fromMonth }} To:
+{{ $to }}-{{ $toMonth }}
+
 {{ partialCached "calendar/year" (dict "context" $context "year" . "from" $from "fromMonth" $fromMonth "to" $to
-"toMonth" $toMonth) (string (delimit (slice $from $fromMonth $to $toMonth .) "")) }}
+"toMonth" $toMonth) (string (delimit (slice $from $fromMonth $to $toMonth .) ""))
+}}
 {{ end }}
+<p>calender done!</p>

@@ -21,6 +21,19 @@ D:\Projects\EOC.online\hugoplate\themes\eoconline\layouts\insights\list.html
       </div>
       <!-- sidebar -->
       <div class="lg:col-4">
+        <!-- calendar widget -->
+        <h5>Insights by Date</h5>
+        <!--  partialCached "calendar" .}}
+        | groupByDate "2006"  https://gohugo.io/methods/pages/groupbydate/ & https://discourse.gohugo.io/t/solved-groupbydate-groups-by-month-how-to-group-by-date-day/7900
+        "CurrentTaxonomy" $currentTaxonomy
+        -->
+        {{ $archive:= .Pages.GroupByDate "2006" }}
+
+        {{ partial "calendar" (dict "context" . "from" 2016 "fromMonth" 10 "to" (now.Format "2006") "toMonth"
+        (now.Format "1") "pages" .Site.Pages) }}
+
+        <!-- partialCached "calendar" ( dict "Archive" $archive "from" "2016" "to" "2024" "fromMonth" "1" "toMonth" "12" )
+
         <!-- widget -->
         {{ $widget:= site.Params.widgets.sidebar }}
         {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}

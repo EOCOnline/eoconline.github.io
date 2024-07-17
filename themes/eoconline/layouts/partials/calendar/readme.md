@@ -63,8 +63,11 @@ Next choose a page you want to be rendered within the activity calendar-view and
 ```
 +++
 date = "2017-03-06T21:27:05.454Z"
+PublishDate = "2017-03-06T21:27:05.454Z"
 archive = ["2017","2017-03","2017-03-06"]
 +++
 ```
+
+Unclear whether PublishDate is required...
 
 In this example the page will be rendered in the archive of the Year 2017, the month of March and within the specific day’s archive at the 6th of March, 2017.
