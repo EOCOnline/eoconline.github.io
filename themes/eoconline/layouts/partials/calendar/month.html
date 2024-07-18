@@ -19,8 +19,7 @@
 
 {{ $daysThisMonth := $context.Scratch.Get "daysThisMonth" }}
 
-year = {{ $year }}...<br>
-month = {{ $month }}...<br>
+year = {{ $year }} ; month = {{ $month }};
 
 
 {{ $monthTwoLetters := printf "%02d" $month }}
@@ -33,7 +32,7 @@ month2letters = {{ $monthTwoLetters }} ...<br>
   : error calling dateFormat: unable to parse date: -01-01 -->
 <!-- original:  $monthInLetters := dateFormat "January" (string (delimit (slice $year "-" $monthTwoLetters "-01") "")) }} -->
 
-{{ $monthInLetters := "January" }}
+{{ $monthInLetters := "February" }}
 
 <!-- BUG: $firstWeekdayInLetters := dateFormat "Mon" (string (delimit (slice $year "-" $monthTwoLetters "-01") "")) }} -->
 {{ $firstWeekdayInLetters := "Mon" }}
@@ -65,9 +64,9 @@ month2letters = {{ $monthTwoLetters }} ...<br>
     <li class="calendar-day-empty"></li>
     {{ end }}
 
+    rangerdanger
     {{ range $daysThisMonth }}
-    {{ partial "calendar/day" (dict "context" $context "year" $year "month" $month "day" .) (string (delimit (slice
-    $year $month .) "")) }}
+    {{ partial "calendar/day" (dict "context" $context "year" $year "month" $month "day" .) (string (delimit (slice $year $month .) "")) }}
     {{ end }}
 
     {{ range (seq (mod (add (len $daysThisMonth) $firstWeekdayMondayOffset) 7)) }}

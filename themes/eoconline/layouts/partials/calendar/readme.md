@@ -86,3 +86,11 @@ In this example the page will be rendered in the archive of the Year 2017, the m
 | | | |-- month.html
 | | | |-- day.html
 | | |-- calendar.html
+
+## Styling
+
+Add styling.scss to the \assets\scss directory, then add
+'''scss
+@import "./styling.scss";
+'''
+to the top of the existing custom.scss file there.
