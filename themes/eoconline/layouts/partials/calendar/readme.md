@@ -6,6 +6,8 @@ An activity calendar-widget is well known from content management systems like W
 
 ## Source
 
+The original web site now links to spam, but fortunately the 2017 original article is available by the Way Back Machine!
+
 https://web.archive.org/web/20191212005200/https://gohugohq.com/partials/activity-calendar-posts/
 
 ## Usage & Parameters
@@ -14,33 +16,37 @@ https://web.archive.org/web/20191212005200/https://gohugohq.com/partials/activit
 
 ### Parameters
 
-**context**
+#### context
+
 This is crucial to pass the current context into the partial. While partials have an own context otherwise without access to the related parent context.
 
-**from**
+#### from
+
 This is the year as (YYYY) when you want to start the calendar.
 
-**fromMonth**
+#### fromMonth
+
 This is the month as a single digit number without leading zero in which month the calendar needs to start (including this month).
 
-**to**
+#### to
+
 This is the year as (YYYY) when you want to end the calendar.
 
-**toMonth**
+#### toMonth
+
 This is the month as a single digit number without leading zero in which month the calendar needs to stop (including this month).
 
-**pages**
-Pages expect a list of pages to check whether or not there was a post in a certain year/month/day. This will also provide a bunch of flexibility and multi usage of the partial.
+#### pages
 
-(If you are wondering what (now.Format "2006") makes - have a look at the explanation of dateFormat in Hugo.)
+Pages expect a list of pages to check whether or not there was a post in a certain year/month/day. This will also provide a bunch of flexibility and multi usage of the partial.
 
 ## Taxonomy structure
 
 In order to make working links to the archive we need to create taxonomies that creates the list-pages for the articles. For this we need changes in the hugo.toml and prepare some layouts for the archive-taxonomy.
 
-**hugo.toml**
+### hugo.toml
 
-```
+```toml
 # adding taxonomy term 'archive'
 [taxonomies]
 archive = "archive"
@@ -48,19 +54,18 @@ archive = "archive"
 
 Then create a layout file called archive.html in /layouts/taxonomy/, with the following content:
 
-**archive.html**
+### archive.html
 
-```
+```html + go
 <h1>Archive! Hooray...</h1>
-{{ $currentTaxonomy := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
-{{ .Pages | jsonify }}
+{{ $currentTaxonomy := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }} {{ .Pages | jsonify }}
 ```
 
 Next choose a page you want to be rendered within the activity calendar-view and add the following front matter:
 
-**your-content.md**
+### your-content.md
 
-```
+```MD
 +++
 date = "2017-03-06T21:27:05.454Z"
 PublishDate = "2017-03-06T21:27:05.454Z"
@@ -68,6 +73,16 @@ archive = ["2017","2017-03","2017-03-06"]
 +++
 ```
 
-Unclear whether PublishDate is required...
+Unclear whether PublishDate is required...(Some stackOverflow article mentioned this)
 
 In this example the page will be rendered in the archive of the Year 2017, the month of March and within the specific day’s archive at the 6th of March, 2017.
+
+### File structure
+
+|-- layouts
+| |-- partials
+| | |-- calendar
+| | | |-- year.html
+| | | |-- month.html
+| | | |-- day.html
+| | |-- calendar.html

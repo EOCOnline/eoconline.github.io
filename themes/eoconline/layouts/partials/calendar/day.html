@@ -1,3 +1,5 @@
+<!-- Purpose: This partial is used to render a single day in the calendar. It is used in the calendar.html layout. -->
+
 {{ $context := .context }}
 {{ $year := .year }}
 
@@ -12,11 +14,18 @@
 
 {{ $context.Scratch.Set "isFuture" false }}
 
-{{ if le now (time $dateString) }}
-{{ $context.Scratch.Set "isFuture" true }}
-{{ end }}
+<!-- BUG: /calendar/day.html:17:14: executing "partials/calendar/day.html" at <time $dateString>: error calling time: unable to parse date: 01-01
+  if le now (time $dateString) }}
 
-{{ $isFuture := $context.Scratch.Get "isFuture" }}
+if le now (time $dateString) }}
+$context.Scratch.Set "isFuture" true }}
+end }}
+
+$isFuture := $context.Scratch.Get "isFuture" }}
+  -->
+
+  {{ $isFuture := false }}
+
 
 {{- $articlesFound := index ($context.Scratch.Get "ArticlesPerDay") $dateString -}}
 <li class="calendar-day {{ if $isFuture }}calendar-day-future{{ end }} {{ if gt $articlesFound 0 }}calendar-day-has-articles{{ end }} {{ if eq (now.Format "2006-01-02") $dateString }}calendar-day-is-today{{ end }}">

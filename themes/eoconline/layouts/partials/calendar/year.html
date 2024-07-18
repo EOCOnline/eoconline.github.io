@@ -1,3 +1,5 @@
+<!-- Purpose: Display a year's worth of months in a calendar -->
+
 {{ $months := seq 12 }}
 {{ $context := .context }}
 {{ $year := .year }}
@@ -6,24 +8,35 @@
 {{ $to := .to }}
 {{ $toMonth := .toMonth }}
 
-<!--  $isLeapYear := (modBool $year 4) -->
+
+<!-- BUG: should be  $isLeapYear := (modBool $year 4)
+<modBool $year 4>: error calling modBool: modulo operator can’t be used with non integer value
+  render: failed to render pages: modulo operator can’t be used with non integer value
+-->
+YEAR is
+{{ $year }}
+
 {{ $isLeapYear := false }}
 
 
 <div class="calendar-year">
   <header>
     <h2>
-      {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") (string $year) }}
-      {{ if gt $articlesThisYear 0}}<a href="/archive/{{ $year }}/">{{ end }}
-        {{ $year }}
-        {{ if gt $articlesThisYear 0}}</a>{{ end }}
+      <!-- Following gets: "error calling string: unable to cast []int64{2018} of type []int64 to string" -->
+      YEAR is
+      {{ $year }}
+
+
+      <!-- $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") (string $year) }}
+       if gt $articlesThisYear 0}}<a href="/archive/{{ $year }}/"> end }}
+         $year }}
+         if gt $articlesThisYear 0}}</a>  end }}
+       -->
     </h2>
   </header>
   {{ range $months }}
-  {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le .
-  $toMonth)) }}
-  {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string
-  (delimit (slice $year .) "")) }}
-  {{ end }}
+    {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
+      {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
+    {{ end }}
   {{ end }}
 </div>

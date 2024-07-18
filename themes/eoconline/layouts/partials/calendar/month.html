@@ -1,10 +1,13 @@
+<!-- Purpose: Display a month of the calendar -->
+
+<h6>into month.html...</h6>
+
 {{ $context := .context }}
 {{ $year := .year }}
 {{ $isLeapYear := .isLeapYear }}
 {{ $month := .month }}
 
-{{ $daysPerMonth := dict "1" (seq 31) "2" (seq 28) "2-leap" (seq 29) "3" (seq 31) "4" (seq 30) "5" (seq 31) "6" (seq 30)
-"7" (seq 31) "8" (seq 31) "9" (seq 30) "10" (seq 31) "11" (seq 30) "12" (seq 31) }}
+{{ $daysPerMonth := dict "1" (seq 31) "2" (seq 28) "2-leap" (seq 29) "3" (seq 31) "4" (seq 30) "5" (seq 31) "6" (seq 30) "7" (seq 31) "8" (seq 31) "9" (seq 30) "10" (seq 31) "11" (seq 30) "12" (seq 31) }}
 {{ $daysPerWeekMap := dict "Mon" 0 "Tue" 1 "Wed" 2 "Thu" 3 "Fri" 4 "Sat" 5 "Sun" 6 }}
 {{ $daysPerWeek := slice "Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun" }}
 
@@ -16,10 +19,25 @@
 
 {{ $daysThisMonth := $context.Scratch.Get "daysThisMonth" }}
 
+year = {{ $year }}...<br>
+month = {{ $month }}...<br>
+
+
 {{ $monthTwoLetters := printf "%02d" $month }}
 
-{{ $monthInLetters := dateFormat "January" (string (delimit (slice $year "-" $monthTwoLetters "-01") "")) }}
-{{ $firstWeekdayInLetters := dateFormat "Mon" (string (delimit (slice $year "-" $monthTwoLetters "-01") "")) }}
+month2letters = {{ $monthTwoLetters }} ...<br>
+
+<!-- following gets:
+  partials/calendar/month.html:27:22: executing "partials/calendar/month.html" at
+  <dateFormat "January" (string (delimit (slice $year "-" $monthTwoLetters "-01") ""))>
+  : error calling dateFormat: unable to parse date: -01-01 -->
+<!-- original:  $monthInLetters := dateFormat "January" (string (delimit (slice $year "-" $monthTwoLetters "-01") "")) }} -->
+
+{{ $monthInLetters := "January" }}
+
+<!-- BUG: $firstWeekdayInLetters := dateFormat "Mon" (string (delimit (slice $year "-" $monthTwoLetters "-01") "")) }} -->
+{{ $firstWeekdayInLetters := "Mon" }}
+
 {{ $firstWeekdayInNumbers := index $daysPerWeekMap $firstWeekdayInLetters }}
 {{ $firstWeekdayMondayOffset := (sub (add $firstWeekdayInNumbers 6) 6) }}
 

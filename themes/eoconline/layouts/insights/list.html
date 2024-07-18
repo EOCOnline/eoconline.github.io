@@ -1,44 +1,65 @@
 {{ define "main" }}
-{{ partial "page-header" . }}
+  {{ partial "page-header" . }}
 
-<h4 class="self-center">Insights are temporal notices, reviews and notes - that "expire".</h4>
-D:\Projects\EOC.online\hugoplate\themes\eoconline\layouts\insights\list.html
 
-<section class="section">
-  <div class="container">
-    <div class="row gx-5">
-      <!-- insight (blog) posts -->
-      <div class="lg:col-8">
-        <div class="row">
-          {{ $paginator:= .Paginate .RegularPages }}
-          {{ range $paginator.Pages }}
-          <div class="md:col-6 mb-14">
-            {{ partial "components/insight-card" . }}
+  <h4 class="self-center">Insights are temporal notices, reviews and notes - that "expire".</h4>
+  D:\Projects\EOC.online\hugoplate\themes\eoconline\layouts\insights\list.html
+
+  <section class="section">
+    <div class="container">
+      <div class="row gx-5">
+        <!-- insight (blog) posts -->
+        <div class="lg:col-8">
+          <div class="row">
+            {{ $paginator:= .Paginate .RegularPages }}
+            {{ range $paginator.Pages }}
+              <div class="md:col-6 mb-14">
+                {{ partial "components/insight-card" . }}
+              </div>
+            {{ end }}
           </div>
-          {{ end }}
+          {{ partial "components/pagination.html" . }}
         </div>
-        {{ partial "components/pagination.html" . }}
-      </div>
-      <!-- sidebar -->
-      <div class="lg:col-4">
-        <!-- calendar widget -->
-        <h5>Insights by Date</h5>
-        <!--  partialCached "calendar" .}}
+        <!-- sidebar -->
+        <div class="lg:col-4">
+          <h5>Archive69! list.html... Hooray...</h5>
+          D:\Projects\EOC.online\hugoplate\themes\eoconline\layouts\insights\list.html
+          <!-- execute of template failed: template: insights/list.html:26:70: executing "main" at <.URL>: can't evaluate field URL in type *hugolib.pageState      -->
+          {{ $currentTaxonomy := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+          <!-- .Pages | jsonify }} -->
+
+          # Pages =
+          {{ len .Pages }}
+
+
+          <br />
+          # .Site.Pages =
+          {{ len .Site.Pages }}
+
+
+          <p>END OF D:\Projects\EOC.online\hugoplate\themes\eoconline\layouts\insights\list.html</p>
+          <br />
+          <hr />
+
+          <!-- calendar widget -->
+          <h5>Insights by Date</h5>
+          <!--  partialCached "calendar" .}}
         | groupByDate "2006"  https://gohugo.io/methods/pages/groupbydate/ & https://discourse.gohugo.io/t/solved-groupbydate-groups-by-month-how-to-group-by-date-day/7900
         "CurrentTaxonomy" $currentTaxonomy
         -->
-        {{ $archive:= .Pages.GroupByDate "2006" }}
 
-        {{ partial "calendar" (dict "context" . "from" 2016 "fromMonth" 10 "to" (now.Format "2006") "toMonth"
-        (now.Format "1") "pages" .Site.Pages) }}
+          {{ $archive:= .Pages.GroupByDate "2006" }}
 
-        <!-- partialCached "calendar" ( dict "Archive" $archive "from" "2016" "to" "2024" "fromMonth" "1" "toMonth" "12" )
+          {{ partial "calendar" (dict "context" . "from" 2016 "fromMonth" 10 "to" (now.Format "2006") "toMonth" (now.Format "1") "pages" .Site.Pages) }}
 
-        <!-- widget -->
-        {{ $widget:= site.Params.widgets.sidebar }}
-        {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+
+          <!-- partialCached "calendar" ( dict "Archive" $archive "from" "2016" "to" "2024" "fromMonth" "1" "toMonth" "12" ) -->
+
+          <!-- widget -->
+          {{ $widget:= site.Params.widgets.sidebar }}
+          {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 {{ end }}

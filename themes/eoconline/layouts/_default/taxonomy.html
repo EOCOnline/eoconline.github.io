@@ -1,21 +1,22 @@
 {{ define "main" }}
-{{ partial "page-header" . }}
+  {{ partial "page-header" . }}
 
-D:\Projects\EOC.online\hugoplate\themes\eoconline\layouts\_default\taxonomy.html
-<section class="section">
-  <div class="container">
-    <div class="row gx-5">
-      <!-- blog posts -->
-      <div class="lg:col-8">
-        <div class="row">
-          {{ range .Data.Pages }}
-          <div class="md:col-6 mb-14">
-            {{ partial "components/blog-card" . }}
+  D:\Projects\EOC.online\hugoplate\themes\eoconline\layouts\_default\taxonomy.html
+  <section class="section">
+    <div class="container">
+      <div class="row gx-5">
+        <!-- blog posts -->
+        <div class="lg:col-8">
+          <div class="row">
+            {{ range .Data.Pages }}
+              <div class="md:col-6 mb-14">
+                blog-card:
+                {{ partial "components/blog-card" . }}
+              </div>
+            {{ end }}
           </div>
-          {{ end }}
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 {{ end }}
