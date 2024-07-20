@@ -41,7 +41,7 @@ monthS = {{ $monthS }}; monthStr = {{ $monthStr }}; monthStr2 = {{ $monthStr2 }}
 {{ $firstWeekdayInLetters := dateFormat "Mon" ($monthStr2) }}
 firstWeekdayInLetters  = {{ $firstWeekdayInLetters }}<br>
 
-  {{ $firstWeekdayInNumbers := index $daysPerWeekMap $firstWeekdayInLetters }}
+{{ $firstWeekdayInNumbers := index $daysPerWeekMap $firstWeekdayInLetters }}
 {{ $firstWeekdayMondayOffset := (sub (add $firstWeekdayInNumbers 6) 6) }}
 
 <!-- following gets:
