@@ -8,36 +8,46 @@
 {{ $to := .to }}
 {{ $toMonth := .toMonth }}
 
+{{ $yearStr := printf "%04d" $year }}
 
-<!-- BUG: should be  $isLeapYear := (modBool $year 4)
-<modBool $year 4>: error calling modBool: modulo operator can’t be used with non integer value
+<!-- STUPID code to force a cast, avoiding creat an integer from the string
+  the obvious:
+  $yearInt := cast.ToInt $yearStr }}
+  fails with:
+  unable to cast []int{2016} of type []int to int
+  and
+  unable to cast "[2016]" of type string to int64
 -->
+{{ $temp := replace $yearStr "[" "" }}
+{{ $temp2 := replace $temp "]" "" }}
+{{ $yearInt := cast.ToInt $temp2 }}
+
+<!--
+  temp =  $temp }}; temp2 =  $temp2 }}; yearInt = $yearInt }}
+-->
+
 
 {{ $isLeapYear := false }}
-<!-- if eq (mod $yearInt 4) 0 }}
-   if or (ne (mod $yearInt 100) 0) (eq (mod $yearInt 400) 0) }}
-     $isLeapYear = true }}
-   end }}
- end }}
--->
+{{ if eq (mod $yearInt 4) 0 }}
+   {{ if or (ne (mod $yearInt 100) 0) (eq (mod $yearInt 400) 0) }}
+     {{ $isLeapYear = true }} <!-- 2012, 2016, 2020 are leap years -->
+   {{ end }}
+ {{ end }}
+
+{{ $isLeapYear := false }}
+{{ if eq (mod $yearInt 4) 0 }}
+   {{ if or (ne (mod $yearInt 100) 0) (eq (mod $yearInt 400) 0) }}
+     {{ $isLeapYear = true }}
+   {{ end }}
+ {{ end }}
 
 <div class="calendar-year">
   <header>
     <h2>
-      <!-- Following gets: "error calling string: unable to cast []int64{2018} of type []int64 to string"
-      unable to cast []int{2016} of type []int to string
-    -->
-
-      {{ $year }}
-
-
-      <!-- BUG:
-       $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") (string  $year ) }}
-       if gt $articlesThisYear 0}}<a href="/insights/{{ $year }}/">  end }}
-
-         $year }}
-       if gt $articlesThisYear 0}}</a>   end }}
-       -->
+       {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
+       {{ if gt $articlesThisYear 0}}<a href="/archive/{{ $year }}/">  {{ end }}
+         {{ $yearStr }}
+       {{ if gt $articlesThisYear 0}}</a>   {{ end }}
     </h2>
   </header>
   {{ range $months }}
