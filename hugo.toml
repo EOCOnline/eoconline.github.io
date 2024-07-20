@@ -22,6 +22,10 @@ defaultContentLanguage = 'en'
 # defaultContentLanguageInSubdir need to be true if you want to use the language code as a subdirectory and language specific 404 page
 defaultContentLanguageInSubdir = false
 
+
+# Set content editor
+# newContentEditor = "code" # options: "code" or "editor" or "default" (default is "code")
+
 ########################### Services #############################
 [services]
 [services.googleAnalytics]

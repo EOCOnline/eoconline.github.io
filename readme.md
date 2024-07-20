@@ -236,6 +236,4 @@ If you need a custom theme, theme customization, or complete website development
 
 ## ToDo
 
-- downlevelDiv.innerHTML =
-- 2011-6-6_entry138\\index.html": "C:\Users\John\AppData\Local\Temp\hugo-transform-error569656508:1233:217": unexpected EOF in expression on line 1233 and column 217
-- 2012\\2012-3-26_entry245\\index.html": "C:\Users\John\AppData\Local\Temp\hugo-transform-error2119166930:1235:229": unexpected EOF in expression on line 1235 and column 229
+- https://discourse.gohugo.io/t/the-dot-and-the-dollar-in-context/48604

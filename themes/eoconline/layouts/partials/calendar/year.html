@@ -11,26 +11,32 @@
 
 <!-- BUG: should be  $isLeapYear := (modBool $year 4)
 <modBool $year 4>: error calling modBool: modulo operator can’t be used with non integer value
-  render: failed to render pages: modulo operator can’t be used with non integer value
 -->
-YEAR is
-{{ $year }}
 
 {{ $isLeapYear := false }}
-
+<!-- if eq (mod $yearInt 4) 0 }}
+   if or (ne (mod $yearInt 100) 0) (eq (mod $yearInt 400) 0) }}
+     $isLeapYear = true }}
+   end }}
+ end }}
+-->
 
 <div class="calendar-year">
   <header>
     <h2>
-      <!-- Following gets: "error calling string: unable to cast []int64{2018} of type []int64 to string" -->
-      YEAR is
+      <!-- Following gets: "error calling string: unable to cast []int64{2018} of type []int64 to string"
+      unable to cast []int{2016} of type []int to string
+    -->
+
       {{ $year }}
 
 
-      <!-- $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") (string $year) }}
-       if gt $articlesThisYear 0}}<a href="/archive/{{ $year }}/"> end }}
+      <!-- BUG:
+       $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") (string  $year ) }}
+       if gt $articlesThisYear 0}}<a href="/insights/{{ $year }}/">  end }}
+
          $year }}
-         if gt $articlesThisYear 0}}</a>  end }}
+       if gt $articlesThisYear 0}}</a>   end }}
        -->
     </h2>
   </header>

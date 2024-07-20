@@ -1,5 +1,3 @@
-<p>calenderxx running!</p>
-
 {{ $context := .context }}
 {{ $from := int .from }}
 {{ $fromMonth := int .fromMonth }}
@@ -35,19 +33,22 @@ To: {{ $to }}-{{ $toMonth }} <br />
   {{ $nextYear := (add $from $sequence) }}
 
   {{ if le $nextYear $to }}
-    <br />Adding consideredYears: slice {{ $nextYear }}<br />
+   
+    <!-- Adding slice $nextYear === ' $nextYear }}' === ' slice $nextYear }}'<br /-->
 
-    {{ $context.Scratch.Add "consideredYears" (slice $nextYear) }}
+    {{ $context.Scratch.Add "consideredYears" ($nextYear) }}
+	<!-- had been: $context.Scratch.Add "consideredYears" (slice $nextYear) }} -->
     {{ $context.Scratch.Set "currentYear" $nextYear }}
+ 	<!-- br />Adding consideredYears: slice  $nextYear }}<br /-->
   {{ end }}
 
 {{ end }}
 
 {{ range ($context.Scratch.Get "consideredYears") }}
-  <br />Calendar calling year with From: {{ $from }}-{{ $fromMonth }} To: {{ $to }}-{{ $toMonth }}<br />
+  <br />Calendar calling year '{{ . }}' with From: {{ $from }}-{{ $fromMonth }} To: {{ $to }}-{{ $toMonth }}<br />
 
   {{ partialCached "calendar/year" (dict "context" $context "year" . "from" $from "fromMonth" $fromMonth "to" $to
     "toMonth" $toMonth) (string (delimit (slice $from $fromMonth $to $toMonth .) ""))
   }}
 {{ end }}
-<p>calender done!</p>
+
