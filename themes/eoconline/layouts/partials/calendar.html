@@ -9,7 +9,15 @@
 <!--
 works:
   { site.Data | jsonify }}
+  { printf "%#v" . }}
 
+
+  HUGO.toml:
+    [[Params.skin]]
+		  show_generated_by = true
+
+   partials/footer.html:
+    { if .Site.Params.skin.show_generated_by }}  - I think Params is depricated, so remove that one word...
 
   { $myParams := .Params }}
 
