@@ -12,12 +12,13 @@
 {{ $context.Scratch.Set "daysThisMonth" (index $daysPerMonth (string $month)) }}
 
 {{ if and $isLeapYear (eq $month 2) }}
-{{ $context.Scratch.Set "daysThisMonth" (index $daysPerMonth "2-leap") }}
+  {{ $context.Scratch.Set "daysThisMonth" (index $daysPerMonth "2-leap") }}
 {{ end }}
 
 {{ $daysThisMonth := $context.Scratch.Get "daysThisMonth" }}
 
 {{ $monthTwoLetters := printf "%02d" $month }}
+
 
 <!-- $monthInLetters := dateFormat "January" (string (delimit (slice $year "-" $monthTwoLetters "-01") ""))  }} -->
 <!-- above fails with: error calling dateFormat: unable to parse date: -01-01 -->
@@ -28,10 +29,12 @@
 {{ $temp := replace $monthStr "[" "" }}
 {{ $monthStr2 := replace $temp "]" "" }}
 
-year = {{ $year }} ; month = {{ $month }}; month2Letters = '{{ $monthTwoLetters }}'<br>
-monthS = {{ $monthS }}; monthStr = {{ $monthStr }}; monthStr2 = {{ $monthStr2 }}<br>
 
-{{  $monthInLetters := dateFormat "January" ( $monthStr2 ) }}
+<!--
+  year = { $year }} ; month = { $month }}; month2Letters = '{ $monthTwoLetters }}'<br>
+  monthS = { $monthS }}; monthStr = { $monthStr }}; monthStr2 = { $monthStr2 }}<br>
+-->
+{{ $monthInLetters := dateFormat "January" ( $monthStr2 ) }}
 <!-- $monthInLetters := "January"}} -->
 
 <!-- $firstWeekdayInLetters := dateFormat "Mon" (string (delimit (slice $year "-" $monthTwoLetters "-01") ""))  }} -->
@@ -39,10 +42,15 @@ monthS = {{ $monthS }}; monthStr = {{ $monthStr }}; monthStr2 = {{ $monthStr2 }}
 <!-- BUG: $firstWeekdayInLetters := dateFormat "Mon" (string (delimit (slice $year "-" $monthTwoLetters "-01") "")) }} -->
 <!-- $firstWeekdayInLetters := "Mon" }} -->
 {{ $firstWeekdayInLetters := dateFormat "Mon" ($monthStr2) }}
-firstWeekdayInLetters  = {{ $firstWeekdayInLetters }}<br>
+
+
+<!--
+  firstWeekdayInLetters  = { $firstWeekdayInLetters }}<br>
+  -->
 
 {{ $firstWeekdayInNumbers := index $daysPerWeekMap $firstWeekdayInLetters }}
 {{ $firstWeekdayMondayOffset := (sub (add $firstWeekdayInNumbers 6) 6) }}
+
 
 <!-- following gets:
   partials/calendar/month.html:27:22: executing "partials/calendar/month.html" at
@@ -52,40 +60,37 @@ firstWeekdayInLetters  = {{ $firstWeekdayInLetters }}<br>
  $monthInLetters := "February" }}
 -->
 
-<div class="calendar-month">
+{{ $articlesThisMonth := index ($context.Scratch.Get "ArticlesPerMonth") (string (delimit (slice $year $monthTwoLetters) "-")) }}
 
-  <header>
-    <h4>
-      {{ $articlesThisMonth := index ($context.Scratch.Get "ArticlesPerMonth") (string (delimit (slice $year
-      $monthTwoLetters) "-")) }}
-      {{ if gt $articlesThisMonth 0}}<a href="/archive/{{ delimit (slice $year $monthTwoLetters) " -" }}/">{{ end }}
-        {{ $monthInLetters }}
-        {{ if gt $articlesThisMonth 0}}</a>{{ end }}
-    </h4>
-  </header>
+{{ if gt $articlesThisMonth 0 }}
+  <div class="calendar-month">
+    <header>
+      <h4>
+        <a href="/archive/{{ delimit (slice $year $monthTwoLetters) " -" }}/"> {{ $monthInLetters }} ( {{ $articlesThisMonth }} ) </a>
+      </h4>
+    </header>
 
-  <!-- List days of the week as column headings -->
-  <ul class="calendar-weekdays">
-    {{- range $daysPerWeek -}}
-    <li class="calendar-weekday-{{ lower . }}">{{ . }}</li>
-    {{- end -}}
-  </ul>
+    <!-- List days of the week as column headings -->
+    <ul class="calendar-weekdays">
+      {{- range $daysPerWeek -}}
+        <li class="calendar-weekday-{{ lower . }}">{{ . }}</li>
+      {{- end -}}
+    </ul>
 
-  <!-- List days of the month in a calendar format -->
-  <ul class="calendar-days">
+    <!-- List days of the month in a calendar format -->
+    <ul class="calendar-days">
+      {{ range seq $firstWeekdayMondayOffset }}
+        <li class="calendar-day-empty"></li>
+      {{ end }}
 
-    {{ range seq $firstWeekdayMondayOffset }}
-    <li class="calendar-day-empty"></li>
-    {{ end }}
+      {{ range $daysThisMonth }}
+        {{ partial "calendar/day" (dict "context" $context "year" $year "month" $month "day" .) (string (delimit (slice $year $month .) "")) }}
+      {{ end }}
 
-    {{ range $daysThisMonth }}
-    {{ partial "calendar/day" (dict "context" $context "year" $year "month" $month "day" .) (string (delimit (slice $year $month .) "")) }}
-    {{ end }}
+      {{ range (seq (mod (add (len $daysThisMonth) $firstWeekdayMondayOffset) 7)) }}
+        <li class="calendar-day-empty"></li>
+      {{ end }}
 
-    {{ range (seq (mod (add (len $daysThisMonth) $firstWeekdayMondayOffset) 7)) }}
-    <li class="calendar-day-empty"></li>
-    {{ end }}
-
-  </ul>
-
-</div>
+    </ul>
+  </div>
+{{ end }}

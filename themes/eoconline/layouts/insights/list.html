@@ -2,10 +2,13 @@
   {{ partial "page-header" . }}
 
 
-  <h4 class="self-center">Insights are temporal notices, reviews and notes - that "expire".</h4>
-
   <section class="section">
     <div class="container">
+      <div class="row gx-5">
+        <h6 class="self-center">Insights are temporal notices, reviews and notes - that "expire".</h6>
+        <br />
+        <br />
+      </div>
       <div class="row gx-5">
         <!-- insight (blog) posts -->
         <div class="lg:col-8">
@@ -22,26 +25,23 @@
 
         <!-- sidebar -->
         <div class="lg:col-4">
-          <h5>Insight Archive</h5>
+          <!-- calendar widget -->
+          <h5>Insights by Date</h5>
 
           <!-- execute of template failed: template: insights/list.html:26:70: executing "main" at <.URL>: can't evaluate field URL in type *hugolib.pageState      -->
           {{ $currentTaxonomy := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
-          <!-- .Pages | jsonify }} -->
+          <!-- .Pages | jsonify }}
+          # Pages = len .Pages }}; # .Site.Pages =  len .Site.Pages }}<br />
 
-          # Pages = {{ len .Pages }}; # .Site.Pages = {{ len .Site.Pages }}<br />
+          -->
 
-
-
-
-          <!-- calendar widget -->
-          <h5>Insights by Date</h5>
-          <!--  partialCached "calendar" .}}
-        "CurrentTaxonomy" $currentTaxonomy
-        -->
+          <!--  partialCached "calendar"
+            "CurrentTaxonomy" $currentTaxonomy vs. context" .
+          -->
 
           {{ $archive:= .Pages.GroupByDate "2006" }}
 
-          {{ partial "calendar" (dict "context" . "from" 2016 "fromMonth" 10 "to" (now.Format "2006") "toMonth" (now.Format "1") "pages" .Site.Pages) }}
+          {{ partialCached "calendar" (dict "context" . "from" 2016 "fromMonth" 10 "to" (now.Format "2006") "toMonth" (now.Format "1") "pages" .Site.Pages) }}
 
 
           <!-- partialCached "calendar" ( dict "Archive" $archive "from" "2016" "to" "2024" "fromMonth" "1" "toMonth" "12" ) -->

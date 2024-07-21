@@ -5,19 +5,39 @@
 {{ $toMonth := int .toMonth }}
 {{ $pages := .pages }}
 
-Calendar to call year with From:
-{{ $from }}-{{ $fromMonth }}
-To: {{ $to }}-{{ $toMonth }} <br />
 
-# of pages =
-{{ (len .pages) }}
+<!--
+works:
+  { site.Data | jsonify }}
+
+
+  { $myParams := .Params }}
+
+is true:
+{ strings.Contains ( . | jsonify) "yyyy" }}
+
+yy =
+{ .Site.yyyyyyyyy }}
+.Site.Author2.name =
+{ .Site.author2.name }}
+params.author2.name = { .params.author2.name }} -
+{ .Params.author2.name }}
+  -->
+
+<!--
+  Calendar to call year with From:
+  {$from }}-{ $fromMonth }}
+  To: { $to }}-{ $toMonth }} <br />
+
+  # of pages =
+  { (len .pages) }}
+-->
 
 {{ $context.Scratch.Set "currentYear" $from }}
 {{ $context.Scratch.Add "consideredYears" (slice $from) }}
 
 {{ range ($pages.GroupByPublishDate "2006") }}
   {{ $context.Scratch.SetInMap "ArticlesPerYear" .Key ((len .Pages)) }}
-  <!-- $context.Scratch.SetInMap "ArticlesPerYear" .Key (len .pages) -->
 {{ end }}
 
 {{ range ($pages.GroupByPublishDate "2006-01") }}
@@ -33,22 +53,19 @@ To: {{ $to }}-{{ $toMonth }} <br />
   {{ $nextYear := (add $from $sequence) }}
 
   {{ if le $nextYear $to }}
-   
-    <!-- Adding slice $nextYear === ' $nextYear }}' === ' slice $nextYear }}'<br /-->
-
     {{ $context.Scratch.Add "consideredYears" ($nextYear) }}
-	<!-- had been: $context.Scratch.Add "consideredYears" (slice $nextYear) }} -->
+    <!-- had been: $context.Scratch.Add "consideredYears" (slice $nextYear) }} -->
     {{ $context.Scratch.Set "currentYear" $nextYear }}
- 	<!-- br />Adding consideredYears: slice  $nextYear }}<br /-->
+    <!-- br />Adding consideredYears: slice { $nextYear }}<br /-->
   {{ end }}
 
 {{ end }}
 
 {{ range ($context.Scratch.Get "consideredYears") }}
-  <br />Calendar calling year '{{ . }}' with From: {{ $from }}-{{ $fromMonth }} To: {{ $to }}-{{ $toMonth }}<br />
-
+  <!--
+      <br />Calendar calling year '{ . }}' with From: { $from }}-{ $fromMonth }} To: { $to }}-{ $toMonth }}<br />
+    -->
   {{ partialCached "calendar/year" (dict "context" $context "year" . "from" $from "fromMonth" $fromMonth "to" $to
     "toMonth" $toMonth) (string (delimit (slice $from $fromMonth $to $toMonth .) ""))
   }}
 {{ end }}
-

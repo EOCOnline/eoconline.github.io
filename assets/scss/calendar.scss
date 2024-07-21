@@ -124,13 +124,14 @@ $color-white    : #ffffff;
 
   &.calendar-day-is-today {
     &::before {
-      content      : '';
-      width        : $gutter-default * 1;
-      height       : $gutter-default * 1;
-      position     : absolute;
-      top          : 50%;
-      left         : 50%;
-      border       : 2px solid $color-accent;
+      content : '';
+      width   : $gutter-default * 1;
+      height  : $gutter-default * 1;
+      position: absolute;
+      top     : 50%;
+      left    : 50%;
+      border  : 2px solid $color-accent;
+
       transform    : translate(-50%, -50%);
       z-index      : -1;
       border-radius: 50%;

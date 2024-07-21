@@ -1,5 +1,9 @@
 resourceDir = "/resourceCache/"
 
+yyyyyyyyy = "yyyyyyyyyyyy"
+logFile = "D:/Projects/EOC.online/hugoplate/hugo.log"
+
+
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
 baseURL = "http://localhost:1313/"
@@ -25,6 +29,9 @@ defaultContentLanguageInSubdir = false
 
 # Set content editor
 # newContentEditor = "code" # options: "code" or "editor" or "default" (default is "code")
+
+[author2]
+    name = "michael d henderson"
 
 ########################### Services #############################
 [services]
@@ -132,6 +139,9 @@ notAlternative = true
 
 
 ############################# Plugins ##############################
+
+[params]
+yyyyy = "yyyyyyyyyyy"
 
 # CSS Plugins
 [[params.plugins.css]]

@@ -234,6 +234,10 @@ List of some projects people are building with **eoconline**!
 
 If you need a custom theme, theme customization, or complete website development services from scratch you can [Hire Us](https://zeon.studio/estimate-project).
 
-## ToDo
+## ToDo (Reading...)
 
 - https://discourse.gohugo.io/t/the-dot-and-the-dollar-in-context/48604
+- https://www.thenewdynamic.com/article/hugo-data/manipulation-slices-and-maps/
+- https://pkg.go.dev/text/template
+- https://gohugo.io/templates/introduction/
+- https://web.archive.org/web/20191212005200/https://gohugohq.com/partials/activity-calendar-posts/

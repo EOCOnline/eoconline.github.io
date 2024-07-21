@@ -1,0 +1,6 @@
+<!-- FFI: for Calendar widget (see \layouts\partials\calendar\readme.md) -->
+
+<h1>Archive</h1>
+D:\Projects\EOC.online\hugoplate\content\english\archive.html
+{{ $currentTaxonomy := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
+{{ .Pages | jsonify }}
