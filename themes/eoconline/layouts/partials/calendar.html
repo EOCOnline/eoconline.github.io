@@ -93,9 +93,14 @@ params.author2.name = { .params.author2.name }} -
       let h = element.querySelector("#mainHeading>header>h5");
 
       h.classList.toggle("font-semibold");
+      child.classList.toggle("mystyle");
       child.classList.toggle("hidden");
-      // console.log(indicators[0]);
-      indicators[0].classList.toggle("rotate-180");
+      //console.log("child:"+child.);
+      console.log("indicators:" + indicators[0]);
+      //indicators[0].classList.toggle("src" == "/images/minus-1.svg" ? "/images/plus-1.svg" : "/images/minus-1.svg");
+      indicators[0].classList.toggle("mystyle", "hidden");
+      //indicators[0].classList.toggle("rotate-180");
+      // object.style.rotate="-120deg"
       // add or remove multiple classes
       //div.classList.add("foo", "bar", "baz");
       //div.classList.remove("foo", "bar", "baz");
