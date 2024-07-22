@@ -22,8 +22,6 @@
 {{ $temp := replace $yearStr "[" "" }}
 {{ $temp2 := replace $temp "]" "" }}
 {{ $yearInt := cast.ToInt $temp2 }}
-
-
 <!--
   temp =  $temp }}; temp2 =  $temp2 }}; yearInt = $yearInt }}
 -->
@@ -36,28 +34,52 @@
   {{ end }}
 {{ end }}
 
-{{ $isLeapYear := false }}
-{{ if eq (mod $yearInt 4) 0 }}
-  {{ if or (ne (mod $yearInt 100) 0) (eq (mod $yearInt 400) 0) }}
-    {{ $isLeapYear = true }}
-  {{ end }}
-{{ end }}
-
 
 <div class="calendar-year">
-  <header>
-    <h5>
-      {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
-      {{ if gt $articlesThisYear 0 }}
-        <a href="/archive/{{ $year }}/">
-          {{ $yearStr }}
-        </a>
-      {{ end }}
-    </h5>
-  </header>
-  {{ range $months }}
-    {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
-      {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
-    {{ end }}
-  {{ end }}
+  <!--------------------------------------------------->
+
+  {{ $ctx := dict
+    "vendor" "bootstrap"
+    "name" "house"
+  }}
+
+
+  <!-- { partial "icons/icon" $ctx }} -->
+
+  <!-- accordion component from https://tailwindcomponents.com/component/faq-1 -->
+  <div class="lg:container ">
+    <div class="w-full mx-auto">
+      <div class="w-full">
+        <div id="mainHeading">
+          <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+            <span class="transform dark:hidden">+</span>
+            <span class="transform dark:block hidden">-</span>
+            <!--img class="transform dark:hidden " src="/images/faq-8-svg2.svg" alt="toggler" />
+            <img class="transform dark:block hidden " src="/images/faq-8-svg2dark.svg" alt="toggler" /-->
+          </button>
+          <header>
+            <h5 class="flex text-base ">
+              {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
+              {{ if gt $articlesThisYear 0 }}
+                <a href="/archive/{{ $year }}/">
+                  {{ $yearStr }}
+                </a>
+              {{ end }}
+            </h5>
+          </header>
+        </div>
+
+        <div id="menu" class="hidden text-base">
+          {{ range $months }}
+            {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
+              {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      <hr class="w-full lg:mt-10 my-8" />
+    </div>
+  </div>
+
+  <!--------------------------------------------------->
 </div>
