@@ -46,14 +46,15 @@
   <!-- accordion component from https://tailwindcomponents.com/component/faq-1 -->
   <div class="lg:container ">
     <div id="mainHeading">
-      <button aria-label="toggler" data-menu>
-        <i class="fas fa-info-circle"></i>
-        <img src="/images/arrow-up.svg" alt="expand" class="transform dark:hidden" />
-
-        <!--span class="transform dark:hidden">+</span-->
+      <button aria-label="toggler" data-menu class="mr-3">
+        <!--i class="far fa-folder-open"></i>
+          <i class="far fa-folder-closed"></i-->
+        <i class="far fa-folder-plus"></i>
+        <!--  https://fontawesome.com/  -->
+        <img src="images/arrow-up.svg" alt="expand" class="transform dark:hidden" />
       </button>
       <header>
-        <h5 class="flex text-base ">
+        <h5 class="flex text-base">
           {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
           {{ if gt $articlesThisYear 0 }}
             <a href="/archive/{{ $year }}/">
