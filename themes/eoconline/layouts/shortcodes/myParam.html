@@ -1,0 +1,13 @@
+<!--
+  https://gohugo.io/content-management/shortcodes/#param
+  https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/shortcodes/param.html
+
+  Sample usage: {< myParam "yyyyyyyyy" >}}  -- only works in MD files!
+-->
+
+{{- $name := (.Get 0) -}}
+{{- with $name -}}
+  {{- with ($.Page.Param .) }}{{ . }}{{ else }}{{ errorf "Param %q not found: %s" $name $.Position }}{{ end -}}
+{{- else }}
+  {{ errorf "Missing param key: %s" $.Position }}
+{{ end -}}

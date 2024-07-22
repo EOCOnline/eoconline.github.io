@@ -17,6 +17,9 @@ draft: false
 
 {{< image src="/images/eoc.online.SkillsCrosswalk.png" caption="eoc.online Skills Crosswalk screenshot" alt="eoc.online Skills Crosswalk screenshot" height="" width="" position="right" command="fill" option="q75" class="img-fluid" title="eoc.online Skills Crosswalk screenshot"  webp="false" >}}
 
+ABOVE with image tag, below with Figure!
+{{< figure src="/images/eoc.online.SkillsCrosswalk.png" title="eoc.online Skills Crosswalk screenshot" >}}
+
 FEMA’s list of Skillsets (& associated Skills/Tasks) help Emergency Operation Centers (EOCs) qualify personnel. Common Skillsets suggest training & provide a standardized vocabulary to specify personnel skills between EOCs. This repository contains derivative products of the FEMA skillsets to aid in their effective use.
 
 A handy way to view these are to use a spreadsheet to list all the skills and tasks in the left columns, and then list the positions in your EOC (whether ICS, Departmental, or ISM) across the top rows. We provide a sample spreadsheet already filled out, but you should edit the positions to reflect your EOC organization chart. (Maybe start with only a few key/top positions for the initial phase.)

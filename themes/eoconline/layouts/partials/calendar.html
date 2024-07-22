@@ -5,12 +5,13 @@
 {{ $toMonth := int .toMonth }}
 {{ $pages := .pages }}
 
-
+{
 <!--
 works:
   { site.Data | jsonify }}
   { printf "%#v" . }}
 
+  {< myParam "yyyyyyyyy" >}}  -- only works in MD files!
 
   HUGO.toml:
     [[Params.skin]]
