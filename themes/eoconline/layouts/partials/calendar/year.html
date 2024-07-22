@@ -46,14 +46,14 @@
 
 <div class="calendar-year">
   <header>
-    <h2>
+    <h5>
       {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
       {{ if gt $articlesThisYear 0 }}
         <a href="/archive/{{ $year }}/">
           {{ $yearStr }}
         </a>
       {{ end }}
-    </h2>
+    </h5>
   </header>
   {{ range $months }}
     {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}

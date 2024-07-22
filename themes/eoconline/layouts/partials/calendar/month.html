@@ -34,7 +34,7 @@
   year = { $year }} ; month = { $month }}; month2Letters = '{ $monthTwoLetters }}'<br>
   monthS = { $monthS }}; monthStr = { $monthStr }}; monthStr2 = { $monthStr2 }}<br>
 -->
-{{ $monthInLetters := dateFormat "January" ( $monthStr2 ) }}
+{{ $monthInLetters := dateFormat "Jan" ( $monthStr2 ) }}
 <!-- $monthInLetters := "January"}} -->
 
 <!-- $firstWeekdayInLetters := dateFormat "Mon" (string (delimit (slice $year "-" $monthTwoLetters "-01") ""))  }} -->
@@ -64,10 +64,8 @@
 
 {{ if gt $articlesThisMonth 0 }}
   <div class="calendar-month">
-    <header>
-      <h4>
-        <a href="/archive/{{ delimit (slice $year $month) "-" }}/">{{ $monthInLetters }} <span class="calendar-monthTotals">( {{ $articlesThisMonth }} )</span> </a>
-      </h4>
+    <header class="font-bold">
+      <a href="/archive/{{ delimit (slice $year $month) "-" }}/">{{ $monthInLetters }} <span class="calendar-monthTotals">( {{ $articlesThisMonth }} )</span> </a>
     </header>
 
     <div class="calendar-monthCalendar">
