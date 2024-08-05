@@ -41,7 +41,9 @@ features:
 
   - title: "We Are a Community"
     image: "/images/eoc.online.SkillsCrosswalk.512x455.png"
-    content: "We've been involved in rural EOCs for decades, but need your input and suggestions to grow in areas that will help you. Our insights change frequently and are a reaction to current events."
+    content: "We've been involved in rural EOCs for decades, but need your input and suggestions to grow in areas that will help you. Our insights change frequently and are a reaction to current events. 
+    EOC.online represents a cooperative approach, pooling the resources of EOC specialists around the country to build upon shared work of others to produce quality software for helping us help our neighbors. 
+    Join our team to help define our future direction."
     bulletpoints:
       - We currently welcome discussions & inquiries using Discord
       - In the future, we look towards new models for EOC to EOC collaboration and discussion!
