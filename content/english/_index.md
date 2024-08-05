@@ -3,7 +3,7 @@
 banner:
   title: "Open Source Tools & Resources for your Emergency Operation Center"
   content: "**eoc.online** provides insights & open-source software to support rural & international EOCs -- <br>
-  helping you support others."
+  helping you support others. We also rpovide tools for local ACS/ARES/CERT/MRC/Neighborhood/Citizen Corps groups."
   image: "/images/20220205_112750.1200x512.png"
   # button:
   #   enable: true
@@ -14,7 +14,7 @@ banner:
 features:
   - title: "EOC Specific Insights"
     image: "/images/GoogleMaps.512x403.png"
-    content: "We focus on Emergency Operation Centers: rural & international with few dedicated staff"
+    content: "We focus on smaller rural (& international) Emergency Operation Centers with few dedicated staff"
     bulletpoints:
       - Learn about FEMA's recent innovations in supporting EOC (& IMTs) over the past decade
       - What do we think of software used by EOCs? Check out our take on them.
@@ -33,6 +33,7 @@ features:
       - EOC Skillset Cross-Walk -- A handy spreadsheet to organize which skills apply to your various EOC positions
       - See what software is used by EOCs -- check out our ever expanding listing!
       - What national and International standards apply to EOC software -- and does that impact your EOC?
+      - Links to other resources we've found helpful
     button:
       enable: true
       label: "See our current Resources"

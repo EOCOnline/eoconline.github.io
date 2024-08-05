@@ -241,3 +241,31 @@ If you need a custom theme, theme customization, or complete website development
 - https://pkg.go.dev/text/template
 - https://gohugo.io/templates/introduction/
 - https://web.archive.org/web/20191212005200/https://gohugohq.com/partials/activity-calendar-posts/
+
+to resolve:
+WARN found no layout file for "html" for kind "term": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
+WARN found no layout file for "html" for kind "page": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
+WARN found no layout file for "html" for kind "section": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
+WARN found no layout file for "html" for kind "home": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
+WARN found no layout file for "html" for kind "taxonomy": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
+do:
+hugo mod clean
+hugo mod get -u
+https://github.com/jpanther/congo/issues/382
+
+npm install -g npm@10.8.2
+npm update
+
+scripts": {
+"dev": "hugo server",
+"build": "hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
+"preview": "hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
+"dev:example": "cd exampleSite && hugo server",
+"build:example": "cd exampleSite && hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
+"preview:example": "cd exampleSite && hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
+"update-modules": "node ./scripts/clearModules.js && hugo mod clean --all && hugo mod get -u ./... && hugo mod tidy",
+"remove-darkmode": "node ./scripts/removeDarkmode.js && yarn format",
+"project-setup": "node ./scripts/projectSetup.js",
+"theme-setup": "node ./scripts/themeSetup.js",
+"update-theme": "node ./scripts/themeUpdate.js",
+"format": "prettier -w .

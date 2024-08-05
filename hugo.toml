@@ -3,6 +3,19 @@ resourceDir = "/resourceCache/"
 yyyyyyyyy = "yyyyyyyyyyyy"
 logFile = "D:/Projects/EOC.online/hugoplate/hugo.log"
 
+############ Used by Schema.html partial ############
+baseURL = "https://eoc.online"
+
+[params]
+author = "JHHFC"
+logo = "img/logo.jpg"
+header = "EOC.online - Insights & Resources"
+yyyyy = "yyyyyyyyyyy"
+
+# facebook = "eoconline"
+# twitter = "eoconline"
+# instagram = "eoconline"
+github = "eoconline"
 
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
@@ -145,9 +158,6 @@ notAlternative = true
 
 
 ############################# Plugins ##############################
-
-[params]
-yyyyy = "yyyyyyyyyyy"
 
 # CSS Plugins
 [[params.plugins.css]]
