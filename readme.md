@@ -269,3 +269,5 @@ scripts": {
 "theme-setup": "node ./scripts/themeSetup.js",
 "update-theme": "node ./scripts/themeUpdate.js",
 "format": "prettier -w .
+
+Update npm: choco install nodejs-lts --version="20.16.0" from ELEVATED CMD shell

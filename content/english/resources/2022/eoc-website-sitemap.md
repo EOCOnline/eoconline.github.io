@@ -20,7 +20,11 @@ draft: false
 
 > Have you considered these topics for inclusion into your Emergency Operations Center's website? Hopefully these can inspire some discussions about how to build your own website - for the public, your partners, and your staff and volunteers!
 
-This is quite an exhaustive listing of topics and pages that may or _may not_ reflect your community needs and messaging goals. Consider the ongoing upkeep effort - and readership's enthusiasm - before planning a vast site that may duplicate others in your region.
+This is quite an exhaustive listing of topics and pages that may or _may not_ reflect your community needs and messaging goals. Consider the ongoing upkeep effort - and readership's enthusiasm - before planning a vast site that may duplicate others in your region. Many topics might just require a sentence/paragraph to cover - not a page! Much of this may be covered by ongoing training and other standard departmental HR sessions, but it is worth having _some_ resource section that spells all these details out, whether on this website or another.
+
+The main categories are broken up by possible audiences. These different segments may be on different websites or -- by requiring logins to view (or even edit) non-public content -- all on one unified website. Your environment will dictate your options.
+
+If you have website technology that allows logging in a assigning roles easily, you can control who can see, or even edit, various pages or sections of your website. That requires creating & managing usernames and logins, requiring time & effort.
 
 ## Self-Assess, Before Plowing In
 
@@ -28,7 +32,7 @@ For new and smaller EOC's it is recommended to avoid recreating all the followin
 
 As an alternative approach, it can be very effective to have a few pages pertaining to local organizations, contacts, and planning efforts, but to let another organization (with sufficient budget and staffing) handle the primary and ongoing messaging.
 
-Having a unified message is most critical to reassure citizens and organizations. If you do not anticipate having public relations staffing during serious events then consider coordinating with your parent organizations for handling your messaging too. Certainly clarify ahead of time your various roles in different scenerios!
+Having a unified message is most critical to reassure citizens and organizations. If you do not anticipate having public relations staffing during serious events then consider coordinating with your parent organizations for handling your messaging too. Certainly clarify ahead of time your various roles in different scenarios!
 
 ### Public Pages
 
@@ -68,16 +72,49 @@ Having a unified message is most critical to reassure citizens and organizations
     - Current programs and planning efforts
   - Partners
     - How to Donate
-      Whether seeking money or material -- or more likely discouraging clothing, bedding and other cumbersome, donations that might force a complete wearhouse setup(!), you can lay out your guidelines
+      Whether seeking money or material -- or more likely discouraging clothing, bedding and other cumbersome, donations that might force a complete warehouse setup(!), you can lay out your guidelines
     - How to Volunteer
-      - What are the organizations, roles and crednetialing expected of volunteers
+      - What are the organizations, roles and credentialing expected of volunteers
 
-### Internal (Private) Pages
+### Volunteer Pages
+
+- Welcome
+- Intro to your role in the EOC
+  - Chain of COmmand
+  - Job Description
+  - Job Aides
+- Standard Procedures
+  - Scheduling
+  - Training & Certification
+  - Financial
+- EOC Resources available
+- Expectations/scope/limits/DEI resources
+- Partners
+  - ARES/ACS
+  - CERT
+  - Citizen Corps Council
+  - Firewise
+  - Neighborhood Watch
+
+### Partner Agency Pages
+
+- Welcome
+- Intro to your role in the EOC
+- Standard Procedures
+- EOC Resources available
+- Expectations/scope/limits/DEI resources
+- Partners
+  - Local
+  - County
+  - State
+  - Federal
+
+### Internal Staff Pages
 
 - Sign-in (who has access, to all or part of the site?)
 - Current Incidents
 
-  - Incidents
+  - Incident (select current and old incidents of interest)
     - For Each Incident
       - IAP
         - Objectives
@@ -85,6 +122,15 @@ Having a unified message is most critical to reassure citizens and organizations
         - Staffing
       - Situation Awareness
       - Missions
+  - EOC (This will vary based on your EOC Model: ICS/ISM/Departmental)
+
+    - COmmand Staff
+    - Operations Section
+    - Planning Section
+    - Logistics Section
+    - Administrative & Finance Section
+    -
+
   - Contact Info
     - EOC Sections
       - Units
@@ -99,11 +145,12 @@ Having a unified message is most critical to reassure citizens and organizations
     - Wiki
       - Alerting
       - User Guides
-    - Std Op Proceedures
+    - Std Op Procedures
     - Planning
     -
 
 - Welcome to new staff and volunteers
+
   - DEI
   - EOC training expectations and opportunities
   - Financial policies and reimbursement forms
@@ -114,6 +161,15 @@ Having a unified message is most critical to reassure citizens and organizations
     - manuals
     - audio/visual equipment
     - other documentation
+
+- Reference
+  - Training
+  - Calender
+  - Contacts
+  - ICS Forms
+  - Wiki
+  - Document Library
+  - Passwords
 
 ## Other topics
 
