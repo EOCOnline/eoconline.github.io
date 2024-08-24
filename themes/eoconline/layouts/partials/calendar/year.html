@@ -11,7 +11,7 @@
 {{ $yearStr := printf "%04d" $year }}
 
 
-<!-- STUPID code to force a cast, avoiding creat an integer from the string
+<!-- STUPID code to force a cast, avoiding create an integer from the string
   the obvious:
   $yearInt := cast.ToInt $yearStr }}
   fails with:
@@ -47,23 +47,27 @@
   <div class="lg:container ">
     <div id="mainHeading">
       <button aria-label="toggler" data-menu class="mr-3">
-        <!--i class="far fa-folder-open"></i>
-          <i class="far fa-folder-closed"></i-->
-        <!--i class="far fa-folder-plus"></i-->
+        <!--i class="far fa-folder-plus">
+          <img src="/images/arrow-right.svg" alt="expand2" class="transform myFolder " width="12px" />
+        </i -->
         <!--  https://fontawesome.com/  -->
         <!-- class="dark:hidden"  -->
-        <img src="/images/plus-1.svg" alt="expand2" class="transform myFolder " width="12px" />
-        <img src="/images/minus-1.svg" alt="expand2" class="transform myFolder hidden" width="12px" />
+        <!--img src="/images/minus-1.svg" alt="expand2" class="transform myFolder hidden" width="12px" /-->
       </button>
       <header>
-        <h5 class="flex text-base">
+        <span class="flex text-base">
+          <i class="far fa-folder-closed"> </i>
+          <img src="/images/plus-1.svg" alt="expand2" class="transform myFolder" width="12px" />
+          <i class="far fa-folder-open"></i>
+          <img src="/images/minus-1.svg" alt="expand2" class="transform myFolder" width="12px" />
           {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
           {{ if gt $articlesThisYear 0 }}
             <a href="/archive/{{ $year }}/">
               {{ $yearStr }}
             </a>
+            <span class="calendar-yearTotals"> ({{ $articlesThisYear }})</span>
           {{ end }}
-        </h5>
+        </span>
       </header>
     </div>
 
