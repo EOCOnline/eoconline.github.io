@@ -82,32 +82,57 @@ params.author2.name = { .params.author2.name }} -
 
 <script>
   // from https://tailwindcomponents.com/component/faq-1
-  let elements = document.querySelectorAll("[data-menu]");
+  let elements = document.querySelectorAll("[toggle-item]");
   for (let i = 0; i < elements.length; i++) {
     let main = elements[i];
 
     main.addEventListener("click", function () {
       let element = main.parentElement.parentElement;
       let indicators = main.querySelectorAll("img");
-      let child = element.querySelector("#menu");
+      //let child = element.querySelector("#menu");
 
       // let h = element.querySelector("#mainHeading>header>h5");
-      let h = element.querySelector("#mainHeading>button>header>span");
+      let classes = element.querySelector("#mainHeading>button>header>span").classList;
+
+      //console.log("Classes (before) =" + classes);
+
+      if (classes.contains("close-folder")) {
+        console.log("Opening folder");
+        classes.add("open-folder");
+        classes.remove("close-folder");
+      } else {
+        console.log("Closing folder");
+        classes.add("close-folder");
+        classes.remove("open-folder");
+      }
+      // const classes = h.classList;
+      // for (let cssClass of classes) {
+      //   console.log(cssClass + "; ");
+      // }
 
       //console.log("clicked!");
+      //<!-- .Pages | jsonify }} -->
 
-      h.classList.toggle("font-semibold");
-      child.classList.toggle("mystyle");
-      child.classList.toggle("hidden");
-      //console.log("child:"+child.);
-      console.log("#################### indicators:" + indicators[0]);
-      //indicators[0].classList.toggle("src" == "/images/minus-1.svg" ? "/images/plus-1.svg" : "/images/minus-1.svg");
-      indicators[0].classList.toggle("mystyle", "hidden");
+      //classes.toggle("font-semibold");
+      //classes.toggle("open-folder");
+      //h.classList.toggle("myStyle");
+      //h.classList.toggle("hidden");
+      //for (let klass in child.classlist) {
+      //  console.log(klass.toString());
+      //}
+      //console.log("child:" + child);
+
+      //console.log("### indicators:" + indicators[0]);
+      //indicators[0].classList.toggle("src" == "/images/minus-1.svg" ? "/images/arrow-up.svg" : "/images/plus-1.svg");
+      indicators[0].classList.toggle("myStyle", "hidden");
+
       //indicators[0].classList.toggle("rotate-180");
-      // object.style.rotate="-120deg"
+      //object.style.rotate = "-120deg";
       // add or remove multiple classes
       //div.classList.add("foo", "bar", "baz");
       //div.classList.remove("foo", "bar", "baz");
+
+      //console.log("Classes (after) =" + classes);
     });
   }
 </script>
