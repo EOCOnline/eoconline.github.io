@@ -60,9 +60,8 @@ $color-white    : #ffffff;
   text-align  : left;
   //width     : calc(85% / 4);
   width       : 95%;
-
   //margin: $gutter-default;
-  margin: 0px;
+  margin      : 0px;
 
   header {
     width: 100%;
@@ -102,9 +101,7 @@ $color-white    : #ffffff;
     &.calendar-weekday-sun {
       opacity: 1;
     }
-
   }
-
 }
 
 .calendar-days {
@@ -120,7 +117,6 @@ $color-white    : #ffffff;
   li {
     width: calc(100% / 7);
   }
-
 }
 
 .calendar-day {
@@ -155,9 +151,7 @@ $color-white    : #ffffff;
       em {
         display: none;
       }
-
     }
-
   }
 
   &.calendar-day-is-today {
