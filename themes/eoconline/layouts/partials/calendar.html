@@ -91,16 +91,16 @@ params.author2.name = { .params.author2.name }} -
       let indicators = main.querySelectorAll("img");
       let child = element.querySelector("#menu");
 
-      let h = element.querySelector("#mainHeading>header>h5");
-      //let h = element.querySelector("#mainHeading>header>span");
+      // let h = element.querySelector("#mainHeading>header>h5");
+      let h = element.querySelector("#mainHeading>button>header>span");
 
-      console.log("clicked!");
+      //console.log("clicked!");
 
       h.classList.toggle("font-semibold");
       child.classList.toggle("mystyle");
       child.classList.toggle("hidden");
       //console.log("child:"+child.);
-      console.log("indicators:" + indicators[0]);
+      console.log("#################### indicators:" + indicators[0]);
       //indicators[0].classList.toggle("src" == "/images/minus-1.svg" ? "/images/plus-1.svg" : "/images/minus-1.svg");
       indicators[0].classList.toggle("mystyle", "hidden");
       //indicators[0].classList.toggle("rotate-180");

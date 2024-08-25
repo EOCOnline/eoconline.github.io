@@ -47,29 +47,29 @@
   <div class="lg:container ">
     <div id="mainHeading">
       <button aria-label="toggler" data-menu class="mr-3">
-        <i class="far fa-folder-plus">
+        <!--i class="far fa-folder-plus">
           <img src="/images/arrow-right.svg" alt="expand2" class="transform myFolder " width="12px" />
-        </i>
+        </i-->
         <!--  https://fontawesome.com/  -->
         <!-- class="dark:hidden"  -->
-        <img src="/images/minus-1.svg" alt="expand2" class="transform myFolder hidden" width="12px" />
+        <!--img src="/images/minus-1.svg" alt="expand2" class="transform myFolder hidden" width="12px" /-->
+
+        <header>
+          <span class="flex text-base">
+            <i class="far fa-folder-closed"> </i>
+            <img src="/images/plus-1.svg" alt="expand2" class="transform myFolder" width="12px" />
+            <i class="far fa-folder-open"></i>
+            <img src="/images/minus-1.svg" alt="expand2" class="transform myFolder" width="12px" />
+            {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
+            {{ if gt $articlesThisYear 0 }}
+              <a href="/archive/{{ $year }}/">
+                <h5>{{ $yearStr }}</h5>
+              </a>
+              <span class="calendar-yearTotals"> ({{ $articlesThisYear }})</span>
+            {{ end }}
+          </span>
+        </header>
       </button>
-      <header>
-        <h5 class="flex text-base">An h5</h5>
-        <span class="flex text-base">
-          <i class="far fa-folder-closed"> </i>
-          <img src="/images/plus-1.svg" alt="expand2" class="transform myFolder" width="12px" />
-          <i class="far fa-folder-open"></i>
-          <img src="/images/minus-1.svg" alt="expand2" class="transform myFolder" width="12px" />
-          {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
-          {{ if gt $articlesThisYear 0 }}
-            <a href="/archive/{{ $year }}/">
-              {{ $yearStr }}
-            </a>
-            <span class="calendar-yearTotals"> ({{ $articlesThisYear }})</span>
-          {{ end }}
-        </span>
-      </header>
     </div>
 
     <div id="menu" class="hidden text-base">
