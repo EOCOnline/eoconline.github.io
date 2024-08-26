@@ -65,10 +65,10 @@
 {{ if gt $articlesThisMonth 0 }}
   <div class="calendar-month">
     <header class="font-bold">
-      <a href="/archive/{{ delimit (slice $year $month) "-" }}/">{{ $monthInLetters }} <span class="calendar-monthTotals">( {{ $articlesThisMonth }} )</span> </a>
+      <a href="/archive/{{ delimit (slice $year $month) "-" }}/">{{ $monthInLetters }} <span class="calendar-month-totals">( {{ $articlesThisMonth }} )</span> </a>
     </header>
 
-    <div class="calendar-monthCalendar">
+    <div class="calendar-month-calendar">
       <!-- List days of the week as column headings -->
       <ul class="calendar-weekdays">
         {{- range $daysPerWeek -}}

@@ -38,46 +38,27 @@
   "vendor" "bootstrap"
   "name" "house"
 }}
-<!-- { partial "icons/icon" $ctx }} -->
 
-<!-- i class="fas fa-info-circle"></i-->
 
-<div class="calendar-year">
-  <!-- accordion component from https://tailwindcomponents.com/component/faq-1 -->
-  <div class="lg:container ">
-    <div id="mainHeading">
-      <button aria-label="toggler" toggle-item class="mr-3">
-        <!--i class="far fa-folder-plus">
-          <img src="/images/arrow-right.svg" alt="expand2" class="transform myFolder " width="12px" />
-        </i-->
-        <!--  https://fontawesome.com/  -->
-        <!-- class="dark:hidden"  -->
-        <!--img src="/images/minus-1.svg" alt="expand2" class="transform myFolder hidden" width="12px" /-->
+<div id="calendarYear" class="calendar-year">
+  <button aria-label="toggler" toggle-item class="mr-3 text-base close-folder">
+    <i class="far fa-folder-closed"> </i>
+    &nbsp;&nbsp;
+    {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
+    {{ if gt $articlesThisYear 0 }}
+      <a href="/archive/{{ $year }}/">
+        <h5>{{ $yearStr }}</h5>
+      </a>
+      <span class="calendar-year-totals">&nbsp; ({{ $articlesThisYear }})</span>
+    {{ end }}
+  </button>
+  <hr />
 
-        <header>
-          <span class="flex text-base close-folder">
-            <i class="far fa-folder-closed"> </i>
-            <!--img src="/images/plus-1.svg" alt="closed folder" class="close-folder-img" width="12px" /-->
-
-            &nbsp;&nbsp;
-            {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
-            {{ if gt $articlesThisYear 0 }}
-              <a href="/archive/{{ $year }}/">
-                <h5>{{ $yearStr }}</h5>
-              </a>
-              <span class="calendar-yearTotals">&nbsp; ({{ $articlesThisYear }})</span>
-            {{ end }}
-          </span>
-        </header>
-      </button>
-    </div>
-
-    <div id="menu" class="hidden text-base">
-      {{ range $months }}
-        {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
-          {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
-        {{ end }}
+  <span class="text-base hidden close-folder calendar-month">
+    {{ range $months }}
+      {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
+        {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
       {{ end }}
-    </div>
-  </div>
+    {{ end }}
+  </span>
 </div>

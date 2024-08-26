@@ -89,27 +89,31 @@ params.author2.name = { .params.author2.name }} -
     main.addEventListener("click", function () {
       let element = main.parentElement.parentElement;
 
-      let classes = element.querySelector("#mainHeading>button>header>span").classList;
-      //let imageClasses = element.querySelector("#mainHeading>button>header>span>img").classList;
-      let iconClasses = element.querySelector("#mainHeading>button>header>span>i").classList;
+      let months = element.querySelector(".calendar-month").classList;
+      //console.log("Month classes (before) =" + months);
+      // months.toggle("hidden");
+      //console.log("Month classes (after) =" + months);
+
+      let buttonClasses = element.querySelector("#calendarYear>button").classList;
+      let iconClasses = element.querySelector("#calendarYear>button>i").classList;
 
       //console.log("Classes (before) =" + classes);
       //console.log("Classes (before) =" + imageClasses);
 
-      if (classes.contains("close-folder")) {
+      if (buttonClasses.contains("close-folder")) {
         //console.log("Opening folder");
-        classes.add("open-folder");
-        classes.remove("close-folder");
-        //imageClasses.add("open-folder-img");
-        //imageClasses.remove("close-folder-img");
+        buttonClasses.add("open-folder");
+        buttonClasses.remove("close-folder");
+        months.add("open-folder");
+        months.remove("close-folder");
         iconClasses.add("fa-folder-open");
         iconClasses.remove("fa-folder-closed");
       } else {
         //console.log("Closing folder");
-        classes.add("close-folder");
-        classes.remove("open-folder");
-        //imageClasses.add("close-folder-img");
-        //imageClasses.remove("open-folder-img");
+        buttonClasses.add("close-folder");
+        buttonClasses.remove("open-folder");
+        months.add("close-folder");
+        months.remove("open-folder");
         iconClasses.add("fa-folder-closed");
         iconClasses.remove("fa-folder-open");
       }
