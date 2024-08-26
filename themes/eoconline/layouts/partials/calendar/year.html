@@ -57,15 +57,15 @@
         <header>
           <span class="flex text-base close-folder">
             <i class="far fa-folder-closed"> </i>
-            <img src="/images/plus-1.svg" alt="expand2" class="transform myFolder" width="12px" />
-            <i class="far fa-folder-open"></i>
-            <img src="/images/minus-1.svg" alt="expand2" class="transform myFolder" width="12px" />
+            <img src="/images/plus-1.svg" alt="closed folder" class="close-folder-img" width="12px" />
+
+            &nbsp;&nbsp;
             {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
             {{ if gt $articlesThisYear 0 }}
               <a href="/archive/{{ $year }}/">
                 <h5>{{ $yearStr }}</h5>
               </a>
-              <span class="calendar-yearTotals"> ({{ $articlesThisYear }})</span>
+              <span class="calendar-yearTotals">&nbsp; ({{ $articlesThisYear }})</span>
             {{ end }}
           </span>
         </header>

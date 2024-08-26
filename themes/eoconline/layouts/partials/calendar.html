@@ -93,17 +93,23 @@ params.author2.name = { .params.author2.name }} -
 
       // let h = element.querySelector("#mainHeading>header>h5");
       let classes = element.querySelector("#mainHeading>button>header>span").classList;
+      let imageClasses = element.querySelector("#mainHeading>button>header>span>img").classList;
 
       //console.log("Classes (before) =" + classes);
+      console.log("Classes (before) =" + imageClasses);
 
       if (classes.contains("close-folder")) {
         console.log("Opening folder");
         classes.add("open-folder");
         classes.remove("close-folder");
+        imageClasses.add("open-folder-img");
+        imageClasses.remove("close-folder-img");
       } else {
         console.log("Closing folder");
         classes.add("close-folder");
         classes.remove("open-folder");
+        imageClasses.add("close-folder-img");
+        imageClasses.remove("open-folder-img");
       }
       // const classes = h.classList;
       // for (let cssClass of classes) {
@@ -124,7 +130,7 @@ params.author2.name = { .params.author2.name }} -
 
       //console.log("### indicators:" + indicators[0]);
       //indicators[0].classList.toggle("src" == "/images/minus-1.svg" ? "/images/arrow-up.svg" : "/images/plus-1.svg");
-      indicators[0].classList.toggle("myStyle", "hidden");
+      //indicators[0].classList.toggle("myStyle", "hidden");
 
       //indicators[0].classList.toggle("rotate-180");
       //object.style.rotate = "-120deg";
@@ -133,6 +139,7 @@ params.author2.name = { .params.author2.name }} -
       //div.classList.remove("foo", "bar", "baz");
 
       //console.log("Classes (after) =" + classes);
+      console.log("Classes (after) =" + imageClasses);
     });
   }
 </script>
