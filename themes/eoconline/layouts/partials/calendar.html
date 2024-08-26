@@ -88,58 +88,34 @@ params.author2.name = { .params.author2.name }} -
 
     main.addEventListener("click", function () {
       let element = main.parentElement.parentElement;
-      let indicators = main.querySelectorAll("img");
-      //let child = element.querySelector("#menu");
 
-      // let h = element.querySelector("#mainHeading>header>h5");
       let classes = element.querySelector("#mainHeading>button>header>span").classList;
-      let imageClasses = element.querySelector("#mainHeading>button>header>span>img").classList;
+      //let imageClasses = element.querySelector("#mainHeading>button>header>span>img").classList;
+      let iconClasses = element.querySelector("#mainHeading>button>header>span>i").classList;
 
       //console.log("Classes (before) =" + classes);
-      console.log("Classes (before) =" + imageClasses);
+      //console.log("Classes (before) =" + imageClasses);
 
       if (classes.contains("close-folder")) {
-        console.log("Opening folder");
+        //console.log("Opening folder");
         classes.add("open-folder");
         classes.remove("close-folder");
-        imageClasses.add("open-folder-img");
-        imageClasses.remove("close-folder-img");
+        //imageClasses.add("open-folder-img");
+        //imageClasses.remove("close-folder-img");
+        iconClasses.add("fa-folder-open");
+        iconClasses.remove("fa-folder-closed");
       } else {
-        console.log("Closing folder");
+        //console.log("Closing folder");
         classes.add("close-folder");
         classes.remove("open-folder");
-        imageClasses.add("close-folder-img");
-        imageClasses.remove("open-folder-img");
+        //imageClasses.add("close-folder-img");
+        //imageClasses.remove("open-folder-img");
+        iconClasses.add("fa-folder-closed");
+        iconClasses.remove("fa-folder-open");
       }
-      // const classes = h.classList;
-      // for (let cssClass of classes) {
-      //   console.log(cssClass + "; ");
-      // }
-
-      //console.log("clicked!");
-      //<!-- .Pages | jsonify }} -->
-
-      //classes.toggle("font-semibold");
-      //classes.toggle("open-folder");
-      //h.classList.toggle("myStyle");
-      //h.classList.toggle("hidden");
-      //for (let klass in child.classlist) {
-      //  console.log(klass.toString());
-      //}
-      //console.log("child:" + child);
-
-      //console.log("### indicators:" + indicators[0]);
-      //indicators[0].classList.toggle("src" == "/images/minus-1.svg" ? "/images/arrow-up.svg" : "/images/plus-1.svg");
-      //indicators[0].classList.toggle("myStyle", "hidden");
-
-      //indicators[0].classList.toggle("rotate-180");
-      //object.style.rotate = "-120deg";
-      // add or remove multiple classes
-      //div.classList.add("foo", "bar", "baz");
-      //div.classList.remove("foo", "bar", "baz");
 
       //console.log("Classes (after) =" + classes);
-      console.log("Classes (after) =" + imageClasses);
+      //console.log("Classes (after) =" + imageClasses);
     });
   }
 </script>

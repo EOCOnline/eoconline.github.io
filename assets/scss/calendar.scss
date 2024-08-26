@@ -2,39 +2,24 @@
 
 .open-folder {
   padding         : 5px;
-  background-color: #ceeeb8;
-  src             : url(/images/plus-1.svg);
+  background-color: #e6e7e5;
   border          : 1px solid #f0c9c9;
   animation       : fadeIn 2s;
   font-weight     : bold;
+  box-shadow      : 0 0.2em 0.2em rgba(0, 0, 0, 0.25);
 }
 
 .close-folder {
-  padding         : 5px;
-  background-color: #efefef;
-  src             : url(/images/minus-1.svg);
-  box-shadow      : 0 0.2em 0.2em rgba(0, 0, 0, 0.25);
+  padding           : 5px;
+  //background-color: #efefef;
+}
 
+.close -folder-img {
+  content: url(/images/plus-1.svg);
 }
 
 .open-folder-img {
-  content: url(/images/plus-1.svg);
-
-}
-
-.close-folder-img {
   content: url(/images/minus-1.svg);
-}
-
-.myStyle {
-  //width             : 25px;
-  padding               : 5px;
-  background-color      : #f0f0f0;
-  //color             : white;
-  src                   : url(/images/plus-1.svg);
-  //font-size           : 15px;
-  //box-sizing      : border-box;
-
 }
 
 $gutter-default : 5px;
@@ -61,6 +46,7 @@ $color-white    : #ffffff;
 .calendar-yearTotals {
   font-size  : 0.7em;
   font-weight: normal;
+  margin-top : 3px;
 }
 
 .calendar-month {
