@@ -71,7 +71,10 @@ params.author2.name = { .params.author2.name }} -
 {{ end }}
 
 
-<button onclick="toggleCalendars()" title="Toggle display of mini-calenders for selected years" id="toggleCalendar" class="rounded-lg bg-gray-200 align-right">&nbsp;&nbsp;<i class="fa-regular fa-calendar-plus">&nbsp;&nbsp;</button>
+<!-- BUG: Must be run twice to work the first time! AND Title do not display on hover! -->
+<button type="button" onclick="toggleCalendars()" title="Toggle display of mini-calenders for selected years" id="toggleCalendar" class="rounded-lg bg-gray-200 float-right">&nbsp;&nbsp;Show Calendars&nbsp;&nbsp;</button>
+
+<button type="button" onclick="toggleMonths()" title="Toggle display of months for all years" id="toggleMonths" class="rounded-lg bg-gray-200 float-right hover:bg-sky-300 mr-2">&nbsp;&nbsp;Show Months&nbsp;&nbsp;</button>
 
 {{ range ($context.Scratch.Get "consideredYears") }}
   <!--
@@ -84,12 +87,58 @@ params.author2.name = { .params.author2.name }} -
 
 
 <script>
+  // run initially: Add event listeners to all years
   let years = document.querySelectorAll("[toggle-year]");
   for (let i = 0; i < years.length; i++) {
-    let main = years[i];
+    let year = years[i];
 
-    main.addEventListener("click", function () {
-      let element = main.parentElement.parentElement;
+    year.addEventListener("click", ToggleMonth);
+  }
+
+  function toggleMonth() {
+    let element = year.parentElement.parentElement;
+
+    let months = element.querySelector(".calendar-month").classList;
+    //console.log("Month classes (before) =" + months);
+    // months.toggle("hidden");
+    //console.log("Month classes (after) =" + months);
+
+    let buttonClasses = element.querySelector(".calendar-year>button").classList;
+    let iconClasses = element.querySelector(".calendar-year>button>i").classList;
+
+    //console.log("Classes (before) =" + classes);
+    //console.log("Classes (before) =" + imageClasses);
+
+    if (buttonClasses.contains("close-folder")) {
+      //console.log("Opening folder");
+      buttonClasses.add("open-folder");
+      buttonClasses.remove("close-folder");
+      months.add("open-folder");
+      months.remove("close-folder");
+      iconClasses.add("fa-folder-open");
+      iconClasses.remove("fa-folder-closed");
+    } else {
+      //console.log("Closing folder");
+      buttonClasses.add("close-folder");
+      buttonClasses.remove("open-folder");
+      months.add("close-folder");
+      months.remove("open-folder");
+      iconClasses.add("fa-folder-closed");
+      iconClasses.remove("fa-folder-open");
+    }
+
+    //console.log("Classes (after) =" + classes);
+    //console.log("Classes (after) =" + imageClasses);
+  }
+
+  // on click, expand all years
+  function toggleMonths() {
+    let years = document.querySelectorAll("[toggle-year]");
+    console.log("# Years = " + years.length);
+    for (let i = 0; i < years.length; i++) {
+      let year = years[i];
+
+      let element = year.parentElement.parentElement;
 
       let months = element.querySelector(".calendar-month").classList;
       //console.log("Month classes (before) =" + months);
@@ -110,6 +159,7 @@ params.author2.name = { .params.author2.name }} -
         months.remove("close-folder");
         iconClasses.add("fa-folder-open");
         iconClasses.remove("fa-folder-closed");
+        document.getElementById("toggleMonths").innerHTML = "&nbsp;&nbsp;<i class='fa-regular fa-calendar-days'></i>&nbsp;&nbsp;";
       } else {
         //console.log("Closing folder");
         buttonClasses.add("close-folder");
@@ -118,11 +168,12 @@ params.author2.name = { .params.author2.name }} -
         months.remove("open-folder");
         iconClasses.add("fa-folder-closed");
         iconClasses.remove("fa-folder-open");
+        document.getElementById("toggleMonths").innerHTML = "&nbsp;&nbsp;<i class='fa-regular fa-calendar-xmark'></i>&nbsp;&nbsp;";
       }
 
       //console.log("Classes (after) =" + classes);
       //console.log("Classes (after) =" + imageClasses);
-    });
+    }
   }
 
   // BUG: Must be run twice to work the first time!
@@ -135,12 +186,14 @@ params.author2.name = { .params.author2.name }} -
       } else {
         months[i].style.display = "none";
       }
+      // attempts to force a refresh/redraw:
+      //months[i].style.height = "auto";
+      //months[i].offsetHeight;
     }
-    //months[0].offsetHeight; // force a refresh/redraw?
 
     // change button appearance to indicate click...
     let toggleClasses = document.getElementById("toggleCalendar").classList;
-    console.log("Classes (before) =" + toggleClasses);
+    //console.log("Button classes (before) =" + toggleClasses);
 
     if (toggleClasses.contains("bg-cyan-200")) {
       toggleClasses.remove("bg-cyan-200");
@@ -153,6 +206,6 @@ params.author2.name = { .params.author2.name }} -
       document.getElementById("toggleCalendar").innerHTML = "&nbsp;&nbsp;<i class='fa-regular fa-calendar-plus'></i>&nbsp;&nbsp;";
     }
 
-    console.log("Classes (after) =" + toggleClasses);
+    //console.log("Button classes (after) =" + toggleClasses);
   }
 </script>

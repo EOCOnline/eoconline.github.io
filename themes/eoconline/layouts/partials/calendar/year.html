@@ -46,22 +46,19 @@
 <button aria-label="toggle month calendar" toggle-calendar-display onclick="toggle" class="show-month-calendar hidden"></button-->
 
 <div class="calendar-year">
-  <div>
-    <button aria-label="toggle year" toggle-year class="mr-3 text-base close-folder">
-      <i class="far fa-folder-closed"> </i>
-      &nbsp;&nbsp;
-      {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
-      {{ if gt $articlesThisYear 0 }}
-        <a href="/archive/{{ $year }}/">
-          <h5>{{ $yearStr }}</h5>
-        </a>
-        <span class="calendar-year-totals">&nbsp; ({{ $articlesThisYear }})</span>
-      {{ end }}
-    </button>
-  </div>
-  <hr />
+  <button aria-label="toggle year" toggle-year class="text-base close-folder flex">
+    <i class="far fa-folder-closed"> </i>
+    &nbsp;&nbsp;
+    {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
+    {{ if gt $articlesThisYear 0 }}
+      <a href="/archive/{{ $year }}/">
+        <h5>{{ $yearStr }}</h5>
+      </a>
+      <span class="calendar-year-totals">&nbsp; ({{ $articlesThisYear }})</span>
+    {{ end }}
+  </button>
 
-  <div class="text-base hidden close-folder calendar-month">
+  <div class="text-base hidden close-folder calendar-month flex flex-wrap">
     {{ range $months }}
       {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
         {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
