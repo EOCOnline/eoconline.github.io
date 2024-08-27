@@ -70,6 +70,9 @@ params.author2.name = { .params.author2.name }} -
 
 {{ end }}
 
+
+<button onclick="toggleCalendars()" title="Toggle display of mini-calenders for selected years" id="toggleCalendar" class="rounded-lg bg-gray-200 align-right">&nbsp;&nbsp;<i class="fa-regular fa-calendar-plus">&nbsp;&nbsp;</button>
+
 {{ range ($context.Scratch.Get "consideredYears") }}
   <!--
       <br />Calendar calling year '{ . }}' with From: { $from }}-{ $fromMonth }} To: { $to }}-{ $toMonth }}<br />
@@ -81,10 +84,9 @@ params.author2.name = { .params.author2.name }} -
 
 
 <script>
-  // from https://tailwindcomponents.com/component/faq-1
-  let elements = document.querySelectorAll("[toggle-item]");
-  for (let i = 0; i < elements.length; i++) {
-    let main = elements[i];
+  let years = document.querySelectorAll("[toggle-year]");
+  for (let i = 0; i < years.length; i++) {
+    let main = years[i];
 
     main.addEventListener("click", function () {
       let element = main.parentElement.parentElement;
@@ -94,8 +96,8 @@ params.author2.name = { .params.author2.name }} -
       // months.toggle("hidden");
       //console.log("Month classes (after) =" + months);
 
-      let buttonClasses = element.querySelector("#calendarYear>button").classList;
-      let iconClasses = element.querySelector("#calendarYear>button>i").classList;
+      let buttonClasses = element.querySelector(".calendar-year>button").classList;
+      let iconClasses = element.querySelector(".calendar-year>button>i").classList;
 
       //console.log("Classes (before) =" + classes);
       //console.log("Classes (before) =" + imageClasses);
@@ -121,5 +123,36 @@ params.author2.name = { .params.author2.name }} -
       //console.log("Classes (after) =" + classes);
       //console.log("Classes (after) =" + imageClasses);
     });
+  }
+
+  // BUG: Must be run twice to work the first time!
+  function toggleCalendars() {
+    //console.log("Clicked!!!");
+    var months = document.getElementsByClassName("calendar-month-calendar");
+    for (let i = 0; i < months.length; i++) {
+      if (months[i].style.display === "none") {
+        months[i].style.display = "block";
+      } else {
+        months[i].style.display = "none";
+      }
+    }
+    //months[0].offsetHeight; // force a refresh/redraw?
+
+    // change button appearance to indicate click...
+    let toggleClasses = document.getElementById("toggleCalendar").classList;
+    console.log("Classes (before) =" + toggleClasses);
+
+    if (toggleClasses.contains("bg-cyan-200")) {
+      toggleClasses.remove("bg-cyan-200");
+      toggleClasses.add("bg-gray-200");
+      toggleClasses.toggle("font-semibold");
+      document.getElementById("toggleCalendar").innerHTML = "&nbsp;&nbsp;<i class='fa-regular fa-calendar-minus'></i>&nbsp;&nbsp;";
+    } else {
+      toggleClasses.remove("bg-gray-200");
+      toggleClasses.add("bg-cyan-200");
+      document.getElementById("toggleCalendar").innerHTML = "&nbsp;&nbsp;<i class='fa-regular fa-calendar-plus'></i>&nbsp;&nbsp;";
+    }
+
+    console.log("Classes (after) =" + toggleClasses);
   }
 </script>

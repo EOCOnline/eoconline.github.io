@@ -4,6 +4,31 @@ $gutter-default : 5px;
 $color-accent   : #ff6600;
 $color-white    : #ffffff;
 
+
+.thing {
+  margin    : 20px;
+  padding   : 20px;
+  background: lightyellow;
+  border    : 1px solid green;
+}
+
+.thing2 {
+  opacity: 0;
+}
+
+.m-fadeOut {
+  visibility: hidden;
+  opacity   : 0;
+  transition: visibility 0s linear 900ms, opacity 900ms;
+}
+
+.m-fadeIn {
+  visibility: visible;
+  opacity   : 1;
+  transition: visibility 0s linear 900ms, opacity 900ms;
+}
+
+
 .open-folder {
   padding         : 5px;
   background-color: #f2f2f2;
@@ -65,7 +90,7 @@ $color-white    : #ffffff;
 }
 
 .calendar-month-calendar {
-  //display: none;
+  display   : none;
   box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.15);
 
 }
