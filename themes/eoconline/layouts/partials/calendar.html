@@ -71,8 +71,8 @@ params.author2.name = { .params.author2.name }} -
 {{ end }}
 
 
-<!-- BUG: Must be run twice to work the first time! AND Title do not display on hover! -->
-<!-- TODO: Drop down button with various views:
+<!-- BUG: Must be run twice to work the first time! -->
+<!-- Drop down button with various views:
       1) Years: Just Years with insights, no months
       2) Months: Just Years with insights, just months with insights
       3) Calendars: Just Years with insights, just months with insights, plus calendars
@@ -81,13 +81,13 @@ params.author2.name = { .params.author2.name }} -
      -->
 
 <div class="dropdown">
-  <button class="dropbtn">Views</button>
-  <div class="dropdown-content">
-    <a href="#" title="Just Years with insights, no months">Years</a>
-    <a href="#" title="Just Years with insights, just months with insights">Months</a>
-    <a href="#" title="Just Years with insights, just months with insights, plus calendars">Calendars</a>
-    <a href="#" title="All Years, display months and calendars">All</a>
-    <a href="#" title="Hide entire Calendar widget">None</a>
+  <button class="dropbtn bg-gray-200 hover:bg-blue-200 rounded-md px-2 py-0">Views</button>
+  <div class="dropdown-content bg-gray-200 rounded-md">
+    <div class="hover:bg-blue-200" onclick="displayAllYears()" title="Just Years with insights, no months">Years</div>
+    <div class="hover:bg-blue-200" onclick="displayAllMonths()" title="Just Years with insights, just months with insights">Months</div>
+    <div class="hover:bg-blue-200" onclick="toggleCalendars()" title="Just Years with insights, just months with insights, plus calendars">Calendars</div>
+    <div class="hover:bg-blue-200" onclick="displayEverything()" title="All Years, display months and calendars">All</div>
+    <div class="hover:bg-blue-200" onclick="hideEntireCalendar()" title="Hide entire Calendar widget">None</div>
   </div>
 </div>
 
@@ -108,6 +108,7 @@ params.author2.name = { .params.author2.name }} -
 <script>
   // setting for all years, not just one
   let monthsVisible = false;
+  let displayAll = false;
 
   // run initially: Add event listeners to all years
   let years = document.querySelectorAll("[toggle-year]");
@@ -153,6 +154,18 @@ params.author2.name = { .params.author2.name }} -
     //console.log("Classes (after) =" + classes);
     //console.log("Classes (after) =" + imageClasses);
   }
+
+  // Just Years with insights, no months
+  function displayAllYears() {}
+
+  // Just Years with insights, just months with insights
+  function displayAllMonths() {}
+
+  // All Years, display months and calendars
+  function displayEverything() {}
+
+  // Hide entire widget
+  function hideEntireCalendar() {}
 
   // on click, toggle display of months for all years
   function toggleMonths() {
@@ -243,9 +256,11 @@ params.author2.name = { .params.author2.name }} -
     }
   }
 
+  // Just Years with insights, just months with insights, plus calendars
+
   // BUG: Must be run twice to work the first time!
   function toggleCalendars() {
-    //console.log("Clicked!!!");
+    console.log("toggleCalendars running!!!");
     var months = document.getElementsByClassName("calendar-month-calendar");
     for (let i = 0; i < months.length; i++) {
       if (months[i].style.display === "none") {

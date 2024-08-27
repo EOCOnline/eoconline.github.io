@@ -35,25 +35,49 @@
 {{ end }}
 
 
-<div class="calendar-year mt-8 mb-0">
-  <button aria-label="toggle year" toggle-year class="text-base close-folder flex rounded-md bg-gray-200 hover:bg-sky-200 transition duration-300 ease-in-out">
-    &nbsp;&nbsp;
-    <i class="far fa-folder-closed mt-2"> </i>
-    &nbsp;&nbsp;
-    {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
-    {{ if gt $articlesThisYear 0 }}
+<div class="calendar-year mt-3 mb-0">
+  {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
+
+  {{ if gt $articlesThisYear 0 }}
+    <button aria-label="toggle year" toggle-year class="text-base close-folder flex rounded-md hover:bg-sky-200 transition duration-300 ease-in-out">
+      &nbsp;&nbsp;
+      <i class="far fa-folder-closed mt-2"> </i>
+      &nbsp;&nbsp;
+
       <a href="/archive/{{ $year }}/">
         <h5 class="hover:bg-blue-400">{{ $yearStr }}</h5>
       </a>
       <span class="calendar-year-totals pt-1">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
-    {{ end }}
-  </button>
+    </button>
 
-  <div class="text-base hidden close-folder calendar-month flex flex-wrap">
-    {{ range $months }}
-      {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
-        {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
+    <div class="text-base hidden close-folder calendar-month flex flex-wrap">
+      {{ range $months }}
+        {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
+          {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
+        {{ end }}
       {{ end }}
-    {{ end }}
-  </div>
+    </div>
+    <hr class="" />
+  {{ else }}
+    <button aria-label="toggle year" toggle-year class="text-base close-folder flex rounded-md hover:bg-sky-200 transition duration-300 ease-in-out noArticles hidden">
+      &nbsp;&nbsp;
+      <i class="far fa-folder-closed mt-2"> </i>
+      &nbsp;&nbsp;
+
+      <a href="/archive/{{ $year }}/">
+        <h5 class="hover:bg-blue-400">{{ $yearStr }}</h5>
+      </a>
+      <span class="calendar-year-totals pt-1">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
+    </button>
+
+    <div class="text-base hidden close-folder calendar-month flex flex-wrap noArticles">
+      {{ range $months }}
+        {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
+          {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
+        {{ end }}
+      {{ end }}
+    </div>
+    <hr class="noArticles hidden" />
+  {{ end }}
+
 </div>
