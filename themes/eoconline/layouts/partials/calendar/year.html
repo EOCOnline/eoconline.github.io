@@ -36,7 +36,8 @@
 
 
 <div class="calendar-year mt-8 mb-0">
-  <button aria-label="toggle year" toggle-year class="text-base close-folder flex rounded-lg bg-gray-200 hover:bg-sky-200">
+  <button aria-label="toggle year" toggle-year class="text-base close-folder flex rounded-md bg-gray-200 hover:bg-sky-200 transition duration-300 ease-in-out">
+    &nbsp;&nbsp;
     <i class="far fa-folder-closed mt-2"> </i>
     &nbsp;&nbsp;
     {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
@@ -44,7 +45,7 @@
       <a href="/archive/{{ $year }}/">
         <h5 class="hover:bg-blue-400">{{ $yearStr }}</h5>
       </a>
-      <span class="calendar-year-totals pt-1">&nbsp; ({{ $articlesThisYear }})</span>
+      <span class="calendar-year-totals pt-1">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
     {{ end }}
   </button>
 
