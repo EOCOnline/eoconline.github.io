@@ -80,20 +80,24 @@ params.author2.name = { .params.author2.name }} -
       5) Hide: Hide entire Calendar widget
      -->
 
-<div class="dropdown">
-  <button class="dropbtn bg-gray-200 hover:bg-blue-200 rounded-md px-2 py-0">Views</button>
-  <div class="dropdown-content bg-gray-200 rounded-md">
-    <div class="hover:bg-blue-200" onclick="displayAllYears()" title="Just Years with insights, no months">Years</div>
-    <div class="hover:bg-blue-200" onclick="displayAllMonths()" title="Just Years with insights, just months with insights">Months</div>
+<div class="dropdown float-right" aria-label="View dropdown">
+  <button class="bg-gray-200 hover:bg-blue-200 rounded-md px-2 hover:hidden">Views</button>
+  <div class="dropdown-content bg-gray-200 rounded-md float-right shadow-lg px-6 z-1 hidden divide-y divide-lime-600">
+    <div class="font-semibold divide-y-8 divide-red-1000">Views</div>
+
+    <div class="hover:bg-blue-200 rounded-md" onclick="displayAllYears()" title="Just Years with insights, no months">Years</div>
+    <div class="hover:bg-blue-200 rounded-md" onclick="displayAllMonths()" title="Just Years with insights, just months with insights">Months</div>
     <div class="hover:bg-blue-200" onclick="toggleCalendars()" title="Just Years with insights, just months with insights, plus calendars">Calendars</div>
     <div class="hover:bg-blue-200" onclick="displayEverything()" title="All Years, display months and calendars">All</div>
-    <div class="hover:bg-blue-200" onclick="hideEntireCalendar()" title="Hide entire Calendar widget">None</div>
+    <div class="hover:bg-blue-200 rounded-md" onclick="hideEntireCalendar()" title="Hide entire Calendar widget">None</div>
   </div>
 </div>
 
+<!-- Following works, but supplanted by the above dropdown
 <button type="button" onclick="toggleCalendars()" title="Toggle display of mini-calenders for selected years" id="toggleCalendar" class="rounded-lg bg-gray-200 hover:bg-sky-300 float-right">&nbsp;&nbsp;Show Calendars&nbsp;&nbsp;</button>
 
 <button type="button" onclick="toggleMonths()" title="Toggle display of months for all years" id="toggleMonths" class="rounded-lg bg-gray-200  hover:bg-sky-300 float-right mr-2">&nbsp;&nbsp;Show Months&nbsp;&nbsp;</button>
+-->
 
 {{ range ($context.Scratch.Get "consideredYears") }}
   <!--
@@ -115,23 +119,25 @@ params.author2.name = { .params.author2.name }} -
   for (let i = 0; i < years.length; i++) {
     let year = years[i];
 
-    year.addEventListener("click", ToggleMonth(year));
+    year.addEventListener("click", toggleMonth);
   }
 
+  // ------------------------------------------------
   // toggle display of just this one year's months
-  function toggleMonth(year) {
+  function toggleMonth() {
+    console.log("\nToggling display of just this one year's months...");
     let element = year.parentElement.parentElement;
 
     let months = element.querySelector(".calendar-month").classList;
-    //console.log("Month classes (before) =" + months);
+    console.log("Month classes (before) =" + months);
     // months.toggle("hidden");
     //console.log("Month classes (after) =" + months);
 
     let buttonClasses = element.querySelector(".calendar-year>button").classList;
     let iconClasses = element.querySelector(".calendar-year>button>i").classList;
 
-    //console.log("Classes (before) =" + classes);
-    //console.log("Classes (before) =" + imageClasses);
+    console.log("buttonClasses (before) =" + buttonClasses);
+    console.log("iconClasses (before) =" + iconClasses);
 
     if (buttonClasses.contains("close-folder")) {
       //console.log("Opening folder");
@@ -151,22 +157,30 @@ params.author2.name = { .params.author2.name }} -
       iconClasses.remove("fa-folder-open");
     }
 
-    //console.log("Classes (after) =" + classes);
-    //console.log("Classes (after) =" + imageClasses);
+    console.log("buttonClasses (after) =" + buttonClasses);
+    console.log("iconClasses (after) =" + iconClasses);
+    console.log("-------------------\n");
   }
 
+  // ------------------------------------------------
   // Just Years with insights, no months
   function displayAllYears() {}
 
+  // ------------------------------------------------
   // Just Years with insights, just months with insights
   function displayAllMonths() {}
 
+  // ------------------------------------------------
   // All Years, display months and calendars
-  function displayEverything() {}
+  function displayEverything() {
+    alert("Not implemented!");
+  }
 
+  // ------------------------------------------------
   // Hide entire widget
   function hideEntireCalendar() {}
 
+  // ------------------------------------------------
   // on click, toggle display of months for all years
   function toggleMonths() {
     if (monthsVisible) {
