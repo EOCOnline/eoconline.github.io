@@ -34,6 +34,8 @@
   {{ end }}
 {{ end }}
 
+test-test
+<p class="triangle-exclamation user">TEST!</p>
 
 <div class="mt-3 mb-0 calendar-year">
   {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
@@ -53,7 +55,7 @@
 
 
     -->
-    <div class="flex flex-wrap flex-row grow-1 content-start justify-start p-5 close-folder calendar-month monthGotArticles">
+    <div class="flex flex-row flex-wrap content-start justify-start hidden p-5 user grow-1 close-folder calendar-month monthGotArticles">
       {{ range $months }}
         {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
           {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
@@ -79,14 +81,14 @@
       <span class="pt-1 calendar-year-totals">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
     </button>
 
-    <div class="flex flex-wrap  text-base close-folder calendar-month monthNoArticles">
+    <div class="flex flex-wrap text-base close-folder calendar-month monthNoArticles">
       {{ range $months }}
         {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
           {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
         {{ end }}
       {{ end }}
     </div>
-    <hr class="yearNoArticles hidden" />
+    <hr class="hidden yearNoArticles" />
   {{ end }}
 
 </div>

@@ -4,10 +4,26 @@ $gutter-default : 5px;
 $color-accent   : #ff6600;
 $color-white    : #ffffff;
 
-.m-fadeIn {
-  visibility: visible;
-  opacity   : 1;
-  transition: visibility 0s linear 900ms, opacity 900ms;
+// https://docs.fontawesome.com/web/add-icons/pseudo-elements
+// Solid style of user
+/*.user {
+  .fa-icon-solid(@fa-var-user);
+}
+
+// Regular style of triangle-exclamation
+.triangle-exclamation {
+  .fa-icon-regular(@fa-var-triangle-exclamation);
+}
+*/
+
+// Solid style of user
+.user {
+  @include fa-icon-solid($fa-var-user);
+}
+
+// Regular style of triangle-exclamation
+.triangle-exclamation {
+  @include fa-icon-regular($fa-var-triangle-exclamation);
 }
 
 .open-folder {
