@@ -33,7 +33,7 @@ works:
 		  show_generated_by = true
 
    partials/footer.html:
-    { if .Site.Params.skin.show_generated_by }}  - I think Params is depricated, so remove that one word...
+    { if .Site.Params.skin.show_generated_by }}  - I think Params is deprecated, so remove that one word...
 
   { $myParams := .Params }}
 
@@ -149,46 +149,8 @@ params.author2.name = { .params.author2.name }} -
   for (let i = 0; i < years.length; i++) {
     let year = years[i];
 
-    if (true) {
-      // Add event listener to each year, but doesn't work...
-      year.addEventListener("click", toggleMonth);
-    } else {
-      year.addEventListener("click", function () {
-        let element = year.parentElement;
-        let months = element.querySelector(".calendar-month").classList;
-        console.log("Month classes (before) =" + months);
-        // months.toggle("hidden");
-        //console.log("Month classes (after) =" + months);
-
-        let buttonClasses = element.querySelector(".calendar-year>button").classList;
-        let iconClasses = element.querySelector(".calendar-year>button>i").classList;
-
-        console.log("buttonClasses (before) =" + buttonClasses);
-        console.log("iconClasses (before) =" + iconClasses);
-
-        if (buttonClasses.contains("close-folder")) {
-          //console.log("Opening folder");
-          buttonClasses.add("open-folder");
-          buttonClasses.remove("close-folder");
-          months.add("open-folder");
-          months.remove("close-folder");
-          iconClasses.add("fa-folder-open");
-          iconClasses.remove("fa-folder-closed");
-        } else {
-          //console.log("Closing folder");
-          buttonClasses.add("close-folder");
-          buttonClasses.remove("open-folder");
-          months.add("close-folder");
-          months.remove("open-folder");
-          iconClasses.add("fa-folder-closed");
-          iconClasses.remove("fa-folder-open");
-        }
-
-        console.log("buttonClasses (after) =" + buttonClasses);
-        console.log("iconClasses (after) =" + iconClasses);
-        console.log("-------------------\n");
-      });
-    }
+    // Add event listener to each year, but doesn't work...
+    year.addEventListener("click", toggleMonth);
   }
 
   // ------------------------------------------------
@@ -201,8 +163,9 @@ params.author2.name = { .params.author2.name }} -
 
     let months = element.querySelector(".calendar-month").classList;
     console.log("Month classes (before) =" + months);
-    // months.toggle("hidden");
-    //console.log("Month classes (after) =" + months);
+    months.toggle("hidden");
+    console.log("Month classes (after) =" + months + "\n");
+
 
     let buttonClasses = element.querySelector(".calendar-year>button").classList;
     let iconClasses = element.querySelector(".calendar-year>button>i").classList;

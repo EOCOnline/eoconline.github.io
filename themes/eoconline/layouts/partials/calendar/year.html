@@ -49,15 +49,23 @@
       </a>
       <span class="pt-1 calendar-year-totals">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
     </button>
-    <!-- flex flex-wrap -->
-    <div class=" text-base close-folder calendar-month monthGotArticles hidden">
+    <!--
+
+
+    -->
+    <div class="flex flex-wrap flex-row grow-1 content-start justify-start p-5 close-folder calendar-month monthGotArticles">
       {{ range $months }}
         {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
           {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
         {{ end }}
       {{ end }}
     </div>
+    <!--
+
+
+    -->
     <hr class="yearGotArticles" />
+    <!------------------------------>
   {{ else }}
     <!-- flex flex-wrap -->
     <button aria-label="toggle year" toggle-year class="text-base transition duration-300 ease-in-out rounded-md close-folder hover:bg-sky-200 yearNoArticles">
