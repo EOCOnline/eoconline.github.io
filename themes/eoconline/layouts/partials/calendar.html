@@ -173,7 +173,7 @@ params.author2.name = { .params.author2.name }} -
       default:
         alert("Unknown view: " + viewSelect.options[viewSelect.selectedIndex].text);
     }
-    alert("View = " + view);
+    // alert("View = " + view);
   }
 
   // ------------------------------------------------
@@ -219,22 +219,30 @@ params.author2.name = { .params.author2.name }} -
   // ------------------------------------------------
   // Just Years with insights, no months
   function displayAllYears() {
-    // display all months with >1 article, i.e., display yearGotArticles & hide yearNoArticles
-    // hide all months, i.e., hide monthGotArticles & hide monthNoArticles
+    // display yearGotArticles
+    // hide yearNoArticles
+    // hide monthGotArticles
+    // hide monthNoArticles
+    // hide calendars
   }
 
   // ------------------------------------------------
   // Just Years with insights, just months with insights
   function displayAllMonths() {
-    // display yearGotArticles & hide yearNoArticles
-    // show monthGotArticles & hide monthNoArticles
+    // display yearGotArticles
+    // hide yearNoArticles
+    // display monthGotArticles
+    // hide monthNoArticles
+    // hide calendars
   }
 
   // ------------------------------------------------
   // All Years, display months and calendars
   function displayEverything() {
-    // display yearGotArticles & yearNoArticles
-    // display monthGotArticles & monthNoArticles
+    // display yearGotArticles
+    // display yearNoArticles
+    // display monthGotArticles
+    // display monthNoArticles
     // display calendars
     alert("Not implemented!");
   }
@@ -245,7 +253,7 @@ params.author2.name = { .params.author2.name }} -
     // hide calendar-year
   }
 
-  // ------------------------------------------------
+  /* ------------------------------------------------
   // on click, toggle display of months for all years
   function toggleMonths() {
     if (monthsVisible) {
@@ -296,12 +304,13 @@ params.author2.name = { .params.author2.name }} -
         iconClasses.remove("fa-folder-open");
         document.getElementById("toggleMonths").innerHTML = "&nbsp;&nbsp;<i class='fa-regular fa-calendar-xmark'></i>&nbsp;&nbsp;";
       }
-      */
+
 
       //console.log("Classes (after) =" + classes);
       //console.log("Classes (after) =" + imageClasses);
     }
   }
+  */
 
   // display all months for the year
   function openMonths(year) {

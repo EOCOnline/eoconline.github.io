@@ -59,7 +59,7 @@
     </div>
     <hr class="Articles" />
   {{ else }}
-    <button aria-label="toggle year" toggle-year class="flex hidden text-base transition duration-300 ease-in-out rounded-md close-folder hover:bg-sky-200 noArticles">
+    <button aria-label="toggle year" toggle-year class="flex  text-base transition duration-300 ease-in-out rounded-md close-folder hover:bg-sky-200 yearNoArticles hidden">
       &nbsp;&nbsp;
       <i class="mt-2 far fa-folder-closed"> </i>
       &nbsp;&nbsp;
@@ -67,17 +67,17 @@
       <a href="/archive/{{ $year }}/">
         <h5 class="hover:bg-blue-400">{{ $yearStr }}</h5>
       </a>
-      <span class="pt-1 calendar-year-totals">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
+      <span class="pt-1 calendar-year-totals">&nbsp; ({{ $articlesThisYear - 1 }})&nbsp;</span>
     </button>
 
-    <div class="flex flex-wrap hidden text-base close-folder calendar-month noArticles">
+    <div class="flex flex-wrap  text-base close-folder calendar-month monthNoArticles hidden">
       {{ range $months }}
         {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
           {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
         {{ end }}
       {{ end }}
     </div>
-    <hr class="hidden noArticles" />
+    <hr class="yearNoArticles hidden" />
   {{ end }}
 
 </div>
