@@ -5,6 +5,21 @@
 {{ $toMonth := int .toMonth }}
 {{ $pages := .pages }}
 
+{{ $view1_title := "Just Years with insights, no months" }}
+{{ $view1_text := "Years, no months" }}
+
+{{ $view2_title := "Just Years with insights, just months with insights" }}
+{{ $view2_text := "Years + months" }}
+
+{{ $view3_title := "Just Years with insights, just months with insights, plus calendars" }}
+{{ $view3_text := "Years + months + calendars" }}
+
+{{ $view4_title := "All Years, display months and calendars" }}
+{{ $view4_text := "All" }}
+
+{{ $view5_title := "Hide entire Calendar widget" }}
+{{ $view5_text := "Hide" }}
+
 
 <!--
 works:
@@ -71,18 +86,6 @@ params.author2.name = { .params.author2.name }} -
 {{ end }}
 
 
-<!-- relies on "require('@tailwindcss/forms')" in tailwind.config.js -->
-<div class="block text-right ">
-  <label for="location" class="text-sm font-semibold leading-6 text-gray-900 ">View: &nbsp;</label>
-  <select id="location" name="location" class="mt-2 rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
-    <option selected onselect="displayAllYears()" title="Just Years with insights, no months">Years, no months</option>
-    <option onselect="displayAllMonths()" title="Just Years with insights, just months with insights">Years + months</option>
-    <option onselect="toggleCalendars()" title="Just Years with insights, just months with insights, plus calendars">Years + months + calendars</option>
-    <option onselect="displayEverything()" title="All Years, display months and calendars">All</option>
-    <option onselect="hideEntireCalendar()" title="Hide entire Calendar widget">Hide</option>
-  </select>
-</div>
-
 <!-- BUG: Must be run twice to work the first time! -->
 <!-- Drop down button with various views:
       1) Years: Just Years with insights, no months
@@ -92,7 +95,7 @@ params.author2.name = { .params.author2.name }} -
       5) Hide: Hide entire Calendar widget
      -->
 
-<div class="float-right dropdown" aria-label="View dropdown">
+<!-- div class="float-right dropdown" aria-label="View dropdown">
   <button class="px-2 bg-gray-200 rounded-md hover:bg-blue-200 hover:hidden">Views</button>
   <div class="hidden float-right px-6 bg-gray-200 divide-y rounded-md shadow-lg dropdown-content z-1 divide-lime-600">
     <div class="font-semibold divide-y-8 divide-red-1000">Views</div>
@@ -105,11 +108,26 @@ params.author2.name = { .params.author2.name }} -
   </div>
 </div>
 
-<!-- Following works, but supplanted by the above dropdown
+<Following works, but supplanted by the above dropdown
 <button type="button" onclick="toggleCalendars()" title="Toggle display of mini-calenders for selected years" id="toggleCalendar" class="float-right bg-gray-200 rounded-lg hover:bg-sky-300">&nbsp;&nbsp;Show Calendars&nbsp;&nbsp;</button>
 
 <button type="button" onclick="toggleMonths()" title="Toggle display of months for all years" id="toggleMonths" class="float-right mr-2 bg-gray-200 rounded-lg hover:bg-sky-300">&nbsp;&nbsp;Show Months&nbsp;&nbsp;</button>
 -->
+
+<!-- relies on "require('@tailwindcss/forms')" in tailwind.config.js
+ oninput="displayEverything()" onblur="displayEverything()"
+  onchange="displayEverything()"
+-->
+<div class="block text-right">
+  <label for="viewSelect" class="text-sm font-semibold leading-6 text-gray-900">View: &nbsp;</label>
+  <select id="viewSelect" name="viewSelect" class="py-0 pl-2 pr-10 mt-2 text-gray-900 border-0 rounded-md ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6" oninput="changeView()">
+    <option selected title="{{ $view1_title }}">{{ $view1_text }}</option>
+    <option title="{{ $view2_title }}">{{ $view2_text }}</option>
+    <option title="{{ $view3_title }}">{{ $view3_text }}</option>
+    <option title="{{ $view4_title }}">{{ $view4_text }}</option>
+    <option title="{{ $view5_title }}">{{ $view5_text }}</option>
+  </select>
+</div>
 
 {{ range ($context.Scratch.Get "consideredYears") }}
   <!--
@@ -120,8 +138,8 @@ params.author2.name = { .params.author2.name }} -
   }}
 {{ end }}
 
-
 <script>
+
   // setting for all years, not just one
   let monthsVisible = false;
   let displayAll = false;
@@ -132,6 +150,30 @@ params.author2.name = { .params.author2.name }} -
     let year = years[i];
 
     year.addEventListener("click", toggleMonth);
+  }
+
+  function changeView() {
+    let viewSelect = document.getElementById("viewSelect");
+    switch(viewSelect.options[viewSelect.selectedIndex].text) {
+      case "{{ $view1_text }}":
+        displayAllYears();
+        break;
+      case "{{ $view2_text }}":
+        displayAllMonths();
+        break;
+      case "{{ $view3_text }}":
+        toggleCalendars();
+        break;
+      case "{{ $view4_text }}":
+        displayEverything();
+        break;
+      case "{{ $view5_text }}":
+        hideEntireCalendar();
+        break;
+      default:
+        alert("Unknown view: " + viewSelect.options[viewSelect.selectedIndex].text);
+    }
+    alert("View = " + view);
   }
 
   // ------------------------------------------------

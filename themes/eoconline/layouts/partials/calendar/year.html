@@ -35,49 +35,49 @@
 {{ end }}
 
 
-<div class="calendar-year mt-3 mb-0">
+<div class="mt-3 mb-0 calendar-year">
   {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
 
   {{ if gt $articlesThisYear 0 }}
-    <button aria-label="toggle year" toggle-year class="text-base close-folder flex rounded-md hover:bg-sky-200 transition duration-300 ease-in-out yearGotArticles">
+    <button aria-label="toggle year" toggle-year class="flex text-base transition duration-300 ease-in-out rounded-md close-folder hover:bg-sky-200 yearGotArticles">
       &nbsp;&nbsp;
-      <i class="far fa-folder-closed mt-2"> </i>
+      <i class="mt-2 far fa-folder-closed"> </i>
       &nbsp;&nbsp;
 
       <a href="/archive/{{ $year }}/">
         <h5 class="hover:bg-blue-400">{{ $yearStr }}</h5>
       </a>
-      <span class="calendar-year-totals pt-1">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
+      <span class="pt-1 calendar-year-totals">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
     </button>
 
-    <div class="text-base hidden close-folder calendar-month flex flex-wrap monthGotArticles">
+    <div class="flex flex-wrap hidden text-base close-folder calendar-month monthGotArticles">
       {{ range $months }}
         {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
           {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
         {{ end }}
       {{ end }}
     </div>
-    <hr class="" />
+    <hr class="Articles" />
   {{ else }}
-    <button aria-label="toggle year" toggle-year class="text-base close-folder flex rounded-md hover:bg-sky-200 transition duration-300 ease-in-out noArticles hidden">
+    <button aria-label="toggle year" toggle-year class="flex hidden text-base transition duration-300 ease-in-out rounded-md close-folder hover:bg-sky-200 noArticles">
       &nbsp;&nbsp;
-      <i class="far fa-folder-closed mt-2"> </i>
+      <i class="mt-2 far fa-folder-closed"> </i>
       &nbsp;&nbsp;
 
       <a href="/archive/{{ $year }}/">
         <h5 class="hover:bg-blue-400">{{ $yearStr }}</h5>
       </a>
-      <span class="calendar-year-totals pt-1">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
+      <span class="pt-1 calendar-year-totals">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
     </button>
 
-    <div class="text-base hidden close-folder calendar-month flex flex-wrap noArticles">
+    <div class="flex flex-wrap hidden text-base close-folder calendar-month noArticles">
       {{ range $months }}
         {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
           {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
         {{ end }}
       {{ end }}
     </div>
-    <hr class="noArticles hidden" />
+    <hr class="hidden noArticles" />
   {{ end }}
 
 </div>
