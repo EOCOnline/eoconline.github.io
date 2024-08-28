@@ -39,7 +39,7 @@
   {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
 
   {{ if gt $articlesThisYear 0 }}
-    <button aria-label="toggle year" toggle-year class="text-base close-folder flex rounded-md hover:bg-sky-200 transition duration-300 ease-in-out">
+    <button aria-label="toggle year" toggle-year class="text-base close-folder flex rounded-md hover:bg-sky-200 transition duration-300 ease-in-out yearGotArticles">
       &nbsp;&nbsp;
       <i class="far fa-folder-closed mt-2"> </i>
       &nbsp;&nbsp;
@@ -50,7 +50,7 @@
       <span class="calendar-year-totals pt-1">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
     </button>
 
-    <div class="text-base hidden close-folder calendar-month flex flex-wrap">
+    <div class="text-base hidden close-folder calendar-month flex flex-wrap monthGotArticles">
       {{ range $months }}
         {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
           {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
