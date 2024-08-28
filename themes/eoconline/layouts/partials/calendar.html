@@ -149,38 +149,55 @@ params.author2.name = { .params.author2.name }} -
   for (let i = 0; i < years.length; i++) {
     let year = years[i];
 
-    year.addEventListener("click", toggleMonth);
-  }
+    if (true) {
+      // Add event listener to each year, but doesn't work...
+      year.addEventListener("click", toggleMonth);
+    } else {
+      year.addEventListener("click", function () {
+        let element = year.parentElement;
+        let months = element.querySelector(".calendar-month").classList;
+        console.log("Month classes (before) =" + months);
+        // months.toggle("hidden");
+        //console.log("Month classes (after) =" + months);
 
-  function changeView() {
-    let viewSelect = document.getElementById("viewSelect");
-    switch(viewSelect.options[viewSelect.selectedIndex].text) {
-      case "{{ $view1_text }}":
-        displayAllYears();
-        break;
-      case "{{ $view2_text }}":
-        displayAllMonths();
-        break;
-      case "{{ $view3_text }}":
-        toggleCalendars();
-        break;
-      case "{{ $view4_text }}":
-        displayEverything();
-        break;
-      case "{{ $view5_text }}":
-        hideEntireCalendar();
-        break;
-      default:
-        alert("Unknown view: " + viewSelect.options[viewSelect.selectedIndex].text);
+        let buttonClasses = element.querySelector(".calendar-year>button").classList;
+        let iconClasses = element.querySelector(".calendar-year>button>i").classList;
+
+        console.log("buttonClasses (before) =" + buttonClasses);
+        console.log("iconClasses (before) =" + iconClasses);
+
+        if (buttonClasses.contains("close-folder")) {
+          //console.log("Opening folder");
+          buttonClasses.add("open-folder");
+          buttonClasses.remove("close-folder");
+          months.add("open-folder");
+          months.remove("close-folder");
+          iconClasses.add("fa-folder-open");
+          iconClasses.remove("fa-folder-closed");
+        } else {
+          //console.log("Closing folder");
+          buttonClasses.add("close-folder");
+          buttonClasses.remove("open-folder");
+          months.add("close-folder");
+          months.remove("open-folder");
+          iconClasses.add("fa-folder-closed");
+          iconClasses.remove("fa-folder-open");
+        }
+
+        console.log("buttonClasses (after) =" + buttonClasses);
+        console.log("iconClasses (after) =" + iconClasses);
+        console.log("-------------------\n");
+      });
     }
-    // alert("View = " + view);
   }
 
   // ------------------------------------------------
   // toggle display of just this one year's months
   function toggleMonth() {
     console.log("\nToggling display of just this one year's months...");
-    let element = year.parentElement.parentElement;
+
+    let year = this;
+    let element = year.parentElement; //.parentElement;
 
     let months = element.querySelector(".calendar-month").classList;
     console.log("Month classes (before) =" + months);
@@ -215,6 +232,32 @@ params.author2.name = { .params.author2.name }} -
     console.log("iconClasses (after) =" + iconClasses);
     console.log("-------------------\n");
   }
+
+  function changeView() {
+    let viewSelect = document.getElementById("viewSelect");
+    switch(viewSelect.options[viewSelect.selectedIndex].text) {
+      case "{{ $view1_text }}":
+        displayAllYears();
+        break;
+      case "{{ $view2_text }}":
+        displayAllMonths();
+        break;
+      case "{{ $view3_text }}":
+        toggleCalendars();
+        break;
+      case "{{ $view4_text }}":
+        displayEverything();
+        break;
+      case "{{ $view5_text }}":
+        hideEntireCalendar();
+        break;
+      default:
+        alert("Unknown view: " + viewSelect.options[viewSelect.selectedIndex].text);
+    }
+    // alert("View = " + view);
+  }
+
+  // ------------------------------------------------
 
   // ------------------------------------------------
   // Just Years with insights, no months
