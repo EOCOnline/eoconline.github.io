@@ -7,55 +7,14 @@
 
 {{ $view1_title := "Just Years with insights, no months" }}
 {{ $view1_text := "Years, no months" }}
-
 {{ $view2_title := "Just Years with insights, just months with insights" }}
 {{ $view2_text := "Years + months" }}
-
 {{ $view3_title := "Just Years with insights, just months with insights, plus calendars" }}
 {{ $view3_text := "Years + months + calendars" }}
-
 {{ $view4_title := "All Years, display months and calendars" }}
 {{ $view4_text := "All" }}
-
 {{ $view5_title := "Hide entire Calendar widget" }}
 {{ $view5_text := "Hide" }}
-
-
-<!--
-works:
-  { site.Data | jsonify }}
-  { printf "%#v" . }}
-
-  {< myParam "yyyyyyyyy" >}}  -- only works in MD files!
-
-  HUGO.toml:
-    [[Params.skin]]
-		  show_generated_by = true
-
-   partials/footer.html:
-    { if .Site.Params.skin.show_generated_by }}  - I think Params is deprecated, so remove that one word...
-
-  { $myParams := .Params }}
-
-is true:
-{ strings.Contains ( . | jsonify) "yyyy" }}
-
-yy =
-{ .Site.yyyyyyyyy }}
-.Site.Author2.name =
-{ .Site.author2.name }}
-params.author2.name = { .params.author2.name }} -
-{ .Params.author2.name }}
-  -->
-
-<!--
-  Calendar to call year with From:
-  {$from }}-{ $fromMonth }}
-  To: { $to }}-{ $toMonth }} <br />
-
-  # of pages =
-  { (len .pages) }}
--->
 
 {{ $context.Scratch.Set "currentYear" $from }}
 {{ $context.Scratch.Add "consideredYears" (slice $from) }}
@@ -86,7 +45,6 @@ params.author2.name = { .params.author2.name }} -
 {{ end }}
 
 
-<!-- BUG: Must be run twice to work the first time! -->
 <!-- Drop down button with various views:
       1) Years: Just Years with insights, no months
       2) Months: Just Years with insights, just months with insights
@@ -95,54 +53,29 @@ params.author2.name = { .params.author2.name }} -
       5) Hide: Hide entire Calendar widget
      -->
 
-<!-- div class="float-right dropdown" aria-label="View dropdown">
-  <button class="px-2 bg-gray-200 rounded-md hover:bg-blue-200 hover:hidden">Views</button>
-  <div class="hidden float-right px-6 bg-gray-200 divide-y rounded-md shadow-lg dropdown-content z-1 divide-lime-600">
-    <div class="font-semibold divide-y-8 divide-red-1000">Views</div>
-
-    <div class="rounded-md hover:bg-blue-200" onclick="displayAllYears()" title="Just Years with insights, no months">Years</div>
-    <div class="rounded-md hover:bg-blue-200" onclick="displayAllMonths()" title="Just Years with insights, just months with insights">Months</div>
-    <div class="hover:bg-blue-200" onclick="toggleCalendars()" title="Just Years with insights, just months with insights, plus calendars">Calendars</div>
-    <div class="hover:bg-blue-200" onclick="displayEverything()" title="All Years, display months and calendars">All</div>
-    <div class="rounded-md hover:bg-blue-200" onclick="hideEntireCalendar()" title="Hide entire Calendar widget">None</div>
-  </div>
-</div>
-
-<Following works, but supplanted by the above dropdown
-<button type="button" onclick="toggleCalendars()" title="Toggle display of mini-calenders for selected years" id="toggleCalendar" class="float-right bg-gray-200 rounded-lg hover:bg-sky-300">&nbsp;&nbsp;Show Calendars&nbsp;&nbsp;</button>
-
-<button type="button" onclick="toggleMonths()" title="Toggle display of months for all years" id="toggleMonths" class="float-right mr-2 bg-gray-200 rounded-lg hover:bg-sky-300">&nbsp;&nbsp;Show Months&nbsp;&nbsp;</button>
--->
-
-<!-- relies on "require('@tailwindcss/forms')" in tailwind.config.js
- oninput="displayEverything()" onblur="displayEverything()"
-  onchange="displayEverything()"
--->
 <div class="block text-right">
   <label for="viewSelect" class="text-sm font-semibold leading-6 text-gray-900">View: &nbsp;</label>
   <select id="viewSelect" name="viewSelect" class="py-0 pl-2 pr-10 mt-2 text-gray-900 border-0 rounded-md ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6" oninput="changeView()">
     <option selected title="{{ $view1_title }}">{{ $view1_text }}</option>
     <option title="{{ $view2_title }}">{{ $view2_text }}</option>
     <option title="{{ $view3_title }}">{{ $view3_text }}</option>
+    <!-- BUG: Must be run twice to work the first time! -->
     <option title="{{ $view4_title }}">{{ $view4_text }}</option>
     <option title="{{ $view5_title }}">{{ $view5_text }}</option>
   </select>
 </div>
 
 {{ range ($context.Scratch.Get "consideredYears") }}
-  <!--
-      <br />Calendar calling year '{ . }}' with From: { $from }}-{ $fromMonth }} To: { $to }}-{ $toMonth }}<br />
-    -->
+  <!-- <br />Calendar calling year '{ . }}' with From: { $from }}-{ $fromMonth }} To: { $to }}-{ $toMonth }}<br /> -->
   {{ partialCached "calendar/year" (dict "context" $context "year" . "from" $from "fromMonth" $fromMonth "to" $to
     "toMonth" $toMonth) (string (delimit (slice $from $fromMonth $to $toMonth .) ""))
   }}
 {{ end }}
 
 <script>
-
   // setting for all years, not just one
-  let monthsVisible = false;
-  let displayAll = false;
+  // let monthsVisible = false;
+  // let displayAll = false;
 
   // run initially: Add event listeners to all years
   let years = document.querySelectorAll("[toggle-year]");
@@ -156,15 +89,15 @@ params.author2.name = { .params.author2.name }} -
   // ------------------------------------------------
   // toggle display of just this one year's months
   function toggleMonth() {
-    console.log("\nToggling display of just this one year's months...");
+    //console.log("\nToggling display of just this one year's months...");
 
     let year = this;
     let element = year.parentElement; //.parentElement;
 
     let months = element.querySelector(".calendar-month").classList;
-    console.log("Month classes (before) =" + months);
+    //console.log("Month classes (before) =" + months);
     months.toggle("hidden");
-    console.log("Month classes (after) =" + months + "\n");
+    //console.log("Month classes (after) =" + months + "\n");
 
 
     let buttonClasses = element.querySelector(".calendar-year>button").classList;
@@ -191,22 +124,24 @@ params.author2.name = { .params.author2.name }} -
       iconClasses.remove("fa-folder-open");
     }
 
-    console.log("buttonClasses (after) =" + buttonClasses);
-    console.log("iconClasses (after) =" + iconClasses);
-    console.log("-------------------\n");
+    //console.log("buttonClasses (after) =" + buttonClasses);
+    //console.log("iconClasses (after) =" + iconClasses);
+    //console.log("-------------------\n");
   }
 
   function changeView() {
     let viewSelect = document.getElementById("viewSelect");
+    // alert("View = " + view);
     switch(viewSelect.options[viewSelect.selectedIndex].text) {
       case "{{ $view1_text }}":
-        displayAllYears();
+        displayYears();
         break;
       case "{{ $view2_text }}":
-        displayAllMonths();
+        displayMonths();
         break;
       case "{{ $view3_text }}":
-        toggleCalendars();
+      displayCalendars
+        //toggleCalendars();
         break;
       case "{{ $view4_text }}":
         displayEverything();
@@ -217,46 +152,62 @@ params.author2.name = { .params.author2.name }} -
       default:
         alert("Unknown view: " + viewSelect.options[viewSelect.selectedIndex].text);
     }
-    // alert("View = " + view);
   }
 
-  // ------------------------------------------------
-
-  // ------------------------------------------------
   // Just Years with insights, no months
-  function displayAllYears() {
-    // display yearGotArticles
-    // hide yearNoArticles
-    // hide monthGotArticles
-    // hide monthNoArticles
-    // hide calendars
+  function displayYears() {
+    document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
+    document.querySelectorAll(".month-has-articles").forEach(year => year.classList.add("hidden"));
+
+    document.querySelectorAll(".year-no-articles").forEach(year => year.classList.add("hidden"));
+    document.querySelectorAll(".month-no-articles").forEach(year => year.classList.add("hidden"));
+
+    document.querySelectorAll(".calendar-month").forEach(year => year.classList.add("hidden"));
   }
 
-  // ------------------------------------------------
-  // Just Years with insights, just months with insights
-  function displayAllMonths() {
-    // display yearGotArticles
-    // hide yearNoArticles
-    // display monthGotArticles
-    // hide monthNoArticles
-    // hide calendars
+  // Months: Just display Years with insights, plus months with insights
+  function displayMonths() {
+    document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
+    document.querySelectorAll(".month-has-articles").forEach(year => year.classList.remove("hidden"));
+
+    document.querySelectorAll(".year-no-articles").forEach(year => year.classList.add("hidden"));
+    document.querySelectorAll(".month-no-articles").forEach(year => year.classList.add("hidden"));
+
+    document.querySelectorAll(".calendar-month").forEach(year => year.classList.add("hidden"));
   }
 
-  // ------------------------------------------------
+    // Months: Just display Years with insights, plus months with insights
+    function displayCalendars() {
+      document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
+      document.querySelectorAll(".month-has-articles").forEach(year => year.classList.remove("hidden"));
+
+      document.querySelectorAll(".year-no-articles").forEach(year => year.classList.add("hidden"));
+      document.querySelectorAll(".month-no-articles").forEach(year => year.classList.add("hidden"));
+
+      document.querySelectorAll(".calendar-month").forEach(year => year.classList.add("hidden"));
+    }
+
   // All Years, display months and calendars
   function displayEverything() {
-    // display yearGotArticles
-    // display yearNoArticles
-    // display monthGotArticles
-    // display monthNoArticles
-    // display calendars
-    alert("Not implemented!");
+    document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
+    document.querySelectorAll(".month-has-articles").forEach(year => year.classList.remove("hidden"));
+
+    document.querySelectorAll(".year-no-articles").forEach(year => year.classList.remove("hidden"));
+    document.querySelectorAll(".month-no-articles").forEach(year => year.classList.remove("hidden"));
+
+    document.querySelectorAll(".calendar-month").forEach(year => year.classList.remove("hidden"));
   }
 
   // ------------------------------------------------
-  // Hide entire widget
+  // Hide entire widget (i.e., all years)
   function hideEntireCalendar() {
-    // hide calendar-year
+    let years = document.querySelectorAll("[toggle-year]");
+
+    for (let i = 0; i < years.length; i++) {
+      let year = years[i];
+      //let element = year.parentElement;
+      year.classList.add("hidden");
+    }
   }
 
   /* ------------------------------------------------

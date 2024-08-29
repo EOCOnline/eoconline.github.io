@@ -14,7 +14,6 @@ $color-white    : #ffffff;
 .triangle-exclamation {
   .fa-icon-regular(@fa-var-triangle-exclamation);
 }
-*/
 
 // Solid style of user
 .user {
@@ -25,14 +24,15 @@ $color-white    : #ffffff;
 .triangle-exclamation {
   @include fa-icon-regular($fa-var-triangle-exclamation);
 }
+*/
 
 .open-folder {
   //padding         : 5px;
-  background-color  : #f2f2f2;
+  background-color     : #f2f2f2;
   //border          : 1px solid #f0c9c9;
   //animation       : fadeIn 2s;
-  font-weight       : bold;
-  box-shadow        : 0 0.2em 0.2em rgba(0, 0, 0, 0.25);
+  //font-weight       : bold;
+  // box-shadow        : 0 0.2em 0.2em rgba(0, 0, 0, 0.25);
   //width           : 100%;
 }
 

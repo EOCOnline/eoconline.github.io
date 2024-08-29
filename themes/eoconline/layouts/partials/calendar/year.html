@@ -34,14 +34,12 @@
   {{ end }}
 {{ end }}
 
-test-test
-<p class="triangle-exclamation user">TEST!</p>
 
-<div class="mt-3 mb-0 calendar-year">
+<div class="mt-3 mb-0 calendar-year ">
   {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
 
   {{ if gt $articlesThisYear 0 }}
-    <button aria-label="toggle year" toggle-year class="flex text-base transition duration-300 ease-in-out rounded-md close-folder hover:bg-sky-200 yearGotArticles">
+    <button aria-label="toggle year" toggle-year class="flex text-base transition duration-300 ease-in-out rounded-md close-folder hover:bg-sky-200 year-has-articles">
       &nbsp;&nbsp;
       <i class="mt-2 far fa-folder-closed"> </i>
       &nbsp;&nbsp;
@@ -55,7 +53,7 @@ test-test
 
 
     -->
-    <div class="flex flex-row flex-wrap content-start justify-start hidden p-5 user grow-1 close-folder calendar-month monthGotArticles">
+    <div class="flex flex-row flex-wrap content-start justify-start flex-initial hidden flow-root p-5 close-folder calendar-month month-has-articles user grow-1">
       {{ range $months }}
         {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
           {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
@@ -66,11 +64,11 @@ test-test
 
 
     -->
-    <hr class="yearGotArticles" />
+    <hr class="year-has-articles" />
     <!------------------------------>
   {{ else }}
     <!-- flex flex-wrap -->
-    <button aria-label="toggle year" toggle-year class="text-base transition duration-300 ease-in-out rounded-md close-folder hover:bg-sky-200 yearNoArticles">
+    <button aria-label="toggle year" toggle-year class="text-base transition duration-300 ease-in-out rounded-md close-folder hover:bg-sky-200 year-no-articles">
       &nbsp;&nbsp;
       <i class="mt-2 far fa-folder-closed"> </i>
       &nbsp;&nbsp;
@@ -81,14 +79,14 @@ test-test
       <span class="pt-1 calendar-year-totals">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
     </button>
 
-    <div class="flex flex-wrap text-base close-folder calendar-month monthNoArticles">
+    <div class="flex flex-wrap text-base close-folder calendar-month month-no-articles">
       {{ range $months }}
         {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
           {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
         {{ end }}
       {{ end }}
     </div>
-    <hr class="hidden yearNoArticles" />
+    <hr class="hidden year-no-articles" />
   {{ end }}
 
 </div>
