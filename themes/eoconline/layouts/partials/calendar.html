@@ -45,6 +45,8 @@
 {{ end }}
 
 
+<h5 class="pt-5">Insights by Year & Month</h5>
+
 <!-- Drop down button with various views:
       1) Years: Just Years with insights, no months
       2) Months: Just Years with insights, just months with insights
@@ -55,7 +57,7 @@
 
 <div class="block text-right">
   <label for="viewSelect" class="text-sm font-semibold leading-6 text-gray-900">View: &nbsp;</label>
-  <select id="viewSelect" name="viewSelect" class="py-0 pl-2 pr-10 mt-2 text-gray-900 border-0 rounded-md ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6" oninput="changeView()">
+  <select id="viewSelect" name="viewSelect" class="py-0 pl-2 pr-10 mt-2 text-gray-900 border-0 rounded-md ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-200 sm:text-sm sm:leading-6" oninput="changeView()">
     <option selected title="{{ $view1_title }}">{{ $view1_text }}</option>
     <option title="{{ $view2_title }}">{{ $view2_text }}</option>
     <option title="{{ $view3_title }}">{{ $view3_text }}</option>
@@ -72,61 +74,46 @@
   }}
 {{ end }}
 
+
+<!--
+
+
+ ---------------------------------->
+
 <script>
   // setting for all years, not just one
   // let monthsVisible = false;
   // let displayAll = false;
 
   // run initially: Add event listeners to all years
-  let years = document.querySelectorAll("[calendar-year]");
-  for (let i = 0; i < years.length; i++) {
-    let year = years[i];
+  let years = document.querySelectorAll("[calendar-year]").forEach(year => year.addEventListener("click", toggleMonth));
 
-    // Add event listener to each year, but doesn't work...
-    year.addEventListener("click", toggleMonth);
-  }
 
   // ------------------------------------------------
   // toggle display of just this one year's months
   function toggleMonth() {
-    //console.log("\nToggling display of just this one year's months...");
+    console.log("\nToggling display of just this one year's months...");
 
     let year = this;
-    let element = year.parentElement; //.parentElement;
+    let element = year.parentElement; // .parentElement
 
-    let months = element.querySelector(".calendar-month").classList;
-    //console.log("Month classes (before) =" + months);
-    months.toggle("hidden");
-    //console.log("Month classes (after) =" + months + "\n");
+    element.querySelectorAll(".month-has-articles").forEach(month => month.classList.toggle("hidden"));
 
+    //toggle calendar-year from close-folder to open-folder
+    let yearClasses = year.classList;
+    //console.log("#### buttonClasses (before) =" + yearClasses);
 
-    let buttonClasses = element.querySelector(".calendar-year>button").classList;
-    let iconClasses = element.querySelector(".calendar-year>button>i").classList;
-
-    console.log("buttonClasses (before) =" + buttonClasses);
-    console.log("iconClasses (before) =" + iconClasses);
-
-    if (buttonClasses.contains("close-folder")) {
-      //console.log("Opening folder");
-      buttonClasses.add("open-folder");
-      buttonClasses.remove("close-folder");
-      months.add("open-folder");
-      months.remove("close-folder");
-      iconClasses.add("fa-folder-open");
-      iconClasses.remove("fa-folder-closed");
+    if (yearClasses.contains("close-folder")) {
+      console.log("Opening folder");
+      yearClasses.add("open-folder");
+      yearClasses.remove("close-folder");
     } else {
-      //console.log("Closing folder");
-      buttonClasses.add("close-folder");
-      buttonClasses.remove("open-folder");
-      months.add("close-folder");
-      months.remove("open-folder");
-      iconClasses.add("fa-folder-closed");
-      iconClasses.remove("fa-folder-open");
+      console.log("Closing folder");
+      yearClasses.add("close-folder");
+      yearClasses.remove("open-folder");
+      //months.add("close-folder");
+      //months.remove("open-folder");
     }
-
-    //console.log("buttonClasses (after) =" + buttonClasses);
-    //console.log("iconClasses (after) =" + iconClasses);
-    //console.log("-------------------\n");
   }
 
   function changeView() {
@@ -140,7 +127,7 @@
         displayMonths();
         break;
       case "{{ $view3_text }}":
-      displayCalendars
+      displayCalendars()
         //toggleCalendars();
         break;
       case "{{ $view4_text }}":
@@ -176,7 +163,7 @@
     document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.add("hidden"));
   }
 
-    // Months: Just display Years with insights, plus months with insights
+    // Months: Just display Years with insights, plus months & calendars with insights
     function displayCalendars() {
       document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
       document.querySelectorAll(".month-has-articles").forEach(month => month.classList.remove("hidden"));
@@ -184,7 +171,7 @@
       document.querySelectorAll(".year-no-articles").forEach(year => year.classList.add("hidden"));
       document.querySelectorAll(".month-no-articles").forEach(month => month.classList.add("hidden"));
 
-      document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.add("hidden"));
+      document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.remove("hidden"));
     }
 
   // All Years, display months and calendars
@@ -201,13 +188,21 @@
   // ------------------------------------------------
   // Hide entire widget (i.e., all years)
   function hideEntireCalendar() {
-    let years = document.querySelectorAll("[calendar-year]");
+    /*
+    let years = document.querySelectorAll(".calendar-year");
 
     for (let i = 0; i < years.length; i++) {
       let year = years[i];
       //let element = year.parentElement;
       year.classList.add("hidden");
-    }
+    }*/
+    document.querySelectorAll(".year-has-articles").forEach(year => year.classList.add("hidden"));
+    document.querySelectorAll(".month-has-articles").forEach(month => month.classList.add("hidden"));
+
+    document.querySelectorAll(".year-no-articles").forEach(year => year.classList.add("hidden"));
+    document.querySelectorAll(".month-no-articles").forEach(month => month.classList.add("hidden"));
+
+    document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.add("hidden"));
   }
 
   /* ------------------------------------------------

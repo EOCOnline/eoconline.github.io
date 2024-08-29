@@ -1,4 +1,4 @@
-<!-- Purpose: Display a month of the calendar -->
+<!-- Display 1 month: name + calendar -->
 
 {{ $context := .context }}
 {{ $year := .year }}
@@ -18,52 +18,22 @@
 {{ $daysThisMonth := $context.Scratch.Get "daysThisMonth" }}
 
 {{ $monthTwoLetters := printf "%02d" $month }}
-
-
-<!-- $monthInLetters := dateFormat "January" (string (delimit (slice $year "-" $monthTwoLetters "-01") ""))  }} -->
-<!-- above fails with: error calling dateFormat: unable to parse date: -01-01 -->
-
 {{ $monthS := string (delimit (slice $year "-" $monthTwoLetters "-01") "") }}
 
 {{ $monthStr := printf "%04d-%02d-%02d" $year $month 1 }}
 {{ $temp := replace $monthStr "[" "" }}
 {{ $monthStr2 := replace $temp "]" "" }}
 
-
-<!--
-  year = { $year }} ; month = { $month }}; month2Letters = '{ $monthTwoLetters }}'<br>
-  monthS = { $monthS }}; monthStr = { $monthStr }}; monthStr2 = { $monthStr2 }}<br>
--->
 {{ $monthInLetters := dateFormat "Jan" ( $monthStr2 ) }}
-<!-- $monthInLetters := "January"}} -->
-
-<!-- $firstWeekdayInLetters := dateFormat "Mon" (string (delimit (slice $year "-" $monthTwoLetters "-01") ""))  }} -->
-<!-- above gets  error calling dateFormat: unable to parse date: -01-01 -->
-<!-- BUG: $firstWeekdayInLetters := dateFormat "Mon" (string (delimit (slice $year "-" $monthTwoLetters "-01") "")) }} -->
-<!-- $firstWeekdayInLetters := "Mon" }} -->
 {{ $firstWeekdayInLetters := dateFormat "Mon" ($monthStr2) }}
-
-
-<!--
-  firstWeekdayInLetters  = { $firstWeekdayInLetters }}<br>
-  -->
 
 {{ $firstWeekdayInNumbers := index $daysPerWeekMap $firstWeekdayInLetters }}
 {{ $firstWeekdayMondayOffset := (sub (add $firstWeekdayInNumbers 6) 6) }}
 
-
-<!-- following gets:
-  partials/calendar/month.html:27:22: executing "partials/calendar/month.html" at
-  <dateFormat "January" (string (delimit (slice $year "-" $monthTwoLetters "-01") ""))>
-  : error calling dateFormat: unable to parse date: -01-01 -->
-<!-- original:  $monthInLetters := dateFormat "January" (string (delimit (slice $year "-" $monthTwoLetters "-01") "")) }}
- $monthInLetters := "February" }}
--->
-
 {{ $articlesThisMonth := index ($context.Scratch.Get "ArticlesPerMonth") (string (delimit (slice $year $monthTwoLetters) "-")) }}
 
 {{ if gt $articlesThisMonth 0 }}
-  <div class="calendar-month">
+  <div class="pr-3 mb-5 calendar-month">
     <div class="font-bold">
       <a href="/archive/{{ delimit (slice $year $month) "-" }}/"
         >{{ $monthInLetters }}

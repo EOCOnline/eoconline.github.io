@@ -16,4 +16,4 @@ EOC.Online's goal is to provide insights & resources for your emergency operatio
 
 We initially started working on open source, free websites to serve as a template for your community's Emergency Operations Center's use. The goal remains to provide sophisticated tools that simplify your staff and volunteers effort during disasters. Easy navigation and workflows mirror ICS & NIMS guidance for typical EOCs. Each community is encouraged to customize their own software and public outreach to match local risks, special populations, and other circumstances.
 
-EOC.online is a flexible, free, toolset for creating your own NIMS/ICS based EOC software toolset.
+<i class="fa fa-quote-left fa-3x fa-pull-left fa-border"></i>EOC.online is a flexible, free, toolset for creating your own NIMS/ICS based EOC software toolset.

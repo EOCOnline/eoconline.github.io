@@ -34,8 +34,6 @@
         <div class="lg:col-4">
           <!-- calendar widget -->
 
-          <h5>Insights by Month</h5>
-
           <!-- execute of template failed: template: insights/list.html:26:70: executing "main" at <.URL>: can't evaluate field URL in type *hugolib.pageState      -->
           {{ $currentTaxonomy := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
           <!-- .Pages | jsonify }}
