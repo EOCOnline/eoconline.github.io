@@ -78,7 +78,7 @@
   // let displayAll = false;
 
   // run initially: Add event listeners to all years
-  let years = document.querySelectorAll("[toggle-year]");
+  let years = document.querySelectorAll("[calendar-year]");
   for (let i = 0; i < years.length; i++) {
     let year = years[i];
 
@@ -157,51 +157,51 @@
   // Just Years with insights, no months
   function displayYears() {
     document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
-    document.querySelectorAll(".month-has-articles").forEach(year => year.classList.add("hidden"));
+    document.querySelectorAll(".month-has-articles").forEach(month => month.classList.add("hidden"));
 
     document.querySelectorAll(".year-no-articles").forEach(year => year.classList.add("hidden"));
-    document.querySelectorAll(".month-no-articles").forEach(year => year.classList.add("hidden"));
+    document.querySelectorAll(".month-no-articles").forEach(month => month.classList.add("hidden"));
 
-    document.querySelectorAll(".calendar-month").forEach(year => year.classList.add("hidden"));
+    document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.add("hidden"));
   }
 
   // Months: Just display Years with insights, plus months with insights
   function displayMonths() {
     document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
-    document.querySelectorAll(".month-has-articles").forEach(year => year.classList.remove("hidden"));
+    document.querySelectorAll(".month-has-articles").forEach(month => month.classList.remove("hidden"));
 
     document.querySelectorAll(".year-no-articles").forEach(year => year.classList.add("hidden"));
-    document.querySelectorAll(".month-no-articles").forEach(year => year.classList.add("hidden"));
+    document.querySelectorAll(".month-no-articles").forEach(month => month.classList.add("hidden"));
 
-    document.querySelectorAll(".calendar-month").forEach(year => year.classList.add("hidden"));
+    document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.add("hidden"));
   }
 
     // Months: Just display Years with insights, plus months with insights
     function displayCalendars() {
       document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
-      document.querySelectorAll(".month-has-articles").forEach(year => year.classList.remove("hidden"));
+      document.querySelectorAll(".month-has-articles").forEach(month => month.classList.remove("hidden"));
 
       document.querySelectorAll(".year-no-articles").forEach(year => year.classList.add("hidden"));
-      document.querySelectorAll(".month-no-articles").forEach(year => year.classList.add("hidden"));
+      document.querySelectorAll(".month-no-articles").forEach(month => month.classList.add("hidden"));
 
-      document.querySelectorAll(".calendar-month").forEach(year => year.classList.add("hidden"));
+      document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.add("hidden"));
     }
 
   // All Years, display months and calendars
   function displayEverything() {
     document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
-    document.querySelectorAll(".month-has-articles").forEach(year => year.classList.remove("hidden"));
+    document.querySelectorAll(".month-has-articles").forEach(month => month.classList.remove("hidden"));
 
     document.querySelectorAll(".year-no-articles").forEach(year => year.classList.remove("hidden"));
-    document.querySelectorAll(".month-no-articles").forEach(year => year.classList.remove("hidden"));
+    document.querySelectorAll(".month-no-articles").forEach(month => month.classList.remove("hidden"));
 
-    document.querySelectorAll(".calendar-month").forEach(year => year.classList.remove("hidden"));
+    document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.remove("hidden"));
   }
 
   // ------------------------------------------------
   // Hide entire widget (i.e., all years)
   function hideEntireCalendar() {
-    let years = document.querySelectorAll("[toggle-year]");
+    let years = document.querySelectorAll("[calendar-year]");
 
     for (let i = 0; i < years.length; i++) {
       let year = years[i];
@@ -219,7 +219,7 @@
       monthsVisible = true;
     }
 
-    let years = document.querySelectorAll("[toggle-year]");
+    let years = document.querySelectorAll("[calendar-year]");
     // console.log("# Years = " + years.length);
     for (let i = 0; i < years.length; i++) {
       let year = years[i];
