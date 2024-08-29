@@ -33,7 +33,7 @@
 {{ $articlesThisMonth := index ($context.Scratch.Get "ArticlesPerMonth") (string (delimit (slice $year $monthTwoLetters) "-")) }}
 
 {{ if gt $articlesThisMonth 0 }}
-  <div class="pr-3 mb-5 font-bold month-has-articles">
+  <div class="hidden pr-3 mb-5 font-bold month-has-articles">
     <a href="/archive/{{ delimit (slice $year $month) "-" }}">
       {{ $monthInLetters }}
       <span class="calendar-month-totals">({{ $articlesThisMonth }})</span>

@@ -45,8 +45,7 @@
 justify-start
 divide-y divide-slate-400  user grow-1
     -->
-    <div class="content-start hidden flex-initialflow-root">
-      <span class="flex flex-row flex-wrap px-5">
+      <span class="flex flex-row flex-wrap content-start flex-initial px-5">
         {{ range $months }}
           {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
             {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
@@ -54,7 +53,6 @@ divide-y divide-slate-400  user grow-1
         {{ end }}
 
       </span>
-    </div>
     <!-----------------------------------------
 
 
@@ -70,7 +68,7 @@ flex flex-wrap text-base
       <span class="pt-1 calendar-year-totals">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
     </button>
 
-    <span class="hidden close-folder">
+    <span class="">
       {{ range $months }}
         {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
           {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
