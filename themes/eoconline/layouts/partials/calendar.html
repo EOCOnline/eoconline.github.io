@@ -73,35 +73,29 @@
     "toMonth" $toMonth) (string (delimit (slice $from $fromMonth $to $toMonth .) ""))
   }}
 {{ end }}
-
-
 <!--
 
 
+
  ---------------------------------->
-
 <script>
-  // setting for all years, not just one
-  // let monthsVisible = false;
-  // let displayAll = false;
-
   // run initially: Add event listeners to all years
-  let years = document.querySelectorAll("[calendar-year]").forEach(year => year.addEventListener("click", toggleMonth));
+  let years = document.querySelectorAll(".year-has-articles").forEach(year => year.addEventListener("click", toggleMonth));
+  document.querySelectorAll(".year-no-articles").forEach(year => year.addEventListener("click", toggleMonth));
 
 
-  // ------------------------------------------------
-  // toggle display of just this one year's months
+  // toggle display (& close-folder to open-folder) of just this one year's months
   function toggleMonth() {
-    console.log("\nToggling display of just this one year's months...");
+    //console.log("\nToggling display of this year's months...");
 
     let year = this;
-    let element = year.parentElement; // .parentElement
+    let element = year.parentElement;
 
     element.querySelectorAll(".month-has-articles").forEach(month => month.classList.toggle("hidden"));
+    element.querySelectorAll(".month-no-articles").forEach(month => month.classList.toggle("hidden"));
 
-    //toggle calendar-year from close-folder to open-folder
     let yearClasses = year.classList;
-    //console.log("#### buttonClasses (before) =" + yearClasses);
+    console.log("#### yearClasses (before) =" + yearClasses);
 
     if (yearClasses.contains("close-folder")) {
       console.log("Opening folder");
@@ -111,8 +105,6 @@
       console.log("Closing folder");
       yearClasses.add("close-folder");
       yearClasses.remove("open-folder");
-      //months.add("close-folder");
-      //months.remove("open-folder");
     }
   }
 
@@ -145,10 +137,8 @@
   function displayYears() {
     document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
     document.querySelectorAll(".month-has-articles").forEach(month => month.classList.add("hidden"));
-
     document.querySelectorAll(".year-no-articles").forEach(year => year.classList.add("hidden"));
     document.querySelectorAll(".month-no-articles").forEach(month => month.classList.add("hidden"));
-
     document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.add("hidden"));
   }
 
@@ -156,178 +146,35 @@
   function displayMonths() {
     document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
     document.querySelectorAll(".month-has-articles").forEach(month => month.classList.remove("hidden"));
-
     document.querySelectorAll(".year-no-articles").forEach(year => year.classList.add("hidden"));
     document.querySelectorAll(".month-no-articles").forEach(month => month.classList.add("hidden"));
-
     document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.add("hidden"));
   }
 
-    // Months: Just display Years with insights, plus months & calendars with insights
-    function displayCalendars() {
-      document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
-      document.querySelectorAll(".month-has-articles").forEach(month => month.classList.remove("hidden"));
-
-      document.querySelectorAll(".year-no-articles").forEach(year => year.classList.add("hidden"));
-      document.querySelectorAll(".month-no-articles").forEach(month => month.classList.add("hidden"));
-
-      document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.remove("hidden"));
-    }
+  // Months: Just display Years with insights, plus months & calendars with insights
+  function displayCalendars() {
+    document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
+    document.querySelectorAll(".month-has-articles").forEach(month => month.classList.remove("hidden"));
+    document.querySelectorAll(".year-no-articles").forEach(year => year.classList.add("hidden"));
+    document.querySelectorAll(".month-no-articles").forEach(month => month.classList.add("hidden"));
+    document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.remove("hidden"));
+  }
 
   // All Years, display months and calendars
   function displayEverything() {
     document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
     document.querySelectorAll(".month-has-articles").forEach(month => month.classList.remove("hidden"));
-
     document.querySelectorAll(".year-no-articles").forEach(year => year.classList.remove("hidden"));
     document.querySelectorAll(".month-no-articles").forEach(month => month.classList.remove("hidden"));
-
     document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.remove("hidden"));
   }
 
-  // ------------------------------------------------
   // Hide entire widget (i.e., all years)
   function hideEntireCalendar() {
-    /*
-    let years = document.querySelectorAll(".calendar-year");
-
-    for (let i = 0; i < years.length; i++) {
-      let year = years[i];
-      //let element = year.parentElement;
-      year.classList.add("hidden");
-    }*/
     document.querySelectorAll(".year-has-articles").forEach(year => year.classList.add("hidden"));
     document.querySelectorAll(".month-has-articles").forEach(month => month.classList.add("hidden"));
-
     document.querySelectorAll(".year-no-articles").forEach(year => year.classList.add("hidden"));
     document.querySelectorAll(".month-no-articles").forEach(month => month.classList.add("hidden"));
-
     document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.add("hidden"));
-  }
-
-  /* ------------------------------------------------
-  // on click, toggle display of months for all years
-  function toggleMonths() {
-    if (monthsVisible) {
-      monthsVisible = false;
-    } else {
-      monthsVisible = true;
-    }
-
-    let years = document.querySelectorAll("[calendar-year]");
-    // console.log("# Years = " + years.length);
-    for (let i = 0; i < years.length; i++) {
-      let year = years[i];
-      let element = year.parentElement.parentElement;
-      let buttonClasses = element.querySelector(".calendar-year>button").classList;
-      if (buttonClasses.contains("close-folder")) {
-        openMonths(year);
-      } else {
-        closeMonths(year);
-      }
-      /*
-      let months = element.querySelector(".calendar-month").classList;
-      console.log("Month classes (before) =" + months);
-      // months.toggle("hidden");
-      //console.log("Month classes (after) =" + months);
-
-
-      let iconClasses = element.querySelector(".calendar-year>button>i").classList;
-
-      //console.log("Classes (before) =" + classes);
-      //console.log("Classes (before) =" + imageClasses);
-
-      if (buttonClasses.contains("close-folder")) {
-        //console.log("Opening folder");
-        buttonClasses.add("open-folder");
-        buttonClasses.remove("close-folder");
-        months.add("open-folder");
-        months.remove("close-folder");
-        iconClasses.add("fa-folder-open");
-        iconClasses.remove("fa-folder-closed");
-        document.getElementById("toggleMonths").innerHTML = "&nbsp;&nbsp;<i class='fa-regular fa-calendar-days'></i>&nbsp;&nbsp;";
-      } else {
-        //console.log("Closing folder");
-        buttonClasses.add("close-folder");
-        buttonClasses.remove("open-folder");
-        months.add("close-folder");
-        months.remove("open-folder");
-        iconClasses.add("fa-folder-closed");
-        iconClasses.remove("fa-folder-open");
-        document.getElementById("toggleMonths").innerHTML = "&nbsp;&nbsp;<i class='fa-regular fa-calendar-xmark'></i>&nbsp;&nbsp;";
-      }
-
-
-      //console.log("Classes (after) =" + classes);
-      //console.log("Classes (after) =" + imageClasses);
-    }
-  }
-  */
-
-  // display all months for the year
-  function openMonths(year) {
-    let months = document.getElementsByClassName("calendar-month");
-    for (let i = 0; i < months.length; i++) {
-      months[i].classList.remove("hidden");
-
-      //console.log("Opening folder");
-      buttonClasses.add("open-folder");
-      buttonClasses.remove("close-folder");
-      months.add("open-folder");
-      months.remove("close-folder");
-      iconClasses.add("fa-folder-open");
-      iconClasses.remove("fa-folder-closed");
-    }
-  }
-
-  // hide all months for the year
-  function closeMonths(year) {
-    let months = document.getElementsByClassName("calendar-month");
-    for (let i = 0; i < months.length; i++) {
-      months[i].classList.add("hidden");
-
-      //console.log("Closing folder");
-      buttonClasses.add("close-folder");
-      buttonClasses.remove("open-folder");
-      months.add("close-folder");
-      months.remove("open-folder");
-      iconClasses.add("fa-folder-closed");
-      iconClasses.remove("fa-folder-open");
-    }
-  }
-
-  // Just Years with insights, just months with insights, plus calendars
-
-  // BUG: Must be run twice to work the first time!
-  function toggleCalendars() {
-    console.log("toggleCalendars running!!!");
-    var months = document.getElementsByClassName("calendar-month-calendar");
-    for (let i = 0; i < months.length; i++) {
-      if (months[i].style.display === "none") {
-        months[i].style.display = "block";
-      } else {
-        months[i].style.display = "none";
-      }
-      // attempts to force a refresh/redraw:
-      //months[i].style.height = "auto";
-      //months[i].offsetHeight;
-    }
-
-    // change button appearance to indicate click...
-    let toggleClasses = document.getElementById("toggleCalendar").classList;
-    //console.log("Button classes (before) =" + toggleClasses);
-
-    if (toggleClasses.contains("bg-cyan-200")) {
-      toggleClasses.remove("bg-cyan-200");
-      toggleClasses.add("bg-gray-200");
-      toggleClasses.toggle("font-semibold");
-      document.getElementById("toggleCalendar").innerHTML = "&nbsp;&nbsp;<i class='fa-regular fa-calendar-minus'></i>&nbsp;&nbsp;";
-    } else {
-      toggleClasses.remove("bg-gray-200");
-      toggleClasses.add("bg-cyan-200");
-      document.getElementById("toggleCalendar").innerHTML = "&nbsp;&nbsp;<i class='fa-regular fa-calendar-plus'></i>&nbsp;&nbsp;";
-    }
-
-    //console.log("Button classes (after) =" + toggleClasses);
   }
 </script>
