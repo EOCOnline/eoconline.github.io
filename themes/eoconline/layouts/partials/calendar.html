@@ -95,14 +95,14 @@
     //element.querySelectorAll(".month-no-articles").forEach(month => month.classList.toggle("hidden"));
 
     let yearClasses = year.classList;
-    console.log("#### yearClasses (before) =" + yearClasses);
+    //console.log("#### yearClasses (before) =" + yearClasses);
 
     if (yearClasses.contains("close-folder")) {
-      console.log("Opening folder");
+      //console.log("Opening folder");
       yearClasses.add("open-folder");
       yearClasses.remove("close-folder");
     } else {
-      console.log("Closing folder");
+      //console.log("Closing folder");
       yearClasses.add("close-folder");
       yearClasses.remove("open-folder");
     }
