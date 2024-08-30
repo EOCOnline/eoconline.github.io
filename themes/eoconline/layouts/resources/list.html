@@ -1,31 +1,30 @@
 {{ define "main" }}
-{{ partial "page-header" . }}
-<h4 class="self-center">Resources are tools, software and aids of a "timeless" nature,
-  even though some are only useful in specific contexts.</h4>
-D:\Projects\EOC.online\hugoplate\themes\eoconline\layouts\resources\list.html
+  {{ partial "page-header" . }}
 
-<section class="section">
-  <div class="container">
-    <div class="row gx-5">
-      <!-- tool posts -->
-      <div class="lg:col-8">
-        <div class="row">
-          {{ $paginator:= .Paginate .RegularPages }}
-          {{ range $paginator.Pages }}
-          <div class="md:col-6 mb-14">
-            {{ partial "components/tool-card" . }}
+
+  <section class="pt-2 section">
+    <div class="container">
+      <div class="row">
+        <p class="mb-4 italic font-semibold">Resources are tools, guides, and other content that are not time-sensitive</p>
+        <!-- tool posts -->
+        <div class="lg:col-8">
+          <div class="row">
+            {{ $paginator:= .Paginate .RegularPages }}
+            {{ range $paginator.Pages }}
+              <div class="md:col-6 mb-14">
+                {{ partial "components/tool-card" . }}
+              </div>
+            {{ end }}
           </div>
-          {{ end }}
+          {{ partial "components/pagination.html" . }}
         </div>
-        {{ partial "components/pagination.html" . }}
-      </div>
-      <!-- sidebar -->
-      <div class="lg:col-4">
-        <!-- widget -->
-        {{ $widget:= site.Params.widgets.sidebar }}
-        {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+        <!-- sidebar -->
+        <div class="lg:col-4">
+          <!-- widget -->
+          {{ $widget:= site.Params.widgets.sidebar }}
+          {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 {{ end }}
