@@ -1,3 +1,8 @@
+<!--
+    Hugo Calendar widget:
+    © www.github.com/eoc.online/hugo-calendar-widget
+    'Insights' refer to 'blogs' or 'posts' in this context.
+  -->
 {{ $context := .context }}
 {{ $from := int .from }}
 {{ $fromMonth := int .fromMonth }}
@@ -47,6 +52,8 @@
 
 <h5 class="pt-5">Insights by Year & Month</h5>
 
+<!-- p>Calendar from: {{ $from }}-{{ $fromMonth }} To: {{ $to }}-{{ $toMonth }}</p -->
+
 <!-- Drop down button with various views:
       1) Years: Just Years with insights, no months
       2) Months: Just Years with insights, just months with insights
@@ -82,32 +89,22 @@
  ---------------------------------->
 <script>
   // run initially: Add event listeners to all years
-  let years = document.querySelectorAll(".year-has-articles").forEach(year => year.addEventListener("click", toggleMonth));
+  //let years =
+  document.querySelectorAll(".year-has-articles").forEach(year => year.addEventListener("click", toggleMonth));
   document.querySelectorAll(".year-no-articles").forEach(year => year.addEventListener("click", toggleMonth));
 
 
   // toggle display (& close-folder to open-folder) of just this one year's months
   function toggleMonth() {
     //console.log("\nToggling display of this year's months...");
-
     let year = this;
-    let element = year.parentElement;
 
-    element.querySelectorAll(".month-has-articles").forEach(month => month.classList.toggle("hidden"));
-    //element.querySelectorAll(".month-no-articles").forEach(month => month.classList.toggle("hidden"));
+    year.querySelectorAll(".month-has-articles").forEach(month => month.classList.toggle("hidden"));
+    year.querySelectorAll(".month-no-articles").forEach(month => month.classList.toggle("hidden"));
 
-    let yearClasses = year.classList;
-    //console.log("#### yearClasses (before) =" + yearClasses);
+    year.querySelectorAll(".close-folder").forEach(year => {year.classList.add("open-folder"); year.classList.remove("close-folder");});
+    year.querySelectorAll(".close-folder").forEach(year => {year.classList.add("open-folder"); year.classList.remove("close-folder");});
 
-    if (yearClasses.contains("close-folder")) {
-      //console.log("Opening folder");
-      yearClasses.add("open-folder");
-      yearClasses.remove("close-folder");
-    } else {
-      //console.log("Closing folder");
-      yearClasses.add("close-folder");
-      yearClasses.remove("open-folder");
-    }
   }
 
   function changeView() {
@@ -162,7 +159,7 @@
     document.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.remove("hidden"));
   }
 
-  // All Years, display months and calendars
+  // All Years, display months and calendars, even without insights
   function displayEverything() {
     document.querySelectorAll(".year-has-articles").forEach(year => year.classList.remove("hidden"));
     document.querySelectorAll(".month-has-articles").forEach(month => month.classList.remove("hidden"));

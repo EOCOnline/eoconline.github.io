@@ -208,8 +208,8 @@ link = "plugins/youtube-lite.js"
 lazy = true
 
 [taxonomies]
-  category = 'categories' # heirarchical general topics for Insights
+  category = 'categories' # hierarchical general topics for Insights
   tag = 'tags' # specific keywords for Insights
-  topic = 'topics' # analgous to categories - for resources
-  keyword = 'keywords' # analgous to tags - for resources
+  topic = 'topics' # analogous to categories - for resources
+  keyword = 'keywords' # analogous to tags - for resources
   archive = 'archive' # for Calendar widget (see \layouts\partials\calendar\readme.md)

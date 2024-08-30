@@ -5,17 +5,13 @@ $color-accent   : #ff6600;
 $color-white    : #ffffff;
 
 .open-folder::before {
-  content      : "\f07c";
-  font-family  : "Font Awesome 6 Free";
-  font-weight  : 900;
-  padding-right: 5px;
+  content    : "\f07c";
+  font-family: "Font Awesome 6 Free";
 }
 
 .close-folder::before {
-  content      : "\e185";
-  font-family  : "Font Awesome 6 Free";
-  font-weight  : 900;
-  padding-right: 5px;
+  content    : "\e185";
+  font-family: "Font Awesome 6 Free";
 }
 
 .calendar-weekdays {
@@ -27,8 +23,7 @@ $color-white    : #ffffff;
   padding        : 0px;
   margin         : 0px;
   text-align     : center;
-
-  width: 100%;
+  width          : 100%;
 
   li {
     width         : calc(100% / 7);

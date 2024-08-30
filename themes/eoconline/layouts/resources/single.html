@@ -1,92 +1,95 @@
 {{ define "main" }}
-<section class="section pt-7">
-  <div class="container">
-    <div class="row justify-center">
-      <article class="lg:col-10">
-        {{ $image:= .Params.image }}
-        {{ if $image }}
-        <div class="mb-10">
-          {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "w-full rounded") }}
-        </div>
-        {{ end }}
-        <h1 class="h2 mb-4">
-          {{ .Title }}
-        </h1>
-        <ul class="mb-4">
-          <li class="mr-4 inline-block">
-            <a href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}/">
-              <i class="fa-regular fa-circle-user mr-2"></i>{{ .Params.author }}
-            </a>
-          </li>
-          {{ $topics:= .Params.categories }}
-          {{ if $topics }}
-          <li class="mr-4 inline-block">
-            <i class="fa-regular fa-folder mr-2"></i>
-            {{ range $i,$p:= $topics }}
-            <a href="{{ `topics/` | relLangURL }}{{ . | urlize | lower }}/" class="">{{ . | humanize }}{{ if ne $i (sub
-              (len $topics) 1) }}
-              {{ "," }}
-              {{ end }}
-            </a>
-            {{ end }}
-          </li>
+  <section class="section pt-7">
+    <div class="container">
+      <div class="justify-center row">
+        <article class="lg:col-10">
+          {{ $image:= .Params.image }}
+          {{ if $image }}
+            <div class="mb-10">
+              {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "w-full rounded") }}
+            </div>
           {{ end }}
-          <li class="mr-4 inline-block">
-            <i class="fa-regular fa-clock mr-2"></i>
-            {{ time.Format ":date_long" .PublishDate }}
-          </li>
-        </ul>
-        <div class="content mb-10">
-          {{ partial "toc.html" (dict "Class" "blog" "Collapsed" false "TableOfContents" .TableOfContents ) }}
-          {{ .Content }}
-        </div>
-        <div class="row items-start justify-between">
-          {{ $keywords:= .Params.keywords }}
-          {{ if $keywords }}
-          <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
-            <h5 class="mr-3">{{ T "keywords" }} :</h5>
-            <ul>
-              {{ range $i,$p:= $keywords }}
-              <li class="inline-block">
-                <a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                  href="{{ `keywords/` | relLangURL }}{{ . | urlize | lower }}/">
-                  {{ . | humanize }}
-                </a>
+          <h1 class="mb-4 h2">
+            {{ .Title }}
+          </h1>
+          <ul class="mb-4">
+            <li class="inline-block mr-4">
+              <a href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}/">
+                <i class="mr-2 fa-regular fa-circle-user"></i>{{ .Params.author }}
+              </a>
+            </li>
+            {{ $topics:= .Params.topics }}
+            {{ if $topics }}
+              <li class="inline-block mr-4">
+                <i class="mr-2 fa-regular fa-folder"></i>
+                {{ range $i,$p:= $topics }}
+                  <a href="{{ `topics/` | relLangURL }}{{ . | urlize | lower }}/" class=""
+                    >{{ . | humanize }}{{ if ne $i (sub
+                      (len $topics) 1)
+                    }}
+                      {{ "," }}
+                    {{ end }}
+                  </a>
+                {{ end }}
               </li>
-              {{ end }}
-            </ul>
+            {{ end }}
+            <li class="inline-block mr-4">
+              <i class="mr-2 fa-regular fa-clock"></i>
+              {{ time.Format ":date_long" .PublishDate }}
+            </li>
+          </ul>
+          <div class="mb-10 content">
+            {{ partial "toc.html" (dict "Class" "blog" "Collapsed" false "TableOfContents" .TableOfContents ) }}
+            {{ .Content }}
           </div>
+          <div class="items-start justify-between row">
+            {{ $keywords:= .Params.keywords }}
+            {{ if $keywords }}
+              <div class="flex items-center mb-10 lg:col-5 lg:mb-0">
+                <h5 class="mr-3">{{ T "keywords" }} :</h5>
+                <ul>
+                  {{ range $i,$p:= $keywords }}
+                    <li class="inline-block">
+                      <a class="block px-3 py-1 m-1 rounded bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark hover:text-white" href="{{ `keywords/` | relLangURL }}{{ . | urlize | lower }}/">
+                        {{ . | humanize }}
+                      </a>
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            {{ end }}
+            <div class="flex items-center lg:col-4">
+              {{ partial "social-share" (dict "Context" . "Class" "share-icons" "Title" (T "share") "Whatsapp" false
+                "Telegram" false "Linkedin" false "Pinterest" false "Tumblr" false "Vk" false)
+              }}
+            </div>
+          </div>
+          <!-- comments -->
+          {{ if site.Config.Services.Disqus.Shortname }}
+            <div class="mt-20">
+              {{ template "_internal/disqus.html" . }}
+            </div>
           {{ end }}
-          <div class="lg:col-4 flex items-center">
-            {{ partial "social-share" (dict "Context" . "Class" "share-icons" "Title" (T "share") "Whatsapp" false
-            "Telegram" false "Linkedin" false "Pinterest" false "Tumblr" false "Vk" false) }}
+        </article>
+      </div>
+
+      <!-- Related posts -->
+      {{ $related := (where site.RegularPages "Section" "in" site.Params.mainSections) | intersect (where
+        site.RegularPages ".Title" "!=" .Title) | union (site.RegularPages.Related . )
+      }}
+      {{ $related = $related | shuffle | first 3 }}
+      {{ with $related }}
+        <div class="pb-0 section">
+          <h2 class="mb-12 h3">{{ T "related_posts" }}</h2>
+          <div class="row">
+            {{ range . }}
+              <div class="lg:col-4 md:col-6 mb-14">
+                {{ partial "components/tool-card" . }}
+              </div>
+            {{ end }}
           </div>
         </div>
-        <!-- comments -->
-        {{ if site.Config.Services.Disqus.Shortname }}
-        <div class="mt-20">
-          {{ template "_internal/disqus.html" . }}
-        </div>
-        {{ end }}
-      </article>
+      {{ end }}
     </div>
-
-    <!-- Related posts -->
-    {{ $related := (where site.RegularPages "Section" "in" site.Params.mainSections) | intersect (where
-    site.RegularPages ".Title" "!=" .Title) | union (site.RegularPages.Related . ) }}
-    {{ $related = $related | shuffle | first 3 }}
-    {{ with $related }}
-    <div class="section pb-0">
-      <h2 class="h3 mb-12">{{ T "related_posts" }}</h2>
-      <div class="row">
-        {{ range . }}
-        <div class="lg:col-4 md:col-6 mb-14">
-          {{ partial "components/tool-card" . }}
-        </div>
-        {{ end }}
-      </div>
-    </div>
-    {{ end }}
-  </div>
-</section>
+  </section>
 {{ end }}

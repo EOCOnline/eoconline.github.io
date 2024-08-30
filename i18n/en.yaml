@@ -4,6 +4,8 @@ send: Send
 related_posts: Related Posts
 categories: Categories
 tags: Tags
+topics: Topics
+keywords: Keywords
 toc: Table of Contents
 share: Share
 search_input_placeholder: Search Post...

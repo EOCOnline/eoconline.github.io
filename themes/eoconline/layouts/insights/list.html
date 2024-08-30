@@ -6,7 +6,7 @@
 
   <section class="section">
     <div class="container">
-      <div class="row justify-center">
+      <div class="justify-center row">
         <h6 class="self-center">Insights are temporal notices, reviews and notes - that "expire".</h6>
       </div>
     </div>
@@ -32,31 +32,44 @@
 
         <!-- sidebar -->
         <div class="lg:col-4">
-          <!-- calendar widget -->
+          <!--
+            Hugo Calendar widget:
+            © www.github.com/eoc.online/hugo-calendar-widget
+            'Insights' refer to 'blogs' or 'posts' in this context.
+          -->
 
           <!-- execute of template failed: template: insights/list.html:26:70: executing "main" at <.URL>: can't evaluate field URL in type *hugolib.pageState      -->
           {{ $currentTaxonomy := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
-          <!-- .Pages | jsonify }}
-          # Pages = len .Pages }}; # .Site.Pages =  len .Site.Pages }}<br />
-
-          -->
-
-          <!--  partialCached "calendar"
-            "CurrentTaxonomy" $currentTaxonomy vs. context" .
-          -->
 
           {{ $archive:= .Pages.GroupByDate "2006" }}
+          {{ $initialPages := first 3 .Pages.ByPublishDate }}
 
-          {{ partialCached "calendar" (dict "context" . "from" 2010 "fromMonth" 1 "to" (now.Format "2006") "toMonth" (now.Format "1") "pages" .Site.Pages) }}
 
+          <p>First Article Date: {{ (index $initialPages 0).Date.Format "02 Jan 2006" }}</p>
 
           <hr />
-          <br />
-          <!-- partialCached "calendar" ( dict "Archive" $archive "from" "2016" "to" "2024" "fromMonth" "1" "toMonth" "12" ) -->
 
-          <!-- widget -->
-          {{ $widget:= site.Params.widgets.sidebar }}
-          {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+          <ul>
+            {{ range  $initialPages }}
+              <li>
+                <p>1st 4: <a href="{{ .Permalink }}">{{ .Title }}</a></p>
+                <time>{{ .Date.Format "02 Jan 2006" }}</time>
+              </li>
+            {{ end }}
+          </ul>
+
+          <h3>init date: $initialPage.Date</h3>
+          {{ $from := "2009" }}<!--$initialDate.Date.Format "2006" }}-->
+          {{ $fromMonth := "1" }}
+          <!--$initialDate.Date.Format "1" }}
+          -->
+          {{ partialCached "calendar" (dict "context" . "from" $from "fromMonth" $fromMonth "to" (now.Format "2006") "toMonth" (now.Format "1") "pages" .Site.Pages) }}
+
+
+          <!-- widget wrapper
+           $widget:= site.Params.widgets.sidebar }}
+           partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+          -->
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-<!-- Purpose: Display a year's worth of months in a calendar -->
+<!-- Purpose: Display months from 1 year -->
 
 {{ $months := seq 12 }}
 {{ $context := .context }}
@@ -32,40 +32,29 @@
   {{ end }}
 {{ end }}
 
+{{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
 
-<div class="mx-0 calendar-year">
-  {{ $articlesThisYear := index ($context.Scratch.Get "ArticlesPerYear") ( $yearStr ) }}
+<div class="flex ">
+{{ if gt $articlesThisYear 0 }}
+  <span class="year-has-articles">
+{{ else }}
+  <span class="hidden year-no-articles">
+  {{ $articlesThisYear = 0 }}
+{{ end }}
 
-  {{ if gt $articlesThisYear 0 }}
-    <button aria-label="toggle year" class="flex rounded-md close-folder hover:bg-sky-200 year-has-articles">
-      &nbsp;<a href="/archive/{{ $year }}/"><h5 class="hover:bg-sky-400 pl-5">{{ $yearStr }}</h5></a>
-      <span class="pt-1 text-sm calendar-year-totals ">&nbsp;&nbsp;({{ $articlesThisYear }})</span>
-    </button>
-      <span class="flex flex-row flex-wrap content-start flex-initial px-1">
-        {{ range $months }}
-          {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
-            {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
-          {{ end }}
-        {{ end }}
+  <button aria-label="toggle year" class="flex rounded-md close-folder hover:bg-sky-200">
+    &nbsp;<a href="/archive/{{ $year }}/"><h5 class="hover:bg-sky-400">{{ $yearStr }}</h5></a>
+    <span class="pt-1 text-sm">&nbsp;({{ $articlesThisYear }})</span>
+  </button>
 
-      </span>
-      <hr class="hidden mt-5 mb-3 divide-y month-has-articles divide-slate-400" />
-    <!-----------------------------------------
-
-    -->
-  {{ else }}
-    <button aria-label="toggle year" calendar-year class="rounded-md pr-5 px-2 close-folder hover:bg-sky-200 year-no-articles">
-      <a href="/archive/{{ $year }}/"><h5 class="hover:bg-blue-400 pl-5">{{ $yearStr }}</h5></a>
-      <span class="pt-1 text-sm calendar-year-totals ">&nbsp; ({{ $articlesThisYear }})&nbsp;</span>
-    </button>
-
-    <span class="">
-      {{ range $months }}
-        {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
-          {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
-        {{ end }}
+  <span class="flex flex-row flex-wrap content-start flex-initial px-1">
+    {{ range $months }}
+      {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
+        {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
       {{ end }}
-    </div>
-    <!-- hr class="hidden mb-5 divide-y month-no-articles divide-slate-400" / -->
-  {{ end }}
+    {{ end }}
+  </span>
+
+  <hr class="hidden mt-5 mb-3 divide-y month-has-articles divide-slate-400" />
+  </span>
 </div>
