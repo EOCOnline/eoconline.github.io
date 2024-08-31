@@ -42,9 +42,7 @@
 
   {{ if le $nextYear $to }}
     {{ $context.Scratch.Add "consideredYears" ($nextYear) }}
-    <!-- had been: $context.Scratch.Add "consideredYears" (slice $nextYear) }} -->
     {{ $context.Scratch.Set "currentYear" $nextYear }}
-    <!-- br />Adding consideredYears: slice { $nextYear }}<br /-->
   {{ end }}
 
 {{ end }}
@@ -52,7 +50,7 @@
 
 <h5 class="pt-5">Insights by Year & Month</h5>
 
-<!-- p>Calendar from: {{ $from }}-{{ $fromMonth }} To: {{ $to }}-{{ $toMonth }}</p -->
+<!-- p>From: {{ $from }}-{{ $fromMonth }} To: {{ $to }}-{{ $toMonth }}</p -->
 
 <!-- Drop down button with various views:
       1) Years: Just Years with insights, no months
@@ -74,7 +72,6 @@
 </div>
 
 <div class="p-3 rounded-md bg-[#F6F6F6]">
-  <!-- border-dotted border-2 border-indigo-600 -->
   {{ range ($context.Scratch.Get "consideredYears") }}
     <!-- <br />Calendar calling year '{ . }}' with From: { $from }}-{ $fromMonth }} To: { $to }}-{ $toMonth }}<br /> -->
     {{ partialCached "calendar/year" (dict "context" $context "year" . "from" $from "fromMonth" $fromMonth "to" $to
@@ -99,10 +96,7 @@
     year.querySelectorAll(".month-has-articles").forEach(month => month.classList.toggle("hidden"));
 
     // Only for "all" view: display months without articles
-    let viewSelect = document.getElementById("viewSelect");
-    if (viewSelect.options[viewSelect.selectedIndex].text == "{{ $view4_text }}") {
-      //console.log("View = " + viewSelect.options[viewSelect.selectedIndex].text);
-      //year.querySelectorAll(".calendar-month-calendar").forEach(month => month.classList.toggle("hidden"));
+    if (document.getElementById("viewSelect").options[viewSelect.selectedIndex].text == "{{ $view4_text }}") {
       year.querySelectorAll(".month-no-articles").forEach(month => month.classList.toggle("hidden"));
     }
 

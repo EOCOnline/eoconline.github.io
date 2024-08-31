@@ -33,10 +33,10 @@
 {{ $articlesThisMonth := index ($context.Scratch.Get "ArticlesPerMonth") (string (delimit (slice $year $monthTwoLetters) "-")) }}
 
 {{ if gt $articlesThisMonth 0 }}
-  <div class="hidden pr-3 font-bold month-has-articles">
+  <div class="hidden mb-1 mr-3 font-bold month-has-articles">
     <a href="/archive/{{ delimit (slice $year $month) "-" }}" class="rounded-md hover:bg-sky-200">
 {{else}}
-  <div class="hidden pr-3 font-bold month-no-articles">
+  <div class="hidden mb-1 mr-3 font-bold month-no-articles">
     <a >
   {{ $articlesThisMonth = 0 }}
 {{end}}
@@ -45,7 +45,7 @@
       <span class="text-sm">({{ $articlesThisMonth }})</span>
     </a>
 
-    <div class="mb-5 shadow-md calendar-month-calendar">
+    <div class="shadow-md calendar-month-calendar">
       <!-- List days of the week as column headings -->
       <ul class="calendar-weekdays">
         {{- range $daysPerWeek -}}
