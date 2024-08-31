@@ -37,38 +37,39 @@
 {{ end }}
 
 
-<h5 class="pt-5">Insights by Year & Month</h5>
-<!-- p>From: {{ $fromYear }}-{{ $fromMonth }} To: {{ $to }}-{{ $toMonth }}</p -->
+<div class="mb-4 hugo-calendar-widget">
+  <h5>Insights by Year & Month</h5>
+  <!-- p>From: {{ $fromYear }}-{{ $fromMonth }} To: {{ $to }}-{{ $toMonth }}</p -->
 
-{{ $view1_text := "Years, no months" }}
-{{ $view1_title := "Just Years with insights, no months" }}
-{{ $view2_text := "Years + months" }}
-{{ $view2_title := "Just Years with insights, just months with insights" }}
-{{ $view3_text := "Years + months + calendars" }}
-{{ $view3_title := "Just Years with insights, just months with insights, plus calendars" }}
-{{ $view4_text := "All" }}
-{{ $view4_title := "All Years, display months and calendars" }}
-{{ $view5_text := "Hide" }}
-{{ $view5_title := "Hide entire Calendar widget" }}
+  {{ $view1_text := "Years, no months" }}
+  {{ $view1_title := "Just Years with insights, no months" }}
+  {{ $view2_text := "Years + months" }}
+  {{ $view2_title := "Just Years with insights, just months with insights" }}
+  {{ $view3_text := "Years + months + calendars" }}
+  {{ $view3_title := "Just Years with insights, just months with insights, plus calendars" }}
+  {{ $view4_text := "All" }}
+  {{ $view4_title := "All Years, display months and calendars" }}
+  {{ $view5_text := "Hide" }}
+  {{ $view5_title := "Hide entire Calendar widget" }}
 
 
-<div class="block text-right">
-  <label for="viewSelect" class="text-sm font-semibold leading-6 text-gray-900">View: &nbsp;</label>
-  <select id="viewSelect" name="viewSelect" class="py-0 pl-2 pr-10 mt-2 text-gray-900 border-0 rounded-md ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-200 sm:text-sm sm:leading-6" oninput="changeView()">
-    <option selected title="{{ $view1_title }}">{{ $view1_text }}</option>
-    <option title="{{ $view2_title }}">{{ $view2_text }}</option>
-    <option title="{{ $view3_title }}">{{ $view3_text }}</option>
-    <option title="{{ $view4_title }}">{{ $view4_text }}</option>
-    <option title="{{ $view5_title }}">{{ $view5_text }}</option>
-  </select>
-</div>
+  <div class="block mb-2 text-right">
+    <label for="viewSelect" class="text-sm font-semibold leading-6 text-gray-900">View: &nbsp;</label>
+    <select id="viewSelect" name="viewSelect" class="py-0 pl-2 pr-10 mt-2 text-gray-900 border-0 rounded-md ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-200 sm:text-sm sm:leading-6" oninput="changeView()">
+      <option selected title="{{ $view1_title }}">{{ $view1_text }}</option>
+      <option title="{{ $view2_title }}">{{ $view2_text }}</option>
+      <option title="{{ $view3_title }}">{{ $view3_text }}</option>
+      <option title="{{ $view4_title }}">{{ $view4_text }}</option>
+      <option title="{{ $view5_title }}">{{ $view5_text }}</option>
+    </select>
+  </div>
 
-<div class="p-3 rounded-md bg-[#F6F6F6] divide-x-8y">
   {{ range ($context.Scratch.Get "consideredYears") }}
     {{ partialCached "calendar/year" (dict "context" $context "year" . "from" $fromYear "fromMonth" $fromMonth "to" $to
       "toMonth" $toMonth) (string (delimit (slice $fromYear $fromMonth $to $toMonth .) ""))
     }}
   {{ end }}
+
 </div>
 <!--
 
