@@ -14,6 +14,10 @@ $color-white    : #ffffff;
   font-family: "Font Awesome 6 Free";
 }
 
+.calendar-month-calendar {
+  background-color: #ffffff;
+}
+
 .calendar-weekdays {
   display        : flex;
   flex-grow      : 1;
@@ -61,25 +65,28 @@ $color-white    : #ffffff;
   text-align : center;
 
   &.calendar-day-future {
-    opacity: 0.4;
+    opacity         : 0.4;
+    background-color: chartreuse;
   }
 
   &.calendar-day-has-articles {
-    &::before {
-      content         : '';
-      width           : $gutter-default * 1.1;
-      height          : $gutter-default * 1.1;
-      position        : absolute;
-      top             : 50%;
-      left            : 50%;
-      background-color: $color-accent;
-      transform       : translate(-50%, -50%);
-      z-index         : -1;
-      border-radius   : 50%;
+    /* &::before {
+      content           : '';
+      width             : $gutter-default * 1.1;
+      height            : $gutter-default * 1.1;
+      position          : absolute;
+      top               : 50%;
+      left              : 50%;
+      //background-color: red; used to work...
+      transform         : translate(-50%, -50%);
+      z-index           : -1;
+      border-radius     : 50%;
     }
-
-    color   : $color-white;
-    position: relative;
+*/
+    background-image  : radial-gradient(maroon, rgb(247, 247, 95), white);
+    //background-color: $color-accent;
+    color             : $color-white;
+    position          : relative;
 
     a {
       color: $color-white;
@@ -91,6 +98,7 @@ $color-white    : #ffffff;
   }
 
   &.calendar-day-is-today {
+    /*
     &::before {
       content : '';
       width   : $gutter-default * 1;
@@ -104,9 +112,10 @@ $color-white    : #ffffff;
       z-index      : -1;
       border-radius: 50%;
     }
-
-    position   : relative;
-    font-weight: 800;
-    color      : $color-accent;
+      */
+    background-image: radial-gradient(cyan, rgb(247, 247, 95), white);
+    position        : relative;
+    font-weight     : 800;
+    color           : $color-accent;
   }
 }
