@@ -1,4 +1,18 @@
-EDXL – Distribution Element
+---
+title: "EDXL – Distribution Element"
+meta_title: ""
+description: ""
+date: 2024-12-31T05:00:00Z
+image: "/images/image-placeholder.png"
+author: "John Cornelison"
+categories: ["FEMA"]
+tags: [""]
+Topics: []
+Keywords: []
+draft: true
+---
+
+## EDXL – Distribution Element
 
 6/19/21
 
@@ -13,13 +27,13 @@ EDXL – Distribution Element
 
 Eoc.online to offer:
 
--   EDXL-ED API
--   URI Service (x requests/mth free)
--   Support tiers, incl ‘champion’
--   Resource Tracker using EDXL-RE
+- EDXL-ED API
+- URI Service (x requests/mth free)
+- Support tiers, incl ‘champion’
+- Resource Tracker using EDXL-RE
 
 iLog (6/29/21)
 
--   to implement 3 msg types: CSV, EDXL-DE, HXL
--   EDXL-DE router
--   Vocabulary service: ICS & Sahana-esque alternatives
+- to implement 3 msg types: CSV, EDXL-DE, HXL
+- EDXL-DE router
+- Vocabulary service: ICS & Sahana-esque alternatives

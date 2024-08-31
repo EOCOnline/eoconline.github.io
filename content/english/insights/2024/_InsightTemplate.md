@@ -2,7 +2,7 @@
 title: ""
 meta_title: ""
 description: ""
-date: 2024-06-64T05:00:00Z
+date: 2024-12-31T05:00:00Z
 image: "/images/image-placeholder.png"
 author: "John Cornelison"
 categories: ["FEMA"]
@@ -14,4 +14,4 @@ draft: true
 
 ## FEMAs moves to support EOCs and IMTs
 
->   FEMAs moves to support EOCs and IMTs
+> FEMAs moves to support EOCs and IMTs

@@ -3,7 +3,7 @@
 {{ $months := seq 12 }}
 {{ $context := .context }}
 {{ $year := .year }}
-{{ $from := .from }}
+{{ $fromYear := .fromYear }}
 {{ $fromMonth := .fromMonth }}
 {{ $to := .to }}
 {{ $toMonth := .toMonth }}
@@ -42,19 +42,19 @@
   {{ $articlesThisYear = 0 }}
 {{ end }}
 
-  <button aria-label="toggle year" class="flex rounded-md close-folder hover:bg-sky-200">
-    &nbsp;<a href="/archive/{{ $year }}/"><h5 class="hover:bg-sky-400">{{ $yearStr }}</h5></a>
-    <span class="pt-1 text-sm">&nbsp;({{ $articlesThisYear }})</span>
-  </button>
+    <button aria-label="toggle year" class="flex rounded-md close-folder hover:bg-sky-200">
+      &nbsp;<a href="/archive/{{ $year }}/"><h5 class="hover:bg-sky-400">{{ $yearStr }}</h5></a>
+      <span class="pt-1 text-sm">&nbsp;({{ $articlesThisYear }})</span>
+    </button>
 
-  <span class="flex flex-row flex-wrap content-start flex-initial px-1">
-    {{ range $months }}
-      {{ if or (and (ne $year $from) (ne $year $to)) (and (eq $year $from) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
-        {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
+    <span class="flex flex-row flex-wrap content-start flex-initial px-1">
+      {{ range $months }}
+        {{ if or (and (ne $year $fromYear) (ne $year $to)) (and (eq $year $fromYear) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
+          {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
+        {{ end }}
       {{ end }}
-    {{ end }}
-  </span>
+    </span>
+    <hr class="hidden w-full mt-4 mb-3 divide-y month-has-articles divide-slate-400" />
 
-  <hr class="hidden mt-4 mb-3 divide-y month-has-articles divide-slate-400" />
   </span>
 </div>
