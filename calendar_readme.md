@@ -33,7 +33,7 @@ top level page, "Archive", with sub-pages as determined by the Archive front
 matter in your pages: see below under "Archive Taxonomy" for details on how to
 make this happen.
 
-<img title="" src="./assets/images/calendar_readme/9-1-2024%20at%209.04.07%20AM.png" alt="Hugo Archive Screenshot" width="114">
+<img title="" src="./assets/images/calendar_readme/archive_folders.png" alt="Hugo Archive Screenshot" width="150">
 
 ### Calendar Widget
 
@@ -46,7 +46,7 @@ dropdown menu as shown below. On hover, tooltips provide a bit more explanation.
 - All views are responsive: they shrink & grow depending on media & browser
   screen size.
 
-<img title="" src="./assets/images/calendar_readme/2024-08-31-13-20-10-image.png" alt="Hugo Archive Screenshot" width="401">
+<img title="changing views" src="./assets/images/calendar_readme/changing_views.png" alt="changing views" width="400">
 
 The following describes each view in more detail, detailing some of the user
 interaction and features for each view.
@@ -55,7 +55,7 @@ interaction and features for each view.
 
 > "Just Years with insights, no months"
 
-<img title="" src="./assets/images/calendar_readme/8-31-2024%20at%2011.27.40%20AM.png" alt="8-31-2024 at 11.27.40 AM.png" width="400">
+<img title="default_view" src="./assets/images/calendar_readme/default_view.png" alt="default_view" width="400">
 
 The initial (default) view is shown above.
 
@@ -65,9 +65,9 @@ The initial (default) view is shown above.
 
 - Years with no posts are hidden by default.
 
-<img title="" src="./assets/images/calendar_readme/8-31-2024%20at%2011.28.29%20AM.png" alt="8-31-2024 at 11.28.29 AM.png" width="400">
+<img title="month_hover" src="./assets/images/calendar_readme/month_hover.png" alt="month_hover" width="400">
 
-<img title="" src="./assets/images/calendar_readme/8-31-2024%20at%2011.28.37%20AM.png" alt="8-31-2024 at 11.28.37 AM.png" width="168">
+<img title="month_archive_link" src="./assets/images/calendar_readme/month_archive_link.png" alt="month_archive_link" width="150">
 
 - As shown above, users can click on the folder icon (the light blue area on
   hover) to open the year's folder, thus showing months.
@@ -78,7 +78,7 @@ The initial (default) view is shown above.
 - Multiple folders can be independently opened and closed as desired.
 
 - A 'quirk' of the current code, that I've left as a 'bonus feature', is that on
-  initial selection, opened years also show mini-calendars. This doesn't happen
+  initial selection, opened years also show mini-calendar months. This doesn't happen
   once the 'Years + Months' view is chosen, but only for the 'Years + Months +
   Calendar' or 'All' views.
 
@@ -86,7 +86,7 @@ The initial (default) view is shown above.
 
 > "Just Years with insights, just months with insights"
 
-<img title="" src="./assets/images/calendar_readme/8-31-2024%20at%2011.29.28%20AM.png" alt="8-31-2024 at 11.29.28 AM.png" width="400">
+<img title="years+months" src="./assets/images/calendar_readme/years+months.png" alt="years+months" width="400">
 
 Selecting "Year + Months" in the View dropdown opens all years that have any
 blogs, displaying the months that have blogs.
@@ -107,18 +107,18 @@ blogs, displaying the months that have blogs.
 
 > "Just Years with insights, just months with insights, plus calendars"
 
-<img title="" src="./assets/images/calendar_readme/8-31-2024%20at%2011.29.53%20AM.png" alt="8-31-2024 at 11.29.53 AM.png" width="400">
+<img title="years+months+calendars" src="./assets/images/calendar_readme/years+months+calendars.png" alt="years+months+calendars" width="400">
 
 **Notes:**
 
-- The addition of the mini-calendars provides a visual display of those months
+- The addition of the mini-calendar months provides a visual display of those months
   with blogs.
 
 - Hovering on a day with blog posts displays the number of posts for the day.
 
-  <img title="" src="./assets/images/calendar_readme/8-31-2024%20at%2011.32.48%20AM.png" alt="8-31-2024 at 11.32.48 AM.png" width="400">
+  <img title="day_hover" src="./assets/images/calendar_readme/day_hover.png" alt="day_hover" width="400">
 
-  <img title="" src="./assets/images/calendar_readme/8-31-2024%20at%2011.33.03%20AM.png" title="" alt="8-31-2024 at 11.33.03 AM.png" width="181">
+  <img title="day_hover_link" src="./assets/images/calendar_readme/day_hover_link.png" alt="day_hover_link" width="181">
 
 - Clicking on a day with blog posts navigates to the archive page with previews
   of that day's posts.
@@ -130,7 +130,7 @@ blogs, displaying the months that have blogs.
 
 > "All Years, display months and calendars"
 
-<img src="./assets/images/calendar_readme/8-31-2024%20at%2011.32.21%20AM.png" title="" alt="8-31-2024 at 11.32.21 AM.png" width="400">
+<img src="./assets/images/calendar_readme/all_view.png" title="all_view" alt="all_view" width="400">
 
 Only this view shows ALL years and ALL months - i.e., even those with _zero_
 blog posts or articles. (This was the only option in the original widget I
@@ -143,7 +143,7 @@ started with.)
 
 > "Hide entire Calendar widget"
 
-<img src="./assets/images/calendar_readme/8-31-2024%20at%2011.33.19%20AM.png" title="" alt="8-31-2024 at 11.33.19 AM.png" width="400">
+<img src="./assets/images/calendar_readme/hidden.png" title="hidden" alt="hidden" width="400">
 
 This just hides the widget body, say if the user wants to maximize screen real
 estate for other purposes. The widget heading remains visible.
@@ -156,7 +156,7 @@ The directory structure at
 [www.github.com/eoconline/hugo-calendar-widget](www.github.com/eoconline/hugo-calendar-widget)
 should basically match your existing Hugo site.
 
-<img src="./assets/images/calendar_readme/9-1-2024 at 11.54.19 AM.png" title="Files inserted for the Hugo Calendar Widget" alt="Files inserted for the Hugo Calendar Widget" width="400">
+<img src="./assets/images/calendar_readme/calendar_widget_files.png" title="Files inserted for the Hugo Calendar Widget" alt="Files inserted for the Hugo Calendar Widget" width="400">
 
 1. If so, rename the 'themes/mySite' directory (above) to match your website
    name and then drop our files into your existing website - <u>no files should
@@ -236,7 +236,7 @@ The following provides some guidance.
 
 The original project just used an expanded `assets/scss/calendar.scss` file. The
 `calendar.html`, `year.html` and `month.html` files now incorporate [Tailwind
-CSS](https://tailwindcss.com/) to eliminate run-time processing. The mini-calendars (i.e., the `day.html` file) still rely on the current `assets/scss/calendar.scss` file.
+CSS](https://tailwindcss.com/) to eliminate run-time processing. The mini-calendar months (i.e., the `day.html` file) still rely on the current `assets/scss/calendar.scss` file.
 
 ### Widget Parameters
 
