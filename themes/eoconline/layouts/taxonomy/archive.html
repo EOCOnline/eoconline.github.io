@@ -1,0 +1,10 @@
+<!--
+    Hugo Calendar widget:
+    © www.github.com/eoc.online/hugo-calendar-widget
+-->
+
+<h1>Archive</h1>
+<p>url= .URL</p>
+
+<!-- $currentTaxonomy := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }} -->
+{{ .Pages | jsonify }}
