@@ -6,7 +6,7 @@
 {{ $context := .context }}
 {{ $fromYear := int .fromYear }}
 {{ $fromMonth := int .fromMonth }}
-{{ $to := int .to }}
+{{ $toYear := int .toYear }}
 {{ $toMonth := int .toMonth }}
 {{ $pages := .pages }}
 
@@ -25,11 +25,11 @@
   {{ $context.Scratch.SetInMap "ArticlesPerDay" .Key (len .Pages) }}
 {{ end }}
 
-{{ range $i, $sequence := (seq ((sub $to $fromYear))) }}
+{{ range $i, $sequence := (seq ((sub $toYear $fromYear))) }}
   {{ $currentYear := $context.Scratch.Get "currentYear" }}
   {{ $nextYear := (add $fromYear $sequence) }}
 
-  {{ if le $nextYear $to }}
+  {{ if le $nextYear $toYear }}
     {{ $context.Scratch.Add "consideredYears" ($nextYear) }}
     {{ $context.Scratch.Set "currentYear" $nextYear }}
   {{ end }}
@@ -39,7 +39,7 @@
 
 <div class="mb-4 hugo-calendar-widget">
   <h6>Insights by Year & Month</h6>
-  <!-- p>From: {{ $fromYear }}-{{ $fromMonth }} To: {{ $to }}-{{ $toMonth }}</p -->
+  <!-- p>From: {{ $fromYear }}-{{ $fromMonth }} To: {{ $toYear }}-{{ $toMonth }}</p -->
 
   {{ $view1_text := "Years, no months" }}
   {{ $view1_title := "Just Years with insights, no months" }}
@@ -65,8 +65,8 @@
   </div>
 
   {{ range ($context.Scratch.Get "consideredYears") }}
-    {{ partialCached "calendar/year" (dict "context" $context "year" . "from" $fromYear "fromMonth" $fromMonth "to" $to
-      "toMonth" $toMonth) (string (delimit (slice $fromYear $fromMonth $to $toMonth .) ""))
+    {{ partialCached "calendar/year" (dict "context" $context "year" . "fromYear" $fromYear "fromMonth" $fromMonth "toYear" $toYear
+      "toMonth" $toMonth) (string (delimit (slice $fromYear $fromMonth $toYear $toMonth .) ""))
     }}
   {{ end }}
 

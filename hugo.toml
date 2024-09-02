@@ -212,4 +212,4 @@ lazy = true
   tag = 'tags' # specific keywords for Insights
   topic = 'topics' # analogous to categories - for resources
   keyword = 'keywords' # analogous to tags - for resources
-  archive = 'archive' # for Calendar widget (see \layouts\partials\calendar\readme.md)
+  archive = 'archive' # for Calendar widget (see \calendar_readme.md)

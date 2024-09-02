@@ -5,7 +5,7 @@
 {{ $year := .year }}
 {{ $fromYear := .fromYear }}
 {{ $fromMonth := .fromMonth }}
-{{ $to := .to }}
+{{ $toYear := .toYear }}
 {{ $toMonth := .toMonth }}
 
 {{ $yearStr := printf "%04d" $year }}
@@ -35,7 +35,7 @@
 
     <span class="flex flex-row flex-wrap content-start flex-initial px-1">
       {{ range $months }}
-        {{ if or (and (ne $year $fromYear) (ne $year $to)) (and (eq $year $fromYear) (ge . $fromMonth)) (and (eq $year $to) (le . $toMonth)) }}
+        {{ if or (and (ne $year $fromYear) (ne $year $toYear)) (and (eq $year $fromYear) (ge . $fromMonth)) (and (eq $year $toYear) (le . $toMonth)) }}
           {{ partialCached "calendar/month" (dict "context" $context "year" $year "isLeapYear" $isLeapYear "month" .) (string  (delimit (slice $year .) "")) }}
         {{ end }}
       {{ end }}

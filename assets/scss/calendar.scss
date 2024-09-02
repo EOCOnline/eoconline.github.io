@@ -5,14 +5,17 @@ $color-accent   : #ff6600;
 $color-white    : #ffffff;
 
 .open-folder::before {
+  //background-image  : url(open-folder.svg);
   content    : "\f07c";
   font-family: "Font Awesome 6 Free";
 }
 
 .close-folder::before {
+  //background-image  : url(close-folder.svg);
   content    : "\e185";
   font-family: "Font Awesome 6 Free";
 }
+
 
 .calendar-month-calendar {
   background-color: #ffffff;

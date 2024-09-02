@@ -195,18 +195,23 @@ should basically match your existing Hugo site.
 ### Installation: Archive Taxonomy
 
 To create the Archive, we use the native
-[Hugo taxonomy](https://gohugo.io/methods/site/taxonomies/) facility. It auto-generates Archive pages.
+[Hugo taxonomy](https://gohugo.io/methods/site/taxonomies/) ([also this](https://gohugo.io/content-management/taxonomies/)) facility. It auto-generates Archive pages.
 
 1. Edit the existing `hugo.toml` file at the root of your web site, creating the
-   archive as a taxonomy by inserting these lines:
+   archive as a taxonomy by inserting a line with the singular & plural form of the new taxonomy term under the `[taxonomy]` group:
 
 #### hugo.toml
 
 ```toml
-# adding taxonomy term 'archive'
+# adding 'archive' taxonomy
 [taxonomies]
-archive = "archive"
+    archive = 'archive' # for Calendar widget (see \calendar_readme.md)
 ```
+
+N.B., typical form for taxonomies in the `hugo.toml` file is <SINGULAR_NAME> = <PLURAL_NAME>,
+but I want to site's final directory name to be 'Archive', not 'Archives',
+so strayed here from tradition. Just use the 'plural' term in the front matter
+as shown next.
 
 Next, edit all the pages you desire rendered by the calendar widget. (I edited
 those in my `\content\english\articles` directory.) Add the following front
@@ -226,17 +231,43 @@ archive = ["2024","2024-03","2024-03-06"]
 In this example the page will be rendered in the archive of the Year 2024, the
 month of March and within the specific day’s archive at the 6th of March, 2024.
 
+---
+
 ## Programmable Modifications
 
 Feel free to modify current functionality if you are comfortable programming. Hugo is well documented, but uses the Go language internally if you need to delve into that.
 
 The following provides some guidance.
 
-### Styling
+### Functionality by file
 
-The original project just used an expanded `assets/scss/calendar.scss` file. The
-`calendar.html`, `year.html` and `month.html` files now incorporate [Tailwind
-CSS](https://tailwindcss.com/) to eliminate run-time processing. The mini-calendar months (i.e., the `day.html` file) still rely on the current `assets/scss/calendar.scss` file.
+### list.html
+
+As mentioned above in the first installation section, you need to put a call to the calendar widget where you want it to appear, perhaps above or below other partials components like Categories or Tags?
+
+These few lines use `.Pages.ByPublishDate` to derive a default starting year and month for the calendar widget - the oldest post in the `.Pages` collection, but easily changed to serve your needs.
+
+### calendar.html
+
+That call to the calendar widget is handles by the main partial file, `/layouts/partial/calendar.html`.
+
+Go commands are handled during the compile phase. New for this edition is a small section of Javascript that adds a View dropdown as exhaustively demonstrated above. Modifying the view results in calls to handler routines that change various class modes from `hidden` to the default, display.
+
+The widget parameters the calendar partial receives are provided using a `map` using `dict` (_'dict'ionaries provide key-value-maps like `dict key1 value1 key2 value2 ...`_).
+
+Context-based functions obviously need access to the larger context and data, and thats the first parameter.
+
+### year.html
+
+Calendar.html then repeatedly calls the `year.html` partial to render a single year. (Sub-partials are organized into sub-folder `layouts/partials/calendar/`.)
+
+### month.html
+
+The year partial then repeatedly calls `months.html` to render just the name of the months to be rendered.
+
+### day.html
+
+The month partial in turn calls `day.html` to render the mini-calndar month figures.
 
 ### Widget Parameters
 
@@ -260,7 +291,7 @@ Alter it to define a different beginning year range for the calendar. Use a four
 
 This defaults to the first blog/article's month. _If hardcoding something else, do <u>not</u> use a leading zero!_
 
-#### to
+#### toYear
 
 This defaults to the current year.
 
@@ -277,6 +308,13 @@ Alter it if you wish to reduce the calendar range. \__If hardcoding something el
 Pages refers to a Hugo collection of pages/articles/blogs/posts/insights to
 extract dates for the calendar from. This provides great flexibility to display calendars for other collections!
 
+### Styling
+
+The original project just used an expanded `assets/scss/calendar.scss` file. The `calendar.html`, `year.html` and `month.html` files now incorporate [Tailwind
+CSS](https://tailwindcss.com/) to eliminate run-time processing. The mini-calendar months (i.e., the `day.html` file) still rely on the current `assets/scss/calendar.scss` file.
+
+---
+
 ## Credits & Source
 
 This effort began in 2017 with the great work of RWI (known to me only by their
@@ -289,6 +327,8 @@ Significantly updating the original code & documentation, I've also created a
 bunch of different user selectable views. I'm re-releasing the project under the
 MIT license. The current open source code for this project is at:
 [www.github.com/eoconline/hugo-calendar-widget](<[www.github.com/eoconline/hugo-calendar-widget](http://www.github.com/eoconline/hugo-calendar-widget)>).
+
+---
 
 ## Issues
 
