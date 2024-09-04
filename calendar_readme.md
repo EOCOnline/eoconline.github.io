@@ -209,8 +209,8 @@ To create the Archive, we use the native
 ```
 
 N.B., typical form for taxonomies in the `hugo.toml` file is <SINGULAR_NAME> = <PLURAL_NAME>,
-but I want to site's final directory name to be 'Archive', not 'Archives',
-so strayed here from tradition. Just use the 'plural' term in the front matter
+but I want the site's final directory name to be 'Archive', not 'Archives',
+so strayed here from tradition. Just match whatever 'plural' term you use in the front matter
 as shown next.
 
 Next, edit all the pages you desire rendered by the calendar widget. (I edited
@@ -318,7 +318,7 @@ CSS](https://tailwindcss.com/) to eliminate run-time processing. The mini-calend
 ## Credits & Source
 
 This effort began in 2017 with the great work of RWI (known to me only by their
-intials). Their original web domain (**gohugohq**.com) now delivers spam, but
+initials). Their original web domain (**gohugohq**.com) now delivers spam, but
 fortunately the 2017 original article is available by the Way Back Machine!
 
 https://web.archive.org/web/20191212005200/https://gohugohq.com/partials/activity-calendar-posts/

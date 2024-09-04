@@ -3,40 +3,8 @@
     © www.github.com/eoc.online/hugo-calendar-widget
 -->
 
-<h1>Archive</h1>
-
-{{ $currentTaxonomy := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
-
-{{ $currentTaxonomy | jsonify }}
-
-{{ $taxonomy := .Site.Taxonomies[$currentTaxonomy] }}
-
-{{ $terms := slice }}
-
-{{ range $name, $taxonomy := $taxonomy }}
-  {{ $terms = $terms | append $name }}
-{{ end }}
-
-{{ range $terms }}
-  <h2>{{ . }}</h2>
-  <ul>
-    {{ range $name, $taxonomy := index $taxonomy . }}
-      <li><a href="{{ $taxonomy.Permalink }}">{{ $name }}</a></li>
-    {{ end }}
-  </ul>
-{{ end }}
-
-
+<h2>Archive</h2>
+<!-- check out <a href="https://gohugo.io/quick-reference/page-collections/">https://gohugo.io/quick-reference/page-collections/</a>
+<p>themes\eoconline\layouts\taxonomy\archive.html</p-->
 <!-- $currentTaxonomy := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }} -->
-<!-- .Pages | jsonify }} -->
-
-<p>Archive!...</p>
-<p>
-  failed to render pages: render of "term" failed: "D:\Projects\EOC.online\hugoplate\themes\eoconline\layouts\taxonomy\archive.html:13:60":
-  <br />
-  execute of template failed at <.URL>: can’t evaluate field URL in type page.Page
-</p>
-
-$currentTaxonomy := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0
-
-<!-- .Pages | jsonify }} -->
+<!-- .Pages | jsonify -->
