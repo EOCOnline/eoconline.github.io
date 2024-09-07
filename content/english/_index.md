@@ -50,5 +50,5 @@ features:
     button:
       enable: true
       label: "Join our nascent Discord community"
-      link: "https://discord.com/invite/6dbuFqPs"
+      link: "https://discord.gg/wJ4X3vcHKN"
 ---
