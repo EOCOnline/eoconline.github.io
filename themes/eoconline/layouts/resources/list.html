@@ -20,8 +20,8 @@
         </div>
         <!-- sidebar -->
         <div class="lg:col-4">
-          <!-- widget -->
-          {{ $widget:= site.Params.widgets.sidebar }}
+          <!-- widget - Only show Topics & Keywords -->
+          {{ $widget:= site.Params.widgets.sidebarTK }}
           {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
         </div>
       </div>

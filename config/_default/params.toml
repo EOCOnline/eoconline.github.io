@@ -99,6 +99,8 @@ js_url = 'https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs'
 ######################## sidebar widgets #########################
 [widgets]
 sidebar = ["categories", "tags", "topics", "keywords"]
+sidebarCT = ["categories", "tags"]
+sidebarTK = ["topics", "keywords"]
 
 
 # google map

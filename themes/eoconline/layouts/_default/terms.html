@@ -63,22 +63,6 @@
           {{ end }}
         {{ end }}
 
-
-        <!--
-          /* archives */}}
-         if eq .Permalink (`archives/` | absLangURL) }}
-           range site.Taxonomies.archives.ByCount }}
-            <li class="inline-block m-3">
-              <a href="{{ .Page.Permalink }}" class="block px-4 py-2 text-xl rounded bg-theme-light text-dark dark:bg-darkmode-theme-light dark:text-darkmode-dark">
-                 .Page.Title }}
-                <span class="px-2 ml-2 rounded bg-body dark:bg-darkmode-body">
-                  {{ .Count }}
-                </span>
-              </a>
-            </li>
-          end }}
-         end }}
-          -->
       </ul>
     </div>
   </section>

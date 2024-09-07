@@ -31,8 +31,8 @@
           {{ partialCached "calendar" (dict "context" . "fromYear" $fromYear "fromMonth" $fromMonth "toYear" (now.Format "2006") "toMonth" (now.Format "1") "pages" .Site.Pages) }}
 
 
-          <!-- widget wrapper -->
-          {{ $widget:= site.Params.widgets.sidebar }}
+          <!-- widget wrapper: only do Categories & Tags -->
+          {{ $widget:= site.Params.widgets.sidebarCT }}
           {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
         </div>
       </div>
