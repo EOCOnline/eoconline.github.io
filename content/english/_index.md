@@ -29,12 +29,11 @@ features:
     image: "/images/CardView.lg.512x456.png"
     content: "References, software & tools your EOC can repurpose and integrate to stay current & save time."
     bulletpoints:
-      - RangerTrak™ -- Track & map search & rescue members reporting via radio, without reliable cell or internet access
+      - RangerTrak™ -- Track & map search & rescue & CERT/ACS members reporting via radio, without reliable cell or internet access
       - OpenFemaNgClient™ -- A TypeScript & Angular Client for the openFEMA datasets/APIs
       - EOC Skillset Cross-Walk -- A handy spreadsheet to organize which skills apply to your various EOC positions
       - See what software is used by EOCs -- check out our ever expanding listing!
       - What national and International standards apply to EOC software -- and does that impact your EOC?
-      - Links to other resources we've found helpful
       - Links to other resources we've found helpful
     button:
       enable: true
@@ -44,8 +43,7 @@ features:
   - title: "We Are a Community"
     image: "/images/eoc.online.SkillsCrosswalk.512x455.png"
     content: "We've been involved in rural EOCs for decades, but need your input and suggestions to grow in areas that will help you. Our insights change frequently and are a reaction to current events. 
-    EOC.online represents a cooperative approach, pooling the resources of EOC specialists around the country to build upon shared work of others to produce quality software for helping us help our neighbors. 
-    Join our team to help define our future direction."
+    EOC.online vision is to for a cooperative approach, to pool the resources of EOC specialists around the country, discovering useful software for <i>helping us help our neighbors</i>."
     bulletpoints:
       - We currently welcome discussions & inquiries using Discord
       - In the future, we look towards new models for EOC to EOC collaboration and discussion!
