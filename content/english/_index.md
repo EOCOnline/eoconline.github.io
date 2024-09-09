@@ -30,8 +30,8 @@ features:
     content: "References, software & tools your EOC can repurpose and integrate to stay current & save time."
     bulletpoints:
       - RangerTrak™ -- Track & map search & rescue & CERT/ACS members reporting via radio, without reliable cell or internet access
-      - OpenFemaNgClient™ -- A TypeScript & Angular Client for the openFEMA datasets/APIs
       - EOC Skillset Cross-Walk -- A handy spreadsheet to organize which skills apply to your various EOC positions
+      - OpenFemaNgClient™ -- A TypeScript & Angular Client for the openFEMA datasets/APIs
       - See what software is used by EOCs -- check out our ever expanding listing!
       - What national and International standards apply to EOC software -- and does that impact your EOC?
       - Links to other resources we've found helpful

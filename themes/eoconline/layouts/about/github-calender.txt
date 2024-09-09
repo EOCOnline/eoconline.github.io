@@ -1,7 +1,7 @@
 
-<!--  https://github.com/Bloggify/github-calendar
+<!--  https://github.com/Bloggify/github-calendar-->
 <img src="https://ghchart.rshah.org/eoconline" alt="eoconline's Github chart" />
--->
+
 
 <!--
 <ng-container https://github.com/Bloggify/github-calendar
