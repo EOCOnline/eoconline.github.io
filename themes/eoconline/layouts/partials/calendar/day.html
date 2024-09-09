@@ -24,7 +24,6 @@
 {{ $isFuture := $context.Scratch.Get "isFuture" }}
 {{ $isFuture := false }}
 
-
 {{- $articlesFound := index ($context.Scratch.Get "ArticlesPerDay") $dateString3 -}}
 <li class="calendar-day
   {{ if $isFuture }}calendar-day-future{{ end }}
@@ -33,7 +32,7 @@
    ">
   {{ if gt $articlesFound 0 }}
   <a href="/archive/{{ delimit (slice $year $month $day) "-" }}/"
-    title="{{ $articlesFound }} article{{ if gt $articlesFound 1 }}s{{ end }}">
+    title="{{ $dateString3 }} has {{ $articlesFound }} article{{ if gt $articlesFound 1 }}s{{ end }}">
     {{- end -}}
     <time datetime="{{ $dateString }}">{{ $day }}<em>{{ $articlesFound }}</em></time>
     {{- if gt $articlesFound 0 -}}</a>{{- end -}}
