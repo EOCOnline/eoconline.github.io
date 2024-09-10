@@ -1,4 +1,4 @@
-module hugoplate.netlify.app
+module eoconline.github.io.netlify.app
 
 go 1.21
 

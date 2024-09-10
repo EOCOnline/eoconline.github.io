@@ -3,7 +3,7 @@ extended = true
 min = "0.124.1"
 
 # [[imports]]
-# path = "github.com/eoconline/hugoplate"
+# path = "github.com/eoconline/eoconline.github.io"
 
 [[imports]]
 path = "github.com/gethugothemes/hugo-modules/search"

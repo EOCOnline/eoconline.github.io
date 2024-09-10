@@ -5,7 +5,7 @@
 <p align="center">Made with ♥ by <a href="https://zeon.studio/"> Zeon Studio</a></p>
 <p align=center> If you find this project useful, please give it a ⭐ to show your support.</p>
 
-<h2 align="center"> <a target="_blank" href="https://zeon.studio/preview?project=hugoplate" rel="nofollow">👀 Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/analysis/https-hugoplate-netlify-app/6lyxjw6t4r?form_factor=desktop">Page Speed (95+)🚀</a>
+<h2 align="center"> <a target="_blank" href="https://zeon.studio/preview?project=eoconline.github.io" rel="nofollow">👀 Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/analysis/https-eoconline.github.io-netlify-app/6lyxjw6t4r?form_factor=desktop">Page Speed (95+)🚀</a>
 </h2>
 
 <p align="center">
@@ -13,16 +13,16 @@
     <img src="https://img.shields.io/static/v1?label=min-HUGO-version&message=0.126.0&color=f00&logo=hugo" />
   </a>
 
-  <a href="https://github.com/eoconline/hugoplate/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/eoconline/hugoplate" alt="license">
+  <a href="https://github.com/eoconline/eoconline.github.io/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/eoconline/eoconline.github.io" alt="license">
   </a>
 
-  <a href="https://github.com/eoconline/hugoplate">
-    <img src="https://img.shields.io/github/languages/code-size/eoconline/hugoplate" alt="code size">
+  <a href="https://github.com/eoconline/eoconline.github.io">
+    <img src="https://img.shields.io/github/languages/code-size/eoconline/eoconline.github.io" alt="code size">
   </a>
 
-  <a href="https://github.com/eoconline/hugoplate/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/eoconline/hugoplate" alt="contributors">
+  <a href="https://github.com/eoconline/eoconline.github.io/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/eoconline/eoconline.github.io" alt="contributors">
   </a>
 </p>
 
@@ -83,7 +83,7 @@ We have included almost everything you need to start your Hugo project. Let's se
 
 ## 🚀 Getting Started
 
-First you need to [clone](https://github.com/eoconline/hugoplate) or [download](https://github.com/eoconline/hugoplate/archive/refs/heads/main.zip) the template repository, and then let's get started with the following process:
+First you need to [clone](https://github.com/eoconline/eoconline.github.io) or [download](https://github.com/eoconline/eoconline.github.io/archive/refs/heads/main.zip) the template repository, and then let's get started with the following process:
 
 ### ⚙️ Prerequisites
 
@@ -119,7 +119,7 @@ npm run dev
 
 ### 🎬 Still Confused? Watch a Quick Video
 
-https://github.com/eoconline/hugoplate/assets/58769763/c260c0ae-91be-42ce-b8db-aa7f11f777bd
+https://github.com/eoconline/eoconline.github.io/assets/58769763/c260c0ae-91be-42ce-b8db-aa7f11f777bd
 
 ---
 
@@ -211,14 +211,14 @@ And if you want to Host some other hosting platforms. then you can build your pr
 
 ### 🐞 Reporting Issues
 
-We use GitHub Issues as the official bug tracker for this Template. Please Search [existing issues](https://github.com/eoconline/hugoplate/issues). It’s possible someone has already reported the same problem.
-If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com/eoconline/hugoplate/issues).
+We use GitHub Issues as the official bug tracker for this Template. Please Search [existing issues](https://github.com/eoconline/eoconline.github.io/issues). It’s possible someone has already reported the same problem.
+If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com/eoconline/eoconline.github.io/issues).
 
 ### 📝 License
 
 Copyright (c) 2023 - Present, Designed & Developed by [Zeon Studio](https://zeon.studio/)
 
-**Code License:** Released under the [MIT](https://github.com/eoconline/hugoplate/blob/main/LICENSE) license.
+**Code License:** Released under the [MIT](https://github.com/eoconline/eoconline.github.io/blob/main/LICENSE) license.
 
 **Image license:** The images are only for demonstration purposes. They have their license, we don't have permission to share those images.
 

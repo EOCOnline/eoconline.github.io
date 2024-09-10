@@ -1,7 +1,7 @@
 const { exec } = require("child_process");
 
-const repositoryUrl = "https://github.com/eoconline/hugoplate";
-const localDirectory = "./themes/hugoplate";
+const repositoryUrl = "https://github.com/eoconline/eoconline.github.io";
+const localDirectory = "./themes/eoconline.github.io";
 const foldersToFetch = ["assets", "layouts"];
 const foldersToSkip = ["exampleSite"];
 

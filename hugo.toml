@@ -1,7 +1,7 @@
 resourceDir = "/resourceCache/"
 
 yyyyyyyyy = "yyyyyyyyyyyy"
-logFile = "D:/Projects/EOC.online/hugoplate/hugo.log"
+logFile = "D:/Projects/EOC.online/eoconline.github.io/hugo.log"
 
 ############ Used by Schema.html partial ############
 # baseURL = "https://eoc.online"
