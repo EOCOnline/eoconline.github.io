@@ -3,3 +3,51 @@
 @import "./calendar.scss";
 //@import "./fontawesome.scss";
 //@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+
+// from: https://dzone.com/articles/how-to-style-images-with-markdown, use ![myImg](myImg.jpg# thumbnail bordered right)
+
+
+// or with https://www.pandoc.org/ try ![myImg](myImg.jpg){width=33%}
+// {#thumbnail .bordered .right}
+//  see https://pandoc.org/MANUAL.html#extension-link_attributes
+//  ![image](foo.jpg){#id .class width=30 height=20px}
+// [ref]: foo.jpg "optional title" {#id .class key=val key2="val 2"}
+
+//  https://github.github.com/gfm/#images doesn't show options for images, but https://github.github.com/gfm/#example-106 does show how to use attributes
+
+
+img[src~="thumbnail"] {
+  width : 150px;
+  height: 100px;
+}
+
+img[src~="thumbnail-2x"] {
+  width : 300px;
+  height: 200px;
+}
+
+img[src~="bordered"] {
+  border: 1px solid black;
+}
+
+img[src~="right"] {
+  margin-left: auto;
+}
+
+
+// https://stackoverflow.com/a/39614958/6425926 & then ![image alt >](/image-right.jpg) or ![image alt ><](/center-image.jpg)
+img[alt$=">"] {
+  float: right;
+}
+
+img[alt$="<"] {
+  float: left;
+}
+
+img[alt$="><"] {
+  display  : block;
+  max-width: 100%;
+  height   : auto;
+  margin   : auto;
+  float    : none !important;
+}
