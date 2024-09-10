@@ -54,13 +54,11 @@ parent = "Insights"
 name = "Tags"
 pageRef = "/tags"
 
-[[main]]
-weight = 99
-parent = "Insights"
-name = "Archive"
-pageRef = "/archive"
-
-
+# [[main]]
+# weight = 99
+# parent = "Insights"
+# name = "Archive"
+# pageRef = "/archive"
 
 [[main]]
 weight = 4
