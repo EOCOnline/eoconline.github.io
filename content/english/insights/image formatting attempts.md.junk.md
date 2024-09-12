@@ -30,26 +30,11 @@ waves:
 
 ![my big knight](./images/knight.jpg){width=50% .bordered}
 
-Hello
-: A word in the English language to signify greetings.
-: “Hello! How are you?”
-
-Thanks
-: A word in the English language to signify gratitude towards another person.
-: “Oh wow, thanks!”
-
 https://stackoverflow.com/questions/255170/markdown-and-image-alignment
 ![image alt >](/knight.jpg)
 
-oijoijoijoij
-
 ![my knight!]{./images/knight.jpg#right}
 
-888888888
-
 ![my knight!]{./images/knight.jpg#right bordered}
-
-::: Warning ::::::
-This is a warning.
 
 [This is *some text*]{.class key="val"}
