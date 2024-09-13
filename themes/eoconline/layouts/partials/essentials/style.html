@@ -34,12 +34,7 @@
 {{ $stylesLazy := slice }}
 {{ range site.Params.plugins.css }}
   {{ if findRE "^http" .link }}
-    <link
-      crossorigin="anonymous"
-      media="all"
-      rel="stylesheet"
-      href="{{ .link | relURL }}"
-      {{ .attributes | safeHTMLAttr }} />
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="{{ .link | relURL }}" {{ .attributes | safeHTMLAttr }} />
   {{ else }}
     {{ if not .lazy }}
       {{ $styles = $styles | append (resources.Get .link) }}
@@ -52,10 +47,10 @@
 {{/* main style */}}
 {{ $styles = $styles | append (resources.Get "scss/main.scss" | toCSS) }}
 {{ $styles = $styles | resources.Concat "css/style.css" }}
-{{ $styles = $styles | resources.PostCSS }}
+{{ $styles = $styles | css.PostCSS }}
 
 {{ $stylesLazy = $stylesLazy | resources.Concat "css/style-lazy.css" }}
-{{ $stylesLazy = $stylesLazy | resources.PostCSS }}
+{{ $stylesLazy = $stylesLazy | css.PostCSS }}
 
 {{ if hugo.IsProduction }}
   {{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . | minify | fingerprint | resources.PostProcess }}
@@ -66,17 +61,7 @@
 {{ end }}
 
 {{/* styles */}}
-<link
-  href="{{ $styles.RelPermalink }}"
-  integrity="{{ $styles.Data.Integrity }}"
-  rel="stylesheet" />
+<link href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" rel="stylesheet" />
 
 {{/* styles lazy */}}
-<link
-  defer
-  async
-  rel="stylesheet"
-  href="{{ $stylesLazy.RelPermalink }}"
-  integrity="{{ $stylesLazy.Data.Integrity }}"
-  media="print"
-  onload="this.media='all'; this.onload=null;" />
+<link defer async rel="stylesheet" href="{{ $stylesLazy.RelPermalink }}" integrity="{{ $stylesLazy.Data.Integrity }}" media="print" onload="this.media='all'; this.onload=null;" />

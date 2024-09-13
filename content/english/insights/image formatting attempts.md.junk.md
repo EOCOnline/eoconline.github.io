@@ -13,7 +13,7 @@ params:
   copyright:
   permalink: https://vashonbeprepared.org/en-us/Home/EntryId/6/Washington-State-Observes-Disaster-Preparedness-Month-in-April
   image: 6_blog-image.png
-  author: John Cornelison
+  authors: John Cornelison
 categories: []
 tags: [Individual Preparedness, WA, WEMD]
 keywords: []

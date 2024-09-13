@@ -45,8 +45,8 @@ defaultContentLanguageInSubdir = false
 # Set content editor
 # newContentEditor = "code" # options: "code" or "editor" or "default" (default is "code")
 
-[author2]
-    name = "michael d henderson"
+[author]
+    name = "John Cornelison"
 
 ########################### Services #############################
 [services]
@@ -213,3 +213,4 @@ lazy = true
   topic = 'topics' # analogous to categories - for resources
   keyword = 'keywords' # analogous to tags - for resources
   archive = 'archive' # for Calendar widget (see \calendar_readme.md)
+  author = 'authors' # for author pages
