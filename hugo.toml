@@ -1,17 +1,14 @@
 resourceDir = "/resourceCache/"
 
-yyyyyyyyy = "yyyyyyyyyyyy"
 logFile = "D:/Projects/EOC.online/eoconline.github.io/hugo.log"
 
 ############ Used by Schema.html partial ############
 # baseURL = "https://eoc.online"
 
-# params]
-author = "JHHFC"
 logo = "img/logo.jpg"
 header = "EOC.online - Insights & Resources"
-yyyyy = "yyyyyyyyyyy"
 
+# .Site.Social was deprecated in Hugo v0.124.0 and will be removed in a future release. Use .Site.Params instead.
 # facebook = "eoconline"
 # twitter = "eoconline"
 # instagram = "eoconline"
@@ -29,7 +26,7 @@ theme = "eoconline"
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 timeZone = "America/Los_Angeles"
 # post pagination
-paginate = 12  # see https://gohugo.io/extras/pagination/
+pagination.pagerSize = 12  # see https://gohugo.io/extras/pagination/
 # post excerpt
 summaryLength = 10 # see https://gohugo.io/content-management/excerpts/
 # disable language
@@ -214,3 +211,8 @@ lazy = true
   keyword = 'keywords' # analogous to tags - for resources
   archive = 'archive' # for Calendar widget (see \calendar_readme.md)
   author = 'authors' # for author pages
+
+
+# params]
+[params.author]
+name = "JHHFC"
