@@ -8,11 +8,7 @@ logFile = "D:/Projects/EOC.online/eoconline.github.io/hugo.log"
 logo = "img/logo.jpg"
 header = "EOC.online - Insights & Resources"
 
-# .Site.Social was deprecated in Hugo v0.124.0 and will be removed in a future release. Use .Site.Params instead.
-# facebook = "eoconline"
-# twitter = "eoconline"
-# instagram = "eoconline"
-github = "eoconline"
+
 
 
 
@@ -42,8 +38,15 @@ defaultContentLanguageInSubdir = false
 # Set content editor
 # newContentEditor = "code" # options: "code" or "editor" or "default" (default is "code")
 
-[author]
+[params.author]
     name = "John Cornelison"
+
+[params.social]
+# .Site.Social was deprecated in Hugo v0.124.0 and will be removed in a future release. Use .Site.Params instead.
+# facebook = "eoconline"
+# twitter = "eoconline"
+# instagram = "eoconline"
+github = "eoconline"
 
 ########################### Services #############################
 [services]
@@ -212,7 +215,3 @@ lazy = true
   archive = 'archive' # for Calendar widget (see \calendar_readme.md)
   author = 'authors' # for author pages
 
-
-# params]
-[params.author]
-name = "JHHFC"

@@ -13,8 +13,6 @@ social:
     link: https://linkedin.com/in/JohnCornelison
 ---
 
-John Cornelison
-
 ## Disaster Management & Technology Architect
 
 John Cornelison is a software architect fluent in rapid comprehension of new technologies’ limitations & potentials, with the engineering skill to integrate the best into a complex enterprise environment.

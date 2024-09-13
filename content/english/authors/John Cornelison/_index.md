@@ -25,7 +25,7 @@ With a developer’s ability to delve into detail & track loose ends, he uniquel
 
 Civic accomplishments reflect his social & interpersonal skills.
 
-Specialties:
+SSSSSSSSSSSpecialties:
 • Enterprise & Solution Software Architect
 • Open Source Software for Emergency Operation Centers (EOCs)
 • Typescript, Angular, .Net apps for JamStack using Docker & Kubernates
