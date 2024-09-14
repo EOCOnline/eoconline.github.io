@@ -7,10 +7,10 @@ on:
     branches: ["main"]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+permissions: write-all:
+  #contents: read
+  #pages: write
+  #id-token: write
 
 # Environment variables available to all jobs and steps in this workflow
 env:
