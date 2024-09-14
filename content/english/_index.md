@@ -38,7 +38,7 @@ features:
     button:
       enable: true
       label: "See our current Resources"
-      link: "/resources"
+      link: "/resources2"
 
   - title: "We Are a Community"
     image: "/images/eoc.online.SkillsCrosswalk.512x455.png"

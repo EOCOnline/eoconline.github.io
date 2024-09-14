@@ -1,4 +1,4 @@
-resourceDir = "/resourceCache/"
+#resourceDir = "/resourceCache/"
 publishDir = "docs"
 
 logFile = "D:/Projects/EOC.online/eoconline.github.io/hugo.log"
@@ -10,7 +10,7 @@ header = "eoc.online - Insights & Resources"
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
 # baseURL = "http://localhost:1313/"
-baseURL = "https://eoconline.github.ioe/oconline.github.io"
+baseURL = "https://eoconline.github.io/eoconline.github.io"
 
 # Title of your website (required).
 title = "eoc.online - Insights & Resources for EOCs"
