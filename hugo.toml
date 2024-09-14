@@ -4,7 +4,7 @@ publishDir = "docs"
 logFile = "D:/Projects/EOC.online/eoconline.github.io/hugo.log"
 
 ############ Used by Schema.html partial ############
-logo = "img/logo.jpg"
+logo = "images/logo.png"
 header = "eoc.online - Insights & Resources"
 
 ######################## default configuration ####################
