@@ -1,5 +1,5 @@
 # Sample workflow for building and deploying a Hugo site to GitHub Pages
-name: Deploy Hugo site to Pages
+name: Deploy Hugo site to Pages (main.yml)
 
 on:
   # Runs on pushes targeting the default branch
@@ -15,7 +15,7 @@ permissions:
 # Environment variables available to all jobs and steps in this workflow
 env:
   HUGO_ENV: production
-  HUGO_VERSION:   "0.134.2" # "latest"
+  HUGO_VERSION: "0.134.2" # "latest"
   GO_VERSION: "1.22.2"
   NODE_VERSION: "20.0.0"
   TINA_CLIENT_ID: ${{ vars.TINA_CLIENT_ID }}
