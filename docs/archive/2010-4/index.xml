@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2010-4 on eoc.online - Insights &amp; Resources for EOCs</title>
+    <link>http://localhost:1313/oconline.github.io/archive/2010-4/</link>
+    <description>Recent content in 2010-4 on eoc.online - Insights &amp; Resources for EOCs</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 02 Apr 2010 06:41:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/oconline.github.io/archive/2010-4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Washington State Observes Disaster Preparedness Month in April</title>
+      <link>http://localhost:1313/oconline.github.io/insights/image-formatting-attempts.md.junk/</link>
+      <pubDate>Fri, 02 Apr 2010 06:41:00 +0000</pubDate>
+      <guid>http://localhost:1313/oconline.github.io/insights/image-formatting-attempts.md.junk/</guid>
+      <description>&lt;h2 id=&#34;washington-state-observes-disaster-preparedness-month-in-april&#34;&gt;Washington State Observes Disaster Preparedness Month in April&lt;/h2&gt;&#xA;&lt;p&gt;![./knight.jpg](./images/knight.jpg# thumbnail bordered right)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

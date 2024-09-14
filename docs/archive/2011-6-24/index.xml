@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2011-6-24 on eoc.online - Insights &amp; Resources for EOCs</title>
+    <link>http://localhost:1313/oconline.github.io/archive/2011-6-24/</link>
+    <description>Recent content in 2011-6-24 on eoc.online - Insights &amp; Resources for EOCs</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Jun 2011 13:56:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/oconline.github.io/archive/2011-6-24/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Paul Nichols’ Time Lapse Quake Maps</title>
+      <link>http://localhost:1313/oconline.github.io/insights/2011/2011-06-24_entry156/</link>
+      <pubDate>Fri, 24 Jun 2011 13:56:00 +0000</pubDate>
+      <guid>http://localhost:1313/oconline.github.io/insights/2011/2011-06-24_entry156/</guid>
+      <description>&lt;div class=&#34;wlWriterHeaderFooter&#34; style=&#34;padding-bottom: 4px; margin: 0px; padding-left: 0px; padding-right: 0px; float: none; padding-top: 4px;&#34;&gt; &lt;/div&gt;&#xA;&lt;p&gt;&lt;a href=&#34;./images/156/Windows-Live-Writer-a48656b53807_5A2B-6-24-2011_at_6.47.55_AM_2.jpg&#34;&gt;&lt;img width=&#34;236&#34; height=&#34;244&#34; title=&#34;6-24-2011 at 6.47.55 AM&#34; style=&#34;background-image: none;   margin: 0px 5px 5px 0px; padding-left: 0px; padding-right: 0px; display: inline; float: left;   padding-top: 0px;border: 0px;&#34; alt=&#34;6-24-2011 at 6.47.55 AM&#34; src=&#34;./images/156/Windows-Live-Writer-a48656b53807_5A2B-6-24-2011_at_6.47.55_AM_thumb.jpg&#34; /&gt;&lt;/a&gt;If you&amp;rsquo;ve not come across them, Paul Nichols has created several time lapse earthquake maps. Working at the &lt;a href=&#34;http://www.canterbury.ac.nz/&#34;&gt;University of Canterbury&lt;/a&gt;&#39;s Digital Media Group, he takes USGS or GeoNet data and plots it using the Google Maps API to create a fascinating animation.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

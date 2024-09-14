@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2010-12-23 on eoc.online - Insights &amp; Resources for EOCs</title>
+    <link>http://localhost:1313/oconline.github.io/archive/2010-12-23/</link>
+    <description>Recent content in 2010-12-23 on eoc.online - Insights &amp; Resources for EOCs</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Dec 2010 21:52:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/oconline.github.io/archive/2010-12-23/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Twitter Earthquake Detector</title>
+      <link>http://localhost:1313/oconline.github.io/insights/2010/2010-12-23_entry37/</link>
+      <pubDate>Thu, 23 Dec 2010 21:52:00 +0000</pubDate>
+      <guid>http://localhost:1313/oconline.github.io/insights/2010/2010-12-23_entry37/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Sample map output from the Twitter Earthquake Detector prototype project.&#34; src=&#34;http://recovery.doi.gov/press/wp-content/uploads/2009/07/picture-54.jpg&#34; title=&#34;Twitter Earthquake Detector (TED) Map&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
