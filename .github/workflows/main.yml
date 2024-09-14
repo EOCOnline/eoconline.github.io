@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Install Hugo
+      - name: Install Hugo  (main.yml)
         run: |
           curl -LO "https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz"
           tar -xvf hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz
@@ -40,7 +40,7 @@ jobs:
           rm hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz
           hugo version
 
-      - name: Install Go
+      - name: Install Go (main.yml)
         run: |
           curl -LO "https://dl.google.com/go/go${{ env.GO_VERSION }}.linux-amd64.tar.gz"
           sudo tar -C /usr/local -xzf go${{ env.GO_VERSION }}.linux-amd64.tar.gz
@@ -51,10 +51,10 @@ jobs:
       - name: Setup Project
         run: npm run project-setup
 
-      - name: Install npm dependencies
+      - name: Install npm dependencies (main.yml)
         run: npm install
 
-      - name: Publish to GitHub Pages
+      - name: Publish to GitHub Pages (main.yml)
         run: npm run build
 
       - name: Upload artifact
@@ -70,6 +70,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages (main.yml)
         id: deployment
         uses: actions/deploy-pages@v4
