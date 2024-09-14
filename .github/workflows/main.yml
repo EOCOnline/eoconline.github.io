@@ -7,7 +7,14 @@ on:
     branches: ["main"]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-# or maybe git update-index --chmod=+x .github/workflows/main.yml works?!
+# Also try: git update-index --chmod=+x .github/workflows/main.yml works?!
+# Info: https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
+
+# ERROR mkdir /resourceCache: permission denied
+# Total in 2065 ms
+# Error: error building site: render: failed to render pages: render of "404" failed: "/home/runner/work/eoconline.github.io/eoconline.github.io/themes/eoconline/layouts/_default/baseof.html:38:7": execute of template failed: template: 404.en.html:38:7: executing "404.en.html" at <partial "essentials/header.html" .>: error calling partial: "/home/runner/work/eoconline.github.io/eoconline.github.io/themes/eoconline/layouts/partials/essentials/header.html:8:11": execute of template failed: template: partials/essentials/header.html:8:11: executing "partials/essentials/header.html" at <partial "logo">: error calling partial: "/tmp/hugo_cache_runner/modules/filecache/modules/pkg/mod/github.com/gethugothemes/hugo-modules/images@v0.0.0-20240711030223-49ae4a26e064/layouts/partials/logo.html:83:33": execute of template failed: template: partials/logo.html:83:33: executing "partials/logo.html" at <$logo.Resize>: error calling Resize: mkdir /resourceCache: permission denied
+# Error: Process completed with exit code 1.
+
 permissions:
   write-all
   #contents: read
