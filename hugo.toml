@@ -1,4 +1,4 @@
-#resourceDir = "/resourceCache/"
+resourceDir = "/resourceCache/"
 #publishDir = "docs"
 
 logFile = "D:/Projects/EOC.online/eoconline.github.io/hugo.log"

@@ -8,7 +8,7 @@ builds
 
 public/
 docs/
-#resourceCache/*
+resourceCache/*
 .hugo_build.lock
 jsconfig.json
 hugo_stats.json
