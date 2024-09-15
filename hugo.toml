@@ -10,7 +10,8 @@ header = "eoc.online - Insights & Resources"
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
 # baseURL = "http://localhost:1313/"
-baseURL = "https://eoconline.github.io/eoconline.github.io"
+# baseURL = "https://eoconline.github.io/eoconline.github.io"
+baseURL = "https://eoc.online"
 
 # Title of your website (required).
 title = "eoc.online - Insights & Resources for EOCs"
