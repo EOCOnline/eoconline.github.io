@@ -6,15 +6,17 @@ npm-debug.log
 node_modules/
 builds
 
+# Hugo 'reserved' directories
 public/
 docs/
+resources/*
 resourceCache/*
+
 .hugo_build.lock
 jsconfig.json
 hugo_stats.json
 go.sum
 yarn.lock
-/docs
 
 # System Files
 .DS_Store
