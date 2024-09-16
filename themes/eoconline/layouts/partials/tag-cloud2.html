@@ -1,0 +1,41 @@
+<!-- https://blog.cubieserver.de/2020/adding-a-tag-cloud-to-my-hugo-blog/  -->
+
+<!-- NOT part of the solution but a HUGO approach by BEP!
+<div id="wordcloud2" class="col-sm-12" style="margin-bottom: 15px;">
+  {{ $tags := $.Site.Taxonomies.tags.ByCount }}
+  {{ $v1 := where $tags "Count" ">=" 3 }}
+  {{ $v2 := where $v1 "Term" "not in" (slice "hugo" "tags" "rss") }}
+  {{ range $v2 }}
+  {{ if .Term }}
+    {{ $tagURL := printf "tags/%s" .Term | relURL }}
+    <a href="{{ $tagURL }}" class="btn btn-default" role="button" style="text-transform: uppercase; font-size: 12px; padding-right: 5px; padding-left: 5px;">{{ .Term }} <span class="badge">({{ .Count }})</span></a>
+  {{ end }}
+{{ end }}
+</div>
+-->
+
+<div id="wordcloud2" class="col-sm-12 height-100 width-100" style="margin-bottom: 15px;">
+  {{ range $key, $value := .Data.Terms }}
+    tagMap.set("{{ $key }}", {{ len $value }}); tagArray.push([{{ $key }}, {{ len $value }} ]);
+  {{ end }}
+
+
+  <script>
+    let tagMap = new Map();
+    let tagArray = new Array();
+
+    const tagCanvas = document.querySelector("#wordcloud2"); // select your element to draw in
+    WordCloud(document.querySelector("#wordcloud2"), {
+      list: tagArray,
+      classes: "tag-cloud-item", // add a class to each tag element so we can easily loop over it
+    });
+
+    tagCanvas.addEventListener("wordcloudstop", function (e) {
+      // loop over all added elements (by class name)
+      document.querySelectorAll(".tag-cloud-item").forEach(function (element) {
+        const word = element.innerHTML;
+        element.innerHTML = `<a href="/tags/${word}/" style="color: inherit;">${word}</a>`;
+      });
+    });
+  </script>
+</div>

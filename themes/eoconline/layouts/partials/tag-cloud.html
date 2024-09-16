@@ -1,3 +1,4 @@
+<!--  https://discourse.gohugo.io/t/tag-cloud/6335  -->
 <div id="theme-tagcloud" class="col-sm-12" style="margin-bottom: 15px;">
   {{ $tags := $.Site.Taxonomies.tags.ByCount }}
   {{ $v1 := where $tags "Count" ">=" 3 }}
