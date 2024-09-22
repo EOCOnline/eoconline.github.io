@@ -7,11 +7,11 @@ date: 2022-04-04T05:00:00Z
 created: 2022-04-04T05:00:00Z
 reviewed: 2024-06-27T05:00:00Z
 authors: "John Cornelison"
-image: "/images/rangertrak.png"
+image: "/images/standards.png"
 categories: []
 tags: []
-topics: ["Application", "RangerTrak"]
-keywords: ["ARES", "ACS", "Ham Radio", "CERT", "search & rescue", SAR]
+topics: ["Standards"]
+keywords: ["NIST", "NIEMS", "EDXL", "FEMA"]
 draft: true
 ---
 
