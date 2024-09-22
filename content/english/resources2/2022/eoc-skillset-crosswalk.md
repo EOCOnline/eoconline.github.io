@@ -8,7 +8,7 @@ created: 2022-04-04T05:00:00Z
 reviewed: 2024-06-27T05:00:00Z
 image: "/images/eoc.online.SkillsCrosswalk.png"
 topics: ["Credentialling", "NIMS"]
-author: "John Cornelison"
+authors: "John Cornelison"
 keywords: ["Skillsets", "Excel", "Credentialling"]
 draft: false
 ---

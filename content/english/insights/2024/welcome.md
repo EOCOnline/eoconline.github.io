@@ -4,7 +4,7 @@ meta_title: "Introduction to eoc.online"
 description: "Introduction to eoc.online"
 date: 2024-07-04T00:00:00Z
 image: "/images/eoconline.png"
-author: "John Cornelison"
+authors: "John Cornelison"
 categories: ["software"]
 tags: ["software", "tailwind"]
 topics: []

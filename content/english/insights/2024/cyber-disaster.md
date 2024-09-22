@@ -4,7 +4,7 @@ meta_title: "Cyber Incidents differ from typical Disasters"
 description: "Why computer attacks vary from nornmal disaster incidents"
 date: 2022-04-04T05:00:00Z
 image: "/images/image-placeholder.png"
-author: "John Cornelison"
+authors: "John Cornelison"
 categories: ["Cyber", "Disaster Types", "software", "I'm a category"]
 tags: ["I'm a tag", "Cyber"]
 keywords: ["I'm a keyword"]

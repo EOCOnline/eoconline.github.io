@@ -5,7 +5,7 @@ description: "Why we chose Hugo for our website"
 date: 2024-06-24T05:00:00Z
 image: "/images/hugo-logo-wide.svg"
 categories: ["Technology", "Websites"]
-author: "John Cornelison"
+authors: "John Cornelison"
 tags: ["technology", "Hugo"]
 draft: true
 ---

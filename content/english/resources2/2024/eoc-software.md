@@ -4,11 +4,14 @@ meta_title: " EOC Software "
 description: " EOC Software "
 date: 2024-08-06T05:00:00Z
 image: "/images/image-placeholder.png"
-author: "John Cornelison"
+authors: "John Cornelison"
 categories: []
 tags: []
-Topics: ["Software”]
-Keywords: [“WebEOC", “VEOCI”]
+Topics: [
+    "Software”]
+    Keywords: [“WebEOC",
+    “VEOCI”,
+  ]
 draft: true
 ---
 

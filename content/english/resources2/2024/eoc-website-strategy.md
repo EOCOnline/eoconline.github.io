@@ -7,7 +7,7 @@ date: 2024-09-21T05:00:00Z
 created: 2024-09-21T05:00:00Z
 reviewed: 2024-09-21T05:00:00Z
 image: "/images/image-placeholder.png"
-author: "John Cornelison"
+authors: "John Cornelison"
 topics: ["Communications", "EOC Websites"]
 keywords: ["SiteMap", "Intranet"]
 categories: []
@@ -91,8 +91,7 @@ Consider how the following EOC tasks get handled in your organization and what r
   - Planning Clock/Battle Rhythm
   - Paper and electronic records (Documentation Unit)
   - Message/Call log (for formal communications, i.e., assignments, resource orders, etc.)
-  - ICS-214 Activity Logs - Personal or Unit
-    -
+  - ## ICS-214 Activity Logs - Personal or Unit
 
   General
 

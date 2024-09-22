@@ -4,7 +4,7 @@ meta_title: "Sept. 27 thru Oct. 19"
 description: ""
 date: 2024-12-31T05:00:00Z
 image: "/images/image-placeholder.png"
-author: "John Cornelison"
+authors: "John Cornelison"
 categories: ["ARES"]
 tags: ["Class", "License"]
 Topics: []

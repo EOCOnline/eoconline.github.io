@@ -8,7 +8,7 @@ created: 2022-04-04T05:00:00Z
 reviewed: 2024-06-27T05:00:00Z
 image: "/images/openFemaNgClient_logo.png"
 topics: ["OpenFema", "OpenFemaNgClient"]
-author: "John Cornelison"
+authors: "John Cornelison"
 keywords: ["Open Data", "OpenFemaNgClient", "myKeyWord"]
 draft: false
 ---
