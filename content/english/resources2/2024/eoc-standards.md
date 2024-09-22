@@ -12,7 +12,7 @@ categories: []
 tags: []
 topics: ["Application", "RangerTrak"]
 keywords: ["ARES", "ACS", "Ham Radio", "CERT", "search & rescue", SAR]
-draft: false
+draft: true
 ---
 
 Emergency Software Standards
@@ -59,7 +59,7 @@ What are Ontologies Ontotext Fundamentals Series_files
 CAM Processor - Shortcut.lnk
 ci-threat-information-sharing-framework-508.pdf
 Content Assembly Mechanism - Wikipedia.URL
-Dee Schur LinkedIn.URL
+
 Disasters Homeland Security.URL
 EDXL-DE_Spec_v1.0.pdf
 EIC-Briefing_20210622.pptx

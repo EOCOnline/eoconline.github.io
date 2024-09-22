@@ -9,7 +9,7 @@ categories: ["ARES"]
 tags: ["Class", "License"]
 Topics: []
 Keywords: []
-draft: true
+draft: false
 ---
 
 ## Online Amateur Radio General License Class
@@ -26,11 +26,11 @@ Watch lectures online at your convenience in the comfort of your home with Q&A s
 
 **Cost:** $15 fee (cash or check) for exam.  No fee for class. $35 fee for the license, paid to the FCC.
 
-**Prerequisite:**  Anyone may take the class; however, one must have passed the Technician License test before taking the General test.  
+**Prerequisite:** Anyone may take the class; however, one must have passed the Technician License test before taking the General test.
 
 **Book:** ARRL License Manual, level 2 (General), 10th edition (2023 - 2027).  Also available on Kindle. Please purchase before class.
 
-The lectures are all on YouTube and there is no requirement to attend the Zoom sessions, take the test at the end, or pay any fees.  Only attend the Zoom sessions if you have questions for the instructor or just want to talk about all the wonderful facets of amateur radio.  The instructor, Dave AA7XX Hillier, has a PhD in electrical engineering and is a wonderful lecturer and always treats his students respectfully.
+The lectures are all on YouTube and there is no requirement to attend the Zoom sessions, take the test at the end, or pay any fees. Only attend the Zoom sessions if you have questions for the instructor or just want to talk about all the wonderful facets of amateur radio. The instructor, Dave AA7XX Hillier, has a PhD in electrical engineering and is a wonderful lecturer and always treats his students respectfully.
 
 **HamStudy.org** is an excellent source for free ham radio flash cards, practice tests, and
 question pools.

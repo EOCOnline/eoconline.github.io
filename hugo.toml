@@ -35,6 +35,8 @@ defaultContentLanguageInSubdir = false
 # Set content editor
 # newContentEditor = "code" # options: "code" or "editor" or "default" (default is "code")
 
+# https://gohugo.io/content-management/shortcodes/#param - easy access to params from markdown...
+
 [params.author]
     name = "John Cornelison"
 
@@ -212,3 +214,8 @@ lazy = true
   archive = 'archive' # for Calendar widget (see \calendar_readme.md)
   author = 'authors' # for author pages
 
+######################## sidebar widgets #########################
+[widgets]
+sidebar = ["categories", "tags", "topics", "keywords"]
+sidebarCT = ["categories", "tags"]
+sidebarTK = ["topics", "keywords"]

@@ -14,4 +14,4 @@ draft: true
 
 ## FEMAs moves to support EOCs and IMTs
 
-> FEMAs moves to support EOCs and IMTs
+> FEMAs

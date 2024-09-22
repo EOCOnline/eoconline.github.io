@@ -1,8 +1,9 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
 
-
-  <!-- D:\Projects\EOC.online\eoconline.github.io\themes\eoconline\layouts\_default\taxonomy.html -->
+  taxonomy.html::
+  <!-- D:\Projects\EOC.online\eoconline.github.io\themes\eoconline\layouts\_default\taxonomy.html
+  Called when clicking on an item in a sidebar widget, like categories, tags, topics or keywords -->
   <section class="section">
     <div class="container">
       <div class="row gx-5">
@@ -11,8 +12,8 @@
           <div class="row">
             {{ range .Data.Pages }}
               <div class="md:col-6 mb-14">
-                blog-card:
-                {{ partial "components/blog-card" . }}
+                taxonomy-card:
+                {{ partial "components/taxonomy-card" . }}
               </div>
             {{ end }}
           </div>

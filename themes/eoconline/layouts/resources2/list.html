@@ -12,7 +12,7 @@
             {{ $paginator:= .Paginate .RegularPages }}
             {{ range $paginator.Pages }}
               <div class="md:col-6 mb-14">
-                {{ partial "components/tool-card" . }}
+                {{ partial "components/resource-card" . }}
               </div>
             {{ end }}
           </div>

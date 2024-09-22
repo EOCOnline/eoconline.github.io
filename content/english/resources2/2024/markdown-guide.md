@@ -10,7 +10,7 @@ reviewed: 2024-06-27T05:00:00Z
 topics: ["Guides"]
 keywords: ["Markdown"]
 # save as draft
-draft: false
+draft: true
 ---
 
 {{< toc >}}
@@ -216,11 +216,11 @@ flowchart TD
 
 ### Tables
 
-| Tables        |      Are      |  Cool |
-| ------------- | :-----------: | ----: |
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
 | col 3 is      | right-aligned | $1600 |
-| col 2 is      |   centered    |   $12 |
-| zebra stripes |   are neat    |    $1 |
+| col 2 is      | centered      | $12   |
+| zebra stripes | are neat      | $1    |
 
 <hr>
 
