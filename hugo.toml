@@ -4,7 +4,7 @@
 logFile = "D:/Projects/EOC.online/eoconline.github.io/hugo.log"
 
 ############ Used by Schema.html partial ############
-logo = "images/logos/logo.png"
+logo = "images/logo.png"
 header = "eoc.online - Insights & Resources"
 
 ######################## default configuration ####################
