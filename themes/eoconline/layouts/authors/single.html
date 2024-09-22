@@ -1,19 +1,19 @@
 {{ define "main" }}
-  <section class="section-sm pb-0">
+  <section class="pb-0 section-sm">
     <div class="container">
-      <div class="row border-border dark:border-darkmode-border justify-center border-b pb-14">
-        <div class="lg:col-4 text-center">
+      <div class="justify-center border-b row border-border dark:border-darkmode-border pb-14">
+        <div class="text-center lg:col-4">
           {{ $image:= .Params.image }}
           {{ if $image }}
             {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mx-auto" "Size" "200x275") }}
           {{ else if .Params.Email }}
             <img class="mx-auto" alt="{{ .Title }}" height="300" width="200" src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon" />
           {{ end }}
-          <h1 class="h3 mt-10">{{ .Title }}</h1>
-          <div class="content mt-6">
+          <h1 class="mt-10 h3">{{ .Title }}</h1>
+          <div class="mt-6 content">
             {{ .Content }}
           </div>
-          <ul class="social-icons ml-4 mt-10 text-center">
+          <ul class="mt-10 ml-4 text-center social-icons">
             {{ range .Params.social }}
               <li>
                 <a href="{{ .link | safeURL }}" target="_blank" rel="noopener nofollow">
@@ -31,10 +31,10 @@
         <p class="bold">John's Github contributions over the past year</p>
       </div>
 
-      <div class="row pb-16 pt-14">
+      <div class="pb-16 row pt-14">
         {{ $filterByAuthor := where site.RegularPages "Params.author" "==" .Title }}
         {{ range $filterByAuthor }}
-          <div class="md:col-6 lg:col-4 mb-12">
+          <div class="mb-12 md:col-6 lg:col-4">
             {{ partial "components/author-card" . }}
           </div>
         {{ end }}

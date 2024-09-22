@@ -1,6 +1,6 @@
 yyyyyyyyy = "yyyyyyyyy-from params.toml"
 logFile = "D:/Projects/EOC.online/eoconline.github.io/hugo2.log"
-
+# TODO: This file has been superseded by hugo.toml, I think...
 
 
 #################### default parameters ################################
