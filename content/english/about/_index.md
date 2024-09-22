@@ -6,7 +6,7 @@ image: "/images/logos/eoconline.png"
 draft: false
 ---
 
-<p class="text-lg bold">eoc.online™ provides free tools for Emergency Operations Centers (EOCs) and local ACS/ARES/CERT/MRC/Neighborhood/Citizen Corps groups.</p>
+**eoc.online™ provides free tools for Emergency Operations Centers (EOCs) and local ACS/ARES/CERT/MRC/Neighborhood/Citizen Corps groups.**
 
 ## About
 
@@ -18,4 +18,4 @@ EOC.Online's goal is to provide insights & resources for your emergency operatio
 
 We initially started working on open source, free websites to serve as a template for your community's Emergency Operations Center's use, and that's still an eventual plan. The goal remains to provide sophisticated tools that simplify your staff and volunteers effort during disasters. Easy navigation and workflows mirror ICS & NIMS guidance for typical EOCs. Each community is encouraged to customize their own software and public outreach to match local risks, special populations, and other circumstances.
 
-<i class="p-2 fa fa-quote-left fa-3x fa-pull-left"></i><div class ="fa-2x bg-slate-200">eoc.online provides flexible, free, tools & insights for creating your own EOC software tool set.</div>
+<i class="p-2 fa fa-quote-left fa-3x fa-pull-left"></i><div class ="fa-2x bg-slate-200">eoc.online provides flexible, free, tools & insights for creating your own Emergency Operations Center software tool set.</div>

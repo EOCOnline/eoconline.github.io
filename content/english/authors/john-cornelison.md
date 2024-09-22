@@ -1,7 +1,7 @@
 ---
 title: John Cornelison
 email: jc@eoc.online
-image: "/images/authors/john.png"
+image: "/images/john.png"
 description: John Cornelison is a software architect
 social:
   - name: github
@@ -13,7 +13,7 @@ social:
     link: https://linkedin.com/in/JohnCornelison
 ---
 
-## Disaster Management & Technology Architect
+##### Disaster Management & Technology Architect
 
 John Cornelison is a software architect fluent in rapid comprehension of new technologies’ limitations & potentials, with the engineering skill to integrate the best into a complex enterprise environment.
 
@@ -36,3 +36,8 @@ Incident Command System (ICS) Architectures
 • Influential verbal, written & online communicator
 • Content Management System portals
 • Data analysis with Tableau & D3
+
+<figure>
+  <img src="https://ghchart.rshah.org/vashjuan" alt="John's Github contributions over the past year" width="99%"/>
+  <caption>John's Github contributions over the past year</caption>
+</figure>

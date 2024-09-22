@@ -9,8 +9,8 @@
           {{ else if .Params.Email }}
             <img class="mx-auto" alt="{{ .Title }}" height="300" width="200" src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon" />
           {{ end }}
-          <h1 class="mt-10 h3">{{ .Title }}</h1>
-          <div class="mt-6 content">
+          <h4 class="mt-10 ">{{ .Title }}</h4>
+          <div class="mt-6 text-lg content">
             {{ .Content }}
           </div>
           <ul class="mt-10 ml-4 text-center social-icons">
@@ -24,11 +24,6 @@
             {{ end }}
           </ul>
         </div>
-      </div>
-
-      <div class="justify-center">
-        <img src="https://ghchart.rshah.org/vashjuan" alt="John's Github contributions over the past year" />
-        <p class="bold">John's Github contributions over the past year</p>
       </div>
 
       <div class="pb-16 row pt-14">
