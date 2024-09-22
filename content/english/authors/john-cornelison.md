@@ -1,7 +1,7 @@
 ---
 title: John Cornelison
 email: jc@eoc.online
-image: "/images/john.png"
+image: "/images/authors/john.png"
 description: John Cornelison is a software architect
 social:
   - name: github
