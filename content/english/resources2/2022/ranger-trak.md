@@ -7,7 +7,7 @@ date: 2022-04-04T05:00:00Z
 created: 2022-04-04T05:00:00Z
 reviewed: 2024-06-27T05:00:00Z
 authors: "John Cornelison"
-image: "images/rangertrak.png"
+image: "images/rangertrak/rangertrak.png"
 categories: []
 tags: []
 topics: ["Application", "RangerTrak"]
@@ -33,4 +33,4 @@ This Progressive Web Application, or PWA, will largely run even if there is inco
 
 Verbally transmitting & transcribing latitude & longitude coordinates can be very error prone and slow. Instead RangerTrak also permits other ways to report locations: by Street Address, Google PlusCodes, and perhaps What3Words. See https://en.wikipedia.org/wiki/Open_Location_Code#Other_geocode_systems for a list.
 
-![RangerTrak screenshot](images/entry.png)
+![RangerTrak screenshot](images/rangertrak/entry.png)

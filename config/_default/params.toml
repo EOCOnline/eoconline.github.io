@@ -8,7 +8,7 @@ logFile = "D:/Projects/EOC.online/eoconline.github.io/hugo2.log"
 favicon = "images/favicon.png.x "
 # logo module: https://github.com/gethugothemes/hugo-modules/tree/master/images#logo-implementation
 logo = "images/logo.png"
-logo_darkmode = "images/logos/logo-darkmode.png"
+logo_darkmode = "images/logo-darkmode.png"
 # use `px` or `x` with logo_width, example: "100px".
 # Note: logo_width does not work with .svg file
 logo_width = "160px"
