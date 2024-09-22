@@ -216,29 +216,29 @@ flowchart TD
 
 ### Tables
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
+| Tables        |      Are      |  Cool |
+| ------------- | :-----------: | ----: |
 | col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      | $12   |
-| zebra stripes | are neat      | $1    |
+| col 2 is      |   centered    |   $12 |
+| zebra stripes |   are neat    |    $1 |
 
 <hr>
 
 ### Image
 
-{{< image src="/images/image-placeholder.png" caption="" alt="alter-text" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="image title"  webp="false" >}}
+{{< image src="./images/image-placeholder.png" caption="" alt="alter-text" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="image title"  webp="false" >}}
 
 <hr>
 
 ### Gallery
 
-{{< gallery dir="images/gallery" class="" height="400" width="400" webp="true" command="Fit" option="" zoomable="true" >}}
+{{< gallery dir="./images/gallery" class="" height="400" width="400" webp="true" command="Fit" option="" zoomable="true" >}}
 
 <hr>
 
 ### Slider
 
-{{< slider dir="images/gallery" class="max-w-[600px] ml-0" height="400" width="400" webp="true" command="Fit" option="" zoomable="true" >}}
+{{< slider dir="./images/gallery" class="max-w-[600px] ml-0" height="400" width="400" webp="true" command="Fit" option="" zoomable="true" >}}
 
 <hr>
 
