@@ -6,71 +6,51 @@ type: resource
 date: 2022-04-04T05:00:00Z
 created: 2022-04-04T05:00:00Z
 reviewed: 2024-06-27T05:00:00Z
-image: "/images/openFemaNgClient_logo.png"
+image: "/images/openFemaNgClient/openFemaNgClient_logo.png"
 topics: ["OpenFema", "OpenFemaNgClient"]
 authors: "John Cornelison"
 keywords: ["Open Data", "OpenFemaNgClient", "myKeyWord"]
 draft: false
 ---
 
-{{< image src="/images/openFemaNgClient_logo.png" caption="openFemaNgClient" alt="OpenFemaNgClient is an Angular & Typescript application" height="" width="248" position="right" option="q75" class="img-fluid" title="OpenFemaNgClient is an Angular & Typescript application"  webp="false" >}}
-
-## OpenFemaNgClient™
-
-"A TypeScript & Angular Client for the openFEMA datasets/APIs"
-
 FEMA has released a wide variety of data for public use over the last decade. Their OpenFEMA project provides extensive, historic disaster-related data. It is well documented at: https://www.fema.gov/about/reports-and-data/openfema. However there are not many samples illustrating ways to display and analyze the data without advanced programming skills.
 
-OpenFemaNgClient is an Angular (i.e., 'Ng') and Typescript application that provides one such sample approach for accessing a few of these data sets with ubiqitious JavaScript. Initially this is a proof of concept, with encouragement it could be fortified into an enterprise ready tool!
+{{< image src="images/openFemaNgClient/openFemaNgClient_logo.png" caption="**openFemaNgClient**" alt="OpenFemaNgClient is an Angular & Typescript application" height="" width="248" position="right" option="q75" class="img-fluid" title="OpenFemaNgClient is an Angular & Typescript application"  webp="false" >}}
+
+OpenFemaNgClient is an Angular (i.e., 'Ng') and Typescript application that provides one such sample approach for accessing a few of these data sets with ubiquitous JavaScript. Initially this is a proof of concept, with encouragement it could be fortified into an enterprise ready tool!
 
 ---
 
 > A TypeScript & Angular Client for the openFEMA datasets/APIs
-
-FEMA has released a wide variety of data for public use over the last decade. Their OpenFEMA project provides extensive, historic disaster-related data. It is well documented at: https://www.fema.gov/about/reports-and-data/openfema . However there are not many samples illustrating ways to display and analyze the data without advanced programming skills.
-
-OpenFemaNgClient is an Angular (i.e., ‘Ng’) and Typescript application that provides one such sample approach for accessing a few of these data sets with ubiqitious JavaScript. Initially this is a proof of concept, with encouragement it could be fortified into an enterprise ready tool!
-
-<!-- https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax -->
-
-<!-- picture>
- <source media="(prefers-color-scheme: dark)" srcset="YOUR-DARKMODE-IMAGE">
- <source media="(prefers-color-scheme: light)" srcset="YOUR-LIGHTMODE-IMAGE">
- <img alt="YOUR-ALT-TEXT" src="YOUR-DEFAULT-IMAGE">
-</picture -->
-
-FEMA has released a wide variety of data for public use over the last decade. Their OpenFEMA project provides extensive, historic disaster-related data. It is well documented at: <https://www.fema.gov/about/reports-and-data/openfema>. However there are not many samples illustrating ways to display and analyze the data without advanced programming skills.
-
-OpenFemaNgClient is an Angular (i.e., 'Ng') and Typescript application that provides one such sample approach for accessing a few of these data sets with ubiqitious JavaScript. Initially this is a proof of concept, with encouragement it could be fortified into an enterprise ready tool!
 
 ## Features
 
 - Displays dataset using List, Card, Ag-Grid Grid and Google Map views
 - Also displays a Detailed view showing all data fields.
 - Provides a coding sample using latest versions of Angular & Typescript
-- Open Source, freely available using the permisive MIT license
+- Open Source, freely available using the permissive MIT license
 
-### Screenshots
+## Screenshots
 
-#### List View
+### List View
 
-![OpenFemaNgClient's List View](images/ListView.lg.png)
+![OpenFemaNgClient's List View](images/openFemaNgClient/ListView.lg.png)
 
-#### Card View
+### Card View
 
-![OpenFemaNgClient's Card View](images/CardView.lg.png)
+![OpenFemaNgClient's Card View](images/openFemaNgClient/CardView.lg.png)
 
-#### Grid View
+### Grid View
 
-![OpenFemaNgClient's Grid View](images/GridView.lg.png)
+![OpenFemaNgClient's Grid View](images/openFemaNgClient/GridView.lg.png)
 
-#### Map View
+### Map View
 
-![OpenFemaNgClient's Map View](images/MapView.lg.png)
+![OpenFemaNgClient's Map View](images/openFemaNgClient/MapView.lg.png)
 
-#### Detail View
+### Detail View
 
-![OpenFemaNgClient's Detail View](images/DetailView.lg.png)
+![OpenFemaNgClient's Detail View](images/openFemaNgClient/DetailView.lg.png)
 
 ## Known/Planned Issues
 
@@ -83,6 +63,7 @@ OpenFemaNgClient is an Angular (i.e., 'Ng') and Typescript application that prov
 With encouragement :+1: /funding:
 
 - [ ] Select any of the datasets for display
+- [ ] Update to latest version of Angular using signals
 - [ ] Support access to key API parameters
 - [ ] Move 'View' component code to an 'abstract' class where possible for consistency and streamlined sharing of code
 - [ ] More analysis & filtering options to aid analysis/investigation
@@ -136,11 +117,9 @@ We encourage your feedback and contributions to this repository. Content suggest
 
 ## eoc.online
 
-<img align="right" src="./src/assets/imgs/MIT_License.png">
-{{< image src="/images/MIT_License.png" caption="MIT License" alt="MIT License" height="" width="" position="right" option="q75" class="img-fluid" title="MIT License"  webp="false" >}}
-
 <http://eoc.online> provides free tools for Emergency Operations Centers and local CERT/VOAD/Citizen Corps groups. For more information check out <http://eoc.online>. We'd LOVE to get your reports of use and suggestions for enhancement.
 
 To report issues please visit <https://github.com/EOCOnline/OpenFemaNgClient/issues>.
 
+{{< image src="images/MIT_License.png" caption="**MIT License**" alt="MIT License" height="128" width="" position="right" option="q75" class="img-fluid" title="MIT License"  webp="false" >}}
 ©2022 eoc.online, under the MIT License

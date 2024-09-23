@@ -15,3 +15,13 @@ draft: true
 ## FEMA.gov Sitemap
 
 ### What's a Sitemap?
+
+{{< image src="/images/eoc.online.SkillsCrosswalk.png"
+  caption="**eoc.online Skills Crosswalk Screenshot**"
+  alt="eoc.online Skills Crosswalk screenshot"
+  height="" width="" position="right" command="fill" option="q75" class="img-fluid "
+  title="eoc.online Skills Crosswalk screenshot"  webp="false" >}}
+
+ABOVE with image tag, below with Figure!
+
+{{< figure src="/images/eoc.online.SkillsCrosswalk.png" title="eoc.online Skills Crosswalk screenshot" >}}

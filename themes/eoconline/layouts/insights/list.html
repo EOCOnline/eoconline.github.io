@@ -13,7 +13,7 @@
           <div class="row">
             {{ $paginator:= .Paginate .RegularPages }}
             {{ range $paginator.Pages }}
-              <div class="md:col-6 mb-14">
+              <div class="md:col-6 mb-14 p-4 shadow-xl">
                 {{ partial "components/insight-card" . }}
               </div>
             {{ end }}

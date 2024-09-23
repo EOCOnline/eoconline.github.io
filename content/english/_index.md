@@ -4,7 +4,7 @@ banner:
   title: "Open Source Tools & Resources for your Emergency Operation Center"
   content: "**eoc.online** provides insights & open-source software to support rural & international EOCs -- <br>
   helping you support others. We also provide tools for local ACS/ARES/CERT/MRC/Neighborhood/Citizen Corps groups."
-  image: "/images/20220205_112750.1200x512.png"
+  image: "/images/rangertrak/20220205_112750.1200x512.png"
   # button:
   #   enable: true
   #   label: "Learn More"
@@ -13,7 +13,7 @@ banner:
 # Features
 features:
   - title: "EOC Specific Insights"
-    image: "/images/GoogleMaps.512x403.png"
+    image: "/images/rangertrak/GoogleMaps.512x403.png"
     content: "We focus on smaller rural (& international) Emergency Operation Centers with few dedicated staff"
     content: "We focus on smaller rural (& international) Emergency Operation Centers with few dedicated staff"
     bulletpoints:
@@ -26,7 +26,7 @@ features:
       link: "/insights"
 
   - title: "Software Tools & Resources"
-    image: "/images/CardView.lg.512x456.png"
+    image: "/images/openFemaNgClient/CardView.lg.512x456.png"
     content: "References, software & tools your EOC can repurpose and integrate to stay current & save time."
     bulletpoints:
       - RangerTrak™ -- Track & map search & rescue & CERT/ACS members reporting via radio, without reliable cell or internet access
