@@ -1,30 +1,40 @@
 {{ define "main" }}
-  <section class="section-sm text-center">
+  <section class="text-center section-sm">
     <div class="container">
-      <div class="row justify-center">
+      <div class="justify-center row">
         <div class="sm:col-10 md:col-8 lg:col-6">
           <span class="text-[8rem] block font-bold text-dark dark:text-darkmode-dark"> 404 </span>
-          <h3 class="h2 mb-4">Oooops. Page not found!</h3>
+          <h3 class="mb-4 h2">Oooops. Page not found!</h3>
 
           {{ partial "image" (dict "Src" "images/404-error.png" "Alt" "Error 404 - Page not found" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]"
             "DisplayXL" "1200x" )
           }}
 
 
-          <video width="800" height="600" controls autoplay>
-            <source src="images/Rick-Astley.mp4" type="video/mp4" />
-            <source src="images/Rick_Astley_Never_Gonna_Give_You_Up.avi" type="video/avi" />
-            <source src="/images/Rick_Astley_Never_Gonna_Give_You_Up.ogv" type="video/ogg" />
+          <!--video src="videos/Rick-Astley.mp4" width="800" height="600" controls autoPlay muted>Your browser does not support the video tag.</video>
+
+          <video width="800" height="600" controls autoPlay muted>
+            <source src="videos/Rick-Astley.mp4" type="video/mp4" />
+            <source src="videos/Rick_Astley_Never_Gonna_Give_You_Up.avi" type="video/avi" />
+            <source src="/videos/Rick_Astley_Never_Gonna_Give_You_Up.ogv" type="video/ogg" />
             Your browser does not support the video tag.
-          </video>
+          </video-->
 
           <div class="content">
             <h6>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h6>
           </div>
 
-          <a href="{{ site.BaseURL | relLangURL }}" class="btn btn-primary mt-8"> Back to home </a>
+          <a href="{{ site.BaseURL | relLangURL }}" class="mt-8 btn btn-primary"> Back to home </a>
         </div>
       </div>
     </div>
   </section>
 {{ end }}
+<!--sc ript> id="myvideo"
+  https://stackoverflow.com/questions/34764876/html5-video-autoplay-not-automatically-starting-in-chrome
+  https://stackoverflow.com/questions/49822790/html5-video-autoplay-not-working
+playsinline
+loop
+
+  docum ent.getElementById("myvideo2").play();
+</scri pt-->
