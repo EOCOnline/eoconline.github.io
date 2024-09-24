@@ -1,20 +1,22 @@
 ---
-title: "Strawman EOC Website Sitemap"
-meta_title: ""
-description: ""
-date: 2024-9-21T05:00:00Z
-image: "/images/image-placeholder.png"
+title: "FEMA.gov Website Sitemap"
+meta_title: "EMA.gov Website Sitemap"
+description: "EMA.gov Website Sitemap"
+date: 2024-09-21T05:00:00Z
+image: "images/fema-sitemap.png"
 authors: "John Cornelison"
 categories: []
-tags: ["Sitemap"]
+tags: []
 Topics: ["EOC Websites", "FEMA"]
 Keywords: ["Sitemap"]
-draft: true
+draft: false
 ---
 
-## FEMA.gov Sitemap
+Exploring a bit, I realized that the official FEMA.gov website is huge, and has so many branches and leafs, that it is neigh impossible to fully grasp even its main sections. Its just too big!
 
-### What's a Sitemap?
+So, I've created a sitemap (as of 21 September 2024 anyway) for their site that allows one to contract and expand branches depending on what you're looking for.
+
+### What's a SiteMap?
 
 As noted [here](./eoc-sitemap.md),
 
@@ -26,17 +28,20 @@ _"A sitemap can also be used to quickly outline your (current or planned) websit
 
 The FEMA site is mammoth, and like eating an elephant its best to proceed a bit at a time.
 
-<!--figure>
-  <img src="./images/website-tour.png"-->
+    <img src="images/fema-sitemap.png" alt="FEMA Sitemap" width="99%" height="400px">
 
-<iframe title="Octopus.do visual sitemap" width="99%" height="750" src="https://share.octopus.do/embed/feddm224pr4"></iframe>
-  <!--figcaption><h4>An elephant at sunset</h4></figcaption>
-</figure-->
+    <iframe title="FEMA.gov Sitemap" width="99%" height="750" src="https://share.octopus.do/embed/feddm224pr4"></iframe>
+
+<div class="w-full w-auto bk-zinc-400">
+&nbsp;test!
+</div>
+
+### FEMA.gov Sitemap Textualized
+
+(coming...)
 
 The top-level pages can be expressed as:
 
-English
-
-Spanish
-
-Other Languages (French, ...)
+- English
+- Spanish
+- Other Languages (French, ...)
