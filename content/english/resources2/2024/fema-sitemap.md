@@ -19,7 +19,7 @@ So, I've created a sitemap (as of 21 September 2024 anyway) for their site that 
 
 ### What's a SiteMap?
 
-As noted [here](./eoc-sitemap.md),
+As noted [here](../eoc-sitemap/):
 
 _"Technically, a sitemap is a plain text file (albeit with a [special format](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview)) that lists pages in your website that you want search engines to crawl and add to their results database._
 
@@ -29,17 +29,16 @@ _"A sitemap can also be used to quickly outline your (current or planned) websit
 
 The FEMA site is mammoth, and like eating an elephant its best to proceed a bit at a time.
 
-    <img src="images/fema-sitemap.png" alt="FEMA Sitemap" width="99%" height="400px">
+- This takes some time to download & initialize
+- Drag in the background area to move the map around the screen
+- Zoom using the controls at the upper right, or using a scroll mouse wheel with the CNTL key held
+- Click on the arrow icon at the upper right of each block to go to that page
 
-    <iframe title="FEMA.gov Sitemap" width="99%" height="750" src="https://share.octopus.do/embed/feddm224pr4"></iframe>
-
-<div class="w-full w-auto bk-zinc-400">
-&nbsp;test!
-</div>
+<iframe title="FEMA.gov Sitemap" src="https://share.octopus.do/embed/feddm224pr4"  class="w-screen min-w-full h-screen border-2"></iframe>
 
 ### FEMA.gov Sitemap Textualized
 
-(coming...)
+(coming soon...)
 
 The top-level pages can be expressed as:
 

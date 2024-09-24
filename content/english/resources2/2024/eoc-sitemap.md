@@ -1,18 +1,18 @@
 ---
 title: "Strawman EOC Website Sitemap"
-meta_title: ""
-description: ""
-date: 2024-12-31T05:00:00Z
-image: "/images/image-placeholder.png"
+meta_title: "Use a sitemap to plan your next website"
+description: "Use a sitemap to plan your next website"
+date: 2024-09-24T05:00:00Z
+image: "images/eoc-sitemap.png"
 authors: "John Cornelison"
 categories: []
 tags: []
 Topics: ["EOC Websites"]
 Keywords: ["Sitemap"]
-draft: true
+draft: false
 ---
 
-## Strawman EOC Website Sitemap
+Creating a sitemap is an early process to conceptualize a future website's content - or to plan changes to an existing site. A sitemap is tangible but simple enough to iterate proposed site content in realtime.
 
 ### Why a Sitemap?
 
@@ -20,13 +20,20 @@ What's a sitemap & why might you be interested in having one anyway?!
 
 Technically, a sitemap is a plain text file (albeit with a [special format](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview)) that lists pages in your website that you want search engines to crawl and add to their results database.
 
-A sitemap can also be used to quickly outline your (current or planned) website. Being abstract, it is easy to move or rearrange a website's structure for discussion purposes. It can be represented as a mindmap, but for our purposes a basic outline of pages will suffice. Each line of the outline could be a main menu heading, a section, a page, or even a portion of a page. It
+A sitemap can also be used to quickly outline your (current or planned) website. Being abstract, it is easy to move or rearrange a website's structure for discussion purposes. It can be represented as a mind-map, but for our purposes a basic outline of pages will suffice. Each row or line of the outline could be:
 
-FEMA.gov Sitemap Visualized...
+- a main menu heading,
+- a section,
+- a page, or even
+- a portion of a page.
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/PyA3LgF0hMRLR2r8ehMPIh/FEMA-Sitemap--Vertical?node-id=1-2&embed-host=share" allowfullscreen></iframe>
+To create your own sitemap, start at a high level, just listing main sections of the website. Gradually add more detailed pages. To clarify a page's content, eventually you can add details about a page's style, functionality, and main components as there is consensus on the higher level plan.
 
-it is a list of pages you
+This is specifically a "Strawman", i.e., something to attack and tear apart. See what you like and care to adopt or burn and shred the parts that don't make sense. Its obviously too large and bulky and expensive and time-consuming and duplicative to build the site below.
+
+Use a tool or whiteboard that makes it easy to move sections of your website, or even pages around. A spreadsheet may be all you need.
+
+Also take a look at other sitemaps, even the vast [FEMA.gov sitemap](../fema-sitemap/) for other ideas.
 
 ### Public Pages
 
@@ -150,7 +157,7 @@ it is a list of pages you
   - DEI
   - EOC training expectations and opportunities
   - Financial policies and reimbursement forms
-  - Standard Operating Proceedures
+  - Standard Operating Procedures
   - Guide to EOC Resources
     - electronic
     - facilities

@@ -38,10 +38,15 @@
               {{ time.Format ":date_long" .PublishDate }}
             </li>
           </ul>
-          <div class="mb-10 content">
-            {{ partial "toc.html" (dict "Class" "blog" "Collapsed" false "TableOfContents" .TableOfContents ) }}
+
+          <div class="content mb-10">
+            {{ $toc := .Params.toc }}
+            {{ if not $toc }}
+              {{ partial "toc.html" (dict "Class" "blog" "Collapsed" false "TableOfContents" .TableOfContents ) }}
+            {{ end }}
             {{ .Content }}
           </div>
+
           <div class="items-start justify-between row">
             {{ $keywords:= .Params.keywords }}
             {{ if $keywords }}

@@ -16,7 +16,7 @@ draft: true
 
 ### What's a Sitemap?
 
-{{< image src="/images/eoc.online.SkillsCrosswalk.png"
+{{< image src="images/eoc.online.SkillsCrosswalk.png"
   caption="**eoc.online Skills Crosswalk Screenshot**"
   alt="eoc.online Skills Crosswalk screenshot"
   height="" width="" position="right" command="fill" option="q75" class="img-fluid "
@@ -24,10 +24,10 @@ draft: true
 
 ABOVE with image tag, below with Figure!
 
-{{< figure src="/images/eoc.online.SkillsCrosswalk.png" title="eoc.online Skills Crosswalk screenshot" >}}
+{{< figure src="images/eoc.online.SkillsCrosswalk.png" title="eoc.online Skills Crosswalk screenshot" >}}
 
 Or try this!
 
-{{ partial "image" (dict "Src" .image "Alt" "Image of CERT & ACS teams using RangerTrak" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]"
+{{ partial "image" (dict "Src" "images/SkillsCrosswalk.png" "Alt" "Image of CERT & ACS teams using RangerTrak" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]"
   "DisplayXL" "1200x" )
 }}
