@@ -18,6 +18,12 @@
 // per https://github.com/gethugothemes/hugo-modules/tree/master/search
 @import 'search';
 
+.shadows-into-light-regular {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style : normal;
+}
+
 img[src~="thumbnail"] {
   width : 150px;
   height: 100px;
