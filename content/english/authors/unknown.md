@@ -1,15 +1,15 @@
 ---
 title: An unknown author
 #email:
-image: "/images/unknown-author.png"
+image: "images/unknown-author.png"
 description: We aren't sure who created this
 social:
   - name: mystery
     icon: fa-question
-    link: /images/unknown.jpg"
+    link: images/unknown.jpg"
 ---
 
-##### Unknown Author
+##### Tribute to Another Unknown Author
 
 We're sorry but we're uncertain who originally authored this.
 
