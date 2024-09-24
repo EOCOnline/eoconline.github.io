@@ -15,7 +15,7 @@
           <ul class="mb-4">
             <li class="inline-block mr-4">
               <a href="{{ `authors/` | relLangURL }}{{ .Params.Author | urlize }}/">
-                <i class="mr-2 fa-regular fa-circle-user"></i>{{ .Params.author }}
+                <i class="mr-2 fa-regular fa-circle-user"></i>{{ .Params.authors }}
               </a>
             </li>
             {{ $topics:= .Params.topics }}
@@ -24,7 +24,7 @@
                 <i class="mr-2 fa-regular fa-folder"></i>
                 {{ range $i,$p:= $topics }}
                   <a href="{{ `topics/` | relLangURL }}{{ . | urlize | lower }}/" class=""
-                    >{{ . | humanize }}{{ if ne $i (sub
+                    >{{ . }}{{ if ne $i (sub
                       (len $topics) 1)
                     }}
                       {{ "," }}
@@ -51,7 +51,7 @@
                   {{ range $i,$p:= $keywords }}
                     <li class="inline-block">
                       <a class="block px-3 py-1 m-1 rounded bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark hover:text-white" href="{{ `keywords/` | relLangURL }}{{ . | urlize | lower }}/">
-                        {{ . | humanize }}
+                        {{ . }}
                       </a>
                     </li>
                   {{ end }}
