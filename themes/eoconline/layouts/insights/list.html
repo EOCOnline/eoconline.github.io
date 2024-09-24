@@ -8,7 +8,8 @@
     <div class="container">
       <div class="row">
         <p class="mb-4 italic font-semibold">Insights are temporal notices, reviews and notes - that "expire"</p>
-        <!-- insight (blog) posts -->
+
+        <!-- insight posts -->
         <div class="lg:col-8">
           <div class="row">
             {{ $paginator:= .Paginate .RegularPages }}
@@ -35,7 +36,12 @@
 
           <!-- widget wrapper: only do Categories & Tags -->
           {{ $widget:= site.Params.widgets.sidebarCT }}
+
+
+          <!-- widgetCT =  $widget }} on page .Title }} -->
+
           {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+
         </div>
       </div>
     </div>

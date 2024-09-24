@@ -1,3 +1,10 @@
-{{ range .Widgets }}
-  {{ partial ( print "widgets/" . ) $.Scope }}
+{{ $scope := .Scope }}
+{{ $widget := .Widgets }}
+
+
+<!--incoming widget =  $widget }} &&&&  .Widgets }}-->
+
+{{ range $widget }}
+  <!--br />WORKING ON WIDGET:  . | jsonify }} with scope: $scope }}<br /-->
+  {{ partial ( print "widgets/" . ) $scope }}
 {{ end }}
