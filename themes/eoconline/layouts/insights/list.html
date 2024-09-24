@@ -34,13 +34,10 @@
           {{ partialCached "calendar" (dict "context" . "fromYear" $fromYear "fromMonth" $fromMonth "toYear" (now.Format "2006") "toMonth" (now.Format "1") "pages" .Site.Pages) }}
 
 
-          <!-- widget wrapper: only do Categories & Tags -->
+          <!-- widget wrapper: only do Categories & Tags  - but partial can't then be cached... -->
           {{ $widget:= site.Params.widgets.sidebarCT }}
 
-
-          <!-- widgetCT =  $widget }} on page .Title }} -->
-
-          {{ partialCached "widgets/widget-wrapperCT" ( dict "Scope" . "Widgets" $widget ) }}
+          {{ partial "widgets/widget-wrapper" ( dict "Scope" . "Widgets" $widget ) }}
 
         </div>
       </div>

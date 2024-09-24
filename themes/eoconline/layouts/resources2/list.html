@@ -24,13 +24,10 @@
 
         <!-- sidebar -->
         <div class="lg:col-4">
-          <!-- widget - Only show Topics & Keywords -->
+          <!-- widget - Only show Topics & Keywords - but partial can't then be cached... -->
           {{ $widget:= site.Params.widgets.sidebarTK }}
 
-
-          <!-- widgetTK =  $widget }} on page .Title }} -->
-
-          {{ partialCached "widgets/widget-wrapperTK" ( dict "Scope" . "Widgets" $widget ) }}
+          {{ partial "widgets/widget-wrapper" ( dict "Scope" . "Widgets" $widget ) }}
 
         </div>
       </div>
