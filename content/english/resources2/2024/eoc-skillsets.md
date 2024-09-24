@@ -7,7 +7,7 @@ date: 2024-09-04T05:00:00Z
 created: 2022-09-04T05:00:00Z
 reviewed: 2024-09-27T05:00:00Z
 image: "images/eoc.online.SkillsCrosswalk.png"
-topics: ["Credentialing", "NIMS"]
+topics: ["Credentialing", "NIMS", "National Qualification System"]
 authors: "John Cornelison"
 keywords: ["Skillsets", "Excel", "Credentialing"]
 draft: true
