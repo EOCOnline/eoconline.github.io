@@ -3,7 +3,7 @@ title: "Strawman EOC Website Sitemap"
 meta_title: "Use a sitemap to plan your next website"
 description: "Use a sitemap to plan your next website"
 date: 2024-09-24T05:00:00Z
-image: "./images/Straw_of_the_rice.08Oct9-2038688354.jpg"
+image: "images/Straw_of_the_rice.jpg"
 authors: "John Cornelison"
 categories: []
 tags: []
