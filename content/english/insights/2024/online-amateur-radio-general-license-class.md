@@ -2,7 +2,7 @@
 title: "Online Amateur Radio General License Class"
 meta_title: "Sept. 27 thru Oct. 19"
 description: ""
-date: 2024-09-22T05:00:00Z
+date: 2024-09-20T05:00:00Z
 image: "../images/stryker_three-ham-radio-licenses.jpg"
 authors: "John Cornelison"
 categories: ["ARES"]
