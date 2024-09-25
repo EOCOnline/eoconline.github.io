@@ -2,7 +2,7 @@
 title: "Online Amateur Radio General License Class"
 meta_title: "Sept. 27 thru Oct. 19"
 description: ""
-date: 2024-12-31T05:00:00Z
+date: 2024-9-22T05:00:00Z
 image: "/images/image-placeholder.png"
 authors: "John Cornelison"
 categories: ["ARES"]
@@ -12,9 +12,7 @@ Keywords: []
 draft: false
 ---
 
-## Online Amateur Radio General License Class
-
-#### Sept. 27 thru Oct. 19
+**Online Amateur Radio General License Class**
 
 Amateur Radio General License (level 2) Class
 

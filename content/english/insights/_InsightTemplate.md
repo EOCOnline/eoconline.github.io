@@ -29,3 +29,5 @@ ABOVE with image tag, below with Figure!
 Or try this!
 
 {{ partial "image" (dict "Src" "images/john.png "Alt" "Image of CERT & ACS teams using RangerTrak" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "1200x" ) }}
+
+< slider dir="/images/gallery" class="max-w-[600px] ml-0" height="400" width="400" webp="true" command="Fit" option="" zoomable="true" >}}

@@ -2,13 +2,11 @@
 title: "eoc.online"
 meta_title: "About"
 description: "eoc.online™ provides free tools for Emergency Operations Centers (EOCs) and local ACS/ARES/CERT/MRC/Neighborhood/Citizen Corps groups. For more information check out https://eoc.online."
-image: "/images/logos/eoconline.png"
+image: "/images/logos/eoconline3.png"
 draft: false
 ---
 
 **eoc.online™ provides free tools for Emergency Operations Centers (EOCs) and local ACS/ARES/CERT/MRC/Neighborhood/Citizen Corps groups.**
-
-<!-- < slider dir="/images/gallery" class="max-w-[600px] ml-0" height="400" width="400" webp="true" command="Fit" option="" zoomable="true" >}} -->
 
 ### About
 
