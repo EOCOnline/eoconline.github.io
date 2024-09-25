@@ -31,3 +31,21 @@ Or try this!
 {{ partial "image" (dict "Src" "images/john.png "Alt" "Image of CERT & ACS teams using RangerTrak" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "1200x" ) }}
 
 < slider dir="/images/gallery" class="max-w-[600px] ml-0" height="400" width="400" webp="true" command="Fit" option="" zoomable="true" >}}
+
+![./knight.jpg](./images/knight.jpg# thumbnail bordered right)
+
+waves:
+{{ $image := .Resources.Get "./images/knight.jpg" }}
+
+![my big knight](./images/knight.jpg){width=50% .bordered}
+
+https://stackoverflow.com/questions/255170/markdown-and-image-alignment
+![image alt >](/knight.jpg)
+
+![my knight!]{./images/knight.jpg#right}
+
+![my knight!]{./images/knight.jpg#right bordered}
+
+[This is *some text*]{.class key="val"}
+
+(https://pkg.go.dev/github.com/disintegration/imaging)[https://pkg.go.dev/github.com/disintegration/imaging]
