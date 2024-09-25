@@ -2,19 +2,22 @@
 title: "Online Amateur Radio General License Class"
 meta_title: "Sept. 27 thru Oct. 19"
 description: ""
-date: 2024-9-22T05:00:00Z
-image: "/images/image-placeholder.png"
+date: 2024-09-22T05:00:00Z
+image: "../images/stryker_three-ham-radio-licenses.jpg"
 authors: "John Cornelison"
 categories: ["ARES"]
 tags: ["Class", "License"]
 Topics: []
 Keywords: []
+toc: "off"
 draft: false
 ---
 
 **Online Amateur Radio General License Class**
 
 Amateur Radio General License (level 2) Class
+
+{{< figure src="../images/stryker_three-ham-radio-licenses.jpg" title="The three types of Amateur Radio Licenses" >}}
 
 **When:** Friday September 27 through Saturday October 19, 2024
 
