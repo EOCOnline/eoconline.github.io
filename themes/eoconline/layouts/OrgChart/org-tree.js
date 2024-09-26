@@ -1,18 +1,7 @@
-let fontSize = document.body.style.fontSize;
+let fontSize = document.querySelector(".tree").style.fontSize;
+setFontSize(fontSize);
 
-function isNumber(n) {
-  return !isNaN(parseFloat(n)) && isFinite(n);
-}
-
-function setFontSize(el) {
-  fontSize = el.value;
-  if (!isNumber(fontSize) || fontSize < 0.5) {
-    fontSize = 1;
-  }
-  document.body.style.fontSize = fontSize + 'em';
-}
-
-document.querySelector("#fontSize").addEventListener("change", (e) => { setFontSize(e.target); });
+document.querySelector("#fontSize").addEventListener("input", (e) => { setFontSize(e.target); });
 
 document.querySelector("#fontSize").addEventListener('keyup', (event) => {
   if (event.key === 'Escape') {
@@ -24,3 +13,15 @@ document.querySelector("#fontSize").addEventListener('keyup', (event) => {
     }
   }
 });
+
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+function setFontSize(el) {
+  fontSize = el.value;
+  if (!isNumber(fontSize) || fontSize < 0.5) {
+    fontSize = 1;
+  }
+  document.querySelector(".tree").style.fontSize = fontSize + 'em';
+}

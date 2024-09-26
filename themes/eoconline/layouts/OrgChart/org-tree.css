@@ -1,18 +1,89 @@
-/* https://codepen.io/bisserof/pen/nrMveb
-*/
-
 body {
   margin: 30px;
   font-family: sans-serif;
 }
 
-#fontSizeWrapper {
-  font-size: 16px;
+#TreeOptions {
+  margin: 15px 0;
+  padding: 15px;
+  background-color: #eee;
+  border-radius: 0.3em;
+}
+
+#TreeOptions div {
+  font-size: large;
+  font-weight: bold;
+}
+
+#TreeOptions input {
+  margin: 5px;
+  background-color: rgb(168, 168, 168);
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-weight: 600;
+  line-height: 1.3rem;
+  padding: 0.25rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6b7280 solid;
+  text-decoration-thickness: auto;
+
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  /*
+    transition-duration: 2.5s;
+  box-shadow:
+    rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.15) 0 1px 2px,
+    rgba(44, 187, 99, 0.15) 0 2px 4px,
+    rgba(44, 187, 99, 0.15) 0 4px 8px,
+    rgba(44, 187, 99, 0.15) 0 8px 16px,
+    rgba(44, 187, 99, 0.15) 0 16px 32px;
+    */
+  display: inline-block;
+  transition: all 500ms;
+}
+
+#TreeOptions input:hover {
+  box-shadow:
+    rgba(69, 103, 187, 0.35) 0 -25px 18px -14px inset,
+    rgba(69, 103, 187, 0.35) 0 1px 2px,
+    rgba(69, 103, 187, 0.35) 0 2px 4px,
+    rgba(69, 103, 187, 0.35) 0 4px 8px,
+    rgba(69, 103, 187, 0.35) 0 8px 16px,
+    rgba(69, 103, 187, 0.35) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+  background-color: #374151;
+}
+
+#TreeOptions input:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+#fontSizeLabel {
+  font-size: medium;
+  margin-top: 3px;
 }
 
 #fontSize {
-  width: 100px;
-  font-size: 1em;
+  width: 150px;
+  margin-left: 10px;
+}
+
+#fontSizeValue {
+  width: 2em;
+  display: inline-block;
+  background-color: rgb(255, 255, 255);
+  padding: 2px;
 }
 
 /* ————————————————————–
@@ -25,10 +96,9 @@ ul {
 }
 
 .tree {
-  margin: 1em;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  padding: 20px;
+  border: 1px solid #a6a6a6;
+  border-radius: 0.3em;
 }
 
 .tree input {
