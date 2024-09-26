@@ -50,7 +50,7 @@ body {
     rgba(44, 187, 99, 0.15) 0 16px 32px;
     */
   display: inline-block;
-  transition: all 500ms;
+  transition: all 400ms;
 }
 
 #TreeOptions input:hover {
@@ -169,7 +169,7 @@ label.tree_label:before {
 
 :checked ~ label.tree_label:before {
   content: "–";
-  background: #601616;
+  background: #414040;
 }
 
 /* ————————————————————–

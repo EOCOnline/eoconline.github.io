@@ -1,4 +1,5 @@
-<!--  originally based on https://codepen.io/bisserof/pen/nrMveb  -->
+<!--  originally based on https://codepen.io/bisserof/pen/nrMveb
+-->
 
 <!doctype html>
 <html lang="en">
@@ -16,8 +17,8 @@
   <body>
     <div id="TreeOptions">
       <div>Tree Options:<br /></div>
-      <input type="button" value="Collapse Entire Tree" onclick="" />
-      <input type="button" value="Expand Entire Tree" onclick="" />
+      <input type="button" value="Collapse Entire Tree" onclick="collapseTree();" />
+      <input type="button" value="Expand Entire Tree" onclick="expandTree();" />
 
       <div>
         <label title="Font size in em's" id="fontSizeLabel">
@@ -34,6 +35,8 @@
         </label>
       </div>
     </div>
+
+    <ul id="JSONunorderedList"></ul>
 
     <ul class="tree">
       <li>
