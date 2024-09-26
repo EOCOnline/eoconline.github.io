@@ -2,7 +2,6 @@ let fontSize = document.querySelector(".tree").style.fontSize;
 setFontSize(fontSize);
 
 document.querySelector("#fontSize").addEventListener("input", (e) => { setFontSize(e.target); });
-
 document.querySelector("#fontSize").addEventListener('keyup', (event) => {
   if (event.key === 'Escape') {
     // esc key pressed
@@ -14,10 +13,6 @@ document.querySelector("#fontSize").addEventListener('keyup', (event) => {
   }
 });
 
-function isNumber(n) {
-  return !isNaN(parseFloat(n)) && isFinite(n);
-}
-
 function setFontSize(el) {
   fontSize = el.value;
   if (!isNumber(fontSize) || fontSize < 0.5) {
@@ -26,16 +21,26 @@ function setFontSize(el) {
   document.querySelector(".tree").style.fontSize = fontSize + 'em';
 }
 
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
 function expandTree() {
   var checkboxes = document.querySelector(".tree").getElementsByTagName("input");
-  for (var i = 0; i < checkboxes.length; ++i) { checkboxes[i].checked = "checked"; }
-  console.log("expanded " + checkboxes.length + "tree nodes");
+  var len = checkboxes.length;
+  for (var i = 0; i < len; i++) {
+    checkboxes[i].checked = "checked";
+  }
+  console.log("expanded all " + checkboxes.length + " nodes.");
 }
 
 function collapseTree() {
   var checkboxes = document.querySelector(".tree").getElementsByTagName("input");
-  for (var i = 0; i < checkboxes.length; ++i) { checkboxes[i].checked = ""; }
-  console.log("Collapsed " + checkboxes.length + "tree nodes");
+  var len = checkboxes.length;
+  for (var i = 0; i < len; i++) {
+    checkboxes[i].checked = "";
+  }
+  console.log("Collapsed all " + checkboxes.length + " nodes.");
 }
 
 /*
@@ -45,6 +50,45 @@ window.onload = () => {
   $("#list").html(markupArray.join(""));
 };
 */
+
+
+
+
+
+// or ESM/TypeScript import
+import Ajv from "ajv"
+// Node.js require:
+const Ajv = require("ajv")
+
+const ajv = new Ajv() // options can be passed, e.g. {allErrors: true}
+
+const schema = {
+  type: "object",
+  properties: {
+    foo: { type: "integer" },
+    bar: { type: "string" },
+  },
+  required: ["foo"],
+  additionalProperties: false,
+}
+
+const data = {
+  foo: 1,
+  bar: "abc",
+}
+
+const validate = ajv.compile(schema)
+const valid = validate(data)
+if (!valid) console.log(validate.errors)
+
+
+
+
+
+
+
+
+
 
 dataSource = {
   id: 1,
@@ -77,13 +121,22 @@ dataSource = {
   ],
 };
 
+// See https://jsonlint.com/ for JSON formatting rules.
+
 // https://stackoverflow.com/questions/6692538/generate-unordered-list-from-json-data
 
 var jsonObj = {
-  "labels": [{
-    "labelFont": "35pt Calibri", "labelLocation": { "x": 0.1483, "y": 0.75 }, "labelText": "fluffer"
-  },
-  { "labelFont": "35pt Calibri", "labelLocation": { "x": 0.666, "y": 0.666 }, "labelText": "nutter" }
+  "labels": [
+    {
+      "labelFont": "35pt Calibri",
+      "labelLocation": { "x": 0.1483, "y": 0.75 },
+      "labelText": "fluffer"
+    },
+    {
+      "labelFont": "35pt Calibri",
+      "labelLocation": { "x": 0.666, "y": 0.666 },
+      "labelText": "nutter"
+    }
   ]
 }; //some json to display
 
