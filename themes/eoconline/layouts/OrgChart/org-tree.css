@@ -3,6 +3,7 @@ body {
   font-family: sans-serif;
 }
 
+/* Tree Options */
 #TreeOptions {
   margin: 15px 0;
   padding: 15px;
@@ -87,10 +88,10 @@ body {
   padding: 2px;
 }
 
-/* ————————————————————–
-  Tree core styles
+/* Core Tree Styles
+BUG: ul will affect all ul in the page
 */
-ul {
+.tree ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -115,9 +116,12 @@ ul {
   display: block;
 }
 
-/* ————————————————————–
-  Tree rows
-*/
+/* Tree rows
+
+input[type=text] {
+   //styling
+}
+    */
 .tree li {
   line-height: 1.2;
   position: relative;
@@ -132,9 +136,7 @@ ul {
   padding-bottom: 0;
 }
 
-/* ————————————————————–
-  Tree labels
-*/
+/* Tree labels */
 .tree_label {
   position: relative;
   display: inline-block;
@@ -149,9 +151,7 @@ label.tree_label:hover {
   color: #666;
 }
 
-/* ————————————————————–
-  Tree expanded icon
-*/
+/* Tree expanded icon */
 label.tree_label:before {
   background: #000;
   color: #fff;
@@ -167,14 +167,13 @@ label.tree_label:before {
   line-height: 0.9em;
 }
 
+/* Tree collapsed icon */
 :checked ~ label.tree_label:before {
   content: "–";
   background: #414040;
 }
 
-/* ————————————————————–
-  Tree branches
-*/
+/* Tree branches */
 .tree li:before {
   position: absolute;
   top: 0;

@@ -31,7 +31,7 @@ function expandTree() {
   for (var i = 0; i < len; i++) {
     checkboxes[i].checked = "checked";
   }
-  console.log("expanded all " + checkboxes.length + " nodes.");
+  console.log("Expanded all " + checkboxes.length + " nodes.");
 }
 
 function collapseTree() {
@@ -52,8 +52,10 @@ window.onload = () => {
 */
 
 
+/*
 
-
+https://ajv.js.org/guide/getting-started.html#basic-data-validation
+https://www.npmjs.com/package/ajv
 
 // or ESM/TypeScript import
 import Ajv from "ajv"
@@ -82,15 +84,36 @@ const valid = validate(data)
 if (!valid) console.log(validate.errors)
 
 
-
-
-
-
-
-
-
+*/
 
 dataSource = {
+  title: "",
+  url: "emergency-managers",
+  summary: "Emergency Managers",
+  children: [
+    { title: "Tools for Practitioners", url: "emergency-managers/practitioners" },
+
+  ]
+};
+
+/*
+Parent Page ID;
+Page ID;
+Page title;
+Block title;
+Block content;
+Page link;
+SEO title;
+SEO slug;
+SEO description;
+SEO H1;
+SEO additional
+*/
+
+
+
+
+dataSource3 = {
   id: 1,
   name: "Lao Lao",
   title: "general manager",
