@@ -42,11 +42,10 @@ The FEMA site is mammoth, and like eating an elephant its best to proceed a bit 
 - Zoom using the controls at the upper right, or using a scroll mouse wheel with the CTRL key held
 - Click on the arrow icon at the upper right of each block to go to that page
 
-[https://octopus.do/aq1k7kiqjrs](https://octopus.do/aq1k7kiqjrs)
+<iframe title="FEMA.gov Sitemap" src="https://share.octopus.do/embed/aq1k7kiqjrs"  class="box-border absolute z-20 w-5/6 border-4 left-10" style="height:60vh;"></iframe>
 
-<iframe title="Octopus.do visual sitemap" width="800" height="450" src="https://share.octopus.do/embed/aq1k7kiqjrs"></iframe>
+<div class="z-10 " style="height: 60vh;"></div>
 
-<iframe title="FEMA.gov Sitemap" src="https://share.octopus.do/embed/feddm224pr4"  class="w-screen h-screen min-w-full border-2"></iframe>
 ### FEMA.gov Sitemap Textualized
 
 (coming soon...)

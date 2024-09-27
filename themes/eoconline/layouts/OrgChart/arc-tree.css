@@ -7,7 +7,7 @@ body {
 #TreeOptions {
   margin: 15px 0;
   padding: 15px;
-  width: 375px;
+  width: 675px;
   background-color: #eee;
   border-radius: 0.3em;
   border: #505050 1px solid;
@@ -88,9 +88,7 @@ body {
   padding: 2px;
 }
 
-/* Core Tree Styles
-BUG: ul will affect all ul in the page
-*/
+/* Core Tree Styles */
 .tree ul {
   list-style-type: none;
   padding: 0;
@@ -118,8 +116,8 @@ BUG: ul will affect all ul in the page
 
 /* Tree rows
 
-input[type=text] {
-   //styling
+input[type="text"] {
+   //styling Firefox only??
 }
     */
 .tree li {

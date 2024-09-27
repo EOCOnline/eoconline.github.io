@@ -13,6 +13,7 @@ document.querySelector("#fontSize").addEventListener('keyup', (event) => {
   }
 });
 
+
 function setFontSize(el) {
   fontSize = el.value;
   if (!isNumber(fontSize) || fontSize < 0.5) {
