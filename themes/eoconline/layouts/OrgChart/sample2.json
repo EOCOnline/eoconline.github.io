@@ -1,51 +1,54 @@
-<!--  originally based on https://codepen.io/bisserof/pen/nrMveb
--->
+{
+  "name": "FEMA.Gov Home",
+  "URL": "/",
+  "meta": "FEMa info",
+  "children": [
+    {
+      "name": "ES",
+      "URL": "/es",
+      "meta": "Spanish",
+      "children": [
+        {
+          "name": "Emergency Managers",
+          "URL": "/es/emergency-managers",
+          "meta": "Emergency Manager information in Spanish",
+          "children": [
+            {
+              "name": "Tools for Practitioners",
+              "URL": "/es/emergency-managers/practitioners",
+              "meta": "Tools for Practitioners in Spanish"
+            },
+            {
+              "name": "Tools for Politicians",
+              "URL": "/es/emergency-managers/Politicians",
+              "meta": "Tools for Politicians in Spanish"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Emergency Managers",
+      "URL": "/emergency-managers",
+      "meta": "Emergency Manager information",
+      "children": [
+        {
+          "name": "Tools for Practitioners",
+          "URL": "/emergency-managers/practitioners",
+          "meta": "Tools for Practitioners"
+        },
+        {
+          "name": "Tools for Politicians",
+          "URL": "/emergency-managers/Politicians",
+          "meta": "Tools for Politicians"
+        }
+      ]
+    }
+  ]
+}
+/*
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Arc Tree</title>
-
-    <!-- link rel="icon" type="image/x-icon" href="./logo.jpg" / -->
-    <link rel="stylesheet" href="./arc-tree.css" />
-    <script defer src="./arc-tree.js"></script>
-  </head>
-  <body>
-    <div id="TreeOptions">
-      <div>Tree Options:<br /></div>
-      <input type="button" value="Collapse Entire Tree" onclick="collapseTree();" />
-      <input type="button" value="Expand Entire Tree" onclick="expandTree();" />
-
-      <div>
-        <label title="Font size in em's" id="fontSizeLabel">
-          Font size: <span id="fontSizeValue">2</span>
-          <input type="range" value="2.5" id="fontSize" step="0.5" min="0.5" max="5" list="steplist" oninput="document.querySelector('#fontSizeValue').textContent = this.value" />
-          <datalist id="steplist">
-            <option>0.5</option>
-            <option>1.0</option>
-            <option>2.0</option>
-            <option>3.0</option>
-            <option>4.0</option>
-            <option>5</option>
-          </datalist>
-        </label>
-      </div>
-    </div>
-
-    <label>
-      Select a JSON file to view:
-      <input type="file" onChange="fileChange(this.files[0])" />
-    </label>
-
-    <ul id="JSONunorderedList"></ul>
-
-    <ul id="unorderedList" class="tree"></ul>
-
-    <ul class="tree">
+<ul class="tree">
       <li>
         <input type="checkbox" id="c1" />
         <label class="tree_label" for="c1">Level 0</label>
@@ -103,5 +106,17 @@
         </ul>
       </li>
     </ul>
-  </body>
-</html>
+*/
+/*
+Parent Page ID;
+Page ID;
+Page title;
+Block title;
+Block content;
+Page link;
+SEO title;
+SEO slug;
+SEO description;
+SEO H1;
+SEO additional
+*/

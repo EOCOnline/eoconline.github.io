@@ -3,6 +3,11 @@ body {
   font-family: sans-serif;
 }
 
+.arrayOrObject {
+  /*font-weight: bold;*/
+  color: #0000ff;
+}
+
 /* Tree Options */
 #TreeOptions {
   margin: 15px 0;

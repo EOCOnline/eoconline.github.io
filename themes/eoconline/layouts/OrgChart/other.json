@@ -1,72 +1,4 @@
-/*
-window.onload = () => {
-  createList(data);
-  markupArray.push("</ul>");
-  $("#list").html(markupArray.join(""));
-};
-*/
-/*
-
-https://ajv.js.org/guide/getting-started.html#basic-data-validation
-https://www.npmjs.com/package/ajv
-
-// or ESM/TypeScript import
-import Ajv from "ajv"
-// Node.js require:
-const Ajv = require("ajv")
-
-const ajv = new Ajv() // options can be passed, e.g. {allErrors: true}
-
-const schema = {
-  type: "object",
-  properties: {
-    foo: { type: "integer" },
-    bar: { type: "string" },
-  },
-  required: ["foo"],
-  additionalProperties: false,
-}
-
-const data = {
-  foo: 1,
-  bar: "abc",
-}
-
-const validate = ajv.compile(schema)
-const valid = validate(data)
-if (!valid) console.log(validate.errors)
-
-
-*/
-
-dataSource = {
-  title: "",
-  url: "emergency-managers",
-  summary: "Emergency Managers",
-  children: [
-    { title: "Tools for Practitioners", url: "emergency-managers/practitioners"
-    },
-  ]
-};
-
-/*
-Parent Page ID;
-Page ID;
-Page title;
-Block title;
-Block content;
-Page link;
-SEO title;
-SEO slug;
-SEO description;
-SEO H1;
-SEO additional
-*/
-
-
-
-
-dataSource3 = {
+{
   id: 1,
   name: "Lao Lao",
   title: "general manager",
@@ -104,28 +36,6 @@ dataSource3 = {
     { id: 12, name: "Yu Tie", title: "department manager"
     },
   ],
-};
-
+}
 // See https://jsonlint.com/ for JSON formatting rules.
 // https://stackoverflow.com/questions/6692538/generate-unordered-list-from-json-data
-
-var jsonObj = {
-  "labels": [
-    {
-      "labelFont": "35pt Calibri",
-      "labelLocation": {
-        "x": 0.1483,
-        "y": 0.75
-      },
-      "labelText": "fluffer"
-    },
-    {
-      "labelFont": "35pt Calibri",
-      "labelLocation": {
-        "x": 0.666,
-        "y": 0.666
-      },
-      "labelText": "nutter"
-    }
-  ]
-}; //some json to display
