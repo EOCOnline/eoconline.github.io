@@ -44,128 +44,9 @@ function collapseTree() {
   console.log("Collapsed all " + checkboxes.length + " nodes.");
 }
 
-/*
-window.onload = () => {
-  createList(data);
-  markupArray.push("</ul>");
-  $("#list").html(markupArray.join(""));
-};
-*/
+// {{ now.UnixNano }} to create a unique ID
 
 
-/*
-
-https://ajv.js.org/guide/getting-started.html#basic-data-validation
-https://www.npmjs.com/package/ajv
-
-// or ESM/TypeScript import
-import Ajv from "ajv"
-// Node.js require:
-const Ajv = require("ajv")
-
-const ajv = new Ajv() // options can be passed, e.g. {allErrors: true}
-
-const schema = {
-  type: "object",
-  properties: {
-    foo: { type: "integer" },
-    bar: { type: "string" },
-  },
-  required: ["foo"],
-  additionalProperties: false,
-}
-
-const data = {
-  foo: 1,
-  bar: "abc",
-}
-
-const validate = ajv.compile(schema)
-const valid = validate(data)
-if (!valid) console.log(validate.errors)
-
-
-*/
-
-dataSource = {
-  title: "",
-  url: "emergency-managers",
-  summary: "Emergency Managers",
-  children: [
-    { title: "Tools for Practitioners", url: "emergency-managers/practitioners" },
-
-  ]
-};
-
-/*
-Parent Page ID;
-Page ID;
-Page title;
-Block title;
-Block content;
-Page link;
-SEO title;
-SEO slug;
-SEO description;
-SEO H1;
-SEO additional
-*/
-
-
-
-
-dataSource3 = {
-  id: 1,
-  name: "Lao Lao",
-  title: "general manager",
-  children: [
-    { id: 2, name: "Bo Miao", title: "department manager" },
-    {
-      id: 3,
-      name: "Su Miao",
-      title: "department manager",
-      children: [
-        { id: 4, name: "Tie Hua", title: "senior engineer" },
-        {
-          id: 5,
-          name: "Hei Hei",
-          title: "senior engineer",
-          children: [
-            { id: 6, name: "Pang Pang", title: "engineer" },
-            { id: 7, name: "Xiang Xiang", title: "UE engineer" },
-          ],
-        },
-      ],
-    },
-    { id: 8, name: "Yu Jie", title: "department manager" },
-    { id: 9, name: "Yu Li", title: "department manager" },
-    { id: 10, name: "Hong Miao", title: "department manager" },
-    { id: 11, name: "Yu Wei", title: "department manager" },
-    { id: 12, name: "Yu Tie", title: "department manager" },
-  ],
-};
-
-// See https://jsonlint.com/ for JSON formatting rules.
-
-// https://stackoverflow.com/questions/6692538/generate-unordered-list-from-json-data
-
-var jsonObj = {
-  "labels": [
-    {
-      "labelFont": "35pt Calibri",
-      "labelLocation": { "x": 0.1483, "y": 0.75 },
-      "labelText": "fluffer"
-    },
-    {
-      "labelFont": "35pt Calibri",
-      "labelLocation": { "x": 0.666, "y": 0.666 },
-      "labelText": "nutter"
-    }
-  ]
-}; //some json to display
-
-var listEl = document.getElementById('JSONunorderedList');
-makeList(jsonObj, listEl);
 
 function makeList(jsonObject, listElement) {
   for (var i in jsonObject) {
@@ -195,4 +76,19 @@ function makeList(jsonObject, listElement) {
       makeList(jsonObject[i], newUL);
     }
   }
+}
+
+async function readJSONFile(file) {
+  return new Promise((resolve, reject) => {
+    let fileReader = new FileReader();
+    fileReader.onload = event => {
+      resolve(JSON.parse(event.target.result))
+    };
+    fileReader.onerror = (error => reject(error));
+    fileReader.readAsText(file);
+  });
+}
+
+async function fileChange(file) {
+  readJSONFile(file).then(json => makeList(json, document.getElementById('JSONunorderedList')));
 }
