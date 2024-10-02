@@ -1,26 +1,7 @@
-
-
-document.querySelector("#fontSize").addEventListener("input", (e) => { setFontSize(e.target); });
-document.querySelector("#fontSize").addEventListener('keyup', (event) => {
-  if (event.key === 'Escape') {
-    // esc key pressed
-    const isNotCombinedKey = !(event.ctrlKey || event.altKey || event.shiftKey);
-    if (isNotCombinedKey) {
-      // Escape key pressed without ctrl or alt or shift keys
-      setFontSize(1);
-    }
-  }
-});
-
-//document.querySelector("#fontSize").value = 3.5;
-
-document.addEventListener("DOMContentLoaded", function () {
-  //console.log("Document loaded");
-  setFontSize(document.querySelector("#fontSize"));
-});
+document.addEventListener("DOMContentLoaded",
+  setFontSize(document.querySelector("#fontSize")));
 
 function setFontSize(el) {
-  //console.log("Setting font size to: " + el.value);
   let fontSize = el.value;
   if (!isNumber(fontSize) || fontSize < 0.5 || fontSize > 5) {
     fontSize = 1;
