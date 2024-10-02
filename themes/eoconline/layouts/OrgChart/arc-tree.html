@@ -13,6 +13,7 @@
     <!-- link rel="icon" type="image/x-icon" href="./logo.jpg" / -->
     <link rel="stylesheet" href="./arc-tree.css" />
     <script defer src="./arc-tree.js"></script>
+    <script type="text/javascript" src="purify.min.js"></script>
   </head>
   <body>
     <div id="TreeOptions">
@@ -22,7 +23,7 @@
 
       <div>
         <label title="Font size in em's" id="fontSizeLabel">
-          Font size: <span id="fontSizeValue">2</span>
+          Font size: <span id="fontSizeValue">2</span> &nbsp;
           <input type="range" value="2.5" id="fontSize" step="0.5" min="0.5" max="5" list="steplist" oninput="document.querySelector('#fontSizeValue').textContent = this.value" />
           <datalist id="steplist">
             <option>0.5</option>
@@ -36,10 +37,7 @@
       </div>
     </div>
 
-    <label>
-      Select a JSON file to view:
-      <input type="file" onChange="fileChange(this.files[0])" />
-    </label>
+    <label> Select a JSON file to view: //<input type="file" onChange="fileChange(this.files[0])" /> </label>
 
     <ul id="JSONunorderedList"></ul>
 

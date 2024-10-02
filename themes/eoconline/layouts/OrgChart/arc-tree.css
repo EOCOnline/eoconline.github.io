@@ -12,7 +12,8 @@ body {
 #TreeOptions {
   margin: 15px 0;
   padding: 15px;
-  width: 675px;
+  width: 370px;
+  min-width: 200px;
   background-color: #eee;
   border-radius: 0.3em;
   border: #505050 1px solid;
@@ -83,7 +84,7 @@ body {
 }
 
 #fontSize {
-  width: 235px;
+  width: 225px;
 }
 
 #fontSizeValue {
