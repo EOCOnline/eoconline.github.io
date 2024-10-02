@@ -14,7 +14,7 @@ body {
   padding: 15px;
   max-width: 365px;
   min-width: 180px;
-  background-color: #ffffff; /* #eee */
+  background-color: #eee;
   border-radius: 0.3em;
   border: #505050 1px solid;
 }
@@ -30,7 +30,6 @@ body {
   border: 1px solid transparent;
   border-radius: 0.5rem;
   box-sizing: border-box;
-  color: #ffffff;
   cursor: pointer;
   flex: 0 0 auto;
   font-weight: 600;
@@ -60,6 +59,10 @@ body {
   transition: all 400ms;
 }
 
+#TreeOptions [type="button"] {
+  color: rgb(255, 255, 255);
+}
+
 #TreeOptions input:hover {
   box-shadow:
     rgba(69, 103, 187, 0.35) 0 -25px 18px -14px inset,
@@ -84,11 +87,7 @@ body {
 }
 
 #fontSize {
-  width: 215px;
-}
-
-#fontSize2 {
-  width: 215px;
+  width: 220px;
 }
 
 #fontSizeValue {
