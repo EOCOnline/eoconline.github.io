@@ -1,6 +1,4 @@
-let fontSize = document.querySelector(".tree").style.fontSize;
-setFontSize(fontSize);
-let uniqueID = 0;
+
 
 document.querySelector("#fontSize").addEventListener("input", (e) => { setFontSize(e.target); });
 document.querySelector("#fontSize").addEventListener('keyup', (event) => {
@@ -14,13 +12,22 @@ document.querySelector("#fontSize").addEventListener('keyup', (event) => {
   }
 });
 
+//document.querySelector("#fontSize").value = 3.5;
+
+document.addEventListener("DOMContentLoaded", function () {
+  //console.log("Document loaded");
+  setFontSize(document.querySelector("#fontSize"));
+});
 
 function setFontSize(el) {
-  fontSize = el.value;
-  if (!isNumber(fontSize) || fontSize < 0.5) {
+  //console.log("Setting font size to: " + el.value);
+  let fontSize = el.value;
+  if (!isNumber(fontSize) || fontSize < 0.5 || fontSize > 5) {
     fontSize = 1;
   }
   document.querySelector(".tree").style.fontSize = fontSize + 'em';
+  document.querySelector("#fontSizeValue").innerHTML = fontSize;
+  document.querySelector("#fontSize").value = fontSize;
 }
 
 function isNumber(n) {
@@ -66,7 +73,7 @@ jsonObj =
   ]
 };
 
-traverse(jsonObj);
+//traverse(jsonObj);
 buildTree(jsonObj, document.getElementById('unorderedList'));
 var listItemHTML = "";
 var listLog = "";

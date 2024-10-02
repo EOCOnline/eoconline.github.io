@@ -93,7 +93,8 @@ body {
 #fontSizeValue {
   width: 2em;
   display: inline-block;
-  background-color: rgb(255, 255, 255);
+  background-color: #eee;
+  border: #000 1px solid;
   padding: 2px;
 }
 
