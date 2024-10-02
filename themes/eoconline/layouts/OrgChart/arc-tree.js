@@ -45,14 +45,6 @@ function collapseTree() {
   console.log("Collapsed all " + checkboxes.length + " nodes.");
 }
 
-[{
-  "SponsorID": 382,
-  "SponsorName": "Test Name",
-  "MonthEndReport": true,
-  "AccountingManager": "Me",
-  "UnboundProperties": [], "State": 16
-}]
-
 jsonObj =
 {
   name: "FEMA.Gov_Home",
@@ -126,24 +118,9 @@ function buildTree(o, treeElement) {
   }
 }
 
-function traverse2(o) {
-  for (var i in o) {
-    if (Boolean(o[i]) && typeof (o[i]) == "object") {
-      console.log(i + " (object) is " + o[i]);
-      console.group(i.toString());
-      traverse2(o[i]);
-      console.groupEnd();
-    } else {
-      console.log(i + ":  " + o[i]);
-    }
-  }
-}
-
-//const object = {a: 1, b: 2, c: 3 };
-//for (const property in object) {console.log(`${property}: ${object[property]}`);}
-
 function traverse(jsonObj) {
   if (jsonObj !== null && typeof jsonObj == "object") {
+
     Object.entries(jsonObj).forEach(([key, value]) => {
       // key is either an array index or object key
       console.log("traversing: " + key + " : " + value.toString());
@@ -151,27 +128,13 @@ function traverse(jsonObj) {
       traverse(value);
       console.groupEnd();
     });
+
   }
   else {
     // jsonObj is a number or string
     console.log("Got # or $: " + jsonObj.toString());
   }
 }
-
-function traverse0(o) {
-  debugger;
-  for (var i in o) {
-    //console.log("processing: " + i, o[i]);
-    if (!!o[i] && typeof (o[i]) == "object") {
-      console.log("Obj:" + i, o[i]);
-      traverse(o[i]);
-    } else {
-      console.log(i, o[i]);
-    }
-  }
-}
-
-
 
 function makeListOrig(jsonObject, treeElement) {
   for (var i in jsonObject) {
