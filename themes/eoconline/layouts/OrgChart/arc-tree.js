@@ -66,11 +66,11 @@ jsonObj =
   ]
 };
 
-
+traverse(jsonObj);
 buildTree(jsonObj, document.getElementById('unorderedList'));
 var listItemHTML = "";
 var listLog = "";
-var expandedByDefault = false;
+var expandedByDefault = true;
 
 /// <summary>
 /// Create an HTML unordered list of items from a JSON object
@@ -97,7 +97,7 @@ function buildTree(o, treeElement) {
         var newLabel = document.createElement('label');
         newLabel.className = "tree_label";
         newLabel.htmlFor = "c" + uniqueID;
-        newLabel.innerHTML = DOMPurify.sanitize(listItemHTML);  //NOTE: Needed?!
+        newLabel.innerHTML = DOMPurify.sanitize(listItemHTML);  //NOTE: Sanitization is not needed with trusted JSON
         listItemHTML = "";
 
         treeElement.appendChild(newLI);
@@ -161,7 +161,7 @@ function makeListOrig(jsonObject, treeElement) {
       var newUL = document.createElement('ul');
       //newUL.innerHTML=i;
       treeElement.appendChild(newUL);
-      makeList(jsonObject[i], newUL);
+      makeListOrig(jsonObject[i], newUL);
     }
   }
 }
@@ -182,13 +182,12 @@ async function fileChange(file) {
     json => {
       console.log(json);
       buildTree(json, document.getElementById('unorderedList'));
-      makeListOrig(json, document.getElementById('JSONunorderedList'));
+      // makeListOrig(json, document.getElementById('unorderedList'));
     }
   );
 }
 
 /*
-
 function validateJson(jsonFile) {
   try {
     JSON.parse(jsonFile);
@@ -199,7 +198,7 @@ function validateJson(jsonFile) {
 }
 
 function downloadJson() {
-  var json = document.getElementById('JSONunorderedList').innerHTML;
+  var json = document.getElementById('unorderedList').innerHTML;
   var blob = new Blob([json], { type: "text/plain;charset=utf-8" });
   saveAs(blob, "orgchart.json");
 }
@@ -212,7 +211,7 @@ function uploadJson() {
 }
 
 function clearJson() {
-  document.getElementById('JSONunorderedList').innerHTML = '';
+  document.getElementById('unorderedList').innerHTML = '';
 }
 
 // https://ajv.js.org/guide/getting-started.html#basic-data-validation

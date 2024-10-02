@@ -24,7 +24,11 @@
       <div>
         <label title="Font size in em's" id="fontSizeLabel">
           Font size: <span id="fontSizeValue">2</span> &nbsp;
-          <input type="range" value="2.5" id="fontSize" step="0.5" min="0.5" max="5" list="steplist" oninput="document.querySelector('#fontSizeValue').textContent = this.value" />
+
+          <input type="range" value="2.5" step="0.5" min="0.5" max="5" id="fontSize" list="steplist" oninput="document.querySelector('#fontSizeValue').textContent = this.value" />
+          <!-- Following works on Firefox, but not on Chrome
+          https://stackoverflow.com/questions/26612700/ticks-for-type-range-html-input
+          -->
           <datalist id="steplist">
             <option>0.5</option>
             <option>1.0</option>
@@ -35,13 +39,24 @@
           </datalist>
         </label>
       </div>
+
+      <div>
+        <input type="range" value="2.5" step="0.5" min="0.5" max="5" id="fontSize2" list="steplist2" oninput="document.querySelector('#fontSizeValue').textContent = this.value" />
+        <datalist id="steplist2">
+          <option>0.5</option>
+          <option>1.0</option>
+          <option>2.0</option>
+          <option>3.0</option>
+          <option>4.0</option>
+          <option>5</option>
+        </datalist>
+      </div>
     </div>
 
     <label> Select a JSON file to view: //<input type="file" onChange="fileChange(this.files[0])" /> </label>
 
-    <ul id="JSONunorderedList"></ul>
-
     <ul id="unorderedList" class="tree"></ul>
+    <!-- ul id="unorderedList2" class="tree"></ul -->
 
     <ul class="tree">
       <li>

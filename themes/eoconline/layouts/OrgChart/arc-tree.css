@@ -12,9 +12,9 @@ body {
 #TreeOptions {
   margin: 15px 0;
   padding: 15px;
-  width: 370px;
-  min-width: 200px;
-  background-color: #eee;
+  max-width: 365px;
+  min-width: 180px;
+  background-color: #ffffff; /* #eee */
   border-radius: 0.3em;
   border: #505050 1px solid;
 }
@@ -84,7 +84,11 @@ body {
 }
 
 #fontSize {
-  width: 225px;
+  width: 215px;
+}
+
+#fontSize2 {
+  width: 215px;
 }
 
 #fontSizeValue {
