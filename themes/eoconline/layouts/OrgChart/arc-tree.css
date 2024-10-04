@@ -1,11 +1,13 @@
+:root {
+  --treeCurves: #777;
+  --objectColor: #3625b9;
+  --tree-ball-collapsed-color: black;
+  --tree-ball-expanded-color: black;
+}
+
 body {
   margin: 30px;
   font-family: sans-serif;
-}
-
-.arrayOrObject {
-  /*font-weight: bold;*/
-  color: #0000ff;
 }
 
 /* Tree Options */
@@ -99,16 +101,21 @@ body {
 }
 
 /* Core Tree Styles */
-.tree ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.object {
+  /*font-weight: bold;*/
+  color: var(--objectColor);
 }
 
 .tree {
   padding: 20px;
   border: 1px solid #a6a6a6;
   border-radius: 0.3em;
+}
+
+.tree ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .tree input {
@@ -161,7 +168,7 @@ label.tree_label:hover {
 
 /* Tree expanded icon */
 label.tree_label:before {
-  background: #000;
+  background: var(--tree-ball-expanded-color);
   color: #fff;
   position: relative;
   z-index: 1;
@@ -178,7 +185,7 @@ label.tree_label:before {
 /* Tree collapsed icon */
 :checked ~ label.tree_label:before {
   content: "–";
-  background: #414040;
+  background: var(--tree-ball-collapsed-color);
 }
 
 /* Tree branches */
@@ -189,7 +196,7 @@ label.tree_label:before {
   left: -0.5em;
   display: block;
   width: 0;
-  border-left: 1px solid #777;
+  border-left: 1px solid var(--treeCurves);
   content: "";
 }
 
@@ -200,8 +207,8 @@ label.tree_label:before {
   display: block;
   height: 0.5em;
   width: 1em;
-  border-bottom: 1px solid #777;
-  border-left: 1px solid #777;
+  border-bottom: 1px solid var(--treeCurves); /* line extending right to the children */
+  border-left: 1px solid var(--treeCurves); /* vertical segment at bottom of the drop & curving into above lines */
   border-radius: 0 0 0 0.3em;
   content: "";
 }
@@ -212,8 +219,8 @@ label.tree_label:after {
 
 :checked ~ label.tree_label:after {
   border-radius: 0 0.3em 0 0;
-  border-top: 1px solid #777;
-  border-right: 1px solid #777;
+  border-top: 1px solid var(--treeCurves); /* line extending right from + - marker */
+  border-right: 1px solid var(--treeCurves); /* initial drop, from above line */
   border-bottom: 0;
   border-left: 0;
   bottom: 0;
@@ -228,11 +235,4 @@ label.tree_label:after {
 
 .tree > li:last-child:before {
   display: none;
-}
-
-.tree_custom {
-  display: block;
-  background: #eee;
-  padding: 1em;
-  border-radius: 0.3em;
 }

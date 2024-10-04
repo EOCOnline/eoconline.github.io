@@ -69,7 +69,33 @@ jsonObj =
       name: "Emergency Managers",
       url: "/emergency-managers",
       meta: "Emergency Manager information",
-      children: []
+      children: [
+        {
+          name: "EM1",
+          url: "/em1",
+          meta: "Emergency Manager 1",
+          children: [
+            {
+              name: "EM1.1",
+              url: "/em1.1",
+              meta: "Emergency Manager 1.1",
+              children: []
+            },
+            {
+              name: "EM1.2",
+              url: "/em1.2",
+              meta: "Emergency Manager 1.2",
+              children: []
+            }
+          ]
+        },
+        {
+          name: "EM2",
+          url: "/em2",
+          meta: "Emergency Manager 2",
+          children: []
+        }
+      ]
     }
   ]
 };
@@ -100,14 +126,25 @@ function buildTree(o, treeElement) {
     else {
       console.log(i + ': ' + o[i]);
       //console.log("1) listItemHTML: " + listItemHTML);
-      listItemHTML += i + '=' + o[i] + ";  ";
+      // listItemHTML += i + '=' + o[i] + ";  ";
+      switch (i) {
+        case "name": listItemHTML += "<b>" + o[i] + ":</b>"; break;
+        case "url": listItemHTML += " (<a href='" + o[i] + "'>" + o[i] + "</a>) "; break;
+        case "meta": listItemHTML += "<i> " + o[i] + "</i>"; break;
+        default: listItemHTML += "Unknown node (" + i + ")=" + o[i];
+      }
       //console.log("2) listItemHTML: " + listItemHTML);
     }
 
-    //treeElement.appendChild(newLI);
-    //insert a <ul> for nested nodes
 
-    if (o[i] instanceof Object) { //o[i] instanceof Array ||
+    //insert a <ul> for nested non-array nodes
+    /*
+    if (o[i] instanceof Array) {
+      buildTree(o[i], treeElement);
+    }
+    else
+    */
+    if (o[i] instanceof Object) {
 
       if (listItemHTML != "") {
         console.log("=== dump caches!");
@@ -127,16 +164,34 @@ function buildTree(o, treeElement) {
         newLabel.htmlFor = "c" + uniqueID;
         newLabel.className = "tree_label";
         newLabel.innerHTML = DOMPurify.sanitize(listItemHTML);  //NOTE: Sanitization is not needed with trusted JSON
+
+        // Or if last leaf (no children), add a leaf class
+        if (Object.keys(o[i]).length == 0) {
+          newLI.className = "leaf";
+          var newSpan = document.createElement('span');
+          newSpan.className = "tree_label";
+          newSpan.innerHTML = DOMPurify.sanitize(listItemHTML);  //NOTE: Sanitization is not needed with trusted JSON
+          newLI.appendChild(newSpan);
+        }
         listItemHTML = "";
 
         treeElement.appendChild(newLI);
-        newLI.appendChild(newInput);
-        newLI.appendChild(newLabel);
+
+        if (Object.keys(o[i]).length > 0) {
+          newLI.appendChild(newInput);
+          newLI.appendChild(newLabel);
+        }
         treeElement = newLI;
       }
 
       var newUL = document.createElement('ul');
-      treeElement.appendChild(newUL);
+      if (o[i] instanceof Array) {
+        // no need to create a new UL for arrays
+        newUL = treeElement;
+      } else if (o[i] instanceof Object) {
+        newUL.className = "object";
+        treeElement.appendChild(newUL);
+      }
 
       console.group("children "); // + o[i]);//i.name)
       //newUL.innerHTML=i;
