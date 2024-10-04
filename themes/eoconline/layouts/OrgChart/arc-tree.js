@@ -1,5 +1,12 @@
-document.addEventListener("DOMContentLoaded",
-  setFontSize(document.querySelector("#fontSize")));
+document.addEventListener("DOMContentLoaded", function () {
+  console.clear();
+  setFontSize(document.querySelector("#fontSize"));
+  //traverse(jsonObj);
+  console.log("========================");
+  //makeListOrig(jsonObj, document.getElementById('unorderedList2'));
+  console.log("========================");
+  buildTree(jsonObj, document.getElementById('unorderedList'));
+});
 
 function setFontSize(el) {
   let fontSize = el.value;
@@ -43,7 +50,20 @@ jsonObj =
       name: "ES",
       url: "/es",
       meta: "Spanish_meta",
-      children: []
+      children: [
+        {
+          name: "ES1",
+          url: "/es1",
+          meta: "Spanish1_meta",
+          children: []
+        },
+        {
+          name: "ES2",
+          url: "/es2",
+          meta: "Spanish2_meta",
+          children: []
+        }
+      ]
     },
     {
       name: "Emergency Managers",
@@ -54,8 +74,6 @@ jsonObj =
   ]
 };
 
-//traverse(jsonObj);
-buildTree(jsonObj, document.getElementById('unorderedList'));
 var listItemHTML = "";
 var listLog = "";
 var expandedByDefault = true;
@@ -66,10 +84,33 @@ var expandedByDefault = true;
 /// </summary>
 function buildTree(o, treeElement) {
 
+  console.log("buildTree: " + o?.toString());
+  // console.log("1) listItemHTML: " + listItemHTML);
   for (var i in o) {
-    if (Boolean(o[i]) && typeof (o[i]) == "object") {
+    console.log("processing: " + i.toString());
+    //var newLI = document.createElement('li');
+
+    if (o[i] instanceof Array) {
+      console.log("got Array");
+    }
+    else if (o[i] instanceof Object) {
+      console.log("got Object");
+      //newLI.className = "tree-Object";
+    }
+    else {
+      console.log(i + ': ' + o[i]);
+      //console.log("1) listItemHTML: " + listItemHTML);
+      listItemHTML += i + '=' + o[i] + ";  ";
+      //console.log("2) listItemHTML: " + listItemHTML);
+    }
+
+    //treeElement.appendChild(newLI);
+    //insert a <ul> for nested nodes
+
+    if (o[i] instanceof Object) { //o[i] instanceof Array ||
 
       if (listItemHTML != "") {
+        console.log("=== dump caches!");
         // Output list item we've been building up before processing children
         console.log(listLog);
         listLog = "";
@@ -78,57 +119,43 @@ function buildTree(o, treeElement) {
         var newLI = document.createElement('li');
 
         var newInput = document.createElement('input');
-        newInput.type = "checkbox";
         newInput.id = "c" + uniqueID;
+        newInput.type = "checkbox";
         newInput.checked = expandedByDefault;
 
         var newLabel = document.createElement('label');
-        newLabel.className = "tree_label";
         newLabel.htmlFor = "c" + uniqueID;
+        newLabel.className = "tree_label";
         newLabel.innerHTML = DOMPurify.sanitize(listItemHTML);  //NOTE: Sanitization is not needed with trusted JSON
         listItemHTML = "";
 
         treeElement.appendChild(newLI);
-        treeElement.appendChild(newLabel);
-        treeElement.appendChild(newInput);
+        newLI.appendChild(newInput);
+        newLI.appendChild(newLabel);
+        treeElement = newLI;
       }
 
       var newUL = document.createElement('ul');
       treeElement.appendChild(newUL);
-      console.group("children of " + i.name)
-      buildTree(i.children, newUL);
-      console.groupEnd()
 
-    } else {
-      listLog += i + ': ' + o[i] + "; ";
-      listItemHTML += i + ': ' + o[i] + "; ";
-    }
-  }
-}
-
-function traverse(jsonObj) {
-  if (jsonObj !== null && typeof jsonObj == "object") {
-
-    Object.entries(jsonObj).forEach(([key, value]) => {
-      // key is either an array index or object key
-      console.log("traversing: " + key + " : " + value.toString());
-      console.group(value.toString());
-      traverse(value);
+      console.group("children "); // + o[i]);//i.name)
+      //newUL.innerHTML=i;
+      buildTree(o[i], newUL);
+      //buildTree(i.children, newUL);
       console.groupEnd();
-    });
+    }
 
-  }
-  else {
-    // jsonObj is a number or string
-    console.log("Got # or $: " + jsonObj.toString());
+    //listLog += i + ': ' + o[i] + "; ";
+    //listItemHTML += i + ': ' + o[i] + "; ";
+
+    //    if (Boolean(o[i]) && typeof (o[i]) == "object") {
   }
 }
+
 
 function makeListOrig(jsonObject, treeElement) {
   for (var i in jsonObject) {
-
-    // console.log("processing: " + i.toString());
-
+    console.log("processing: " + i.toString());
     var newLI = document.createElement('li');
 
     if (jsonObject[i] instanceof Array) {
@@ -149,7 +176,83 @@ function makeListOrig(jsonObject, treeElement) {
       var newUL = document.createElement('ul');
       //newUL.innerHTML=i;
       treeElement.appendChild(newUL);
+      console.group("children of " + i.name)
       makeListOrig(jsonObject[i], newUL);
+      console.groupEnd();
+    }
+  }
+}
+
+
+function traverse(jsonObj) {
+  if (jsonObj !== null && typeof jsonObj == "object") {
+
+    Object.entries(jsonObj).forEach(([key, value]) => {
+      // key is either an array index or object key
+      console.log("traversing: " + key + " : " + value.toString());
+      console.group(value.toString());
+      traverse(value);
+      console.groupEnd();
+    });
+
+  }
+  else {
+    // jsonObj is a number or string
+    console.log("Got # or $: " + jsonObj.toString());
+  }
+}
+
+/// <summary>
+/// Create an HTML unordered list of items from a JSON object
+/// Recurse through the JSON object, building up an HTML string to display, appending them to the treeElement.
+
+// BUG: Doesn't descend into children objects...
+
+/// </summary>
+function buildTree2(o, treeElement) {
+
+  console.log("buildTree: " + o?.toString());
+  //console.log("1) listItemHTML: " + listItemHTML);
+  for (var i in o) {
+    //console.log("2) listItemHTML: " + listItemHTML);
+    if (Boolean(o[i]) && typeof (o[i]) == "object") {
+      //console.log("3) listItemHTML: " + listItemHTML);
+      //console.log("processing object: " + i.toString());
+      if (listItemHTML != "") {
+        // Output list item we've been building up before processing children
+        console.log(listLog);
+        listLog = "";
+
+        var uniqueID = Math.floor(Math.random() * 1000000).toString();
+        var newLI = document.createElement('li');
+
+        var newInput = document.createElement('input');
+        newInput.id = "c" + uniqueID;
+        newInput.type = "checkbox";
+        newInput.checked = expandedByDefault;
+
+        var newLabel = document.createElement('label');
+        newLabel.htmlFor = "c" + uniqueID;
+        newLabel.className = "tree_label";
+        newLabel.innerHTML = DOMPurify.sanitize(listItemHTML);  //NOTE: Sanitization is not needed with trusted JSON
+        listItemHTML = "";
+
+        treeElement.appendChild(newLI);
+        treeElement.appendChild(newLabel);
+        treeElement.appendChild(newInput);
+      }
+
+      var newUL = document.createElement('ul');
+      treeElement.appendChild(newUL);
+      console.group("children of " + i.name)
+      buildTree(i.children, newUL);
+      console.groupEnd()
+
+    } else {
+      //console.warn(i + ': ' + o[i] + "; ");
+      listLog += i + ': ' + o[i] + "; ";
+      listItemHTML += i + ': ' + o[i] + "; ";
+      //console.log("listItemHTML: " + listItemHTML);
     }
   }
 }
