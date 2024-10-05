@@ -18,6 +18,9 @@
   <body>
     <div id="TreeOptions">
       <div>Tree Options:<br /></div>
+      <input type="button" value="Collapse Leafs " onclick="collapseLeafs();" />
+      <input type="button" value="Show Leafs " onclick="showLeafs();" />
+      <br />
       <input type="button" value="Collapse Entire Tree" onclick="collapseTree();" />
       <input type="button" value=" Expand Entire Tree " onclick="expandTree();" />
 
@@ -25,7 +28,7 @@
         <label title="Font size in em's" id="fontSizeLabel">
           Font size: <span id="fontSizeValue"></span> &nbsp;
 
-          <input type="range" step="0.5" min="0.5" value="1.5" max="5" id="fontSize" list="steplist" oninput="setFontSize(this)" />
+          <input type="range" step="0.5" min="0.5" value="1.0" max="5" id="fontSize" list="steplist" oninput="setFontSize(this)" />
           <datalist id="steplist">
             <option>1.0</option>
             <option>2.0</option>
@@ -39,17 +42,72 @@
 
     <label> Select a JSON file to view: //<input type="file" onChange="fileChange(this.files[0])" /> </label>
 
-    <ul id="unorderedList2"></ul>
     <ul id="unorderedList" class="tree"></ul>
+
+    =========================================
+
+    <ul id="unorderedListBB" class="tree" style="font-size: 1em;">
+      <li>
+        <input id="c710115" type="checkbox" />
+        <label for="c710115" class="tree_label">name=FEMA.Gov_Home; url=/; meta=Level 0; </label>
+        <!------------>
+        <ul class="object">
+          <li>
+            <input id="c502656" type="checkbox" />
+            <label for="c502656" class="tree_label">name=ES; url=/es; meta=Level 1; </label>
+            <!------------>
+            <ul class="object">
+              <li class="leaf"><span class="tree_label">name=ES1; url=/es1; meta=Level 2; </span></li>
+              <!--/ul>
+            <------------  >
+            <ul class="object"-->
+              <li class="leaf"><span class="tree_label">name=ES2; url=/es2; meta=Level 2; </span></li>
+            </ul>
+          </li>
+          <!--/ul>
+        <----------- >
+        <ul class="object"-->
+          <li>
+            <input id="c148124" type="checkbox" />
+            <label for="c148124" class="tree_label">name=Emergency Managers; url=/emergency-managers; meta=Level 1; </label>
+            <!------------>
+            <ul class="object">
+              <li>
+                <input id="c454917" type="checkbox" />
+                <label for="c454917" class="tree_label">name=EM1; url=/em1; meta=Level 2; </label>
+
+                <ul class="object">
+                  <li class="leaf"><span class="tree_label">name=EM1.1; url=/em1.1; meta=Level 3; </span></li>
+                  <!--/ul>
+                <------------ >
+                <ul class="object"-->
+                  <li class="leaf">
+                    <span class="tree_label">name=EM1.2; url=/em1.2; meta=Level 3 -- Emergency Manager 1.2 description that's really long and maybe includes some <br />line <br />breaks<br />...; </span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <!------------>
+            <ul class="object">
+              <li class="leaf"><span class="tree_label">name=EM2; url=/em2; meta=Level 1; </span></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    =========================================
 
     <ul class="tree">
       <li>
         <input type="checkbox" id="c1" />
         <label class="tree_label" for="c1">Level 0</label>
+        <!------------>
         <ul>
           <li>
             <input type="checkbox" checked="checked" id="c2" />
             <label for="c2" class="tree_label">Level 1</label>
+            <!------------>
             <ul>
               <li><span class="tree_label">Level 2</span></li>
               <li><span class="tree_label">Level 2</span></li>
@@ -58,11 +116,13 @@
           <li>
             <input type="checkbox" id="c3" />
             <label for="c3" class="tree_label">Ll 1 <br />label text <br />with line-breaks</label>
+            <!------------>
             <ul>
               <li><span class="tree_label">Level 2</span></li>
               <li>
                 <input type="checkbox" id="c4" />
                 <label for="c4" class="tree_label"><span class="tree_custom">Specified tree item view</span></label>
+                <!------------>
                 <ul>
                   <li><span class="tree_label">Level 3</span></li>
                 </ul>
@@ -75,10 +135,12 @@
       <li>
         <input type="checkbox" id="c5" />
         <label class="tree_label" for="c5">Level 0</label>
+        <!------------>
         <ul>
           <li>
             <input type="checkbox" id="c6" />
             <label for="c6" class="tree_label">Level 1</label>
+            <!------------>
             <ul>
               <li><span class="tree_label">Level 2</span></li>
             </ul>
@@ -86,11 +148,13 @@
           <li>
             <input type="checkbox" id="c7" />
             <label for="c7" class="tree_label">Level 1</label>
+            <!------------>
             <ul>
               <li><span class="tree_label">Level 2</span></li>
               <li>
                 <input type="checkbox" id="c8" />
                 <label for="c8" class="tree_label">Level 2</label>
+                <!------------>
                 <ul>
                   <li><span class="tree_label">Level 3</span></li>
                 </ul>

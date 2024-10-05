@@ -131,12 +131,7 @@ body {
   display: block;
 }
 
-/* Tree rows
-
-input[type="text"] {
-   //styling Firefox only??
-}
-    */
+/* Tree rows */
 .tree li {
   line-height: 1.2;
   position: relative;
@@ -198,6 +193,7 @@ label.tree_label:before {
   width: 0;
   border-left: 1px solid var(--treeCurves);
   content: "";
+  /* background-color: #f3dd37; */
 }
 
 .tree_label:after {
@@ -207,10 +203,11 @@ label.tree_label:before {
   display: block;
   height: 0.5em;
   width: 1em;
-  border-bottom: 1px solid var(--treeCurves); /* line extending right to the children */
+  border-bottom: 1px solid var(--treeCurves); /* line extending right to the child, at child level */
   border-left: 1px solid var(--treeCurves); /* vertical segment at bottom of the drop & curving into above lines */
   border-radius: 0 0 0 0.3em;
   content: "";
+  /* background-color: #48c1fe; */
 }
 
 label.tree_label:after {

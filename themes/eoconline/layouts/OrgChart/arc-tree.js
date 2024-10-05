@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("========================");
   //makeListOrig(jsonObj, document.getElementById('unorderedList2'));
   console.log("========================");
-  buildTree(jsonObj, document.getElementById('unorderedList'));
+  buildTree(jsonObj, document.getElementById('unorderedList'), "https://www.fema.gov");
 });
 
 function setFontSize(el) {
@@ -22,13 +22,24 @@ function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-function expandTree() {
-  var checkboxes = document.querySelector(".tree").getElementsByTagName("input");
-  var len = checkboxes.length;
+function collapseLeafs() {
+  var leafs = document.getElementsByClassName(".leaf");
+  var len = leafs.length;
+  console.log = "Collapsing all " + leafs.length + " leafs.";
   for (var i = 0; i < len; i++) {
-    checkboxes[i].checked = "checked";
+    i.style.display = "none";
   }
-  console.log("Expanded all " + checkboxes.length + " nodes.");
+  //console.log("Collapsed all " + leafs.length + " leafs.");
+}
+
+function showLeafs() {
+  var leafs = document.getElementsByClassName(".leaf");
+  var len = leafs.length;
+  console.log = "Displaying all " + leafs.length + " leafs.";
+  for (var i = 0; i < len; i++) {
+    i.style.display = "block";
+  }
+  //console.log("Displayed all " + leafs.length + " leafs.");
 }
 
 function collapseTree() {
@@ -40,27 +51,36 @@ function collapseTree() {
   console.log("Collapsed all " + checkboxes.length + " nodes.");
 }
 
+function expandTree() {
+  var checkboxes = document.querySelector(".tree").getElementsByTagName("input");
+  var len = checkboxes.length;
+  for (var i = 0; i < len; i++) {
+    checkboxes[i].checked = "checked";
+  }
+  console.log("Expanded all " + checkboxes.length + " nodes.");
+}
+
 jsonObj =
 {
   name: "FEMA.Gov_Home",
   url: "/",
-  meta: "FEMa _meta",
+  meta: "Level 0",
   children: [
     {
       name: "ES",
       url: "/es",
-      meta: "Spanish_meta",
+      meta: "Level 1",
       children: [
         {
           name: "ES1",
           url: "/es1",
-          meta: "Spanish1_meta",
+          meta: "Level 2",
           children: []
         },
         {
           name: "ES2",
           url: "/es2",
-          meta: "Spanish2_meta",
+          meta: "Level 2",
           children: []
         }
       ]
@@ -68,23 +88,23 @@ jsonObj =
     {
       name: "Emergency Managers",
       url: "/emergency-managers",
-      meta: "Emergency Manager information",
+      meta: "Level 1",
       children: [
         {
           name: "EM1",
           url: "/em1",
-          meta: "Emergency Manager 1",
+          meta: "Level 2",
           children: [
             {
               name: "EM1.1",
               url: "/em1.1",
-              meta: "Emergency Manager 1.1",
+              meta: "Level 3",
               children: []
             },
             {
               name: "EM1.2",
               url: "/em1.2",
-              meta: "Emergency Manager 1.2",
+              meta: "Level 3 -- Emergency Manager 1.2 description that's really long and maybe includes some <br/>line <br/>breaks<br/>...",
               children: []
             }
           ]
@@ -92,23 +112,25 @@ jsonObj =
         {
           name: "EM2",
           url: "/em2",
-          meta: "Emergency Manager 2",
+          meta: "Level 1",
           children: []
         }
       ]
     }
   ]
+
 };
 
+var expandedByDefault = true;
 var listItemHTML = "";
 var listLog = "";
-var expandedByDefault = true;
+var listUrl = "";
 
 /// <summary>
 /// Create an HTML unordered list of items from a JSON object
 /// Recurse through the JSON object, building up an HTML string to display, appending them to the treeElement.
 /// </summary>
-function buildTree(o, treeElement) {
+function buildTree(o, treeElement, url) {
 
   console.log("buildTree: " + o?.toString());
   // console.log("1) listItemHTML: " + listItemHTML);
@@ -118,21 +140,26 @@ function buildTree(o, treeElement) {
 
     if (o[i] instanceof Array) {
       console.log("got Array");
+      var newCmt = document.createComment(i + ": ARRAY");
+      treeElement.appendChild(newCmt);
     }
     else if (o[i] instanceof Object) {
       console.log("got Object");
+      var newCmt = document.createComment(i + ": OBJECT");
+      treeElement.appendChild(newCmt);
       //newLI.className = "tree-Object";
     }
     else {
       console.log(i + ': ' + o[i]);
       //console.log("1) listItemHTML: " + listItemHTML);
-      // listItemHTML += i + '=' + o[i] + ";  ";
+      listItemHTML += i + '=' + o[i] + ";  ";
+      /*
       switch (i) {
-        case "name": listItemHTML += "<b>" + o[i] + ":</b>"; break;
-        case "url": listItemHTML += " (<a href='" + o[i] + "'>" + o[i] + "</a>) "; break;
+        case "name": listItemHTML += "<b>" + o[i] + "</b>"; break;
+        case "url": listItemHTML += " (<a href='" + o[i] + "'>" + o[i] + "</a>): "; break;
         case "meta": listItemHTML += "<i> " + o[i] + "</i>"; break;
         default: listItemHTML += "Unknown node (" + i + ")=" + o[i];
-      }
+      }*/
       //console.log("2) listItemHTML: " + listItemHTML);
     }
 
@@ -187,10 +214,13 @@ function buildTree(o, treeElement) {
       var newUL = document.createElement('ul');
       if (o[i] instanceof Array) {
         // no need to create a new UL for arrays
-        newUL = treeElement;
-      } else if (o[i] instanceof Object) {
-        newUL.className = "object";
+        // newUL = treeElement;
+        newUL.className = "array";
         treeElement.appendChild(newUL);
+      } else if (o[i] instanceof Object) {
+        newUL = treeElement;
+        //newUL.className = "object";
+        //treeElement.appendChild(newUL);
       }
 
       console.group("children "); // + o[i]);//i.name)
