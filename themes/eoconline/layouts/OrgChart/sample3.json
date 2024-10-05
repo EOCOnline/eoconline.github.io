@@ -1,11 +1,11 @@
 {
   "name": "root",
-  "URL": "//",
+  "url": "//",
   "meta": "Root info",
   "children": [
     {
       "name": "FEMA.Gov Home",
-      "URL": "/",
+      "url": "/",
       "meta": "FEMa info",
       "children": [
         {
