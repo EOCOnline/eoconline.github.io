@@ -59,20 +59,19 @@ function expandTree() {
 
 
 var expandedByDefault = true;
+var cumulativeUrls = false; // If true, append child URLs to parent URL
 var listItemHTML = "";
 var listLog = "";
-var listUrl = "";
 
 /// <summary>
 /// Create an HTML unordered list of items from a JSON object
 /// Recurse through the JSON object, building up an HTML string to display, appending them to the treeElement.
 /// </summary>
-function buildTree(o, treeElement) {
+function buildTree(o, treeElement, url) {
 
-  console.log("buildTree: " + o?.toString());
-  // console.log("1) listItemHTML: " + listItemHTML);
+  //console.log("buildTree: " + o?.toString());
   for (var i in o) {
-    console.log("processing: " + i.toString());
+    // console.log("processing: " + i.toString());
     if (o[i] instanceof Array) {
       // console.log("got Array");
       // treeElement.appendChild(document.createComment(i + ": ARRAY"));
@@ -82,13 +81,21 @@ function buildTree(o, treeElement) {
       // treeElement.appendChild(document.createComment(i + ": OBJECT"));
     }
     else {
-      console.log(i + ': ' + o[i]);
+      //console.log(i + ': ' + o[i]);
       listLog += i + '=' + o[i] + ";  ";
 
       switch (i) {
         case "name": listItemHTML += "<b>" + o[i] + "</b>"; break;
-        case "url": listItemHTML += " (<a href='" + o[i] + "'>" + o[i] + "</a>): "; break;
-        case "meta": listItemHTML += "<i> " + o[i] + "</i>"; break;
+        case "url":
+          if (cumulativeUrls) {
+            childUrl = url + o[i];
+          } else {
+            childUrl = o[i];
+          }
+          listItemHTML += " (<a href='" + url + "'>" + o[i] + "</a>): ";
+
+          break;
+        case "meta": listItemHTML += "<i> Level " + o[i] + "</i>"; break;
         default: listItemHTML += " [Unknown node (" + i + ")=" + o[i] + "] ";
       }
     }
@@ -96,7 +103,7 @@ function buildTree(o, treeElement) {
     if (o[i] instanceof Object) {
 
       if (listItemHTML != "") {
-        console.log("=== dump caches!");
+        // console.log("=== dump caches!");
         // Output list item we've been building up before processing children
         console.log(listLog);
         listLog = "";
@@ -133,17 +140,18 @@ function buildTree(o, treeElement) {
         treeElement = newLI;
       }
 
-      var newUL = document.createElement('ul');
+      var newUL = treeElement;
       if (o[i] instanceof Array) {
-        newUL.className = "array";
+        newUL = document.createElement('ul');
+        // newUL.className = "array";
         treeElement.appendChild(newUL);
       } else if (o[i] instanceof Object) {
         // no need to create a new UL for non-arrays
-        newUL = treeElement;
+        //newUL = treeElement;
       }
 
-      console.group("children ");
-      buildTree(o[i], newUL);
+      console.group("children of " + i);
+      buildTree(o[i], newUL, childUrl);
       console.groupEnd();
     }
   }
@@ -164,7 +172,9 @@ async function fileChange(file) {
   readJSONFile(file).then(
     json => {
       console.log(json);
-      buildTree(json, document.getElementById('unorderedList'));
+      //var baseUrl = new URL(file.name, window.location.href).href;
+      //var baseUrl = new URL("https:\\fema.gov").href;
+      buildTree(json, document.getElementById('unorderedList'), "https:////fema.gov");
     }
   );
 }
