@@ -1,8 +1,13 @@
+// or ESM/TypeScript import
+import Ajv from "ajv"
+
 document.addEventListener("DOMContentLoaded", function () {
   //console.clear();
   setFontSize(document.querySelector("#fontSize"));
 });
 
+
+/// 'Tree Options' functionality =====================
 function setFontSize(el) {
   let fontSize = el.value;
   if (!isNumber(fontSize) || fontSize < 0.5 || fontSize > 5) {
@@ -17,7 +22,7 @@ function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-// NOTE: Doesn't work!
+// BUG: Doesn't work!
 function collapseLeafs() {
   var leafs = document.getElementsByClassName(".leaf");
   var len = leafs.length;
@@ -28,7 +33,7 @@ function collapseLeafs() {
   console.log("Collapsed all " + leafs.length + " leafs.");
 }
 
-// NOTE: Doesn't work!
+// BUG: Doesn't work!
 function showLeafs() {
   var leafs = document.getElementsByClassName(".leaf");
   var len = leafs.length;
@@ -58,18 +63,152 @@ function expandTree() {
 }
 
 
+
+/// Import & Validate Json functionality =====================
+async function readJSONFile(file) {
+  return new Promise((resolve, reject) => {
+    let fileReader = new FileReader();
+    fileReader.onload = event => {
+      resolve(JSON.parse(event.target.result))
+    };
+    fileReader.onerror = (error => reject(error));
+    fileReader.readAsText(file);
+  });
+}
+
+async function fileChange(file) {
+  readJSONFile(file).then(
+    json => {
+      console.log(json);
+      //var baseUrl = new URL(file.name, window.location.href).href;
+      //var baseUrl = new URL("https:\\fema.gov").href;
+      validateJson(json);
+      clearArcTree(document.getElementById('unorderedArcTree'));
+      buildArcTree(json, document.getElementById('unorderedArcTree'), "https:////fema.gov");
+    }
+  );
+}
+
+function validateJson(json) {
+  try {
+    JSON.parse(json);
+  } catch (e) {
+    console.error("Invalid JSON: " + e);
+    return false;
+  }
+  console.log("json validated using JSON.parse")
+  return true;
+}
+
+// https://ajv.js.org/guide/getting-started.html#basic-data-validation
+// https://www.npmjs.com/package/ajv
+
+// Node.js require:
+const Ajv = require("ajv")
+const ajv = new Ajv() // options can be passed, e.g. {allErrors: true}
+
+const schema = {
+  type: "object",
+  properties: {
+    foo: { type: "integer" },
+    bar: { type: "string" },
+  },
+  required: ["foo"],
+  additionalProperties: false,
+}
+
+const schema2 = {
+  type: "object",
+  properties: {
+    title: { type: "string" },
+    url: { type: "string" },
+    meta: { type: "string" },
+    children: { type: "object" },
+  },
+  required: ["title"],
+  additionalProperties: false,
+}
+
+const data = {
+  foo: 1,
+  bar: "abc",
+}
+
+const data2 = {
+  title: "test title",
+  url: "test url",
+  meta: "test meta",
+  children: {
+    title: "test title",
+    url: "test url",
+    meta: "test meta",
+    children: {
+      title: "test title",
+      url: "test url",
+      meta: "test meta",
+    }
+  }
+}
+
+const validate = ajv.compile(schema)
+const valid = validate(data)
+if (!valid) {
+  console.error(validate.errors)
+} else {
+  console.log("Json validated using Ajv")
+}
+
+/// Unused!
+function downloadJson() {
+  var json = document.getElementById('unorderedArcTree').innerHTML;
+  var blob = new Blob([json], { type: "text/plain;charset=utf-8" });
+  saveAs(blob, "arcTree.json");
+}
+
+/// Unused!
+function uploadJson() {
+  var file = document.getElementById('file').files[0];
+  if (file) {
+    fileChange(file);
+  }
+}
+
+
+
+/// Tree Creation functionality =====================
 var expandedByDefault = true;
-var cumulativeUrls = false; // If true, append child URLs to parent URL
+var cumulativeUrls = true; // If true, append child URLs to parent URL
 var listItemHTML = "";
 var listLog = "";
 
-/// <summary>
-/// Create an HTML unordered list of items from a JSON object
-/// Recurse through the JSON object, building up an HTML string to display, appending them to the treeElement.
-/// </summary>
-function buildTree(o, treeElement, url) {
+function clearArcTree(treeElement) {
+  treeElement.innerHTML = '';
+}
 
-  //console.log("buildTree: " + o?.toString());
+/// <summary>
+/// recurse through an 'o' JSON object & build up an HTML unordered list
+/// Parameters:
+/// 'o' is the JSON object to be processed, of the following form:
+/***
+      o = {
+        "title": "title of web page",
+        "url": "relative url of web page",
+        "meta": "web page description",
+        "children": [{
+          "title": "title of child page",
+          "url": "relative url of child page",
+          "meta": "child page description",
+          "children": [{...}, {...}]
+        }]
+      }
+***/
+/// 'treeElement' is the HTML element to which the unordered list is to be appended
+/// 'url' is this this segment of the tree's full or cumulative (N.B., see above option) url.
+///   Initially it is just the base/home URL.
+/// </summary>
+
+function buildArcTree(o, treeElement, url) {
+  //console.log("buildArcTree: " + o?.toString());
   for (var i in o) {
     // console.log("processing: " + i.toString());
     if (o[i] instanceof Array) {
@@ -85,7 +224,7 @@ function buildTree(o, treeElement, url) {
       listLog += i + '=' + o[i] + ";  ";
 
       switch (i) {
-        case "name": listItemHTML += "<b>" + o[i] + "</b>"; break;
+        case "title": listItemHTML += "<b>" + o[i] + "</b>"; break;
         case "url":
           if (cumulativeUrls) {
             childUrl = url + o[i];
@@ -93,7 +232,6 @@ function buildTree(o, treeElement, url) {
             childUrl = o[i];
           }
           listItemHTML += " (<a href='" + url + "'>" + o[i] + "</a>): ";
-
           break;
         case "meta": listItemHTML += "<i> Level " + o[i] + "</i>"; break;
         default: listItemHTML += " [Unknown node (" + i + ")=" + o[i] + "] ";
@@ -130,7 +268,6 @@ function buildTree(o, treeElement, url) {
           newLI.appendChild(newSpan);
         }
         listItemHTML = "";
-
         treeElement.appendChild(newLI);
 
         if (Object.keys(o[i]).length > 0) {
@@ -151,88 +288,8 @@ function buildTree(o, treeElement, url) {
       }
 
       console.group("children of " + i);
-      buildTree(o[i], newUL, childUrl);
+      buildArcTree(o[i], newUL, childUrl);
       console.groupEnd();
     }
   }
 }
-
-async function readJSONFile(file) {
-  return new Promise((resolve, reject) => {
-    let fileReader = new FileReader();
-    fileReader.onload = event => {
-      resolve(JSON.parse(event.target.result))
-    };
-    fileReader.onerror = (error => reject(error));
-    fileReader.readAsText(file);
-  });
-}
-
-async function fileChange(file) {
-  readJSONFile(file).then(
-    json => {
-      console.log(json);
-      //var baseUrl = new URL(file.name, window.location.href).href;
-      //var baseUrl = new URL("https:\\fema.gov").href;
-      buildTree(json, document.getElementById('unorderedList'), "https:////fema.gov");
-    }
-  );
-}
-
-/*
-function validateJson(jsonFile) {
-  try {
-    JSON.parse(jsonFile);
-  } catch (e) {
-    return false;
-  }
-  return true;
-}
-
-function downloadJson() {
-  var json = document.getElementById('unorderedList').innerHTML;
-  var blob = new Blob([json], { type: "text/plain;charset=utf-8" });
-  saveAs(blob, "orgchart.json");
-}
-
-function uploadJson() {
-  var file = document.getElementById('file').files[0];
-  if (file) {
-    fileChange(file);
-  }
-}
-
-function clearJson() {
-  document.getElementById('unorderedList').innerHTML = '';
-}
-
-// https://ajv.js.org/guide/getting-started.html#basic-data-validation
-// https://www.npmjs.com/package/ajv
-
-// or ESM/TypeScript import
-import Ajv from "ajv"
-// Node.js require:
-const Ajv = require("ajv")
-
-const ajv = new Ajv() // options can be passed, e.g. {allErrors: true}
-
-const schema = {
-  type: "object",
-  properties: {
-    foo: { type: "integer" },
-    bar: { type: "string" },
-  },
-  required: ["foo"],
-  additionalProperties: false,
-}
-
-const data = {
-  foo: 1,
-  bar: "abc",
-}
-
-const validate = ajv.compile(schema)
-const valid = validate(data)
-if (!valid) console.log(validate.errors)
-
-*/

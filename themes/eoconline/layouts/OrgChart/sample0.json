@@ -1,21 +1,21 @@
 {
-    "name": "FEMA.Gov_Home",
+    "title": "FEMA.Gov_Home",
     "url": "/",
     "meta": "Level 0",
     [
         {
-            "name": "ES",
+            "title": "ES",
             "url": "/es",
             "meta": "Level 1",
             [
                 {
-                    "name": "ES1",
+                    "title": "ES1",
                     "url": "/es1",
                     "meta": "Level 2",
                     []
                 },
                 {
-                    "name": "ES2",
+                    "title": "ES2",
                     "url": "/es2",
                     "meta": "Level 2",
                     []
@@ -23,23 +23,23 @@
             ]
         },
         {
-            "name": "Emergency Managers",
+            "title": "Emergency Managers",
             "url": "/emergency-managers",
             "meta": "Level 1",
             [
                 {
-                    "name": "EM1",
+                    "title": "EM1",
                     "url": "/em1",
                     "meta": "Level 2",
                     [
                         {
-                            "name": "EM1.1",
+                            "title": "EM1.1",
                             "url": "/em1.1",
                             "meta": "Level 3",
                             []
                         },
                         {
-                            "name": "EM1.2",
+                            "title": "EM1.2",
                             "url": "/em1.2",
                             "meta": "Level 3 -- Emergency Manager 1.2 description that's really long and maybe includes some <br/>line <br/>breaks<br/>...",
                             []
@@ -47,7 +47,7 @@
                     ]
                 },
                 {
-                    "name": "EM2",
+                    "title": "EM2",
                     "url": "/em2",
                     "meta": "Level 1",
                     []

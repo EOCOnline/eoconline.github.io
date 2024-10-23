@@ -1,31 +1,31 @@
 {
-  "name": "root",
+  "title": "root",
   "url": "//",
   "meta": "Root info",
   "children": [
     {
-      "name": "FEMA.Gov Home",
+      "title": "FEMA.Gov Home",
       "url": "/",
       "meta": "FEMa info",
       "children": [
         {
-          "name": "ES",
-          "URL": "/es",
+          "title": "ES",
+          "url": "/es",
           "meta": "Spanish",
           "children": [
             {
-              "name": "Emergency Managers",
-              "URL": "/es/emergency-managers",
+              "title": "Emergency Managers",
+              "url": "/es/emergency-managers",
               "meta": "Emergency Manager information in Spanish",
               "children": [
                 {
-                  "name": "Tools for Practitioners",
-                  "URL": "/es/emergency-managers/practitioners",
+                  "title": "Tools for Practitioners",
+                  "url": "/es/emergency-managers/practitioners",
                   "meta": "Tools for Practitioners in Spanish"
                 },
                 {
-                  "name": "Tools for Politicians",
-                  "URL": "/es/emergency-managers/Politicians",
+                  "title": "Tools for Politicians",
+                  "url": "/es/emergency-managers/Politicians",
                   "meta": "Tools for Politicians in Spanish"
                 }
               ]
@@ -33,18 +33,18 @@
           ]
         },
         {
-          "name": "Emergency Managers",
-          "URL": "/emergency-managers",
+          "title": "Emergency Managers",
+          "url": "/emergency-managers",
           "meta": "Emergency Manager information",
           "children": [
             {
-              "name": "Tools for Practitioners",
-              "URL": "/emergency-managers/practitioners",
+              "title": "Tools for Practitioners",
+              "url": "/emergency-managers/practitioners",
               "meta": "Tools for Practitioners"
             },
             {
-              "name": "Tools for Politicians",
-              "URL": "/emergency-managers/Politicians",
+              "title": "Tools for Politicians",
+              "url": "/emergency-managers/Politicians",
               "meta": "Tools for Politicians"
             }
           ]
