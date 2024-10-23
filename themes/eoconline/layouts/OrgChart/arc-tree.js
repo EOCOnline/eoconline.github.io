@@ -1,9 +1,11 @@
 // or ESM/TypeScript import
-import Ajv from "ajv"
+//import Ajv from "ajv"
 
 document.addEventListener("DOMContentLoaded", function () {
-  //console.clear();
+  console.clear();
+  console.log("DOM fully loaded and parsed");
   setFontSize(document.querySelector("#fontSize"));
+  document.getElementById("arcTreeFile").value = "";
 });
 
 
@@ -22,26 +24,24 @@ function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-// BUG: Doesn't work!
 function collapseLeafs() {
-  var leafs = document.getElementsByClassName(".leaf");
-  var len = leafs.length;
-  console.log = "Collapsing all " + leafs.length + " leafs.";
-  for (var i = 0; i < len; i++) {
-    i.style.display = "none";
+  var leafs = document.getElementsByClassName("leaf");
+  var leafsLen = leafs.length;
+  console.log("Collapsing all " + leafsLen + " leafs.");
+  for (var i = 0; i < leafsLen; i++) {
+    leafs[i].style.display = "none";
   }
-  console.log("Collapsed all " + leafs.length + " leafs.");
+  console.log("Collapsed all " + leafsLen + " leafs.");
 }
 
-// BUG: Doesn't work!
 function showLeafs() {
-  var leafs = document.getElementsByClassName(".leaf");
-  var len = leafs.length;
-  console.log = "Displaying all " + leafs.length + " leafs.";
-  for (var i = 0; i < len; i++) {
-    i.style.display = "block";
+  var leafs = document.getElementsByClassName("leaf");
+  var leafsLen = leafs.length;
+  console.log("Displaying all " + leafsLen + " leafs.");
+  for (var i = 0; i < leafsLen; i++) {
+    leafs[i].style.display = "block";
   }
-  console.log("Displayed all " + leafs.length + " leafs.");
+  console.log("Displayed all " + leafsLen + " leafs.");
 }
 
 function collapseTree() {
@@ -100,6 +100,7 @@ function validateJson(json) {
   return true;
 }
 
+/*
 // https://ajv.js.org/guide/getting-started.html#basic-data-validation
 // https://www.npmjs.com/package/ajv
 
@@ -172,7 +173,7 @@ function uploadJson() {
     fileChange(file);
   }
 }
-
+*/
 
 
 /// Tree Creation functionality =====================
