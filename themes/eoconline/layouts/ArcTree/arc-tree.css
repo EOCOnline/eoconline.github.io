@@ -6,18 +6,20 @@
   --tree-ball-expanded-color: black;
 }
 
-body {
-  margin: 30px;
+#Tree {
+  padding: 10px;
+  border: 1px solid #7c7c7c;
+  border-radius: 0.3em;
+  margin: 20px;
   font-family: sans-serif;
 }
 
 /* Tree Options */
 #TreeOptions {
-  margin: 15px 0;
   padding: 15px;
-  max-width: 365px;
+  max-width: 600px;
   min-width: 180px;
-  background-color: #eee;
+  background-color: #f3f2f2;
   border-radius: 0.3em;
   border: #505050 1px solid;
 }
@@ -86,11 +88,12 @@ body {
 
 #fontSizeLabel {
   font-size: medium;
-  margin-top: 3px;
+  margin-top: 20px;
 }
 
 #fontSize {
   width: 220px;
+  margin-top: 50px;
 }
 
 #fontSizeValue {
@@ -101,13 +104,17 @@ body {
   padding: 2px;
 }
 
+#arcTreeFile {
+  margin: 10px 5px;
+}
+
 /* Core Tree Styles */
 .object {
-  /*font-weight: bold;*/
   color: var(--objectColor);
 }
 
 .tree {
+  margin: 0px;
   padding: 20px;
   border: 1px solid #a6a6a6;
   border-radius: 0.3em;

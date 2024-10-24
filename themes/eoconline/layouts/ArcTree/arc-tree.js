@@ -3,7 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   console.clear();
-  console.log("DOM fully loaded and parsed");
+  //console.log("DOM fully loaded and parsed");
   setFontSize(document.querySelector("#fontSize"));
   document.getElementById("arcTreeFile").value = "";
 });
@@ -27,7 +27,6 @@ function isNumber(n) {
 function collapseLeafs() {
   var leafs = document.getElementsByClassName("leaf");
   var leafsLen = leafs.length;
-  console.log("Collapsing all " + leafsLen + " leafs.");
   for (var i = 0; i < leafsLen; i++) {
     leafs[i].style.display = "none";
   }
@@ -37,7 +36,6 @@ function collapseLeafs() {
 function showLeafs() {
   var leafs = document.getElementsByClassName("leaf");
   var leafsLen = leafs.length;
-  console.log("Displaying all " + leafsLen + " leafs.");
   for (var i = 0; i < leafsLen; i++) {
     leafs[i].style.display = "block";
   }
@@ -79,12 +77,14 @@ async function readJSONFile(file) {
 async function fileChange(file) {
   readJSONFile(file).then(
     json => {
-      console.log(json);
+      console.log("Read new Json file: " + file.name);
       //var baseUrl = new URL(file.name, window.location.href).href;
-      //var baseUrl = new URL("https:\\fema.gov").href;
+      // TODO: get base URL from base element in JSON file
+
+      var baseUrl = "https:\\fema.gov"
       validateJson(json);
       clearArcTree(document.getElementById('unorderedArcTree'));
-      buildArcTree(json, document.getElementById('unorderedArcTree'), "https:////fema.gov");
+      buildArcTree(json, document.getElementById('unorderedArcTree'), baseUrl);
     }
   );
 }
@@ -100,11 +100,12 @@ function validateJson(json) {
   return true;
 }
 
-/*
+
 // https://ajv.js.org/guide/getting-started.html#basic-data-validation
 // https://www.npmjs.com/package/ajv
 
 // Node.js require:
+/*
 const Ajv = require("ajv")
 const ajv = new Ajv() // options can be passed, e.g. {allErrors: true}
 
@@ -168,7 +169,7 @@ function downloadJson() {
 
 /// Unused!
 function uploadJson() {
-  var file = document.getElementById('file').files[0];
+  var file = document.getElementById('arcTreeFile').files[0];
   if (file) {
     fileChange(file);
   }
@@ -187,7 +188,7 @@ function clearArcTree(treeElement) {
 }
 
 /// <summary>
-/// recurse through an 'o' JSON object & build up an HTML unordered list
+/// Recurse through an 'o' JSON object & build up an HTML unordered list
 /// Parameters:
 /// 'o' is the JSON object to be processed, of the following form:
 /***
@@ -205,7 +206,7 @@ function clearArcTree(treeElement) {
 ***/
 /// 'treeElement' is the HTML element to which the unordered list is to be appended
 /// 'url' is this this segment of the tree's full or cumulative (N.B., see above option) url.
-///   Initially it is just the base/home URL.
+///   Initially url is just the base/home URL.
 /// </summary>
 
 function buildArcTree(o, treeElement, url) {

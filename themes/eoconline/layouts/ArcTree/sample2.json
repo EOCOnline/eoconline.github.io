@@ -16,12 +16,14 @@
             {
               "title": "Tools for Practitioners",
               "url": "/es/emergency-managers/practitioners",
-              "meta": "Tools for Practitioners in Spanish"
+              "meta": "Tools for Practitioners in Spanish",
+              "children": []
             },
             {
               "title": "Tools for Politicians",
               "url": "/es/emergency-managers/Politicians",
-              "meta": "Tools for Politicians in Spanish"
+              "meta": "Tools for Politicians in Spanish",
+              "children": []
             }
           ]
         }
